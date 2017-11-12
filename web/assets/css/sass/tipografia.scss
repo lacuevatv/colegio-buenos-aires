@@ -1,0 +1,84 @@
+h1 {
+	font-size: 300%;
+	line-height: 110%;
+	color: $color-azul-titulos;
+	font-weight:$fuente-bold;
+	small {
+		font-size: 60%;
+	}
+
+	@media (min-width: $md) {
+		font-size: 300%;
+		line-height: 130%;
+	}
+}
+
+h2 {
+	font-size: 250%;
+	line-height: 110%;
+	font-weight:$fuente-bold;
+	margin: 40px 0;
+	color: $color-azul-titulos;
+	small {
+		font-size: 60%;
+	}
+
+	@media (min-width: $md) {
+		font-size: 300%;
+		line-height: 130%;
+	}
+}
+
+h3 {
+	font-size: 170%;
+	line-height: 110%;
+	font-weight:$fuente-bold;
+	color: $color-azul-titulos;
+	margin: 25px 0;
+	small {
+		font-size: 70%;
+	}
+}
+
+h4 {
+	font-size: 130%;
+	line-height: 110%;
+	margin: 15px 0;
+	small {
+		font-size: 70%;
+	}
+}
+
+h5 {
+	font-size: 100%;
+	line-height: 100%;
+	margin: 15px 0;
+	small {
+		font-size: 80%;
+	}
+}
+
+p {
+	font-size: 100%;
+	line-height: 150%;
+	margin: 10px 0;
+	small {
+		font-size: 80%;
+	}
+}
+
+q {
+	font-size: 200%;
+	line-height: 110%;
+	font-weight:$fuente-bold;
+	margin: 40px 0;
+	color: $color-azul-titulos;
+	small {
+		font-size: 60%;
+	}
+
+	@media (min-width: $md) {
+		font-size: 200%;
+		line-height: 110%;
+	}
+}

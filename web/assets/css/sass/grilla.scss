@@ -1,0 +1,12 @@
+.main-wrapper {}
+
+.inner-wrapper {
+    padding-top: 80px;
+    @media (min-width: $sm) {
+        padding-top: 150px;
+    }
+    @media (min-width: $md) {
+        padding-top: 0;
+    }
+}
+
