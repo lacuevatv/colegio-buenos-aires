@@ -45,8 +45,6 @@ function listaNoticias( $limit = 20, $status = 'all', $extended = false, $catego
 			$imgGaleria   = $row['post_imagenesGal'];
 			$status       = $row['post_status'];
 			$date         = $row['post_fecha'];
-			$linkExterno  = $row['post_link_externo'];
-			$fechaAgenda  = $row['post_fecha_agenda'];
 
 			$meses        = array('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
 			$dia          = date("d", strtotime($date));
@@ -181,8 +179,6 @@ function searchPost ( $slug ) {
 				'mes'          => $mes,
 				'year'         => $year,	
 				'status'       => $data['post_status'],
-				'linkExterno'  => $data['post_link_externo'],
-				'fechaAgenda'  => $data['post_fecha_agenda'],
 			);
 
 		closeDataBase($connection);

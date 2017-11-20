@@ -1,0 +1,28 @@
+#accordion-docs {
+	margin: 50px 0;
+}
+
+.docs-section-title {
+	font-size: 200%;
+	line-height:120%; 
+	margin: 20px 0 0;
+	text-transform: uppercase;
+	small {
+		font-size: 50%;
+		font-style: italic;
+		cursor: pointer;
+		text-transform: lowercase;
+	}
+}
+
+.links-docs {
+	margin: 20px 0;
+
+	li {
+		margin: 20px 0;
+	}
+}
+
+.new-section-docs-btn-text {
+	margin-bottom: 50px;
+}

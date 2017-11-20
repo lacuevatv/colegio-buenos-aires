@@ -120,9 +120,9 @@ if ( $modulo == '') {
       <!-- modulo -->
       <section>
         <div class="modulo-wrapper">
-          <h2>Slider Inicio</h2>
-          <p>Modificar los sliders actuales: borrar y/o agregar fotos.</p>
-          <p><a class="btn btn-primary" href="index.php?admin=editar-slider&slug=home" role="button">Modificar sliders</a></p>
+          <h2>Documentación</h2>
+          <p>Administrar la documentación subida.</p>
+          <p><a class="btn btn-primary" href="index.php?admin=archivos" role="button">Modificar</a></p>
         </div>
       </section><!-- //modulo -->
     </div><!-- //columna -->

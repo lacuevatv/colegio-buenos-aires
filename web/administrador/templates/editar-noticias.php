@@ -26,8 +26,6 @@ $video        =  isset($dataPost['video']) ? $dataPost['video'] : '';
 $categoria    = isset($dataPost['categoria']) ? $dataPost['categoria'] : '';
 $galeria      = isset($dataPost['galeria']) ? $dataPost['galeria'] : '';
 $imgGaleria   = isset($dataPost['imgGaleria']) ? $dataPost['imgGaleria'] : array();
-$linkExterno  = isset($dataPost['linkExterno']) ? $dataPost['linkExterno'] : '';
-$fechaAgenda  = isset($dataPost['fechaAgenda']) ? $dataPost['fechaAgenda'] : '';
 $fecha        = isset($dataPost['fecha']) ? $dataPost['fecha'] : '';
 $dia          = isset($dataPost['dia']) ? $dataPost['dia'] : '';
 $mes          = isset($dataPost['mes']) ? $dataPost['mes'] : '';
@@ -154,14 +152,14 @@ $status       = isset($dataPost['status']) ? $dataPost['status'] : 'new';
 				</div>
 
 			<div class="row">	
-				<div class="col-70">
+				<div class="col">
 
 					<div id="accordion">
 						<h3>Video destacado</h3>
 						<div>
 	<!------ VIDEO DESTACADO DE LA NOTICIA ---------->
 							<div class="form-group">
-								<label for="post_video">Url del video<br>
+								<label for="post_video">Url del video
 								<small>Copiar url de Youtube</small> </label>
 								<input id="post_video" name="post_video" value="<?php echo $video; ?>">
 							</div>
@@ -214,21 +212,8 @@ $status       = isset($dataPost['status']) ? $dataPost['status'] : 'new';
 							<?php }//if ?>
 							</ul>
 						</div>
-						<!------ LINK EXTERNO ---------->
-						<h3>Link Externo</h3>
-						<div class="form-group">
-							<label for="post_link_externo">Link Externo
-							<small>Para redireccionar a otro lado</small></label>
-							<input type="url" id="post_link_externo" name="post_link_externo" value="<?php echo $linkExterno; ?>">
-						</div>
 				   	</div><!-- //#accordion -->
 			   	</div><!-- // col -->
-			   	<div class="col-30">
-			   		<div class="form-group">
-			   			<label for="post_fecha_agenda" class="larger-label">Fecha Para Agenda</label>
-						<input id="post_fecha_agenda" name="post_fecha_agenda" type="date" value="<?php echo $fechaAgenda?>">
-					</div>
-				</div><!-- // col -->
 			</div><!-- // row -->
 			<hr>
 		   	<div class="row">	

@@ -62,18 +62,16 @@ function get_footer_scripts ($modulo) { ?>
 		case 'biblioteca-medios': ?>
 			<script src="<?php echo MAINURL; ?>/administrador/assets/js/modulo-medios.js"></script>
 			<?php break;
-		
-		case 'sliders' :
-		case 'editar-slider' : ?>
-			<script src="<?php echo MAINURL; ?>/administrador/assets/js/modulo-medios.js"></script>
-			<script src="<?php echo MAINURL; ?>/administrador/assets/js/modulo-sliders.js"></script>
-			<?php break;
 
 		case 'promociones' : ?>
 			<script src="<?php echo MAINURL; ?>/administrador/assets/js/modulo-medios.js"></script>
 			<script src="<?php echo MAINURL; ?>/administrador/assets/js/modulo-promociones.js"></script>
 			<?php break;
 		
+		case 'archivos' : ?>
+			<script src="<?php echo MAINURL; ?>/administrador/assets/js/modulo-medios.js"></script>
+			<script src="<?php echo MAINURL; ?>/administrador/assets/js/modulo-archivos.js"></script>
+		<?php break;
 		default: ?>
 			<script src="<?php echo MAINURL; ?>/administrador/assets/lib/tinymce/tinymce.min.js"></script>
 			<script src="<?php echo MAINURL; ?>/administrador/assets/js/modulo-noticias.js"></script>
@@ -121,7 +119,7 @@ function mainshorcutIndex() {
 	$connection = connectDB();
 	$tabla = 'noticias';
 	$limit = '3';
-	$categoria = 'agenda';
+	$categoria = 'noticias';
 	$status = 'publicado';
 	
 	$query  = "SELECT * FROM " .$tabla. " WHERE post_categoria='".$categoria."' AND post_status='".$status."' ORDER by post_fecha desc LIMIT ".$limit." ";
@@ -149,8 +147,6 @@ function mainshorcutIndex() {
 			$imgGaleria   = $row['post_imagenesGal'];
 			$status       = $row['post_status'];
 			$date         = $row['post_fecha'];
-			$linkExterno  = $row['post_link_externo'];
-			$fechaAgenda  = $row['post_fecha_agenda'];
 
 			$meses        = array('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
 			$dia          = date("d", strtotime($date));

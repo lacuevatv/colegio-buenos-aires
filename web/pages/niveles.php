@@ -6,7 +6,7 @@
  * PAGE TEMPLATE: PAGINA NIVELES
 */
 
-getPageVar();//variante de la pagina
+echo getPageVar();//variante de la pagina
 echo ver_categoria();//define la categoria
 
 include 'header.php';

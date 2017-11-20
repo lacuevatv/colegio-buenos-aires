@@ -65,7 +65,7 @@ if(!defined("SECUREACCESS"))
                   <a href="index.php?admin=promociones" role="button">promociones</a>
                 </li>
                 <li>
-                  <a href="index.php?admin=editar-slider&slug=home" role="button">Slider Inicio</a>
+                  <a href="index.php?admin=archivos" role="button">Documentación</a>
                 </li>
               </ul>
             </li>
