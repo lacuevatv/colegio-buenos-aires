@@ -2,6 +2,7 @@
 (Sitio auto administrable)
 
 ## Versiones:
+* 0.1 - Backend básico listo, cargadas algunas noticias, imágenes y documentación de ejemplo para empezar.
 * 0.0 - Template Init
 
 ## Notas:
