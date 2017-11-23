@@ -12,7 +12,8 @@ define ( 'UPLOADS', dirname( __FILE__ ) . '/../galeria' );
 define ( 'PAGESDIR', dirname( __FILE__ ) . '/../pages' );
 define ( 'TEMPLATEDIR', dirname( __FILE__ ) . '/../templates' );
 //urls
-define ('MAINSURL', 'http://' . $_SERVER['HTTP_HOST']);
+define ('CARPETASERVIDOR', '' );//esta variable se define si el sitio no está en el root del dominio y si está en una subcarpeta
+define ('MAINSURL', 'http://' . $_SERVER['HTTP_HOST'] . CARPETASERVIDOR );
 define ('UPLOADSURL', MAINSURL . '/galeria');
 //base de datos
 define("DB_SERVER", "localhost");
@@ -28,9 +29,31 @@ define('LINK_FACEBOOK', '#');
 define('LINK_INSTAGRAM', '#');
 define('LINK_TWITTER', '#');
 define('LINK_YOUTUBE', '#');
+define('LINK_EMAIL', '#');
+define('TELCOLEGIO', '4855 8289');
 
 global $categorias;
 $categorias = array(
 	array( 'slug' => 'noticias', 'nombre' => 'Noticias'),
 	array( 'slug' => 'edad-feliz', 'nombre' => 'Edad Feliz'),
+);
+
+global $menuItems;
+$menuItems = array(
+	array( 'url' => MAINSURL, 'nombre' => 'Inicio'),
+	array( 'url' => 'institucional', 'nombre' => 'Institucional'),
+	array( 'url' => 'niveles', 'nombre' => 'Niveles', 'subItem' => array(
+		array ('url' => 'niveles/inicial', 'nombre' => 'inicial'),
+		array ('url' => 'niveles/primaria', 'nombre' => 'primaria'),
+		array ('url' => 'niveles/secundario', 'nombre' => 'secundario'),
+		),
+	),
+	array( 'url' => 'noticias', 'nombre' => 'Noticias'),
+	array( 'url' => 'edad-feliz', 'nombre' => 'Edad Feliz'),
+	/*array( 'url' => MAINSURL . '/noticias', 'nombre' => 'Noticias', 'subItem' => array(
+		array ('url' => MAINSURL . '/noticias/edad-feliz', 'nombre' => 'edad feliz'),
+		array ('url' =>  MAINSURL . '/noticias/novedades', 'nombre' => 'Noticias')
+		),
+	),*/
+	array( 'url' => 'contacto', 'nombre' => 'Contacto'),
 );

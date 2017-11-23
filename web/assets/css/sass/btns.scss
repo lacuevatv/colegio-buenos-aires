@@ -1,0 +1,71 @@
+/*ICONOS*/
+
+.icon-tel {
+	display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    background: url(../images/sprite.png);
+    background-position: -53px -8px;
+    margin-right: 10px;
+}
+
+.icon {
+	display: block;
+	padding: 2px;
+	width: 30px;
+	height: 25px;
+	background: url(../images/sprite.png);
+}
+
+.icon-email {
+	background-position: -95px -12px;
+}
+
+.icon-facebook {
+	background-position: -129px -12px;
+}
+
+.icon-twitter {
+	background-position: -162px -12px;
+}
+
+.icon-youtube {
+	background-position: -196px -12px;
+}
+
+.icon-instagram {
+	background-position: -225px -12px;
+}
+
+/*BOTONES*/
+
+.btn {
+	display: inline-block;
+	padding: 10px 20px;
+	text-transform: uppercase;
+	@include border-radius(5px);
+	cursor: pointer;
+
+	&:hover {
+	    zoom: 1;
+	    filter: alpha(opacity=70);
+	    opacity: 0.7;
+	}
+}
+
+.btn-sm {
+	font-size: 70%;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+.btn-border {
+	border: 1px solid $color-negro;
+	color: $color-negro;
+}
+
+.btn-border-inverse {
+	border: 1px solid $color-blanco;
+	color: $color-blanco;
+}

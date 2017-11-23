@@ -2,6 +2,7 @@
 (Sitio auto administrable)
 
 ## Versiones:
+* 0.2 - Armando el front, tengo listo header y footer con scripts y responsive
 * 0.1 - Backend básico listo, cargadas algunas noticias, imágenes y documentación de ejemplo para empezar.
 * 0.0 - Template Init
 

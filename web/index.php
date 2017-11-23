@@ -8,6 +8,6 @@
 require_once 'inc/functions.php';
 
 global $pageActual;
-$pageActual = pageActual();
+$pageActual = pageActual( cleanUri() );
 
 getPage( $pageActual );

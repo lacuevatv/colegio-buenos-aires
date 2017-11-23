@@ -1,12 +1,56 @@
 .main-wrapper {}
 
-.inner-wrapper {
-    padding-top: 80px;
-    @media (min-width: $sm) {
-        padding-top: 150px;
-    }
-    @media (min-width: $md) {
-        padding-top: 0;
-    }
+.inner-wrapper {}
+
+//aplica un padding extra para cuando el nav se define como fixed
+.padding-fixed {
+	padding-top: 100px;
 }
 
+.container {
+	margin: 0 auto;
+	padding: 0 5%;
+	@media (min-width: $md) {
+	padding: 0 10%;
+	}
+}
+
+.container-der {
+	margin: 0 auto;	
+	padding-right: 5%;
+	@media (min-width: $md) {
+		padding-right: 10%;
+	}
+}
+
+.container-izq {
+	margin: 0 auto;	
+	padding-left: 5%;
+	@media (min-width: $md) {
+		padding-left: 10%;
+	}
+}
+
+//contenedor interno de las paginas
+.main-content-page-wrapper {
+	display: flex;
+	display: -o-flex;
+	display: -ms-flex;
+	display: -moz-flex;
+	display: -webkit-flex;
+	-webkit-justify-content: space-between;
+	-moz-justify-content: space-between;
+	-ms-justify-content: space-between;
+	-o-justify-content: space-between;
+	justify-content: space-between;
+	padding-top: 30px;
+    padding-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.main-content-page {
+	flex-grow:1;
+	padding-right: 30px;
+	position: relative;
+}

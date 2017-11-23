@@ -3,16 +3,19 @@
  * Sitio web: Colegio Buenos Aires
  * @LaCueva.tv
  * Since 1.0
- * PAGE TEMPLATE: PAGINA INSTITUCIONAL
+ * PAGE TEMPLATE: PAGINA EDAD FELIZ
 */
+getPageVar( cleanUri() );//trae la variable de la pagina
+
 include 'header.php';
 ?>
+
 <!--- .inner-wrapper: contenido principal y específico del template -->
 <div class="inner-wrapper">
-   
-    <header>
+	
+	<header>
     	<div class="container">
-	        <h1>Institucional</h1>
+	        <h1>Edad feliz</h1>
 	    </div>
     </header>
    

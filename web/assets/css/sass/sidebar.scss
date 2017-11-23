@@ -1,0 +1,14 @@
+.sidebar {
+	display: none;
+	@media (min-width: $md) {
+		display: block;
+		width: 30%;
+		min-width: 250px;
+		padding-left: 20px;
+		position: relative;
+	}
+
+	@media (min-width: $xlg) {
+		width: 25%;
+	}
+}

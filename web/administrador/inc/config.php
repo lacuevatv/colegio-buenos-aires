@@ -11,7 +11,8 @@ define ( 'UPLOADS', dirname( __FILE__ ) . '/../../galeria' );
 define ( 'UPLOADSIMAGES', dirname( __FILE__ ) . '/../../galeria' );
 define ( 'UPLOADSFILES', dirname( __FILE__ ) . '/../../galeria/archivos' );
 //URL
-define ('MAINURL', 'http://' . $_SERVER['HTTP_HOST'] );
+define ('CARPETASERVIDOR', '' );//esta variable se define si el sitio no está en el root del dominio y si está en una subcarpeta
+define ('MAINURL', 'http://' . $_SERVER['HTTP_HOST'] . CARPETASERVIDOR );
 define ('UPLOADSURL', MAINURL . '/galeria');
 define ('UPLOADSURLIMAGES', MAINURL . '/galeria');
 define ('UPLOADSURLFILES', MAINURL . '/galeria/archivos');

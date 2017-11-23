@@ -3,7 +3,7 @@
  * Sitio web: Colegio Buenos Aires
  * @LaCueva.tv
  * Since 1.0
- * PAGE TEMPLATE: PAGINA INICIO
+ * PAGE TEMPLATE: PAGINA ERROR
 */
 include 'header.php';
 ?>

@@ -24,35 +24,75 @@
 <!-- SEO SECCTION -->
     <meta name="keywords" content="<?php echo METAKEYS; ?>">
     <meta name="description" content="<?php echo METADESCRIPTION; ?>">
-    <link rel="canonical" href="<?php echo MAINSURL . "/"; ?>" />
+    <link rel="canonical" href="<?php echo MAINSURL . '/'; ?>" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="<?php echo SITETITLE; ?>" />
-    <meta property="og:description" content="" />
-    <meta property="og:url" content="<?php echo MAINSURL . "/"; ?>" />
+    <meta property="og:description" content="<?php echo METADESCRIPTION; ?>" />
+    <meta property="og:url" content="<?php echo MAINSURL . '/'; ?>" />
     <meta property="og:site_name" content="<?php echo SITETITLE; ?>" />
-    <meta property="og:image" content="" />
+    <meta property="og:image" content="<?php echo MAINSURL . "/galeria/2017-11-21-533-imagen.jpg"; ?>" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:description" content="<?php echo METADESCRIPTION; ?>" />
     <meta name="twitter:title" content="<?php echo SITETITLE; ?>" />
-    <meta name="twitter:image" content="" />
+    <meta name="twitter:image" content="<?php echo MAINSURL . '/galeria/2017-11-21-533-imagen.jpg'; ?>" />
 <!-- // SEO SECCTION -->
 
 <!-- OWL -->
-<link href="<?php echo MAINSURL; ?>/inc/lib/owl/assets/owl.carousel.min.css" rel="stylesheet">
-<!-- <link href="<?php //echo MAINSURL; ?>/inc/lib/owl/assets/owl.theme.default.css" rel="stylesheet">-->
+    <link href="<?php echo MAINSURL; ?>/inc/lib/owl/assets/owl.carousel.min.css" rel="stylesheet">
 <!-- Custom CSS -->
     <link href="<?php echo MAINSURL; ?>/assets/css/style.css?<?php echo VERSION; ?>" rel="stylesheet">
 
 <!--- modernizr -->
-<script src="<?php echo MAINSURL; ?>/assets/js/modernizr-custom.js"></script>
+    <script src="<?php echo MAINSURL; ?>/assets/js/modernizr-custom.js"></script>
 
 </head>
 <body>
 <div class="wrapper-site">
+    <?php getTemplate( 'loader' ); ?>
+
 <!--- header ---------------------->
     <header class="header-site">
 <!--- nav ---------------------->
+        <div class="header-data">
+            <ul class="social-media-header container-der">
+                <?php getTemplate( 'social-items' ); ?>
+            </ul>
+
+            <a href="tel:<?php echo TELCOLEGIO; ?>">
+                <h5 class="tel-data-header">
+                    <span class="icon-tel"></span><?php echo TELCOLEGIO; ?>
+                </h5>
+            </a>
+
+        </div>
+
+        <nav class="main-nav">
+            <div class="container">
+                <a href="<?php echo MAINSURL; ?>" title="<?php echo SITETITLE; ?>">
+                    <img class="brand-name" src="<?php echo MAINSURL; ?>/assets/images/logo.png" alt="Logo Colegio De Buenos Aires">
+                </a>
+
+                <button class="toggle">
+                    <span class="sr-only">Menu</span>
+                    <span class="tog1"></span>
+                    <span class="tog2"></span>
+                    <span class="tog3"></span>
+                </button>
+                <ul class="main-menu" role="navigation">
+                    <?php
+                    global $menuItems;
+                    global $pageActual;
+                    showMenu( $menuItems, $pageActual ); 
+                    ?>
+                </ul>
+            </div>
+            <button class="scroll-top-button">
+                <span class="sr-only">Ir arriba</span>
+                <span class="up1"></span>
+                <span class="up2"></span>
+            </button>
+        </nav>
         
     </header>
 

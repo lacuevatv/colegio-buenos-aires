@@ -31,7 +31,12 @@ function getTemplate ( $name ) {
 	}
 }
 
-
+//esta función limpia el url si el sitio no está instalado en la rais del servidor para que funcionen los permalinks sin problemas
+function cleanUri() {
+	$uri = $_SERVER["REQUEST_URI"];
+	$uri = str_replace(CARPETASERVIDOR, '', $uri);
+	return $uri;	
+}
 
 //detecta el dispositivo
 function dispositivo () {
@@ -59,11 +64,16 @@ function dispositivo () {
  * Pero ademas, e importante, busca en la base de datos mediante el slug. Si es noticia hace un loop de la categoria elegida o de todas las noticias y si es noticia single busca la noticia específica.
  *
 */
-function pageActual () {
+function pageActual ( $uri ) {
 	$slug = 'inicio'; //slug por defecto
-	
+	/*if ( $_SERVER["PHP_SELF"] == '/index.php' ) {
+	 
+	} else {
+		//echo $_SERVER["PHP_SELF"];
+		//echo $_SERVER["REQUEST_URI"];
+	}*/
 	//borramos la barra / luego del dominio:
-	$url = $_SERVER['REQUEST_URI'];
+	$url = $uri;
 	$parseUrl = explode('/', $url);
 	$RequestURI = $parseUrl[1];
 	
@@ -81,10 +91,6 @@ function pageActual () {
 			
 		}
 
-		if ( $slug == 'edad-feliz' ) {
-			$slug = 'noticias';
-		}
-
 	} 
 	//en cambio, si aparece el ? o el & el url funciona con ids, ejecuta la segunda opcion
 	else {
@@ -93,8 +99,12 @@ function pageActual () {
 		$noticia = isset($_REQUEST['noticia'])?$_REQUEST['noticia']:'none';
 		$cat = isset($_REQUEST['cat'])?$_REQUEST['cat']:'none';
 
-		if ( $noticia != 'none' || $cat != 'none' ) {
-			$slug = 'noticias';
+		if ( $noticia != 'none' ) {
+			$slug = $noticia;
+		}
+
+		if ( $cat != 'none' ) {
+			$slug = $cat;
 		}
 	}
 
@@ -102,44 +112,13 @@ function pageActual () {
 
 }//pageActual()
 
-
-/*
-ESTA FUNCIÓN TOMA LA VARIANTE DE ALGUNAS PAGINAS POR EJEMPLO NOTICIAS, EL SLUG ES UNA CATEGORIA O EL URL DE UNA NOTICIA
-@return: string
-*/
-function getPageVar () {
-	$slug = '';
-	$noticia = isset($_REQUEST['noticia'])?$_REQUEST['noticia']:'none';
-	$cat = isset($_REQUEST['cat'])?$_REQUEST['cat']:'none';
-
-	if ( $noticia != 'none' ) {
-		$slug = $noticia;
-	} 
-
-	if ( $cat != 'none' ) {
-		$slug = $cat;
-	} 
-
-	if ( $slug == '' ) {
-		$url = $_SERVER['REQUEST_URI'];
-		$parseUrl = explode('/', $url);
-		if ( count( $parseUrl ) <= 2 ){
-			return;
-		}
-		$slug = $parseUrl[2];
-	}
-	
-	return $slug;
-
-}
-
-//esta funcion devuelve true si es categoria y false si no lo es
-function ver_categoria () {
+//esta funcion devuelve el nombre de la categoria o nada sino lo es 
+function ver_categoria ( $uri ) {
 	global $categorias;
-	$cat = isset($_REQUEST['cat'])?$_REQUEST['cat']:'none';
+	//ver si figura la variable cat en el url, en ese caso es categoria
+	$cat = isset($_REQUEST['cat']) ? $_REQUEST['cat'] : 'none';
 
-	$url = $_SERVER['REQUEST_URI'];
-	$parseUrl = explode('/', $url);
+	$parseUrl = explode('/', $uri);
 	$RequestURI = $parseUrl[1];
 
 	for ($i=0; $i < count($categorias); $i++) { 
@@ -153,6 +132,140 @@ function ver_categoria () {
 
 }
 
+//esta funcion devuelve el nombre true si es categoria y false si no lo es
+function es_categoria ( $uri ) {
+	global $categorias;
+	//ver si figura la variable cat en el url, en ese caso es categoria
+	$cat = isset($_REQUEST['cat'])?$_REQUEST['cat']:'none';
+	if ( $cat != 'none' ) {
+		return true;
+	} 
+	//si el url es bonito hay que parsearlo para buscar las categorias
+	$parseUrl = explode('/', $uri);
+
+	if ( count( $parseUrl ) >= 3 && $parseUrl[2] != '' ){
+		//si el index 2 figura en el url significa que es single
+		return false;
+	} else {
+		$RequestURI = $parseUrl[1];
+
+		for ($i=0; $i < count($categorias); $i++) { 
+			if ( $categorias[$i]['slug'] == $RequestURI ) {
+			return true;
+			break;
+			}
+		}
+		//sino encuentra la categoria en el url, entonces no lo es
+		return false;
+	}	
+}
+
+/*
+ESTA FUNCIÓN TOMA LA VARIANTE DE ALGUNAS PAGINAS POR EJEMPLO NOTICIAS, EL SLUG ES UNA CATEGORIA O EL URL DE UNA NOTICIA
+@return: string
+*/
+function getPageVar ( $uri ) {
+	$slug = '';
+
+	//si es categoria, entonces no hay nada que decir
+	if ( es_categoria( $uri ) ){
+		return;
+	} 
+	
+	//si figura variable noticia en el url, entonces es facil:
+	$noticia = isset($_REQUEST['noticia'])?$_REQUEST['noticia']:'none';
+	if ( $noticia != 'none' ) {
+		$slug = $noticia;
+		return $slug;
+	} 
+
+	//si no hay variables hay que parsear el url para buscar informacion
+	$parseUrl = explode('/', $uri);
+	
+	//si por el contrario hay un indice 2 y este no es la "/" entonces hay info que rescatar
+	if ( isset($parseUrl[2]) && $parseUrl[2] != '' ) {
+		$slug = $parseUrl[2];
+	} else {
+		//y por ultimo la info a mostrar también puede estar en el indice 1 si este no es categoria
+		$slug = $parseUrl[1];
+	}
+
+	return $slug;
+
+}
+//esta función toma el nombre de la categoría para mostrarlo en el front en caso de que sea distinto el nombre del slug
+function getNameCategoria( $categoria ) {
+	global $categorias;
+	for ($i=0; $i < count($categorias) ; $i++) { 
+		if ($categorias[$i]['slug'] == $categoria ) {
+			return $categorias[$i]['nombre'];
+			break;
+		}
+	}
+}
+
+//acorta el texto
+function acortaTexto( $texto, $cantPalabras = 50, $final = null ) {
+	if ( null === $final ) {
+	$final = '&hellip;';
+	}	
+	$textoOriginal = $texto;
+	
+	//quitar html
+	$texto = preg_replace( '@<(script|style)[^>]*?>.*?</\\1>@si', '', $texto );
+	$texto = strip_tags($texto);
+	
+	//reducir texto y agregar el final
+	 $words_array = preg_split( "/[\n\r\t ]+/", $texto, $cantPalabras + 1, PREG_SPLIT_NO_EMPTY );
+	$sep = ' ';
+	
+	//devolver texto reducido
+	if ( count( $words_array ) > $cantPalabras ) {
+		array_pop( $words_array );
+		$texto = implode( $sep, $words_array );
+		$texto = $texto . $final;
+	} else {
+		$texto = implode( $sep, $words_array );
+	}
+	return $texto;
+}
+
+//muestra el menú del array de menu
+function showMenu( $menu, $active = null ) {
+
+	for ($i=0; $i < count($menu); $i++) { ?>
+		<li>
+			<?php 
+				if ( ! isset( $menu[$i]['subItem'] ) ) : ?>
+			<a href="<?php echo MAINSURL . '/' . $menu[$i]['url']; ?>" <?php 
+			if ( $menu[$i]['url'] == $active ) {
+				echo 'class="menu-active"';
+			} ?>>
+				<?php echo $menu[$i]['nombre']; ?>
+			</a>
+			
+			<?php else : 
+				$submenu = $menu[$i]['subItem'];
+			?>
+			<a href="<?php echo MAINSURL . '/' . $menu[$i]['url']; ?>" class="sub-menu-toggle <?php 
+			if ( $menu[$i]['url'] == $active ) {
+				echo ' menu-active';
+			} ?>">
+				<?php echo $menu[$i]['nombre']; ?>
+			</a>
+				<ul class="submenu">
+				<?php for ($a=0; $a < count($submenu); $a++) { ?>
+					<li>
+						<a href="<?php echo MAINSURL . '/' . $submenu[$a]['url']; ?>">
+							<?php echo $submenu[$a]['nombre']; ?>
+						</a>
+					</li>
+				<?php } ?>
+				</ul>
+			<?php endif; ?>
+		</li>
+	<?php }
+}
 
 //devuelve el título de la página para <head><title>
 function SeoTitlePage ( $page ) {

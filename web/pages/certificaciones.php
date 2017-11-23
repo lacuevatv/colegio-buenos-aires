@@ -3,16 +3,19 @@
  * Sitio web: Colegio Buenos Aires
  * @LaCueva.tv
  * Since 1.0
- * PAGE TEMPLATE: PAGINA INSTITUCIONAL
+ * PAGE TEMPLATE: certificaciones
 */
+
+echo getPageVar( cleanUri() );//variante de la pagina
+
 include 'header.php';
 ?>
 <!--- .inner-wrapper: contenido principal y específico del template -->
 <div class="inner-wrapper">
-   
-    <header>
+    
+        <header>
     	<div class="container">
-	        <h1>Institucional</h1>
+	        <h1>Certificaciones</h1>
 	    </div>
     </header>
    
@@ -59,7 +62,7 @@ include 'header.php';
 	       <?php getTemplate( 'sidebar' ); ?>
 	   	</aside>
    </div><!-- //.main-content-page-wrapper -->
-
+        
 </div><!--- //.inner-wrapper -->
 
 <?php include 'footer.php'; ?>

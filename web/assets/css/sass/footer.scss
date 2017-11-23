@@ -1,0 +1,183 @@
+.footer-site {
+    position: relative;
+    z-index: 1;
+    color: $color-blanco;
+    background: url(../images/mural.jpg);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    @media (min-width: $sm) {
+        background-size: cover;
+    }
+    @media (min-width: $md) {
+        background-size: initial;
+        background-position: center;
+    }
+}
+
+.footer-copyright {
+    padding: 2px 20px;
+    text-align: center;
+    background-color: $color-azul-titulos;
+    p {
+        font-size: 70%;
+        font-weight: $fuente-bold;
+        opacity: 0.6;
+    }
+}
+
+.footer-data-wrapper {
+    background-color: $color-azul-separadores;
+}
+
+.footer-data {
+    padding: 30px 20px 10px;
+    @media (min-width: $md) {
+        padding: 30px 5% 10px;
+        display: flex;
+        display: -o-flex;
+        display: -ms-flex;
+        display: -moz-flex;
+        display: -webkit-flex;
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+        -ms-justify-content: space-between;
+        -o-justify-content: space-between;
+        justify-content: space-between;
+    }
+}
+
+.data-colegio {
+    padding: 20px 5px;
+    @media (min-width: $md) {
+        width: 25%;
+        padding: 0 5px;
+    }
+
+    img {
+        width: 50%;
+        min-width: 150px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    h5 {
+        display: block;
+        width: 50%;
+        min-width: 150px;
+        margin: 20px auto;
+        font-size: 120%;
+        position: relative;
+        text-align: center;
+        @media (min-width: $md) {
+            font-size: 95%;
+            cursor: pointer;
+            &:hover {
+                zoom: 1;
+                filter: alpha(opacity=50);
+                opacity: 0.5;
+            }
+        }
+    }
+}
+
+.footer-social-media {
+    margin: 20px auto;
+    display: flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+
+    li {
+        margin: 0 2px;
+        &:hover {
+            zoom: 1;
+            filter: alpha(opacity=50);
+            opacity: 0.5;
+        }
+    }
+}
+
+.footer-contacto {
+    text-align: center;
+    padding: 20px 5px;
+    @media (min-width: $md) {
+        width: 25%;
+        padding: 0 5px;
+    }
+
+    h3 {
+        color: $color-blanco;
+        text-transform: uppercase;
+        font-size: 90%;
+        margin: 15px 0;
+    }
+
+    p {
+        font-size: 90%;
+    }
+
+    a {
+        margin: 20px auto;
+    }
+}
+
+.site-map {
+    display: none;
+    @media (min-width: $md) {
+        display: block;
+        width: 30%;
+        padding: 0 5px;
+    }
+    h3 {
+        color: $color-blanco;
+        text-transform: uppercase;
+        font-size: 90%;
+        margin: 15px 0;
+    }
+
+    
+}
+
+.footer-menu {
+    @media (min-width: $md) {
+        max-height: 150px;
+        display: flex;
+        display: -o-flex;
+        display: -ms-flex;
+        display: -moz-flex;
+        display: -webkit-flex;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        -o-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    > li {
+        font-size: 80%;
+    }
+
+    a {
+        &:hover {
+            zoom: 1;
+            filter: alpha(opacity=50);
+            opacity: 0.5;
+        }
+    }
+}
