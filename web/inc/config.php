@@ -32,15 +32,17 @@ define('LINK_YOUTUBE', '#');
 define('LINK_EMAIL', '#');
 define('TELCOLEGIO', '4855 8289');
 
+//categoria para hacer loop
 global $categorias;
 $categorias = array(
 	array( 'slug' => 'noticias', 'nombre' => 'Noticias'),
 	array( 'slug' => 'edad-feliz', 'nombre' => 'Edad Feliz'),
 );
 
+//items del menu
 global $menuItems;
 $menuItems = array(
-	array( 'url' => MAINSURL, 'nombre' => 'Inicio'),
+	array( 'url' => 'inicio', 'nombre' => 'Inicio'),
 	array( 'url' => 'institucional', 'nombre' => 'Institucional'),
 	array( 'url' => 'niveles', 'nombre' => 'Niveles', 'subItem' => array(
 		array ('url' => 'niveles/inicial', 'nombre' => 'inicial'),
@@ -50,10 +52,13 @@ $menuItems = array(
 	),
 	array( 'url' => 'noticias', 'nombre' => 'Noticias'),
 	array( 'url' => 'edad-feliz', 'nombre' => 'Edad Feliz'),
-	/*array( 'url' => MAINSURL . '/noticias', 'nombre' => 'Noticias', 'subItem' => array(
-		array ('url' => MAINSURL . '/noticias/edad-feliz', 'nombre' => 'edad feliz'),
-		array ('url' =>  MAINSURL . '/noticias/novedades', 'nombre' => 'Noticias')
-		),
-	),*/
 	array( 'url' => 'contacto', 'nombre' => 'Contacto'),
+);
+
+//galeria de imagenes del sidebar. Tres parametros, alt, src y caption para ponerle algún texto
+global $galeriaBienvenidos;
+$galeriaBienvenidos = array(
+	array( 'url' => '2017-11-20-262-imagen.jpg', 'alt' => 'Colegio Buenos Aires', 'caption' => 'Colegio Buenos Aires'),
+	array( 'url' => '2017-11-20-563-imagen.jpg', 'alt' => 'Colegio Buenos Aires', 'caption' => 'Colegio Buenos Aires'),
+	array( 'url' => '2017-11-21-533-imagen.jpg', 'alt' => 'Colegio Buenos Aires', 'caption' => 'Colegio Buenos Aires'),
 );

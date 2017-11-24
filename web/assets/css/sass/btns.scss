@@ -58,6 +58,7 @@
 	font-size: 70%;
 	padding-top: 6px;
 	padding-bottom: 6px;
+	@include border-radius(3px);
 }
 
 .btn-border {
@@ -67,5 +68,10 @@
 
 .btn-border-inverse {
 	border: 1px solid $color-blanco;
+	color: $color-blanco;
+}
+
+.btn-primary {
+	background-color: $color-celeste;
 	color: $color-blanco;
 }

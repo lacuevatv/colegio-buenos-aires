@@ -10,6 +10,7 @@ include 'header.php';
 <!--- .inner-wrapper: contenido principal y específico del template -->
 <div class="inner-wrapper" >
 	<div class="container">
+
 		<h1>colegio de buenos aires
 		<br>
 			<small>Fuente h1 small</small></h1>

@@ -25,9 +25,12 @@ function getPage( $name ) {
 //busca el template $name = nombre del archivo sin extensión
 function getTemplate ( $name ) {
 	$namePage = TEMPLATEDIR . '/'. $name. '.php';
+	$error = '404';
 
 	if (is_file($namePage)) {
 		include $namePage;
+	} else {
+		include TEMPLATEDIR . '/'. $error. '.php';			
 	}
 }
 
