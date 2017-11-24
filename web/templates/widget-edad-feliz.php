@@ -1,13 +1,20 @@
+<?php $EFPosts = getPosts( 'edad-feliz', 1 ); ?>
+
 <article class="widget">
 			
-	<h1>Titulo widget</h1>
+	<h1>
+		<span class="sr-only">Edad feliz</span>
+		<img src="<?php echo MAINSURL; ?>/assets/images/logoEF.jpg">
+	</h1>
 	
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.</p>
+	<p>
+		<?php echo acortaTexto( $EFPosts[0]['post_resumen'], 20 ); ?>
+	</p>
 	
 	<figure>
-		<img src="<?php echo UPLOADSURL; ?>/2017-11-20-262-imagen.jpg">
+		<img src="<?php echo UPLOADSURL . '/' . $EFPosts[0]['post_imagen']; ?>">
 	</figure>
 	
-	<a href="#" class="btn btn-sm btn-primary link-widget">Leer más</a>
+	<a href="<?php echo MAINSURL . '/edad-feliz/' . $EFPosts[0]['post_url'] ?>" class="btn btn-sm btn-primary link-widget">Ver Nota</a>
 
 </article>

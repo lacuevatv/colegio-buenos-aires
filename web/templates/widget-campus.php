@@ -1,13 +1,15 @@
 <article class="widget">
 			
-	<h1>Titulo widget</h1>
+	<h1>Campus virtual</h1>
 	
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.</p>
+	<p>
+		Es una plataforma educativa virtual que nos permite crear un espacio educativo para incluir nuevos aprendizajes. 
+	</p>
 	
 	<figure>
-		<img src="<?php echo UPLOADSURL; ?>/2017-11-20-262-imagen.jpg">
+		<img src="<?php echo UPLOADSURL; ?>/2017-11-24-303-imagen.jpg">
 	</figure>
 	
-	<a href="#" class="btn btn-sm btn-primary link-widget">Leer más</a>
+	<a href="<?php echo MAINSURL . '/campus-virtual/'; ?>" class="btn btn-sm btn-primary link-widget">Leer más</a>
 
 </article>

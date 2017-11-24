@@ -1,6 +1,11 @@
+<?php
+$exclude =  getPageVar( cleanUri() );
+$noticias = getPosts( 'noticias', 2 ); 
+
+?>
 <article class="widget">
 			
-	<h1>Titulo widget</h1>
+	<h1>Últimas noticias</h1>
 	
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.</p>
 	

@@ -31,6 +31,8 @@ define('LINK_TWITTER', '#');
 define('LINK_YOUTUBE', '#');
 define('LINK_EMAIL', '#');
 define('TELCOLEGIO', '4855 8289');
+define('GOOGLECALENDAR', '#');
+define('XHENDRA', '#');
 
 //categoria para hacer loop
 global $categorias;
