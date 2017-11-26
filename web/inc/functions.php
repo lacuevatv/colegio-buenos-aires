@@ -192,11 +192,8 @@ function getPageVar ( $uri ) {
 	//si por el contrario hay un indice 2 y este no es la "/" entonces hay info que rescatar
 	if ( isset($parseUrl[2]) && $parseUrl[2] != '' ) {
 		$slug = $parseUrl[2];
-	} else {
-		//y por ultimo la info a mostrar también puede estar en el indice 1 si este no es categoria
-		$slug = $parseUrl[1];
-	}
-
+	} 
+	
 	return $slug;
 
 }
