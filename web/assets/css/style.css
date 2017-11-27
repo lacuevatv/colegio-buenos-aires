@@ -327,6 +327,9 @@ q {
   background-position: -225px -12px; }
 
 /*BOTONES*/
+.btn-wrapper-center {
+  text-align: center; }
+
 .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -370,6 +373,30 @@ q {
 .btn-primary {
   background-color: #119ad5;
   color: #fff; }
+
+.btn-rosa {
+  color: #e10453;
+  border: 1px solid #e10453;
+  padding: 5px 20px; }
+  .btn-rosa:hover {
+    color: #fff;
+    background-color: #e10453; }
+
+.btn-celeste {
+  color: #119ad5;
+  border: 1px solid #119ad5;
+  padding: 5px 20px; }
+  .btn-celeste:hover {
+    color: #fff;
+    background-color: #119ad5; }
+
+.btn-verde {
+  color: #27b49a;
+  border: 1px solid #27b49a;
+  padding: 5px 20px; }
+  .btn-verde:hover {
+    color: #fff;
+    background-color: #27b49a; }
 
 /*--------------------------------------------------------------
 9.0 FOOTER
@@ -966,6 +993,41 @@ q {
     zoom: 1;
     filter: alpha(opacity=50);
     opacity: 0.5; }
+
+.acordion {
+  margin-top: 20px; }
+  .acordion .title-acordion {
+    margin: 0;
+    margin-top: 10px;
+    background-color: #e10453;
+    color: #fff;
+    font-size: 120%;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer; }
+    .acordion .title-acordion span:before {
+      content: '+'; }
+
+.acordion-content {
+  background-color: #eeeded;
+  font-size: 80%;
+  padding: 0 20px;
+  overflow: hidden;
+  height: 0; }
+  .acordion-content p {
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px; }
+  .acordion-content a {
+    margin-top: 0;
+    margin-bottom: 20px; }
+
+.acordion-color-celeste {
+  background-color: #119ad5 !important; }
+
+.acordion-color-verde {
+  background-color: #27b49a !important; }
 
 /*--------------------------------------------------------------
 12.0 PAGES

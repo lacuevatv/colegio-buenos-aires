@@ -139,3 +139,51 @@
 
 }//widget
 
+
+//tabs
+.acordion {
+	margin-top: 20px;
+	.title-acordion {
+		margin: 0;
+		margin-top: 10px;
+		background-color: $color-rosa;
+		color: $color-blanco;
+		font-size: 120%;
+		text-align: center;
+		height: 40px;
+		line-height: 40px;
+		cursor: pointer;
+		span {
+			
+			&:before {
+				content: '+';
+			}
+		}
+	}
+}
+
+.acordion-content {
+	background-color: $color-gris-claro;
+	font-size: 80%;
+	padding: 0 20px;
+	overflow: hidden;
+	height: 0;
+
+	p {
+		margin: 0;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	a {
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+}
+
+.acordion-color-celeste {
+	background-color: $color-celeste!important;
+}
+.acordion-color-verde {
+	background-color: $color-verde-agua!important;
+}

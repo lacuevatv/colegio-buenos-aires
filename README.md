@@ -2,6 +2,7 @@
 (Sitio auto administrable)
 
 ## Versiones:
+* 0.3.4 - ARMANDO SIDEBAR, widget niveles. Creación de funciones de tabs
 * 0.3.3 - ARMANDO SIDEBAR, widget ultimas noticias con exclude cuando hace clic en una noticia para que no muestra la misma que está mostrando
 * 0.3.2 - ARMANDO SIDEBAR, widget listos: edad feliz, campus virtual, xhendra, contacto y calendario
 * 0.3.1 - ARMANDO SIDEBAR, primer widget bienvenidos con galería de imagenes listo, la galería sirve para otros lugares

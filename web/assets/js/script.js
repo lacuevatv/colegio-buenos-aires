@@ -8,7 +8,7 @@
 
 1.0 NAVIGATION
 2.0 GALERIA IMAGENES
-3.0 
+3.0 TABS
 4.0 
 --------------------------------------------------------------*/
 
@@ -123,7 +123,7 @@ $(window).on('load', function(){
 	//galeria sidebar
 	var galeriaWidget = new galeriaImagenes( $('.wrapper-galeria-images') );
 	galeriaWidget.initGaleria();
-	
+
 });
 
 function galeriaImagenes(contenedor, speedTransition = 7000, speedAnimation = 1500, speedAnimationCaption = 1000, classAnimationCaption = 'fade', tipoTransicion = 'fade') {
@@ -236,10 +236,123 @@ function galeriaImagenes(contenedor, speedTransition = 7000, speedAnimation = 15
 }
 
 
+/*--------------------------------------------------------------
+3.0 TABS
+--------------------------------------------------------------*/
 
+$(document).ready(function(){
+	//widget tabs niveles
+	var widgetAcordion = new acordion( $('#acordionNivelWidget'), true, true );
+	widgetAcordion.initAcordion();
+});
+
+
+//función acordion modo "objeto"
+//primer parametro id o identificador del contenedor
+//segundo parametro, si por defecto hay uno abierto, por defecto ninguno abierto
+//tercer parametro, si se pueden abrir todos juntos o uno solo, por defecto todos juntos
+function acordion( contenedor = $('.acordion'), open = false , collapse = false ) {
+	//parametros
+	this.contenedor = contenedor;
+	var items = $(contenedor).find('.acordion-content');
+	var cantItems = items.length;
+	var openItem;
+	var toggles = $('.title-acordion');//boton donde se hace clic
+	//función que inicia el acordion
+	acordion.prototype.initAcordion = function () {
+		//si es false, no hay nada que hacer
+		//si es true, habría que abrir el primer tab
+		if (open) {
+			openItem( items[0] );
+			toggleOpenClass(items[0]);
+		}
+	}
+
+
+	//al hacer clic en titulo se abre acordeon
+	$(toggles).click(function(){
+		//busca el contenedor para abrir o cerrar
+		var elementToOpen = $(this).next();
+		
+		//abrir item
+		if ( ! isOpen(elementToOpen) ) {
+
+			//si collapse es true cerrar el que esta abierto
+			if (collapse) {
+				var abierto = $('.acordeon-open');
+				closeItem(abierto);
+				toggleOpenClass(abierto);
+				openItem(elementToOpen);
+				toggleOpenClass(elementToOpen);
+			} else {
+				//si no es collpase, simplemente lo abre
+				openItem(elementToOpen);
+				toggleOpenClass(elementToOpen);
+			}
+
+		//cerrar item
+		} else {
+			//si collapse es true hay que abrir uno por defecto, el primero
+			if (collapse) {
+				closeItem(elementToOpen);
+				toggleOpenClass(elementToOpen);
+				openItem( items[0] );
+				toggleOpenClass(items[0]);
+			} else {
+				//si no es collpase, simplemente lo cierra
+				closeItem(elementToOpen);
+				toggleOpenClass(elementToOpen);
+			}
+			
+		}
+	});
+
+
+	//funcion interna que ve si está abierto o cerrado
+	var isOpen = function ( item ) {
+		if ( $(item).hasClass('acordeon-open') ) {
+			return true;
+		}
+	}
+
+	//funcion interna que calcula todas las alturas
+	var altura = function( item ) {
+		$(item).css('height', 'auto');
+		var altura = $(item).height();
+		$(item).css('height', '0');
+		return altura;
+	}
+
+	//function que agrega o quita clase openitem al elemento abierto
+	toggleOpenClass = function( item ) {
+		$(item).toggleClass('acordeon-open');
+	}
+
+	//funcion interna que expande el contenido
+	var openItem = function( item ) {
+		
+		//calcula la altura
+		h = altura(item);
+		//anima y abre
+		$(item).animate({
+			'height' : h
+		});
+	}
+
+	//funcion interna que cierra el contenido
+	var closeItem = function( item ) {
+	//anima y cierra
+		$(item).animate({
+			'height' : '0'
+		});
+	}
+
+
+}//function
+	
 
 /*--------------------------------------------------------------
-3.0 
+4.0 
 --------------------------------------------------------------*/
 
 //$(document).ready(function(){});

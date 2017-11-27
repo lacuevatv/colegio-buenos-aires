@@ -39,6 +39,9 @@
 }
 
 /*BOTONES*/
+.btn-wrapper-center {
+	text-align: center;
+}
 
 .btn {
 	display: inline-block;
@@ -81,4 +84,34 @@
 .btn-primary {
 	background-color: $color-celeste;
 	color: $color-blanco;
+}
+
+.btn-rosa {
+	color: $color-rosa;
+	border: 1px solid $color-rosa;
+	padding: 5px 20px;
+	&:hover {
+	    color: $color-blanco;
+	    background-color: $color-rosa;
+	}
+}
+
+.btn-celeste {
+	color: $color-celeste;
+	border: 1px solid $color-celeste;
+	padding: 5px 20px;
+	&:hover {
+	    color: $color-blanco;
+	    background-color: $color-celeste;
+	}
+}
+
+.btn-verde {
+	color: $color-verde-agua;
+	border: 1px solid $color-verde-agua;
+	padding: 5px 20px;
+	&:hover {
+	    color: $color-blanco;
+	    background-color: $color-verde-agua;
+	}
 }
