@@ -7,55 +7,58 @@
  * Cada widget es un template también
 */
 
+global $pageActual;
+$widgets = array();
+
+switch ( $pageActual ) {
+	case 'contacto':
+		$widgets = array( 
+			'bienvenidos', 'niveles', 'campus', 'noticias',);
+		break;
+	
+	case 'institucional':
+		$widgets = array( 
+			'noticias', 'campus', 'calendario', 'edad-feliz', 'xhendra', 'contacto'
+		);
+		break;
+
+	case 'noticias':
+		$widgets = array( 
+			'bienvenidos', 'niveles', 'campus', 'calendario', 'edad-feliz', 'xhendra', 'contacto'
+		);
+		break;
+
+	case 'edad-feliz':
+		$widgets = array( 
+			'bienvenidos', 'niveles', 'campus', 'noticias', 'calendario', 'xhendra', 'contacto'
+		);
+		break;
+
+	case 'niveles':
+		$widgets = array( 
+			'bienvenidos', 'campus', 'noticias', 'calendario', 'edad-feliz', 'xhendra', 'contacto'
+		);
+		break;
+
+	default:
+		$widgets = array( 
+			'bienvenidos', 'niveles', 'campus', 'noticias', 'calendario', 'edad-feliz', 'xhendra', 'contacto'
+		);
+		break;
+}
+
 ?>
+
 <ul class="sidebar-widgets">
 
-	<li>
+<?php 
 
-		<?php getTemplate( 'widget-bienvenidos' ); ?>
-		
-	</li>
-	
-	<li>
+for ($i=0; $i < count($widgets); $i++) { 
+	$widget = 'widget-' . $widgets[$i];
+	echo '<li>';
+		getTemplate( $widget );
+	echo '</li>';
+}
 
-		<?php getTemplate( 'widget-niveles' ); ?>
-		
-	</li>
-
-	<li>
-
-		<?php getTemplate( 'widget-campus' ); ?>
-		
-	</li>
-
-	<li>
-
-		<?php getTemplate( 'widget-noticias' ); ?>
-		
-	</li>
-
-	<li>
-
-		<?php getTemplate( 'widget-calendario' ); ?>
-		
-	</li>
-
-	<li>
-
-		<?php getTemplate( 'widget-edad-feliz' ); ?>
-		
-	</li>
-
-	<li>
-
-		<?php getTemplate( 'widget-xhendra' ); ?>
-		
-	</li>
-
-	<li>
-
-		<?php getTemplate( 'widget-contacto' ); ?>
-		
-	</li>
-
+?>
 </ul>

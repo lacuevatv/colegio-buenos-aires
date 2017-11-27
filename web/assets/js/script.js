@@ -5,15 +5,39 @@
  * @ver 1.0
  --------------------------------------------------------------
 >>> TABLE OF CONTENTS:
-
-1.0 NAVIGATION
-2.0 GALERIA IMAGENES
-3.0 TABS
-4.0 
+1.0 INIT //variables generales
+2.0 NAVIGATION
+3.0 FORMS
+4.0 GALERIA IMAGENES
+5.0 TABS
+6.0 
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-1.0 NAVIGATION
+1.0 INIT
+--------------------------------------------------------------*/
+//variables generales
+var baseUrl = 'http://' + window.location.host;
+var functionsDir = baseUrl + '/inc';
+
+//onload para que cargue las imágenes
+$(window).on('load', function(){
+
+	//abre galeria de imagenes del sidebar
+	var galeriaWidget = new galeriaImagenes( $('.wrapper-galeria-images') );
+	galeriaWidget.initGaleria();
+
+});
+
+//onready para todo lo demás
+$(document).ready(function(){
+	//inicializa los acordeones de niveles del sidebar
+	var widgetAcordion = new acordion( $('#acordionNivelWidget'), true, true );
+	widgetAcordion.initAcordion();
+});
+
+/*--------------------------------------------------------------
+2.0 NAVIGATION
 --------------------------------------------------------------*/
 
 $(document).ready(function(){
@@ -110,21 +134,58 @@ $(document).ready(function(){
 
 });//.ready
 
+/*--------------------------------------------------------------
+3.0 FORMS
+--------------------------------------------------------------*/
+
+$(document).ready(function(){
+	$('#contact-form').submit(function( event ){
+		event.preventDefault();
+		var mensajeExito = 'Correo enviado exitosamente';
+		var mensajeError = 'Hubo un error, intente nuevamente o comuniquese por teléfono de 9 a 18hs.';
+		var formulario = $(this).serialize()
+
+		formData = new FormData( this );
+		formData.append('function','contact-form');
+
+
+		$.ajax( {
+            type: 'POST',
+            url: functionsDir + '/ajax.php',
+            data: formData,
+            processData: false,
+			contentType: false,
+			cache: false,
+            beforeSend: function() {
+                $('.ajax-loader').fadeIn();
+            },
+            success: function ( response ) {
+                console.log(response);
+                if ( response == 'ok' ) {
+	                $('#contact-form').fadeOut( 1000 );
+	                $('.mensaje-wrapper').fadeIn();
+	                $('span.mensaje').html(mensajeExito);
+                } else {
+                	$('.ajax-loader').fadeOut();
+                	$('#contact-form')[0].reset();
+                	$('.mensaje-wrapper').fadeIn();
+                	$('span.mensaje').html(mensajeError);
+                }
+            },
+            error: function ( ) {
+                console.log('error');
+            },
+        });//cierre ajax
+	})
+});
 
 /*--------------------------------------------------------------
-2.0 GALERIA IMAGENES
+4.0 GALERIA IMAGENES
 --------------------------------------------------------------*/
 
 /*
  * La galería de imagenes está al inicio y en el sidebar, las imágenes están definidas en una varible global en config.php
 */
-
-$(window).on('load', function(){
-	//galeria sidebar
-	var galeriaWidget = new galeriaImagenes( $('.wrapper-galeria-images') );
-	galeriaWidget.initGaleria();
-
-});
 
 function galeriaImagenes(contenedor, speedTransition = 7000, speedAnimation = 1500, speedAnimationCaption = 1000, classAnimationCaption = 'fade', tipoTransicion = 'fade') {
 	//parametros
@@ -237,15 +298,8 @@ function galeriaImagenes(contenedor, speedTransition = 7000, speedAnimation = 15
 
 
 /*--------------------------------------------------------------
-3.0 TABS
+5.0 TABS
 --------------------------------------------------------------*/
-
-$(document).ready(function(){
-	//widget tabs niveles
-	var widgetAcordion = new acordion( $('#acordionNivelWidget'), true, true );
-	widgetAcordion.initAcordion();
-});
-
 
 //función acordion modo "objeto"
 //primer parametro id o identificador del contenedor
@@ -352,7 +406,7 @@ function acordion( contenedor = $('.acordion'), open = false , collapse = false 
 	
 
 /*--------------------------------------------------------------
-4.0 
+6.0 
 --------------------------------------------------------------*/
 
 //$(document).ready(function(){});

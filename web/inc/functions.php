@@ -345,6 +345,7 @@ function closeDataBase( $connection ){
     }
 }
 
+//busca post en base de datos y devuelve array con todos ellos
 function getPosts( $categoria = 'none', $number = -1, $exclude = 'none', $status = 'publicado', $offset = 0 ) {
 	$connection = connectDB();
 	$fecha_actual = date("Y-m-d");

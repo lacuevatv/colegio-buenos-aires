@@ -69,14 +69,8 @@ header, section, footer, aside {
     clear: both;
 }
 
-/*imagen al 100% de ancho responsive*/
-.image-responsive {
-    width: 100%;
-    height: auto;
-}
-
 /*input al 100%*/
-input, select {
+input, select, textarea {
     display: block;
     width: 100%;
 }
@@ -89,4 +83,14 @@ input[type=submit] {
 button {
     border: none;
     background-color:transparent;
+}
+
+.form-group {
+    margin: 10px 0;      
+}
+
+/*imagen al 100% de ancho responsive*/
+.image-responsive {
+    width: 100%;
+    height: auto;
 }

@@ -38,7 +38,48 @@
 	background-position: -225px -12px;
 }
 
-/*BOTONES*/
+
+.icon-before {
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: block;
+		width: 50px;
+		height: 70px;
+		background: url(../images/sprite.png);
+	}
+}
+
+.icon-before-location {
+	&:before {
+		background-position: 0px -50px;
+	}
+}
+.icon-before-email {
+	&:before {
+		background-position: -131px -44px;
+	}
+}
+.icon-before-tel {
+	&:before {
+		background-position: -73px -48px;
+	}
+}
+.icon-before-clock {
+	&:before {
+		background-position: -190px -50px;
+	}
+}
+
+
+
+
+/*
+ ******** BOTONES **********
+*/
 .btn-wrapper-center {
 	text-align: center;
 }
