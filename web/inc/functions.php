@@ -234,6 +234,28 @@ function acortaTexto( $texto, $cantPalabras = 50, $final = null ) {
 	return $texto;
 }
 
+//prepara el resumen para buscarlo en el resumen y en el contenido, recibe como parametro el array del post
+function preparaResumen ( $post ) {
+	$resumen = $post['post_resumen'];
+		if ( $post['post_resumen'] == '' ) {
+			if ( $post['post_contenido'] != '' ) {
+				$resumen = $post['post_contenido'];
+			}
+			$resumen = '';
+		}	
+	return $resumen;
+}
+
+function tuneandoFecha( $date ) {
+	/*FECHAS*/
+	$meses = array('enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre');
+	$dias = array('Domingo','Lunes','Martes','Mi&eacute;rcoles','Jueves','Viernes','S&aacute;bado');
+	$fecha = date("j", strtotime($date)) .' de '. $meses[date("n", strtotime($date))-1] . ' de ' . date("Y", strtotime($date));
+
+	return $fecha;
+}
+
+
 //muestra el menú del array de menu
 function showMenu( $menu, $active = null ) {
 
@@ -387,4 +409,29 @@ function getPosts( $categoria = 'none', $number = -1, $exclude = 'none', $status
 	}
 	
 	return $loop;
+}
+
+//recupera los post individualmente de acuerdo al url
+function getSinglePost ( $slug ) {
+
+	$connection = connectDB();
+	$fecha_actual = date("Y-m-d");
+	$tabla = 'noticias';
+
+	$query  = "SELECT * FROM " .$tabla;
+	$query .= " WHERE post_url='" . $slug . "'";
+	$query .= " AND post_fecha <= '". $fecha_actual. "'";
+	$query .= " LIMIT 1";
+
+	$result = mysqli_query($connection, $query);
+
+	if ( $result->num_rows == 0 ) {
+		getTemplate( '404' );
+	} else {
+
+		$post = mysqli_fetch_array($result);
+
+	}
+
+	return $post;
 }

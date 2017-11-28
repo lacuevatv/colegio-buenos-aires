@@ -5,57 +5,76 @@
  * Since 1.0
  * PAGE TEMPLATE: PAGINA EDAD FELIZ
 */
-echo getPageVar( cleanUri() );//trae la variable de la pagina
+$cantPost = CANTPOST;
+$slug = getPageVar( cleanUri() );//trae la variable de la pagina
+$single = false;
+
+if ( $slug != '' ) {
+	$singlePost = getSinglePost( $slug );
+	$fecha = tuneandoFecha( $singlePost['post_fecha'] );
+	$single = true;
+} else {
+	$posts = getPosts( 'edad-feliz', $cantPost );
+}
+
 
 include 'header.php';
 ?>
 
 <!--- .inner-wrapper: contenido principal y específico del template -->
 <div class="inner-wrapper">
-	
-	<header>
-    	<div class="container">
-	        <h1>Edad feliz</h1>
-	    </div>
-    </header>
-   
+	<header></header>
+
     <div class="main-content-page-wrapper container">
 	    <div class="main-content-page">
-	    	<h1>colegio de buenos aires
-			<br>
-				<small>Fuente h1 small</small></h1>
+		
+		   	<header class="header-posts">
 
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui <a href="#">officia</a> deserunt mollit anim id est laborum.
-			</p>
+		   	<?php if ( $single ) : ?>   	
+		    	
+		    	<div class="title-post-wrapper">
+					<h1>
+						<a href="<?php echo MAINSURL .'/'. $singlePost['post_categoria'] .'/'.$singlePost['post_url']; ?>">
+							<?php echo $singlePost['post_titulo']; ?>
+						</a>
+					</h1>
+					
+					<h6 class="date-post">
+						<?php echo $fecha; ?>
+					</h6>
+				</div>
+			
+			<?php else : ?>
+				
+				<h1>Edad Feliz</h1>
+		        <p>
+		        	Edad feliz es una revista hecha por los alumnos del colegio. Aquí se pueden ver algunas notas y resúmenes de la revista.
+		        </p>
 
-			<p>
-				<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui <a href="#">officia</a> deserunt mollit anim id est laborum.</small>
-				<a href="#" class="btn">Link</a>
-			</p>
+			<?php endif; ?>
 
-			<h2>
-				Institucional h2<br>
-				<small>Fuente h2 small</small>
-			</h2>
+		    </header>    
+		
+	    	<?php if ( $single ) :
+	    		
+	    		getTemplate( 'single-post', $singlePost );
+	    	
+	    	else : ?>
+	    	
+	    	<ul class="loop-posts-wrapper">
+	    	
+	    	<?php
+	    	//loop
+	    		for ($i=0; $i < count($posts); $i++) { 
+	    		echo '<li>';
+	    			getTemplate( 'loop-posts', $posts[$i] );
+	    		echo '</li>';
+	    		} ?>
+	    	
+	    	</ul>
+	    	
+	    	<?php endif; ?>
 
-			<h3>
-				Fuente h3<br>
-				<small>Fuente h3 small</small>
-			</h3>
-
-			<h4>
-				Fuente h4<br>
-				<small>Fuente h4 small</small>
-			</h4>
-
-			<h5>
-				Fuente h5<br>
-				<small>Fuente h5 small</small>
-			</h5>
-
-			<q>La escuela es el arma más poderosa que puedes usar para cambiar el mundo.</q>
-			<p>Nelson Mandela</p>
 	    </div><!-- //.main-content-page -->
 
 	    <aside class="sidebar">

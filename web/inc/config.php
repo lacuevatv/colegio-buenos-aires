@@ -7,6 +7,7 @@
  * Contenido: conneccion
 */
 define ( 'VERSION', '1.0' );
+define ( 'CANTPOST', 10 );
 //CARPETAS
 define ( 'UPLOADS', dirname( __FILE__ ) . '/../galeria' );
 define ( 'PAGESDIR', dirname( __FILE__ ) . '/../pages' );
