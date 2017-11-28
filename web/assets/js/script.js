@@ -20,11 +20,12 @@
 var baseUrl = 'http://' + window.location.host;
 var functionsDir = baseUrl + '/inc';
 
+
 //onload para que cargue las imágenes
 $(window).on('load', function(){
 
 	//abre galeria de imagenes del sidebar
-	var galeriaWidget = new galeriaImagenes( $('.wrapper-galeria-images'), true );
+	var galeriaWidget = new galeriaImagenes( $('.wrapper-galeria-images') );
 	galeriaWidget.initGaleria();
 
 });

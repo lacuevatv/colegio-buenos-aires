@@ -5,7 +5,7 @@
  * Since 1.0
  * PAGE TEMPLATE: PAGINA EDAD FELIZ
 */
-getPageVar( cleanUri() );//trae la variable de la pagina
+echo getPageVar( cleanUri() );//trae la variable de la pagina
 
 include 'header.php';
 ?>
