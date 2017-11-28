@@ -24,7 +24,7 @@ var functionsDir = baseUrl + '/inc';
 $(window).on('load', function(){
 
 	//abre galeria de imagenes del sidebar
-	var galeriaWidget = new galeriaImagenes( $('.wrapper-galeria-images') );
+	var galeriaWidget = new galeriaImagenes( $('.wrapper-galeria-images'), true );
 	galeriaWidget.initGaleria();
 
 });
@@ -34,6 +34,11 @@ $(document).ready(function(){
 	//inicializa los acordeones de niveles del sidebar
 	var widgetAcordion = new acordion( $('#acordionNivelWidget'), true, true );
 	widgetAcordion.initAcordion();
+
+	//inicializa los acordeones de institucional
+	var autoridadesAcordion = new acordion( $('#acordionAutoridades') );
+	autoridadesAcordion.initAcordion();
+	
 });
 
 /*--------------------------------------------------------------
@@ -298,7 +303,7 @@ function galeriaImagenes(contenedor, speedTransition = 7000, speedAnimation = 15
 
 
 /*--------------------------------------------------------------
-5.0 TABS
+5.0 ACORDION
 --------------------------------------------------------------*/
 
 //función acordion modo "objeto"
@@ -318,6 +323,9 @@ function acordion( contenedor = $('.acordion'), open = false , collapse = false 
 		//si es true, habría que abrir el primer tab
 		if (open) {
 			openItem( items[0] );
+		}
+
+		if (collapse) {
 			toggleOpenClass(items[0]);
 		}
 	}
@@ -328,8 +336,7 @@ function acordion( contenedor = $('.acordion'), open = false , collapse = false 
 		//busca el contenedor para abrir o cerrar
 		var elementToOpen = $(this).next();
 		
-		//abrir item
-		if ( ! isOpen(elementToOpen) ) {
+		if ( elementToOpen.height() == 0 ) {
 
 			//si collapse es true cerrar el que esta abierto
 			if (collapse) {
@@ -341,7 +348,6 @@ function acordion( contenedor = $('.acordion'), open = false , collapse = false 
 			} else {
 				//si no es collpase, simplemente lo abre
 				openItem(elementToOpen);
-				toggleOpenClass(elementToOpen);
 			}
 
 		//cerrar item
@@ -355,7 +361,7 @@ function acordion( contenedor = $('.acordion'), open = false , collapse = false 
 			} else {
 				//si no es collpase, simplemente lo cierra
 				closeItem(elementToOpen);
-				toggleOpenClass(elementToOpen);
+				
 			}
 			
 		}
@@ -379,6 +385,7 @@ function acordion( contenedor = $('.acordion'), open = false , collapse = false 
 
 	//function que agrega o quita clase openitem al elemento abierto
 	toggleOpenClass = function( item ) {
+		//debugger;
 		$(item).toggleClass('acordeon-open');
 	}
 
