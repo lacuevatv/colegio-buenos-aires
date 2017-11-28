@@ -1,3 +1,32 @@
+.ajax-loader {
+	display: none;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: $color-transparente url(../images/loader-espiral.gif) no-repeat center;
+	@include border-radius(5px);
+}
+
+.mensaje {
+	display: block;
+	font-style: italic;
+	color: $color-celeste;
+	text-align: center;
+	font-size: 90%;
+}
+
+.separador-background-transparent {
+	background-color: $color-azul-separadores;
+	color: $color-blanco;
+	text-align: center;
+	padding: 30px 20%;
+	h3 {
+		color: $color-blanco!important;		
+	}
+}
+
+
 /*CONTACTO*/
 
 #contact-page {
@@ -94,20 +123,26 @@
 	}
 }
 
-.ajax-loader {
-	display: none;
-	position: absolute;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	background: $color-transparente url(../images/loader-espiral.gif) no-repeat center;
-	@include border-radius(5px);
-}
 
-.mensaje {
-	display: block;
-	font-style: italic;
-	color: $color-celeste;
-	text-align: center;
-	font-size: 90%;
-}
+
+/*INSTITUCIONAL*/
+#page-historia {
+	.autoridades {
+		margin-top: 50px;
+	}
+
+	.separador-campo {
+		background: url(../images/background-separador.jpg) bottom;
+
+		a {
+			margin-top: 10px;
+		}
+	}
+
+	.separador-inscripcion {
+		background: url(../images/background-separador2.jpg) center;
+		a {
+			margin-top: 10px;
+		}
+	}
+}//#page-historia

@@ -83,6 +83,36 @@ q {
 	}
 }
 
+.color-celeste {
+	color: $color-celeste;
+}
+
 .subtitulo_clasico {
 	border-bottom: 2px solid $color-verde-agua;
+}
+
+.main-title-header {
+	padding-top: 50px;
+	padding-bottom: 20px;
+	@media (min-width: $md) {
+		background: $color-azul-titulos url(../images/header-institucional.jpg) no-repeat;
+		background-size: cover;
+		background-position: center;
+		padding-top: 30vh;
+		padding-bottom: 5vh;
+	}
+
+	@media (min-width: $lg) {
+		background-position: center 30%;
+	}
+	@media (min-width: $xlg) {
+		background-position: center 30%;
+	}
+
+	h1 {
+		text-transform: uppercase;
+		@media (min-width: $md) {
+			color: $color-blanco;
+		}
+	}
 }

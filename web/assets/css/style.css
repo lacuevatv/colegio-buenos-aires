@@ -372,8 +372,33 @@ q {
       font-size: 200%;
       line-height: 110%; } }
 
+.color-celeste {
+  color: #119ad5; }
+
 .subtitulo_clasico {
   border-bottom: 2px solid #27b49a; }
+
+.main-title-header {
+  padding-top: 50px;
+  padding-bottom: 20px; }
+  @media (min-width: 992px) {
+    .main-title-header {
+      background: #011a29 url(../images/header-institucional.jpg) no-repeat;
+      background-size: cover;
+      background-position: center;
+      padding-top: 30vh;
+      padding-bottom: 5vh; } }
+  @media (min-width: 1200px) {
+    .main-title-header {
+      background-position: center 30%; } }
+  @media (min-width: 1500px) {
+    .main-title-header {
+      background-position: center 30%; } }
+  .main-title-header h1 {
+    text-transform: uppercase; }
+    @media (min-width: 992px) {
+      .main-title-header h1 {
+        color: #fff; } }
 
 /*--------------------------------------------------------------
 7.0 404
@@ -871,7 +896,7 @@ q {
       -ms-transform: initial;
       -o-transform: initial;
       transform: initial;
-      padding: 30px 0;
+      padding: 30px 0 0;
       display: flex;
       display: -o-flex;
       display: -ms-flex;
@@ -887,6 +912,9 @@ q {
       -ms-justify-content: space-between;
       -o-justify-content: space-between;
       justify-content: space-between; } }
+  @media (min-width: 1200px) {
+    .main-menu {
+      padding: 30px 0; } }
   .main-menu > li {
     padding: 10px 0;
     text-align: center;
@@ -982,6 +1010,7 @@ q {
   height: 50px;
   outline: none;
   background-color: rgba(1, 26, 41, 0.85);
+  cursor: pointer;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -1149,6 +1178,33 @@ q {
 /*--------------------------------------------------------------
 12.0 PAGES
 --------------------------------------------------------------*/
+.ajax-loader {
+  display: none;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(1, 26, 41, 0.3) url(../images/loader-espiral.gif) no-repeat center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px; }
+
+.mensaje {
+  display: block;
+  font-style: italic;
+  color: #119ad5;
+  text-align: center;
+  font-size: 90%; }
+
+.separador-background-transparent {
+  background-color: rgba(1, 26, 41, 0.85);
+  color: #fff;
+  text-align: center;
+  padding: 30px 20%; }
+  .separador-background-transparent h3 {
+    color: #fff !important; }
+
 /*CONTACTO*/
 #contact-page .contact-form-wrapper {
   margin-bottom: 50px; }
@@ -1229,23 +1285,16 @@ q {
   margin: 0 auto;
   width: 90%; }
 
-.ajax-loader {
-  display: none;
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(1, 26, 41, 0.3) url(../images/loader-espiral.gif) no-repeat center;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  border-radius: 5px; }
-
-.mensaje {
-  display: block;
-  font-style: italic;
-  color: #119ad5;
-  text-align: center;
-  font-size: 90%; }
+/*INSTITUCIONAL*/
+#page-historia .autoridades {
+  margin-top: 50px; }
+#page-historia .separador-campo {
+  background: url(../images/background-separador.jpg) bottom; }
+  #page-historia .separador-campo a {
+    margin-top: 10px; }
+#page-historia .separador-inscripcion {
+  background: url(../images/background-separador2.jpg) center; }
+  #page-historia .separador-inscripcion a {
+    margin-top: 10px; }
 
 /*# sourceMappingURL=style.css.map */

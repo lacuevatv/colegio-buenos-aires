@@ -2,6 +2,7 @@
 (Sitio auto administrable)
 
 ## Versiones:
+* 0.4.1 - ARMANDO PAGINAS: Institucional, falta la parte de documentacion y convenios que estaba en el diseño
 * 0.4.0 - ARMANDO PAGINAS: Contacto falta configurar formulario
 * 0.3.4 - ARMANDO SIDEBAR, widget niveles. Creación de funciones de tabs
 * 0.3.3 - ARMANDO SIDEBAR, widget ultimas noticias con exclude cuando hace clic en una noticia para que no muestra la misma que está mostrando
@@ -12,7 +13,7 @@
 * 0.0 - Template Init
 
 ## Notas:
-
+Ver como configurar el email de acuerdo a lo que usen.
 
 ### Librerias utilizadas
 
