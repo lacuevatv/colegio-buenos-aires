@@ -8,12 +8,25 @@
 	@include border-radius(5px);
 }
 
+.ajax-loader-noticias {
+	display: none;
+	position: relative;
+	height: 80px;
+	width: 100%;
+	background: url(../images/loading2.gif) no-repeat center;
+}
+
 .mensaje {
 	display: block;
 	font-style: italic;
 	color: $color-celeste;
 	text-align: center;
 	font-size: 90%;
+}
+
+.mensaje-sutil {
+	color: $color-negro;
+	font-size: 80%;
 }
 
 .separador-background-transparent {
@@ -162,9 +175,18 @@
 	}
 	//wrapper del post en el loop
 	.post-in-loop {
-		img {
-			width: 100%;
+		.image-wrapper-loop {
+			display: block;
+			max-height: 30vh;
+			overflow: hidden;
+			img {
+				width: 100%;
+				display: block;
+				margin: 0 auto;
+				position: relative;
+			}
 		}
+		
 
 		.wrapper-button-more {
 			margin: 30px 0;
@@ -173,6 +195,13 @@
 			}
 		}
 	}
+}
+
+.load-more-wrapper {
+	position: relative;
+	text-align: center;
+	@include transition(all 1s);
+	margin-bottom: 50px;
 }
 
 //titulo con borde bajo verde y fecha a la derecha

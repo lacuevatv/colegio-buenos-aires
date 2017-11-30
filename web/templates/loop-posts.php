@@ -5,7 +5,7 @@
 $resumen = preparaResumen( $data );
 $fecha = tuneandoFecha( $data['post_fecha'] );
 ?>
-<article class="post-in-loop">
+<article class="post-in-loop animation-element fade-in">
 	
 	<div class="title-post-wrapper">
 		
@@ -20,7 +20,8 @@ $fecha = tuneandoFecha( $data['post_fecha'] );
 		</h6>
 	</div>
 	
-	<a href="<?php echo MAINSURL .'/'. $data['post_categoria'] .'/'.$data['post_url']; ?>">
+	<a href="<?php echo MAINSURL .'/'. $data['post_categoria'] .'/'.$data['post_url']; ?>" <?php if ( $data['post_categoria'] == 'noticias' ) { echo 'class="image-wrapper-loop"'; } ?>>
+		
 		<img src="<?php echo UPLOADSURL . '/' . $data['post_imagen']; ?>" alt="<?php echo $data['post_titulo']; ?>">
 	</a>
 	
@@ -31,8 +32,8 @@ $fecha = tuneandoFecha( $data['post_fecha'] );
 	<?php } ?>
 
 	<div class="wrapper-button-more">
-		<a href="<?php echo MAINSURL .'/'. $data['post_categoria'] .'/'.$data['post_url']; ?>" class="btn btn-primary">
-			Leer más
+		<a href="<?php echo MAINSURL .'/'. $data['post_categoria'] .'/'.$data['post_url']; ?>" class="btn btn-sm btn-primary">
+			Ver nota
 		</a>
 	</div>
 

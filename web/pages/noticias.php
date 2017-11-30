@@ -70,8 +70,10 @@ include 'header.php';
 	    		echo '</li>';
 	    		} ?>
 	    	</ul>
+
+	    	<?php getPagination( 'noticias', $cantPost );
 	    	
-	    	<?php endif; ?>
+	    	endif; ?>
 
 	    </div><!-- //.main-content-page -->
 

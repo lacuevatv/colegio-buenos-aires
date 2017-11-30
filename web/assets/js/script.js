@@ -19,19 +19,11 @@
 //variables generales
 var baseUrl = 'http://' + window.location.host;
 var functionsDir = baseUrl + '/inc';
+var actualPage;
 
-
-//onload para que cargue las imágenes
-$(window).on('load', function(){
-
-	//abre galeria de imagenes del sidebar
-	var galeriaWidget = new galeriaImagenes( $('.wrapper-galeria-images') );
-	galeriaWidget.initGaleria();
-
-});
-
-//onready para todo lo demás
 $(document).ready(function(){
+	actualPage = $('body').attr('data-page');
+
 	//inicializa los acordeones de niveles del sidebar
 	var widgetAcordion = new acordion( $('#acordionNivelWidget'), true, true );
 	widgetAcordion.initAcordion();
@@ -39,8 +31,98 @@ $(document).ready(function(){
 	//inicializa los acordeones de institucional
 	var autoridadesAcordion = new acordion( $('#acordionAutoridades') );
 	autoridadesAcordion.initAcordion();
+
+	//clic boton cargar mas
+	$(document).on('click', '.btn-load-more-news', function( e ){
+		e.preventDefault();
+		var btn = this;
+		var loader = $('.ajax-loader-noticias');
+		var contenedor = $('.loop-posts-wrapper');
+		var categoria = $(btn).attr('data-categoria');
+		var page = parseInt($(btn).attr('data-page'));
+		var resto = parseInt( $(btn).attr('data-resto') );
+		var cantPost = $(btn).attr('data-cantpost');
+		var mensaje = $('.mensaje-sutil');
+		var newMensaje = resto + ' noticias más';
+		
+		$(this).attr('data-resto', resto);
+
+		$.ajax( {
+            type: 'POST',
+            url: functionsDir + '/ajax.php',
+            data: {
+            	function: 'load-more',
+            	page: page,
+            	categoria: categoria,
+            	cantPost: cantPost,
+
+            },
+            beforeSend: function() {
+                loader.fadeIn();
+            },
+            success: function ( response ) {
+                //console.log(response);
+                contenedor.append(response);
+                loader.fadeOut();
+                resto = resto - cantPost;
+                if ( resto <= 0 ) {
+                	$('.load-more-wrapper').remove();
+                } else {
+                	newMensaje = resto + ' noticias más';
+                	mensaje.html(newMensaje);
+                	//aumento el numero en el boton
+					$(btn).attr('data-page', page+1);
+					//pongo el nuevo resto
+					$(btn).attr('data-resto', resto);
+                }
+            },
+            error: function ( ) {
+                console.log('error');
+            },
+        });//cierre ajax
+	});
 	
 });
+
+//onload para todo lo que funciona con imágenes
+$(window).on('load', function(){
+
+	//abre galeria de imagenes del sidebar
+	var galeriaWidget = new galeriaImagenes( $('.wrapper-galeria-images') );
+	galeriaWidget.initGaleria();
+
+	//animaciones
+	/*var $animation_elements = $('.animation-element');
+    var $window = $(window);
+
+    function check_if_in_view() {
+      var window_height = $window.height();
+      var window_top_position = $window.scrollTop();
+      var window_bottom_position = (window_top_position + window_height);
+
+      $.each($animation_elements, function() {
+        var $element = $(this);
+        var element_height = $element.outerHeight();
+        var element_top_position = $element.offset().top;
+        var element_bottom_position = (element_top_position + element_height);
+
+        //check to see if this current container is within viewport
+        if ((element_bottom_position >= window_top_position) &&
+            (element_top_position <= window_bottom_position)) {
+          $element.addClass('in-view');
+        } else {
+          $element.removeClass('in-view');
+        }
+      });
+    }
+
+    $window.on('scroll resize', check_if_in_view);
+    $window.trigger('scroll');*/
+
+});
+
+
+
 
 /*--------------------------------------------------------------
 2.0 NAVIGATION
@@ -318,6 +400,7 @@ function acordion( contenedor = $('.acordion'), open = false , collapse = false 
 	var cantItems = items.length;
 	var openItem;
 	var toggles = $('.title-acordion');//boton donde se hace clic
+	
 	//función que inicia el acordion
 	acordion.prototype.initAcordion = function () {
 		//si es false, no hay nada que hacer
@@ -329,6 +412,8 @@ function acordion( contenedor = $('.acordion'), open = false , collapse = false 
 		if (collapse) {
 			toggleOpenClass(items[0]);
 		}
+
+		iconOpenClose();
 	}
 
 
@@ -338,7 +423,7 @@ function acordion( contenedor = $('.acordion'), open = false , collapse = false 
 		var elementToOpen = $(this).next();
 		
 		if ( elementToOpen.height() == 0 ) {
-
+		
 			//si collapse es true cerrar el que esta abierto
 			if (collapse) {
 				var abierto = $('.acordeon-open');
@@ -346,23 +431,28 @@ function acordion( contenedor = $('.acordion'), open = false , collapse = false 
 				toggleOpenClass(abierto);
 				openItem(elementToOpen);
 				toggleOpenClass(elementToOpen);
+				iconOpenClose();
 			} else {
 				//si no es collpase, simplemente lo abre
 				openItem(elementToOpen);
+				iconOpenClose();
+
 			}
 
 		//cerrar item
 		} else {
+			
 			//si collapse es true hay que abrir uno por defecto, el primero
 			if (collapse) {
 				closeItem(elementToOpen);
 				toggleOpenClass(elementToOpen);
 				openItem( items[0] );
 				toggleOpenClass(items[0]);
+				iconOpenClose();
 			} else {
 				//si no es collpase, simplemente lo cierra
 				closeItem(elementToOpen);
-				
+				iconOpenClose();
 			}
 			
 		}
@@ -386,7 +476,7 @@ function acordion( contenedor = $('.acordion'), open = false , collapse = false 
 
 	//function que agrega o quita clase openitem al elemento abierto
 	toggleOpenClass = function( item ) {
-		//debugger;
+		
 		$(item).toggleClass('acordeon-open');
 	}
 
@@ -407,8 +497,20 @@ function acordion( contenedor = $('.acordion'), open = false , collapse = false 
 		$(item).animate({
 			'height' : '0'
 		});
+
+
 	}
 
+	var iconOpenClose = function () {
+		var icon = $('.title-acordion span');//icono más y menos
+		icon.each(function(){
+			if ( $(this.parentElement).next().hasClass('acordeon-open') ) {
+				$(this).text('-');
+			} else {
+				$(this).text('+');
+			}
+		})
+	}
 
 }//function
 	

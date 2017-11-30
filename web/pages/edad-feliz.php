@@ -73,7 +73,9 @@ include 'header.php';
 	    	
 	    	</ul>
 	    	
-	    	<?php endif; ?>
+			<?php getPagination( 'edad-feliz', $cantPost );
+	    	
+	    	endif; ?>
 
 	    </div><!-- //.main-content-page -->
 

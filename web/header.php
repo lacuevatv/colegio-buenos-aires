@@ -5,6 +5,10 @@
  * Since 1.0
  * HEADER
 */
+
+global $menuItems;
+global $pageActual;
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -47,7 +51,7 @@
     <script src="<?php echo MAINSURL; ?>/assets/js/modernizr-custom.js"></script>
 
 </head>
-<body>
+<body data-page="<?php echo $pageActual; ?>">
 <div class="wrapper-site">
     <?php getTemplate( 'loader' ); ?>
 
@@ -80,10 +84,7 @@
                     <span class="tog3"></span>
                 </button>
                 <ul class="main-menu" role="navigation">
-                    <?php
-                    global $menuItems;
-                    global $pageActual;
-                    showMenu( $menuItems, $pageActual ); 
+                    <?php showMenu( $menuItems, $pageActual ); 
                     ?>
                 </ul>
             </div>

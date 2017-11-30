@@ -435,3 +435,30 @@ function getSinglePost ( $slug ) {
 
 	return $post;
 }
+
+
+//Muestra el botón de cargar más de ser necesario e indica la página
+function getPagination( $categoria, $postPerPage ) {
+
+	//$posts = getPosts( $categoria, 10, 'none', 'publicado', $postPerPage );
+	$posts = getPosts( $categoria, -1, 'none', 'publicado' );
+	$totalPost = count($posts);
+	$postRestantes = ceil($totalPost - $postPerPage);//devuelve valor redondeado 
+
+	if ( $postRestantes == 0 ) {
+		return;
+	}
+
+	?>
+	<div class="load-more-wrapper">
+		
+		<div class="ajax-loader-noticias"></div>
+
+		<button class="btn btn-destacado btn-load-more-news" data-page="1" data-categoria="<?php echo $categoria; ?>" data-cantpost="<?php echo $postPerPage; ?>" data-resto="<?php echo $postRestantes; ?>">Cargar más Noticias</button>
+
+		<p class="mensaje mensaje-sutil">
+			<?php echo $postRestantes; ?> noticias más. 
+		</p>
+	</div>
+	<?php
+}

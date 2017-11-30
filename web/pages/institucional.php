@@ -30,9 +30,9 @@ include 'header.php';
 	    	<section class="autoridades">
 	    		<div id="acordionAutoridades" class="acordion">
 	    			<h3 class="title-acordion acordion-color-celeste">
-						<span>
+						<span>+</span>
 							Autoridades
-						</span>
+						
 					</h3>
 	    			<div class="acordion-content">
 	    				<p>
