@@ -44,7 +44,7 @@
                         <ul class="footer-menu" role="navigation">
                             <?php
                             global $menuItems;
-                            showMenu( $menuItems ); 
+                            showMenu( $menuItems, null, true ); 
                             ?>
                         </ul>
                     </nav>

@@ -151,7 +151,7 @@
 
 .footer-menu {
     @media (min-width: $md) {
-        max-height: 150px;
+        max-height: 200px;
         display: flex;
         display: -o-flex;
         display: -ms-flex;
@@ -168,10 +168,19 @@
         -o-flex-wrap: wrap;
         flex-wrap: wrap;
         text-transform: capitalize;
+        @media (min-width: $lg) {
+            max-height: 150px;  
+        }
     }
 
     > li {
         font-size: 80%;
+        @media (min-width: $md) {
+            width: 40%;
+        }
+        @media (min-width: $lg) {
+            width: 25%;
+        }
     }
 
     a {

@@ -257,9 +257,9 @@ function tuneandoFecha( $date ) {
 
 
 //muestra el menú del array de menu
-function showMenu( $menu, $active = null ) {
-
-	for ($i=0; $i < count($menu); $i++) { ?>
+function showMenu( $menu, $active = null, $hide = false ) {
+	//el último elemento del array tiene los menus ocultos
+	for ($i=0; $i < count($menu)-1; $i++) { ?>
 		<li>
 			<?php 
 				if ( ! isset( $menu[$i]['subItem'] ) ) : ?>
@@ -290,7 +290,25 @@ function showMenu( $menu, $active = null ) {
 				</ul>
 			<?php endif; ?>
 		</li>
-	<?php }
+	<?php }//for
+	
+	//mostrar los menus ocultos
+	if ( $hide ) {
+		if ( isset($menu['hideMenus']) ) {
+			$hideMenus = $menu['hideMenus'];	
+		} else {
+			return;
+		}
+		
+		for ($i=0; $i < count($hideMenus); $i++) { ?>
+			<li>
+				<a href="<?php echo MAINSURL . '/' . $hideMenus[$i]['url']; ?>">
+					<?php echo $hideMenus[$i]['nombre']; ?>
+				</a>
+			</li>
+			<?php
+		}
+	}
 }
 
 //devuelve el título de la página para <head><title>

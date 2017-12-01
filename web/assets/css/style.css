@@ -677,7 +677,7 @@ q {
 
 @media (min-width: 992px) {
   .footer-menu {
-    max-height: 150px;
+    max-height: 200px;
     display: flex;
     display: -o-flex;
     display: -ms-flex;
@@ -694,8 +694,18 @@ q {
     -o-flex-wrap: wrap;
     flex-wrap: wrap;
     text-transform: capitalize; } }
+  @media (min-width: 992px) and (min-width: 1200px) {
+    .footer-menu {
+      max-height: 150px; } }
+
 .footer-menu > li {
   font-size: 80%; }
+  @media (min-width: 992px) {
+    .footer-menu > li {
+      width: 40%; } }
+  @media (min-width: 1200px) {
+    .footer-menu > li {
+      width: 25%; } }
 .footer-menu a:hover {
   zoom: 1;
   filter: alpha(opacity=50);

@@ -56,6 +56,15 @@ $menuItems = array(
 	array( 'url' => 'noticias', 'nombre' => 'Noticias'),
 	array( 'url' => 'edad-feliz', 'nombre' => 'Edad Feliz'),
 	array( 'url' => 'contacto', 'nombre' => 'Contacto'),
+	'hideMenus' =>  array(
+		array ('url' => 'campo-deportes', 'nombre' => 'Estancia La Chiquita'),
+		array ('url' => 'campo-deportes', 'nombre' => 'campo de deportes'),
+		array ('url' => 'campus-virtual', 'nombre' => 'campus virtual'),
+		array ('url' => 'certificaciones', 'nombre' => 'certificaciones'),
+		array ('url' => 'documentacion', 'nombre' => 'documentacion'),
+		array ('url' => 'jornada-complementaria', 'nombre' => 'jornada complementaria'),
+		array ('url' => 'talleres', 'nombre' => 'talleres'),
+	),
 );
 
 //galeria de imagenes del sidebar. Tres parametros, alt, src y caption para ponerle algún texto
