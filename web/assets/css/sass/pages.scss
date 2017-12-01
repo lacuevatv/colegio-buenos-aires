@@ -56,7 +56,7 @@
 			}
 
 			input {
-				height: 30px;
+				height: 40px;
 				padding: 10px;
 				@include border-radius(5px);
 				border-style: groove;
@@ -65,7 +65,7 @@
 			}
 
 			textarea {
-				height: 80px;
+				height: 90px;
 				padding: 10px;
 				@include border-radius(5px);
 				border-style: groove;
@@ -140,13 +140,27 @@
 
 /*INSTITUCIONAL*/
 #page-historia {
+	p {
+		text-align: justify;
+	}
+
 	.autoridades {
 		margin-top: 50px;
 	}
 
+	.read-more-wrapper {
+		overflow: hidden;
+		height: 0px;
+	}
+
+	.read-more-button-wrapper {
+		text-align: center;
+		padding: 30px 0;
+	}
+
 	.separador-campo {
 		background: url(../images/background-separador.jpg) bottom;
-
+		margin-bottom: 30px;
 		a {
 			margin-top: 10px;
 		}
@@ -177,8 +191,18 @@
 	.post-in-loop {
 		.image-wrapper-loop {
 			display: block;
-			max-height: 30vh;
+			max-height: 25vh;
 			overflow: hidden;
+			@media (min-width: $sm) {
+				max-height: 30vh;
+			}
+			@media (min-width: $md) {
+				max-height: 35vh;
+			}
+			@media (min-width: $xlg) {
+				max-height: 40vh;
+			}
+
 			img {
 				width: 100%;
 				display: block;

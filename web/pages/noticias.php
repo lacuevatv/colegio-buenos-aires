@@ -8,6 +8,7 @@
 $cantPost = CANTPOST;
 $slug = getPageVar( cleanUri() );//trae la variable de la pagina
 $single = false;
+$dispositivo = dispositivo();
 
 if ( $slug != '' ) {
 	$singlePost = getSinglePost( $slug );
@@ -77,9 +78,14 @@ include 'header.php';
 
 	    </div><!-- //.main-content-page -->
 
+	<?php if ( $dispositivo == 'pc' )  : ?> 
+		    	 	
 	    <aside class="sidebar">
 	       <?php getTemplate( 'sidebar' ); ?>
 	   	</aside>
+
+	<?php endif; ?>
+
    </div><!-- //.main-content-page-wrapper -->
 
 </div><!--- //.inner-wrapper -->

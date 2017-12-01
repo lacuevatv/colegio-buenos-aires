@@ -1,4 +1,4 @@
-<article class="widget">
+<article class="widget animation-element fade-in-scroll">
 			
 <a href="<?php echo GOOGLECALENDAR; ?>" title="Ver calendario de eventos en Google Calendar" target="_blank">
 

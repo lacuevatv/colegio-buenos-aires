@@ -5,7 +5,7 @@
  * Since 1.0
  * PAGE TEMPLATE: PAGINA NIVELES
 */
-
+$dispositivo = dispositivo();
 $slug = getPageVar( cleanUri() );//variante de la pagina
 
 include 'header.php';
@@ -58,7 +58,7 @@ include 'header.php';
 			<p>Nelson Mandela</p>
 	    </div><!-- //.main-content-page -->
 
-	    <?php if ( $slug != 'niveles' ) : ?>
+	    <?php if ( $slug != 'niveles' && $dispositivo == 'pc' ) : ?>
 	    <aside class="sidebar">
 	       <?php getTemplate( 'sidebar' ); ?>
 	   	</aside>

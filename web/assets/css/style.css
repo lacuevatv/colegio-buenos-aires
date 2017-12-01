@@ -1231,7 +1231,7 @@ q {
         #contact-page .contact-form-wrapper form label {
           display: none; } }
     #contact-page .contact-form-wrapper form input {
-      height: 30px;
+      height: 40px;
       padding: 10px;
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
@@ -1241,7 +1241,7 @@ q {
       font-family: "Play", sans-serif;
       color: #333; }
     #contact-page .contact-form-wrapper form textarea {
-      height: 80px;
+      height: 90px;
       padding: 10px;
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
@@ -1301,10 +1301,19 @@ q {
   width: 90%; }
 
 /*INSTITUCIONAL*/
+#page-historia p {
+  text-align: justify; }
 #page-historia .autoridades {
   margin-top: 50px; }
+#page-historia .read-more-wrapper {
+  overflow: hidden;
+  height: 0px; }
+#page-historia .read-more-button-wrapper {
+  text-align: center;
+  padding: 30px 0; }
 #page-historia .separador-campo {
-  background: url(../images/background-separador.jpg) bottom; }
+  background: url(../images/background-separador.jpg) bottom;
+  margin-bottom: 30px; }
   #page-historia .separador-campo a {
     margin-top: 10px; }
 #page-historia .separador-inscripcion {
@@ -1324,8 +1333,17 @@ q {
           margin-top: 80px; } }
   .loop-posts-wrapper .post-in-loop .image-wrapper-loop {
     display: block;
-    max-height: 30vh;
+    max-height: 25vh;
     overflow: hidden; }
+    @media (min-width: 768px) {
+      .loop-posts-wrapper .post-in-loop .image-wrapper-loop {
+        max-height: 30vh; } }
+    @media (min-width: 992px) {
+      .loop-posts-wrapper .post-in-loop .image-wrapper-loop {
+        max-height: 35vh; } }
+    @media (min-width: 1500px) {
+      .loop-posts-wrapper .post-in-loop .image-wrapper-loop {
+        max-height: 40vh; } }
     .loop-posts-wrapper .post-in-loop .image-wrapper-loop img {
       width: 100%;
       display: block;
@@ -1405,7 +1423,15 @@ q {
 /*--------------------------------------------------------------
 13.0 ANIMATION
 --------------------------------------------------------------*/
+.animation-element {
+  opacity: 0; }
+
 .animation-element.fade-in {
+  animation-name: fade-in;
+  animation-duration: 2s;
+  animation-fill-mode: forwards; }
+
+.animation-element.fade-in-scroll.in-view {
   animation-name: fade-in;
   animation-duration: 2s;
   animation-fill-mode: forwards; }
@@ -1415,5 +1441,29 @@ q {
     opacity: 0; }
   to {
     opacity: 1; } }
+.animation-element.slide-up.in-view {
+  animation-name: slide-up;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(100px); }
+  to {
+    opacity: 1;
+    transform: translateY(0px); } }
+.animation-element.slide-right.in-view {
+  animation-name: slide-right;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(100px); }
+  to {
+    opacity: 1;
+    transform: translateX(0px); } }
 
 /*# sourceMappingURL=style.css.map */

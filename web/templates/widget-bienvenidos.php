@@ -1,4 +1,4 @@
-<article class="widget">
+<article class="widget animation-element fade-in-scroll">
 	<a href="<?php echo MAINSURL; ?>/institucional">			
 		<h1>Bienvenidos</h1>
 		

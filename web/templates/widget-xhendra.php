@@ -1,4 +1,4 @@
-<article class="widget">
+<article class="widget animation-element fade-in-scroll">
 	
 	<figure>
 		<img src="<?php echo MAINSURL; ?>/assets/images/xhendra.png">

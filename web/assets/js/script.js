@@ -81,6 +81,28 @@ $(document).ready(function(){
             },
         });//cierre ajax
 	});
+
+	//institucional, altura de parrafo
+	var parrafoInstitucional = $('.read-more-wrapper');
+	var stdHeightParrafoInst = parrafoInstitucional.css( 'height' );
+
+	//al hacer clic se amplia el parrafo para leerlo completo
+	$('.read-more-button-institucional').click(function(){
+		
+		if ( parrafoInstitucional.css( 'height' ) == stdHeightParrafoInst ) {
+		parrafoInstitucional.css( 'height', 'auto' )
+		var alturaCompleta = $('.read-more-wrapper').height() + 'px';
+		parrafoInstitucional.css( 'height', stdHeightParrafoInst );
+
+		parrafoInstitucional.animate({
+			 'height' : alturaCompleta 
+			},2000);
+		} else {
+			parrafoInstitucional.animate({
+			 'height' : stdHeightParrafoInst 
+			},2000);
+		}
+	});
 	
 });
 
@@ -92,7 +114,7 @@ $(window).on('load', function(){
 	galeriaWidget.initGaleria();
 
 	//animaciones
-	/*var $animation_elements = $('.animation-element');
+	var $animation_elements = $('.animation-element');
     var $window = $(window);
 
     function check_if_in_view() {
@@ -117,7 +139,7 @@ $(window).on('load', function(){
     }
 
     $window.on('scroll resize', check_if_in_view);
-    $window.trigger('scroll');*/
+    $window.trigger('scroll');
 
 });
 

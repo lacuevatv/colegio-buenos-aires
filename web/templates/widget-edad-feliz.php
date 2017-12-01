@@ -1,6 +1,6 @@
 <?php $EFPosts = getPosts( 'edad-feliz', 1 ); ?>
 
-<article class="widget">
+<article class="widget animation-element fade-in-scroll">
 			
 	<h1>
 		<span class="sr-only">Edad feliz</span>

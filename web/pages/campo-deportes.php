@@ -5,7 +5,7 @@
  * Since 1.0
  * PAGE TEMPLATE: PAGINA CAMPO DE DEPORTES
 */
-
+$dispositivo = dispositivo();
 include 'header.php';
 ?>
 <!--- .inner-wrapper: contenido principal y específico del template -->
@@ -58,9 +58,14 @@ include 'header.php';
 	    	
 	    </div><!-- //.main-content-page -->
 
+	<?php if ( $dispositivo == 'pc' )  : ?> 
+		    	 	
 	    <aside class="sidebar">
 	       <?php getTemplate( 'sidebar' ); ?>
 	   	</aside>
+
+	<?php endif; ?>
+
    </div><!-- //.main-content-page-wrapper -->
         
 </div><!--- //.inner-wrapper -->

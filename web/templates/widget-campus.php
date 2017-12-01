@@ -1,4 +1,4 @@
-<article class="widget">
+<article class="widget animation-element fade-in-scroll">
 			
 	<h1>Campus virtual</h1>
 	

@@ -5,6 +5,8 @@
  * Since 1.0
  * PAGE TEMPLATE: PAGINA CONTACTO
 */
+$dispositivo = dispositivo();
+
 include 'header.php';
 ?>
 <!--- .inner-wrapper: contenido principal y específico del template -->
@@ -14,9 +16,11 @@ include 'header.php';
 	    <div class="main-content-page">
 
 	    	<section class="contact-form-wrapper">
-	    		<h2 class="subtitulo_clasico">Formulario de Contacto</h2>
+	    		<h2 class="subtitulo_clasico animation-element fade-in">
+	    			Formulario de Contacto
+	    		</h2>
 
-	    		<form id="contact-form" method="POST">
+	    		<form id="contact-form" method="POST" class="animation-element fade-in">
 	    			
 	    			<div class="form-group">
 		    			<label for="nombre">
@@ -58,9 +62,10 @@ include 'header.php';
 	    	</section>
 
 	    	<section class="contact-data-wrapper">
-	    		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2362842021116!2d-58.44429744015378!3d-34.59818617135286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca0b414510e1%3A0x43564576cc0da8d3!2sAcevedo+357%2C+C1414DJG+CABA!5e0!3m2!1ses!2sar!4v1511791250465" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+	    		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2362842021116!2d-58.44429744015378!3d-34.59818617135286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca0b414510e1%3A0x43564576cc0da8d3!2sAcevedo+357%2C+C1414DJG+CABA!5e0!3m2!1ses!2sar!4v1511791250465" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen class="animation-element fade-in"></iframe>
+	    		
 	    		<ul class="contact-data-items row">
-		    		<div class="col-50">
+		    		<div class="col-50 animation-element slide-up">
 		    			<li class="icon-before icon-before-location">
 		    				Acevedo 357, C1414DJG CABA
 		    			</li>
@@ -69,7 +74,7 @@ include 'header.php';
 		    			</li>
 		    		</div>
 
-		    		<div class="col-50">
+		    		<div class="col-50 animation-element slide-up">
 		    			<li class="icon-before icon-before-tel">
 		    				4855-8289
 		    			</li>
@@ -78,10 +83,11 @@ include 'header.php';
 		    			</li>
 		    		</div>
 	    		</ul>
+
 	    	</section>
 
 
-	    	<section class="contact-calendar-wrapper">
+	    	<section class="contact-calendar-wrapper animation-element slide-up">
 	    		<a href="<?php echo GOOGLECALENDAR; ?>" target="_blank" title="Calendario de Eventos en Google Calendar">
 		    		<figure>
 		    			<img src="<?php echo UPLOADSURL; ?>/2017-11-24-395-imagen.png">
@@ -91,10 +97,13 @@ include 'header.php';
 
 
 	    </div><!-- //.main-content-page -->
-
+	<?php if ( $dispositivo == 'pc' )  : ?> 
+		    	 	
 	    <aside class="sidebar">
 	       <?php getTemplate( 'sidebar' ); ?>
 	   	</aside>
+
+	<?php endif; ?> 
    </div><!-- //.main-content-page-wrapper -->
         
 </div><!--- //.inner-wrapper -->
