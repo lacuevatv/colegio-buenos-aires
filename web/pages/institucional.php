@@ -34,7 +34,6 @@ $dispositivo = dispositivo ();
 	    			<h3 class="title-acordion acordion-color-celeste">
 						<span>+</span>
 							Autoridades
-						
 					</h3>
 	    			<div class="acordion-content">
 	    				<p>
@@ -56,15 +55,15 @@ $dispositivo = dispositivo ();
 	    		</h2>
 
 	    		<p>
-		    		La Patria había cumplido un siglo y eran épocas muy duras y llenas de privaciones. Un joven maestro y profesor de Ciencias, proveniente de Rosario, provincia de Santa Fe, soñaba con fundar un instituto educativo. Desde temprana edad el joven Julio Faggioni había sentido el llamado de su vocación docente. Alentado por Catalina Donnoli, quien luego sería su esposa, hace realidad su sueño, inaugurando el 9 de enero de 1911 el COLEGIO BUENOS AIRES, en Serrano 341 del barrio de Villa Crespo.
+		    		La Patria había cumplido un siglo y eran épocas muy duras y llenas de privaciones. Un joven maestro y profesor de Ciencias, proveniente de Rosario, provincia de Santa Fe, soñaba con fundar un instituto educativo. Desde temprana edad el joven <strong>Julio Faggioni</strong> había sentido el llamado de su vocación docente. Alentado por <strong>Catalina Donnoli</strong>, quien luego sería su esposa, hace realidad su sueño, inaugurando el 9 de enero de 1911 el <strong>COLEGIO BUENOS AIRES</strong>, en Serrano 341 del barrio de Villa Crespo.
 		    	</p>
 
 		    	<p>
-		    		Villa Crespo era en ese año un bullicioso crisol de razas que comenzaba a crecer merced a los inmigrantes que se instalaban como obreros en la Fábrica Nacional de Calzado. Era también el hogar de la familia Faggioni, donde nacerían sus hijos Delia, Arístides, Jorge y Julio Néstor.
+		    		Villa Crespo era en ese año un bullicioso crisol de razas que comenzaba a crecer merced a los inmigrantes que se instalaban como obreros en la <strong>Fábrica Nacional de Calzado</strong>. Era también el hogar de la familia Faggioni, donde nacerían sus hijos Delia, Arístides, Jorge y Julio Néstor.
 		    	</p>
 
 		    	<p>
-					Llega el año 1922. El COLEGIO BUENOS AIRES es por entonces la entidad privada docente de mayor prestigio de Villa Crespo. En ese año se traslada a su sede actual, Acevedo 355/57/59. 
+					Llega el año 1922. <strong>El COLEGIO BUENOS AIRES</strong> es por entonces la entidad privada docente de mayor prestigio de Villa Crespo. En ese año se traslada a su sede actual, Acevedo 355/57/59. 
 		    	</p>
 		    	
 		    	<figure>
@@ -77,7 +76,7 @@ $dispositivo = dispositivo ();
 		    	
 
 			    	<p>
-			    		La actividad del profesor Faggioni fue infatigable: sin descuidar su labor docente y la conducción del COLEGIO BUENOS AIRES, fue Presidente de la Asociación Cooperadora del Colegio Nro. 2 del Distrito escolar VII "Francisco D. Herrera". Siendo Presidente de las Asociaciones Cooperadoras de la Capital Federal, instauró la copa de leche obligatoria en las escuelas primarias. 
+			    		La actividad del profesor Faggioni fue infatigable: sin descuidar su labor docente y la conducción del <strong>COLEGIO BUENOS AIRES</strong>, fue <strong>Presidente</strong> de la <strong>Asociación Cooperadora del Colegio Nro. 2</strong> del Distrito escolar VII "<strong>Francisco D. Herrera</strong>". Siendo Presidente de las Asociaciones Cooperadoras de la Capital Federal, instauró <strong>la copa de leche obligatoria</strong> en las escuelas primarias. 
 			    	</p>
 
 			    	<p>
@@ -85,11 +84,11 @@ $dispositivo = dispositivo ();
 			    	</p>
 
 			    	<p>
-			    		Es entonces cuando asume la Dirección del Colegio el mayor de los hijos varones, Arístides Faggioni, quien con el apoyo de su madre y sus hermanos, despliega una vasta actividad docente, guiado por los principios de su padre.
+			    		Es entonces cuando asume la <strong>Dirección del Colegio</strong> el mayor de los hijos varones, <strong>Arístides Faggioni</strong>, quien con el apoyo de su madre y sus hermanos, despliega una vasta actividad docente, guiado por los principios de su padre.
 			    	</p>
 
 			    	<p>
-			    		En 1961 el COLEGIO BUENOS AIRES cumple sus Bodas de Oro, pero el 8 de mayo de ese mismo año, fallece doña Catalina Donnoli de Faggioni, noticia que afectó profundamente a quienes supieron de su abnegación y ternura.
+			    		En 1961 el <strong>COLEGIO BUENOS AIRES</strong> cumple sus <strong>Bodas de Oro</strong>, pero el 8 de mayo de ese mismo año, fallece doña <strong>Catalina Donnoli de Faggioni</strong>, noticia que afectó profundamente a quienes supieron de su abnegación y ternura.
 			    	</p>
 
 			    	<p>
@@ -101,13 +100,13 @@ $dispositivo = dispositivo ();
 			    	</figure>
 			    	
 			    	<p>
-			    		En 1965 se inaugura la Sección Secundaria. Al concluir el año 1969 egresa la primera promoción de bachilleres y peritos mercantiles.
+			    		En 1965 se inaugura la <strong>Sección Secundaria</strong>. Al concluir el año 1969 egresa la primera promoción de bachilleres y peritos mercantiles.
 			    	</p>
 				<?php if ( $dispositivo == 'pc' ) { 
 		    	 	echo '<div class="read-more-wrapper">';
 	    	 	} ?>
 			    	<p>
-			    		Al fallecer don Arístides Faggioni, ocurrido en enero de 1970, le sucede en la Dirección de la Sección Primaria y Jardín de Infantes el menor de los hermanos: Julio Néstor Faggioni.
+			    		Al fallecer don Arístides Faggioni, ocurrido en enero de 1970, le sucede en la <strong>Dirección de la Sección Primaria y Jardín de Infantes</strong> el menor de los hermanos: <strong>Julio Néstor Faggioni</strong>.
 			    	</p>
 
 			    	<p>
@@ -115,7 +114,7 @@ $dispositivo = dispositivo ();
 			    	</p>
 
 			    	<p>
-			    		La gestión del profesor Julio Néstor Faggioni en la dirección del COLEGIO BUENOS AIRES marcó un período de crecimiento y también de lucha, con una gran apertura al barrio que tanto amaba.
+			    		La gestión del profesor Julio Néstor Faggioni en la dirección del <strong>COLEGIO BUENOS AIRES</strong> marcó un período de crecimiento y también de lucha, con una gran apertura al barrio que tanto amaba.
 			    	</p>
 
 			    	<p>
@@ -123,15 +122,15 @@ $dispositivo = dispositivo ();
 			    	</p>
 
 			    	<p>
-			    		Desde entonces su hijo, Julio Guillermo Faggioni, es el heredero de la Dirección General de este afamado Colegio. A su gestión se debe la creación del turno tarde en las secciones primaria y secundaria, como así también la creación de la Sección Jardín Maternal, en ambos turnos.
+			    		Desde entonces su hijo, <strong>Julio Guillermo Faggioni</strong>, es el heredero de la Dirección General de este afamado Colegio. A su gestión se debe la <strong>creación del turno</strong> tarde en las secciones primaria y secundaria, como así también la creación de la <strong>Sección Jardín Maternal</strong>, en ambos turnos.
 			    	</p>
 
 			    	<p>
-			    		El COLEGIO BUENOS AIRES, pionero en la implementación de talleres extraprogramáticos, comenzó hace muchos años con Aeromodelismo, Inglés y Ajedrez. Se ha adecuado a las necesidades que impone el progreso, incorporando a través de los años nuevas propuestas.
+			    		El <strong>COLEGIO BUENOS AIRES</strong>, pionero en la implementación de talleres extraprogramáticos, comenzó hace muchos años con Aeromodelismo, Inglés y Ajedrez. Se ha adecuado a las necesidades que impone el progreso, incorporando a través de los años nuevas propuestas.
 			    	</p>
 
 			    	<p>
-			    		Cuenta en la actualidad con Inglés y Computación desde sala de 3 años, taller extraprogramático de Comunicación Social, editando mensualmente la revista Edad Feliz, que poco a poco se va acercando a su número 100. Además incorporó talleres de Metodología de Tareas y del Estudio en EGB y Secundaria, y UBA XXI para que los alumnos de los últimos años preparen su ingreso a la Universidad.
+			    		Cuenta en la actualidad con Inglés y Computación desde sala de 3 años, taller extraprogramático de Comunicación Social, editando mensualmente la revista <a href="<?php echo MAINSURL; ?>/edad-feliz"><strong>Edad Feliz</strong></a>, que poco a poco se va acercando a su número 100. Además incorporó talleres de <strong>Metodología de Tareas</strong> y del <strong>Estudio en EGB y Secundaria, y UBA XXI</strong> para que los alumnos de los últimos años preparen su ingreso a la Universidad.
 			    	</p>
 
 			    	<p>
@@ -143,7 +142,7 @@ $dispositivo = dispositivo ();
 			    	</figure>
 
 			    	<p>
-			    		Todo el alumnado, desde preescolar hasta 5° año concurre mensualmente a un magnífico campo que el Colegio posee en la localidad de Brandsen, donde se practican deportes, actividades recreativas, y actualmente se trabaja en un proyecto de Huerta Orgánica. En el área deportiva, aprovechando las posibilidades del campo, y mediante un arduo trabajo por parte de los docentes, se han obtenido importantes logros en Fútbol, Handbol, Volley, Atletismo y Hockey. En las instalaciones del Colegio los chicos practican Fútbol y las chicas Gimnasia Aeróbica, con éxito creciente en cada presentación.
+			    		Todo el alumnado, desde preescolar hasta 5° año concurre mensualmente a un magnífico campo que el Colegio posee en la localidad de Brandsen, donde se practican deportes, actividades recreativas, y actualmente se trabaja en un proyecto de <strong>Huerta Orgánica</strong>. En el área deportiva, aprovechando las posibilidades del campo, y mediante un arduo trabajo por parte de los docentes, se han obtenido importantes logros en Fútbol, Handbol, Volley, Atletismo y Hockey. En las instalaciones del Colegio los chicos practican Fútbol y las chicas Gimnasia Aeróbica, con éxito creciente en cada presentación.
 			    	</p>
 
 			    	<p>

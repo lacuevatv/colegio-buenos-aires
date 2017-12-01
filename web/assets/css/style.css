@@ -359,6 +359,8 @@ p {
   margin: 10px 0; }
   p small {
     font-size: 80%; }
+  p strong {
+    font-weight: 700; }
 
 q {
   font-size: 200%;
