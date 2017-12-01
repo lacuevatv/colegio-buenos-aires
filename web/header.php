@@ -16,7 +16,8 @@ global $pageActual;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title><?php echo SITETITLE; ?></title>
-
+    <!-- Forces user OUT of IE's compatibility mode and removes "broken page" icon --> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <!--favicon-->
 <link rel="apple-touch-icon" sizes="180x180" href="<?php echo MAINSURL; ?>/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="<?php echo MAINSURL; ?>/favicon-32x32.png">
@@ -63,7 +64,7 @@ global $pageActual;
                 <?php getTemplate( 'social-items' ); ?>
             </ul>
 
-            <a href="tel:<?php echo TELCOLEGIO; ?>">
+            <a href="tel:11<?php echo str_replace(' ', '', TELCOLEGIO); ?>">
                 <h5 class="tel-data-header">
                     <span class="icon-tel"></span><?php echo TELCOLEGIO; ?>
                 </h5>

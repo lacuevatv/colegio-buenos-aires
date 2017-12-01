@@ -421,7 +421,11 @@ q {
   vertical-align: middle;
   background: url(../images/sprite.png);
   background-position: -53px -8px;
-  margin-right: 10px; }
+  margin-right: 10px;
+  margin-left: -40px; }
+  @media (min-width: 992px) {
+    .icon-tel {
+      margin-left: 0; } }
 
 .icon {
   display: block;
@@ -677,7 +681,7 @@ q {
 
 @media (min-width: 992px) {
   .footer-menu {
-    max-height: 200px;
+    height: 200px;
     display: flex;
     display: -o-flex;
     display: -ms-flex;
@@ -696,7 +700,7 @@ q {
     text-transform: capitalize; } }
   @media (min-width: 992px) and (min-width: 1200px) {
     .footer-menu {
-      max-height: 150px; } }
+      height: 150px; } }
 
 .footer-menu > li {
   font-size: 80%; }
@@ -1356,11 +1360,10 @@ q {
     @media (min-width: 1500px) {
       .loop-posts-wrapper .post-in-loop .image-wrapper-loop {
         max-height: 40vh; } }
-    .loop-posts-wrapper .post-in-loop .image-wrapper-loop img {
-      width: 100%;
-      display: block;
-      margin: 0 auto;
-      position: relative; }
+  .loop-posts-wrapper .post-in-loop img {
+    width: 100%;
+    display: block;
+    margin: 0 auto; }
   .loop-posts-wrapper .post-in-loop .wrapper-button-more {
     margin: 30px 0; }
     @media (min-width: 992px) {

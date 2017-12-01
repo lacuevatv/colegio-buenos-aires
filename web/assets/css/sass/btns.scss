@@ -8,6 +8,10 @@
     background: url(../images/sprite.png);
     background-position: -53px -8px;
     margin-right: 10px;
+    margin-left: -40px;//para compensar y que quede el texto centrado
+    @media (min-width: $md) {
+    	margin-left: 0;
+    }
 }
 
 .icon {

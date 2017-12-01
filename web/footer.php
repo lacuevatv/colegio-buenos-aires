@@ -26,7 +26,7 @@
                         </ul>
 
                         <h5>
-                            <span class="icon-tel"></span><?php echo TELCOLEGIO; ?>
+                            <a href="tel:11<?php echo str_replace(' ', '', TELCOLEGIO); ?>"><span class="icon-tel"></span><?php echo TELCOLEGIO; ?></a>
                         </h5>
 
                     </div>
@@ -36,7 +36,7 @@
                         <p>
                             Para contactarse con nosotros puede llamarnos o visitarnos personalmente de lunes a viernes desde las 8 hasta las 18hs.
                         </p>
-                        <a href="#" class="btn btn-border-inverse btn-sm">Contactar</a>
+                        <a href="<?php echo MAINSURL; ?>/contacto" class="btn btn-border-inverse btn-sm">Contactar</a>
                     </div>
 
                     <nav class="site-map">
