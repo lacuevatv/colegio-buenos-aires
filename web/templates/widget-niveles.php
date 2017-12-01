@@ -5,7 +5,7 @@
 	<div id="acordionNivelWidget" class="acordion">
 		
 		<h3 class="title-acordion">
-			<span>+</span>
+			<span class="icon-open">+</span>
 				Inicial
 		</h3>
 		<div class="acordion-content">
@@ -20,7 +20,7 @@
 		</div><!-- //.tab contenido -->
 
 		<h3 class="title-acordion acordion-color-celeste">
-			<span>+</span>
+			<span class="icon-open">+</span>
 				Primario
 		</h3>
 		<div class="acordion-content">
@@ -35,7 +35,7 @@
 		</div><!-- //.tab contenido -->
 
 		<h3 class="title-acordion acordion-color-verde">
-			<span>+</span>
+			<span class="icon-open">+</span>
 				Secundario
 		</h3>
 		<div class="acordion-content">

@@ -32,7 +32,7 @@ $dispositivo = dispositivo ();
 	    	<section class="autoridades">
 	    		<div id="acordionAutoridades" class="acordion">
 	    			<h3 class="title-acordion acordion-color-celeste">
-						<span>+</span>
+						<span class="icon-open"></span>
 							Autoridades
 					</h3>
 	    			<div class="acordion-content">

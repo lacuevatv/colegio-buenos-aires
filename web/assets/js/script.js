@@ -20,17 +20,32 @@
 var baseUrl = 'http://' + window.location.host;
 var functionsDir = baseUrl + '/inc';
 var actualPage;
+//variables que identifican los navegadores de microsoft
+var es_ie = navigator.userAgent.indexOf("MSIE") > -1 ;
+var es_edge = window.navigator.userAgent.indexOf("Edge") > -1
+
 
 $(document).ready(function(){
 	actualPage = $('body').attr('data-page');
 
+
 	//inicializa los acordeones de niveles del sidebar
 	var widgetAcordion = new acordion( $('#acordionNivelWidget'), true, true );
-	widgetAcordion.initAcordion();
+		widgetAcordion.initAcordion();
 
 	//inicializa los acordeones de institucional
-	var autoridadesAcordion = new acordion( $('#acordionAutoridades') );
-	autoridadesAcordion.initAcordion();
+	if( es_edge || es_ie ){
+		//si es ie tiene que estar abierto
+		var autoridadesAcordion = new acordion( $('#acordionAutoridades'), true);
+		autoridadesAcordion.initAcordion();
+	} else {
+		var autoridadesAcordion = new acordion( $('#acordionAutoridades'), true );
+		autoridadesAcordion.initAcordion();
+	}
+	
+
+	
+	
 
 	//clic boton cargar mas
 	$(document).on('click', '.btn-load-more-news', function( e ){
@@ -105,6 +120,7 @@ $(document).ready(function(){
 	});
 	
 });
+
 
 //onload para todo lo que funciona con imágenes
 $(window).on('load', function(){
@@ -297,14 +313,20 @@ $(document).ready(function(){
  * La galería de imagenes está al inicio y en el sidebar, las imágenes están definidas en una varible global en config.php
 */
 
-function galeriaImagenes(contenedor, speedTransition = 7000, speedAnimation = 1500, speedAnimationCaption = 1000, classAnimationCaption = 'fade', tipoTransicion = 'fade') {
-	//parametros
+function galeriaImagenes( contenedor, speedTransition, speedAnimation, speedAnimationCaption, classAnimationCaption, tipoTransicion ) {
+	//parametros por defecto
 	this.contenedor = contenedor;
-	//tiempo en la cual se muestra la imagen: speedTransition (7000 por defecto)
-	//velocidad de la trancision: speedAnimation (1500 por defecto)
-	//velocidad de animación del caption en el mouse hover: (1000 por defecto);
-	//clase que va a animar caption: classAnimationCaption (fade por defecto)
-	//tipo de trancision: tipoTransicion (fade por defecto) 
+	//tiempo en la cual se muestra la imagen: speedTransition
+	speedTransition || ( speedTransition = 7000 );
+	//velocidad de la trancision: speedAnimation
+	speedAnimation || ( speedAnimation = 1500 );
+	//velocidad de animación del caption en el mouse hover
+	speedAnimationCaption || ( speedAnimationCaption = 1000 );
+	//clase que va a animar caption: classAnimationCaption
+	classAnimationCaption || ( classAnimationCaption = 'fade' );
+	//tipo de trancision: tipoTransicion (fade por defecto
+	tipoTransicion || ( tipoTransicion = 'fade' );
+	 
 
 	//variables
 	//array de imagenes
@@ -415,9 +437,12 @@ function galeriaImagenes(contenedor, speedTransition = 7000, speedAnimation = 15
 //primer parametro id o identificador del contenedor
 //segundo parametro, si por defecto hay uno abierto, por defecto ninguno abierto
 //tercer parametro, si se pueden abrir todos juntos o uno solo, por defecto todos juntos
-function acordion( contenedor = $('.acordion'), open = false , collapse = false ) {
+function acordion( contenedor, open, collapse ) {
 	//parametros
 	this.contenedor = contenedor;
+	open || ( open = false );
+	collapse || ( collapse = false );
+
 	var items = $(contenedor).find('.acordion-content');
 	var cantItems = items.length;
 	var openItem;
@@ -428,14 +453,15 @@ function acordion( contenedor = $('.acordion'), open = false , collapse = false 
 		//si es false, no hay nada que hacer
 		//si es true, habría que abrir el primer tab
 		if (open) {
+			
 			openItem( items[0] );
-		}
-
-		if (collapse) {
 			toggleOpenClass(items[0]);
+			
 		}
-
-		iconOpenClose();
+ 
+		
+		iconOpenClose();	
+		
 	}
 
 
@@ -491,7 +517,7 @@ function acordion( contenedor = $('.acordion'), open = false , collapse = false 
 	//funcion interna que calcula todas las alturas
 	var altura = function( item ) {
 		$(item).css('height', 'auto');
-		var altura = $(item).height();
+		var altura = $(item).height() + 'px';
 		$(item).css('height', '0');
 		return altura;
 	}
@@ -506,7 +532,8 @@ function acordion( contenedor = $('.acordion'), open = false , collapse = false 
 	var openItem = function( item ) {
 		
 		//calcula la altura
-		h = altura(item);
+		var h = altura(item);
+
 		//anima y abre
 		$(item).animate({
 			'height' : h
@@ -524,8 +551,9 @@ function acordion( contenedor = $('.acordion'), open = false , collapse = false 
 	}
 
 	var iconOpenClose = function () {
-		var icon = $('.title-acordion span');//icono más y menos
+		var icon = $('.title-acordion .icon-open');//icono más y menos
 		icon.each(function(){
+			//if ( $(this.parentElement).next().height() == 0 ) {
 			if ( $(this.parentElement).next().hasClass('acordeon-open') ) {
 				$(this).text('-');
 			} else {

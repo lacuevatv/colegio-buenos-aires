@@ -1148,7 +1148,8 @@ q {
   display: -webkit-flex; }
   .widget .wrapper-last-news-data > a {
     width: 40%;
-    margin-top: 12px; }
+    margin-top: 12px;
+    display: block; }
   .widget .wrapper-last-news-data .last-news-data {
     width: 60%;
     padding-left: 10px;
