@@ -480,3 +480,10 @@ function getPagination( $categoria, $postPerPage ) {
 	</div>
 	<?php
 }
+
+//muestra los recientes para el single
+function paginationSingle( $categoria, $cantPost, $exclude ) {
+	$posts = getPosts( $categoria, $cantPost, $exclude );
+
+	getTemplate( 'pagination-single', $posts);
+}

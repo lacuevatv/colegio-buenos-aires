@@ -78,8 +78,58 @@
 	}
 }
 
+.icon-share-wa {
+	display: inline-block;
+	background-color: $color-verde-claro;
+    color: $color-blanco;
+    padding: 0 6px;
+    font-size: 8pt;
+    line-height: 15pt;
+    font-weight: $fuente-bold;
+    @include border-radius(5px);
 
+    &:hover {
+	    zoom: 1;
+	    filter: alpha(opacity=50);
+	    opacity: 0.5;
+	}
 
+	.icon-wata {
+    	display: inline-block;
+    	width: 15px;
+    	height: 15px;
+    	vertical-align: middle;
+    	background: url(../images/sprite.png);
+    	background-position: -136px -138px;
+    }
+}
+
+.print-share-btn {
+	position: relative;
+	display: inline-block;
+	background-color: $color-azul-titulos;
+    color: $color-blanco;
+    padding: 0 6px;
+    font-size: 8pt;
+    line-height: 15pt;
+    font-weight: $fuente-bold;
+    @include border-radius(5px);
+
+    &:hover {
+	    zoom: 1;
+	    filter: alpha(opacity=50);
+	    opacity: 0.5;
+	}
+
+    .icon-print {
+    	display: inline-block;
+    	width: 15px;
+    	height: 15px;
+    	vertical-align: middle;
+    	background: url(../images/sprite.png);
+    	background-position: -161px -138px;
+    }
+}
 
 /*
  ******** BOTONES **********

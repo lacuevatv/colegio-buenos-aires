@@ -18,6 +18,7 @@
 --------------------------------------------------------------*/
 //variables generales
 var baseUrl = 'http://' + window.location.host;
+var uploadsUrl = baseUrl + '/galeria'
 var functionsDir = baseUrl + '/inc';
 var actualPage;
 //variables que identifican los navegadores de microsoft
@@ -42,9 +43,6 @@ $(document).ready(function(){
 		var autoridadesAcordion = new acordion( $('#acordionAutoridades'), true );
 		autoridadesAcordion.initAcordion();
 	}
-	
-
-	
 	
 
 	//clic boton cargar mas
@@ -119,20 +117,37 @@ $(document).ready(function(){
 		}
 	});
 	
-});
+	//hover, single post
+
+
+});//on-ready
 
 
 //onload para todo lo que funciona con imágenes
 $(window).on('load', function(){
 
-	//abre galeria de imagenes del sidebar
+	/*
+	 * INICIOS GALERIA DE IMAGENES
+	*/
+	
+	//galeria de bienvenidos, widget
 	var galeriaWidget = new galeriaImagenes( $('.wrapper-galeria-images') );
 	galeriaWidget.initGaleria();
 
-	//animaciones
+	//si es noticias busca iniciar galeria:
+
+	if (actualPage == 'noticias') {
+	galeriaPost = new galeriaImagenesPost( $('.post-galeria-wrapper') );
+galeriaPost.startGaleriaPost();
+	}
+
+	/*
+	 * ANIMACIONES
+	*/
 	var $animation_elements = $('.animation-element');
     var $window = $(window);
 
+    //chequea si el elemento esta en la vista de pantalla para ejecutar la animacion
     function check_if_in_view() {
       var window_height = $window.height();
       var window_top_position = $window.scrollTop();
@@ -157,7 +172,7 @@ $(window).on('load', function(){
     $window.on('scroll resize', check_if_in_view);
     $window.trigger('scroll');
 
-});
+});//on-load
 
 
 
@@ -260,6 +275,11 @@ $(document).ready(function(){
 
 });//.ready
 
+
+
+
+
+
 /*--------------------------------------------------------------
 3.0 FORMS
 --------------------------------------------------------------*/
@@ -310,7 +330,7 @@ $(document).ready(function(){
 --------------------------------------------------------------*/
 
 /*
- * La galería de imagenes está al inicio y en el sidebar, las imágenes están definidas en una varible global en config.php
+ * La galería de imagenes std está al inicio y en el sidebar, las imágenes están definidas en una varible global en config.php
 */
 
 function galeriaImagenes( contenedor, speedTransition, speedAnimation, speedAnimationCaption, classAnimationCaption, tipoTransicion ) {
@@ -427,6 +447,242 @@ function galeriaImagenes( contenedor, speedTransition, speedAnimation, speedAnim
 	//inicio del programa
 	//initGaleria();
 }
+
+/*
+ * La galería de imagenes del single post
+*/
+function galeriaImagenesPost ( galeria, speedTransition, speedAnimation, tipoTransicion ) {
+	/*
+	 * INICIALIZA PARAMETROS POR DEFECTO
+	*/
+	//tiempo en la cual se muestra la imagen: speedTransition
+	speedTransition || ( speedTransition = 7000 );
+	//velocidad de la trancision: speedAnimation
+	speedAnimation || ( speedAnimation = 100 );
+	//tipo de trancision: tipoTransicion (fade por defecto
+	tipoTransicion || ( tipoTransicion = 'fade' );
+	
+	/*
+	 * VARIABLES INTERNAS
+	*/
+	var contenedor   = galeria.find('ul');
+	
+	var imagenes     = contenedor.find('li img');
+	var mainImage    = galeria.find('.galeria-main-image img');
+	var controls     = $('.controls');
+	var leftControl  = $('.left-control');
+	var rightControl = $('.right-control');
+	var openContened = $('.main-image-wrapper');//la imagen en version gigante
+	var maximus = false;//cuando la version gigante esta abierta esto es true
+
+
+	//función que inicia la galeria
+	galeriaImagenesPost.prototype.startGaleriaPost = function () {
+		//oculta el contenedor de la imagen gigante
+		$(openContened).hide()
+		//ocultar o mostrar controles si es necesario
+		showControls();
+		//muestra la primera foto
+		showMainImage();
+		//inicial el slider automatico
+		intervalAnimated();
+
+	}
+
+	//function: muestra la foto cliqueada o la primera en la lista en grande
+	var showMainImage = function ( img, contenedor ) {
+		img || ( img = imagenes[0] );
+		contenedor || ( contenedor = mainImage ); 
+
+		if ( tipoTransicion == 'fade' ) {
+			var src = uploadsUrl + '/' + $(img).attr('data-href');
+			$(contenedor).fadeOut(speedAnimation, function(){
+				$(contenedor).attr('src', src);	
+			});
+			$(contenedor).fadeIn();
+		}	
+
+		//finalmente poner la clase actva a la nueva imagen
+		classActive(img);
+	}
+	
+	//function: muestra u oculta los controles
+	var showControls = function () {
+		if ( window.innerWidth > 500 ) {
+			//mayor de 500px;
+			if ( imagenes.length < 6 ) {
+				controls.hide();
+			}
+			
+		} else {
+		//menor de 500px;
+			if ( imagenes.length < 4 ) {
+				controls.hide();
+			}
+		}
+	}
+
+	//function: pone clase activa a la imagen seleccionada
+	var classActive = function ( img ) {
+		//busca si alguna tiene la clase y la elimina
+		$('.galeria-imagenes .image-active').each(function(){
+			$(this).removeClass('image-active');
+		});
+		//agrega la clase a la imagen seleccionada
+		$(img).addClass('image-active');
+	}
+
+
+	//function: mueve las imagenes thumnail para la izquierda o para la derecha
+	var moveThumnailImgs = function ( direction ) {
+		var imagenesLi   = contenedor.find('li');
+		var count = imagenesLi.length;
+		clearInterval(idAnimation);
+
+		//mueve a la derecha
+		if ( direction == 'right' ) {
+			$(imagenesLi[0]).fadeOut(300, function(){
+				contenedor.append($(imagenesLi[0]));
+			});
+			$(imagenesLi[0]).fadeIn();
+			//cambia la imagen cuando es image-active
+			if ( $(imagenesLi[0]).find('img').hasClass('image-active') ) {
+				showMainImage( $(imagenesLi[0]).next().find('img') );
+			}
+
+			//si la galería grande esta abierta, cambia la imagen allí tambien
+			if (maximus) {
+				showMainImage( $(imagenesLi[0]).next().find('img'), openContened.find('img') );	
+			}
+
+		}
+		//mueve a la izquierda
+		if ( direction == 'left' ) {
+			$(imagenesLi[count-1]).fadeOut(400, function(){
+				contenedor.prepend($(imagenesLi[count-1]));
+			});
+			$(imagenesLi[count-1]).fadeIn();
+
+			showMainImage( $(imagenesLi[count-1]).find('img') );
+
+			if (maximus) {
+				showMainImage( $(imagenesLi[count-1]).find('img'), openContened.find('img') );
+			}
+		}
+
+		//vuelve a iniciar la animacion
+		intervalAnimated();
+	}
+
+	//click control right/left, mueve las imagenes de indice
+	leftControl.click(function(){
+		moveThumnailImgs('left');
+	});
+
+	rightControl.click(function(){
+		moveThumnailImgs('right');
+	});
+
+
+	//funcion que ejecuta animacion de galeria
+	var intervalAnimated = function () {
+		//ejecuta la animacion
+		idAnimation = setInterval(transitionElement, speedTransition);	
+	}
+
+	var transitionElement = function() {
+		moveThumnailImgs('right');
+	}
+
+	//click en un thumnail, se coloca esa imagen como principal
+	imagenes.click(function(){
+		showMainImage(this);
+	})
+
+
+	//al entrar el mouse se detiene la animacion
+	mainImage.mouseenter(function(){
+		clearInterval(idAnimation);
+	})
+
+	//al salir el mouse se reinicia la animacion
+	mainImage.mouseleave(function(){
+		intervalAnimated();
+	});
+
+	//ampliar galeria
+	mainImage.click(function(){
+		$(openContened).fadeIn();
+		showMainImage( $('.image-active'), openContened.find('img') );
+		maximus = true;
+	});
+
+
+	//cierra la big image al hacer clic en ella
+	openContened.click(function(){
+		$(openContened).fadeOut();
+		maximus = false;
+	});
+
+	//funciones teclado
+	$(document).keyup(function(event){
+        //tecla escape
+        if(event.which==27) {
+        	//reinicia la animacion
+        	clearInterval(idAnimation);
+        	intervalAnimated();
+        	$(openContened).fadeOut();
+        }
+        //tecla izquierda
+        if(event.which==37) {
+        	moveThumnailImgs('left');
+        }
+		//tecla derecha
+        if(event.which==39) {
+        	moveThumnailImgs('right');
+        }
+    });
+
+
+
+	/*
+		funciontes touch
+	*/
+
+	if ( window.innerWidth > 769 ) {
+	    var xIni;
+		var yIni;
+	    //var canvas = document.getElementsByClassName('galeria-main-image')[0];
+
+	    
+		var	canvas = document.getElementsByClassName('main-image-wrapper')[0];    	
+	    
+
+		canvas.addEventListener('touchstart', function(e){
+	        if (e.targetTouches.length == 1) { 
+	        var touch = e.targetTouches[0]; 
+		        xIni = touch.pageX;
+			    yIni = touch.pageY;
+			    console.log(xIni);
+	 	    }
+	    }, false);
+
+		canvas.addEventListener('touchmove', function(e){
+	        if (e.targetTouches.length == 1) { 
+	        var touch = e.targetTouches[0]; 
+	        	if((touch.pageX>xIni+10) && (touch.pageY> yIni-5) && (touch.pageY<yIni+5)){
+	            	moveThumnailImgs('right');
+	          	}
+	          
+		        if((touch.pageX<xIni-10) && (touch.pageY> yIni-5) && (touch.pageY<yIni+5)){
+		         	moveThumnailImgs('left');    
+		        } 
+	     	}
+	    }, false); 
+	}
+
+}//galeriaImagenesPost()
+
 
 
 /*--------------------------------------------------------------

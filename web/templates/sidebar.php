@@ -24,7 +24,7 @@ switch ( $pageActual ) {
 
 	case 'noticias':
 		$widgets = array( 
-			'bienvenidos', 'niveles', 'campus', 'calendario', 'edad-feliz', 'xhendra', 'contacto'
+			'bienvenidos', 'niveles', 'campus', 'edad-feliz', 'calendario', 'contacto'
 		);
 		break;
 
