@@ -95,17 +95,17 @@ $(document).ready(function(){
         });//cierre ajax
 	});
 
-	//institucional, altura de parrafo
+	/*
+	 * institucional, leer completo
+	 */
 	var parrafoInstitucional = $('.read-more-wrapper');
 	var stdHeightParrafoInst = parrafoInstitucional.css( 'height' );
-
+	var alturaCompleta = parrafoInstitucional.prop('scrollHeight') + 'px';
+	
 	//al hacer clic se amplia el parrafo para leerlo completo
 	$('.read-more-button-institucional').click(function(){
 		
 		if ( parrafoInstitucional.css( 'height' ) == stdHeightParrafoInst ) {
-		parrafoInstitucional.css( 'height', 'auto' )
-		var alturaCompleta = $('.read-more-wrapper').height() + 'px';
-		parrafoInstitucional.css( 'height', stdHeightParrafoInst );
 
 		parrafoInstitucional.animate({
 			 'height' : alturaCompleta 
@@ -137,8 +137,8 @@ $(window).on('load', function(){
 	//si es noticias busca iniciar galeria:
 
 	if (actualPage == 'noticias') {
-	galeriaPost = new galeriaImagenesPost( $('.post-galeria-wrapper') );
-galeriaPost.startGaleriaPost();
+		galeriaPost = new galeriaImagenesPost( $('.post-galeria-wrapper') );
+		galeriaPost.startGaleriaPost();
 	}
 
 	/*
@@ -209,9 +209,8 @@ $(document).ready(function(){
 		var menu = $('.main-menu');
 
 		if ( menu.height() == 0 ) {
-			menu.css('height', 'auto');
-			var menuOpen = menu.height() + 'px';
-			menu.css('height', '0');
+			var menuOpen = menu.prop('scrollHeight') + 'px';
+			
 			menu.animate({
 				'height' : menuOpen
 			});
@@ -229,10 +228,8 @@ $(document).ready(function(){
 			e.preventDefault();
 			menu = $(this).closest('li').find('.submenu');
 			
-			if ( menu.height() == 0 ) {
-				menu.css('height', 'auto');
-				var menuOpen = menu.height() + 'px';
-				menu.css('height', '0');
+			if ( menu.height() == 0 ) {				
+				var menuOpen = menu.prop('scrollHeight') + 'px';
 				menu.animate({
 					'height' : menuOpen
 				});
@@ -649,7 +646,7 @@ function galeriaImagenesPost ( galeria, speedTransition, speedAnimation, tipoTra
 		funciontes touch
 	*/
 
-	if ( window.innerWidth > 769 ) {
+	/*if ( window.innerWidth < 769 ) {
 	    var xIni;
 		var yIni;
 	    //var canvas = document.getElementsByClassName('galeria-main-image')[0];
@@ -679,7 +676,7 @@ function galeriaImagenesPost ( galeria, speedTransition, speedAnimation, tipoTra
 		        } 
 	     	}
 	    }, false); 
-	}
+	}*/
 
 }//galeriaImagenesPost()
 
@@ -772,9 +769,7 @@ function acordion( contenedor, open, collapse ) {
 
 	//funcion interna que calcula todas las alturas
 	var altura = function( item ) {
-		$(item).css('height', 'auto');
-		var altura = $(item).height() + 'px';
-		$(item).css('height', '0');
+		var altura = $(item).prop('scrollHeight') + 'px';
 		return altura;
 	}
 
