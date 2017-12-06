@@ -22,26 +22,24 @@ var uploadsUrl = baseUrl + '/galeria'
 var functionsDir = baseUrl + '/inc';
 var actualPage;
 //variables que identifican los navegadores de microsoft
-var es_ie = navigator.userAgent.indexOf("MSIE") > -1 ;
-var es_edge = window.navigator.userAgent.indexOf("Edge") > -1
+//var es_ie = navigator.userAgent.indexOf("MSIE") > -1 ;
+//var es_edge = window.navigator.userAgent.indexOf("Edge") > -1
 
 
 $(document).ready(function(){
 	actualPage = $('body').attr('data-page');
 
-
+	if ( document.getElementById('acordionNivelWidget') != null ) {
 	//inicializa los acordeones de niveles del sidebar
-	var widgetAcordion = new acordion( $('#acordionNivelWidget'), true, true );
-		widgetAcordion.initAcordion();
+	var widgetAcordion = new acordion( $('#acordionNivelWidget'), 'open', 'active' );
+		widgetAcordion.initAcordion();	
+	}
 
-	//inicializa los acordeones de institucional
-	if( es_edge || es_ie ){
-		//si es ie tiene que estar abierto
-		var autoridadesAcordion = new acordion( $('#acordionAutoridades'), true);
-		autoridadesAcordion.initAcordion();
-	} else {
-		var autoridadesAcordion = new acordion( $('#acordionAutoridades'), true );
-		autoridadesAcordion.initAcordion();
+	if ( document.getElementById('acordionAutoridades') != null ) {
+		//inicializa los acordeones de institucional
+		var autoridadesAcordion = new acordion( $('#acordionAutoridades') );
+			autoridadesAcordion.initAcordion();
+		
 	}
 	
 
@@ -685,7 +683,6 @@ function galeriaImagenesPost ( galeria, speedTransition, speedAnimation, tipoTra
 /*--------------------------------------------------------------
 5.0 ACORDION
 --------------------------------------------------------------*/
-
 //función acordion modo "objeto"
 //primer parametro id o identificador del contenedor
 //segundo parametro, si por defecto hay uno abierto, por defecto ninguno abierto
@@ -693,8 +690,8 @@ function galeriaImagenesPost ( galeria, speedTransition, speedAnimation, tipoTra
 function acordion( contenedor, open, collapse ) {
 	//parametros
 	this.contenedor = contenedor;
-	open || ( open = false );
-	collapse || ( collapse = false );
+	open || ( open = 'close' );//u open
+	collapse || ( collapse = 'false' );//active
 
 	var items = $(contenedor).find('.acordion-content');
 	var cantItems = items.length;
@@ -705,14 +702,14 @@ function acordion( contenedor, open, collapse ) {
 	acordion.prototype.initAcordion = function () {
 		//si es false, no hay nada que hacer
 		//si es true, habría que abrir el primer tab
-		if (open) {
+		if (open == 'open' ) {
 			
 			openItem( items[0] );
 			toggleOpenClass(items[0]);
 			
 		}
  
-		
+				
 		iconOpenClose();	
 		
 	}
@@ -720,13 +717,14 @@ function acordion( contenedor, open, collapse ) {
 
 	//al hacer clic en titulo se abre acordeon
 	$(toggles).click(function(){
+
 		//busca el contenedor para abrir o cerrar
 		var elementToOpen = $(this).next();
 		
 		if ( elementToOpen.height() == 0 ) {
 		
 			//si collapse es true cerrar el que esta abierto
-			if (collapse) {
+			if (collapse == 'active') {
 				var abierto = $('.acordeon-open');
 				closeItem(abierto);
 				toggleOpenClass(abierto);
@@ -736,6 +734,7 @@ function acordion( contenedor, open, collapse ) {
 			} else {
 				//si no es collpase, simplemente lo abre
 				openItem(elementToOpen);
+				toggleOpenClass(elementToOpen);
 				iconOpenClose();
 
 			}
@@ -744,7 +743,7 @@ function acordion( contenedor, open, collapse ) {
 		} else {
 			
 			//si collapse es true hay que abrir uno por defecto, el primero
-			if (collapse) {
+			if (collapse  == 'active') {
 				closeItem(elementToOpen);
 				toggleOpenClass(elementToOpen);
 				openItem( items[0] );
@@ -753,6 +752,7 @@ function acordion( contenedor, open, collapse ) {
 			} else {
 				//si no es collpase, simplemente lo cierra
 				closeItem(elementToOpen);
+				toggleOpenClass(elementToOpen);
 				iconOpenClose();
 			}
 			
@@ -804,7 +804,6 @@ function acordion( contenedor, open, collapse ) {
 	var iconOpenClose = function () {
 		var icon = $('.title-acordion .icon-open');//icono más y menos
 		icon.each(function(){
-			//if ( $(this.parentElement).next().height() == 0 ) {
 			if ( $(this.parentElement).next().hasClass('acordeon-open') ) {
 				$(this).text('-');
 			} else {
