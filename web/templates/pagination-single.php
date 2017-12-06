@@ -12,7 +12,7 @@ for ($i=0; $i < count($data); $i++) {
 						<?php echo $post['post_titulo']; ?>			
 					</h1>
 					<p>
-						<?php echo preparaResumen($post); ?>			
+						<?php echo acortaTexto( preparaResumen($post), 18 ); ?>			
 					</p>
 				</div>
 				<figure>
