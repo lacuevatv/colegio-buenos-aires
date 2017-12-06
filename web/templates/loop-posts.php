@@ -5,7 +5,7 @@
 $resumen = preparaResumen( $data );
 $fecha = tuneandoFecha( $data['post_fecha'] );
 ?>
-<article class="post-in-loop animation-element fade-in">
+<article class="post-in-loop animation-element fade-in-scroll">
 	
 	<div class="title-post-wrapper">
 		

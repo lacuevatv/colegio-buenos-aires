@@ -95,6 +95,15 @@ q {
 	border-bottom: 2px solid $color-verde-agua;
 }
 
+.subtitulo_seccion {
+	border-bottom: 2px solid $color-verde-agua;
+	font-size: 170%;
+    padding-bottom: 10px;
+    @media (min-width: $md) {
+	    font-size: 200%;
+	}
+}
+
 .main-title-header {
 	padding-top: 50px;
 	padding-bottom: 20px;
@@ -119,4 +128,28 @@ q {
 			color: $color-blanco;
 		}
 	}
+}
+
+.niveles-header {
+	padding-top: 50px;
+	padding-bottom: 20px;
+	@media (min-width: $md) {
+		background-color: $color-azul-titulos;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center 45%;
+		padding-top: 10vh;
+		padding-bottom: 10vh;
+	}
+
+	h1 {
+		text-transform: uppercase;
+		color: $color-blanco;
+		padding-top: 10vh;
+	}
+
+	p {
+		color: $color-blanco;
+	}
+
 }

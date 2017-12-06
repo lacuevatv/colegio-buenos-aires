@@ -4,7 +4,7 @@
 
 for ($i=0; $i < count($data); $i++) { 
 	$post = $data[$i]; ?>
-	<li class="otras-noticia-item">
+	<li class="otras-noticia-item animation-element fade-in-scroll">
 		<a href="<?php echo MAINSURL .'/'.$post['post_categoria'].'/'. $post['post_url']; ?>" title="<?php echo $post['post_titulo']; ?>">
 			<article>
 				<div class="otra-noticia-data">

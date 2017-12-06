@@ -2,6 +2,7 @@
 (Sitio auto administrable)
 
 ## Versiones:
+* 0.4.9 - ARMANDO PAGINAS: Niveles. 4 templates: Gral, y los tres niveles. Falta terminar, ya tengo la estructura, falta ir completando. Algunos templates que se cargan ahí se ven en otras páginas.
 * 0.4.8 - Correcciones responsive y de script. Mejoré el script del acordion agregando scrollHeigt para conocer la altura de los elementos.
 * 0.4.7 - ARMANDO PAGINAS: Single post, noticias y edad feliz. Tiene opción imagen destacada, video y galería de imagenes (CHEQUEAR SI FUNCIONA BIEN EL TOUCH)
 * 0.4.6 - Funcíón show menu, cree una serie de menus ocultos que están en la ultima parte del array, para mostrar en el footer, pero no en el menú de arriba

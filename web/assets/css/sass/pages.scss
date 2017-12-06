@@ -39,6 +39,28 @@
 	}
 }
 
+.separador-background {
+	background-color: $color-transparente;
+	color: $color-blanco;
+	text-align: center;
+	padding: 30px 5%;
+	h3 {
+		color: $color-blanco!important;		
+		font-size: 150%;
+		@media (min-width: $md) {
+			font-size: 170%;
+		}
+	}
+
+	p {
+		font-size: 80%;
+    	margin-bottom: 30px;
+    	@media (min-width: $md) {
+			font-size: 100%;
+		}
+	}
+}
+
 
 /*CONTACTO*/
 
@@ -689,4 +711,156 @@
 	@media (min-width: $sm) {
 		top: -7px;
 	}
+}
+
+/*NIVELES*/
+.niveles {
+	.nivel-intro {
+		margin-bottom: 30px;
+
+		.msj-bienvenida {
+			margin-bottom: 50px;
+			text-align: justify;
+
+			h4 {
+				text-transform: uppercase;
+				font-weight: $fuente-bold;
+			}
+		}
+
+		.nivel-horario-titulo{
+			color: $color-rosa;
+			text-transform: uppercase;
+			text-align: center!important;
+			margin-bottom: 0;
+		}
+
+		.niveles-horario {
+			text-align: center;
+			padding: 0 50px;
+			margin-bottom: 30px;
+			font-size: 120%;
+		}
+	}//.nivel-intro
+
+	.nivel-detalles {
+		margin: 30px 0;
+	}//.nivel-detalles
+
+	.nivel-certificaciones {
+		margin: 30px 0;
+	}//.nivel-certificaciones
+
+	.nivel-proyecto {
+		position: relative;
+		.texto-proyecto-wrapper {
+			padding: 50px 0;
+			text-align: justify;
+			p {
+				font-weight: $fuente-bold;
+				@media (min-width: $md) {
+					padding: 50px 0;
+			    	font-size: 150%;
+			    }
+			}
+		}
+
+	}//.nivel-proyecto
+	.nivel-talleres {
+		margin: 30px 0;
+	}//.nivel-talleres
+
+	.nivel-deportes {
+		margin: 80px 0;
+
+		.nivel-deportes-wrapper {
+			overflow: hidden;
+			@media (min-width: $md) {
+				display: flex;
+				display: -o-flex;
+				display: -ms-flex;
+				display: -moz-flex;
+				display: -webkit-flex;
+				align-items: center;
+				-webkit-justify-content: space-between;
+				-moz-justify-content: space-between;
+				-ms-justify-content: space-between;
+				-o-justify-content: space-between;
+				justify-content: space-between;
+
+			}
+			.nivel-imagen-deportes {
+				overflow: hidden;
+				height: 200px;
+				margin-bottom: 30px;
+				@media (min-width: $sm) {
+					height: 300px;
+				}
+				@media (min-width: $md) {
+					height: 500px;
+					width: 35%;
+					-webkit-align-self: flex-start;
+					-moz-align-self: flex-start;
+					-ms-align-self: flex-start;
+					-o-align-self: flex-start;
+					align-self: flex-start;
+				}
+
+				img {
+					width: 100%;
+					@media (min-width: $sm) {
+						-webkit-transform: translateY(-100px);
+						-moz-transform: translateY(-100px);
+						-ms-transform: translateY(-100px);
+						-o-transform: translateY(-100px);
+						transform: translateY(-100px);
+					}
+					@media (min-width: $md) {
+						-webkit-transform: translateY(0);
+						-moz-transform: translateY(0);
+						-ms-transform: translateY(0);
+						-o-transform: translateY(0);
+						transform: translateY(0);
+						-webkit-transform: translateX(-200px);
+						-moz-transform: translateX(-200px);
+						-ms-transform: translateX(-200px);
+						-o-transform: translateX(-200px);
+						transform: translateX(-200px);
+						width: auto;
+					}
+				}
+			}
+
+			.nivel-data-deportes {
+				@media (min-width: $md) {
+					width: 60%;
+					-webkit-align-self: flex-start;
+					-moz-align-self: flex-start;
+					-ms-align-self: flex-start;
+					-o-align-self: flex-start;
+					align-self: flex-start;
+				}
+				p {
+					margin-top: 0;
+					text-align: justify;
+					margin-bottom: 20px;
+				}
+			}
+
+		}//.nivel-deportes-wrapper
+	}//.nivel-deportes
+
+	.nivel-documentacion {
+		margin: 30px 0;
+	}//.nivel-documentacion
+
+}//.niveles
+
+.separador-inscribite {
+	margin: 60px 0; 
+	background: url(../images/separador-inscribite.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position-x: center;
+	background-position-y: center;
 }

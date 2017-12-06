@@ -5,12 +5,12 @@
  * @ver 1.0
  --------------------------------------------------------------
 >>> TABLE OF CONTENTS:
-1.0 INIT //variables generales
+1.0 INIT //variables generales e inicio de funciones
 2.0 NAVIGATION
 3.0 FORMS
 4.0 GALERIA IMAGENES
-5.0 TABS
-6.0 
+5.0 ACORDION
+6.0 TABS
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -29,21 +29,56 @@ var actualPage;
 $(document).ready(function(){
 	actualPage = $('body').attr('data-page');
 
+
+/*
+ * Inicio de acordeones
+*/
 	if ( document.getElementById('acordionNivelWidget') != null ) {
-	//inicializa los acordeones de niveles del sidebar
-	var widgetAcordion = new acordion( $('#acordionNivelWidget'), 'open', 'active' );
-		widgetAcordion.initAcordion();	
+	
+		//inicializa los acordeones de niveles del sidebar
+		if (actualPage == 'niveles' ) {
+			//en la pagina niveles los inicializa a todos juntos por su clase
+			var nivelesAcordion = new acordion( $('.acordion'), 'open' );
+			nivelesAcordion.initAcordion();
+		} else {
+			//en las otras paginas se inicializa por el id
+			var widgetAcordion = new acordion( $('#acordionNivelWidget'), 'open', 'active' );
+			widgetAcordion.initAcordion();	
+			console.log('acordeon-otros')
+		}
 	}
 
 	if ( document.getElementById('acordionAutoridades') != null ) {
 		//inicializa los acordeones de institucional
 		var autoridadesAcordion = new acordion( $('#acordionAutoridades') );
 			autoridadesAcordion.initAcordion();
-		
 	}
 	
+	/*
+	 * institucional, leer completo, es una especie de acordeon también
+	 */
+	var parrafoInstitucional = $('.read-more-wrapper');
+	var stdHeightParrafoInst = parrafoInstitucional.css( 'height' );
+	var alturaCompleta = parrafoInstitucional.prop('scrollHeight') + 'px';
+	
+	//al hacer clic se amplia el parrafo para leerlo completo
+	$('.read-more-button-institucional').click(function(){
+		
+		if ( parrafoInstitucional.css( 'height' ) == stdHeightParrafoInst ) {
 
-	//clic boton cargar mas
+		parrafoInstitucional.animate({
+			 'height' : alturaCompleta 
+			},2000);
+		} else {
+			parrafoInstitucional.animate({
+			 'height' : stdHeightParrafoInst 
+			},2000);
+		}
+	});
+
+	/*
+	 * clic boton cargar mas noticias
+	*/
 	$(document).on('click', '.btn-load-more-news', function( e ){
 		e.preventDefault();
 		var btn = this;
@@ -93,35 +128,13 @@ $(document).ready(function(){
         });//cierre ajax
 	});
 
-	/*
-	 * institucional, leer completo
-	 */
-	var parrafoInstitucional = $('.read-more-wrapper');
-	var stdHeightParrafoInst = parrafoInstitucional.css( 'height' );
-	var alturaCompleta = parrafoInstitucional.prop('scrollHeight') + 'px';
 	
-	//al hacer clic se amplia el parrafo para leerlo completo
-	$('.read-more-button-institucional').click(function(){
-		
-		if ( parrafoInstitucional.css( 'height' ) == stdHeightParrafoInst ) {
-
-		parrafoInstitucional.animate({
-			 'height' : alturaCompleta 
-			},2000);
-		} else {
-			parrafoInstitucional.animate({
-			 'height' : stdHeightParrafoInst 
-			},2000);
-		}
-	});
-	
-	//hover, single post
 
 
 });//on-ready
 
 
-//onload para todo lo que funciona con imágenes
+//onload para galería de imágenes y animaciónes
 $(window).on('load', function(){
 
 	/*
@@ -186,11 +199,11 @@ $(document).ready(function(){
 	$(window).scroll(function(){
         if ($(window).scrollTop() > 20) {
         	$('.main-nav').addClass('nav-collapse-fixed');
-        	$('.inner-wrapper').addClass('padding-fixed');
+        	//$('.inner-wrapper').addClass('padding-fixed');
             
         } else {
            	$('.main-nav').removeClass('nav-collapse-fixed');
-            $('.inner-wrapper').removeClass('padding-fixed');
+            //$('.inner-wrapper').removeClass('padding-fixed');
         }
 
 		//scroll top button fixed
@@ -645,35 +658,7 @@ function galeriaImagenesPost ( galeria, speedTransition, speedAnimation, tipoTra
 	*/
 
 	/*if ( window.innerWidth < 769 ) {
-	    var xIni;
-		var yIni;
-	    //var canvas = document.getElementsByClassName('galeria-main-image')[0];
-
 	    
-		var	canvas = document.getElementsByClassName('main-image-wrapper')[0];    	
-	    
-
-		canvas.addEventListener('touchstart', function(e){
-	        if (e.targetTouches.length == 1) { 
-	        var touch = e.targetTouches[0]; 
-		        xIni = touch.pageX;
-			    yIni = touch.pageY;
-			    console.log(xIni);
-	 	    }
-	    }, false);
-
-		canvas.addEventListener('touchmove', function(e){
-	        if (e.targetTouches.length == 1) { 
-	        var touch = e.targetTouches[0]; 
-	        	if((touch.pageX>xIni+10) && (touch.pageY> yIni-5) && (touch.pageY<yIni+5)){
-	            	moveThumnailImgs('right');
-	          	}
-	          
-		        if((touch.pageX<xIni-10) && (touch.pageY> yIni-5) && (touch.pageY<yIni+5)){
-		         	moveThumnailImgs('left');    
-		        } 
-	     	}
-	    }, false); 
 	}*/
 
 }//galeriaImagenesPost()

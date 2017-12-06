@@ -24,7 +24,7 @@ if ( $data['post_galeria'] == '1' ) {
 <?php if ($video) : ?>
 
 <!-- VIDEO -->	
-	<div class="post-video-wrapper">
+	<div class="post-video-wrapper animation-element fade-in">
 		<iframe src="https://www.youtube.com/embed/<?php echo $videoUrl; ?>" frameborder="0" allowfullscreen width="100%" height="100%"></iframe>
 	</div>
 
@@ -61,19 +61,19 @@ if ( $data['post_galeria'] == '1' ) {
 <?php else : ?>
 <!-- IMAGEN DESTACADA-->	
 
-	<figure>
+	<figure class="animation-element fade-in-scroll">
 		<img src="<?php echo UPLOADSURL . '/' . $data['post_imagen']; ?>" alt="<?php echo $data['post_titulo']; ?>" class="image-responsive">
 	</figure>
 <?php endif; ?>
 
 <!-- TEXTO CONTENIDO -->	
 
-<div class="content-wrapper">
+<div class="content-wrapper animation-element fade-in-scroll">
 	<?php echo $data['post_contenido']; ?>
 </div>
 
 <footer class="single-post-footer">
-	<div class="share-post">
+	<div class="share-post animation-element fade-in-scroll">
 		<h3>
 			¡Compartilo en las redes!
 		</h3>

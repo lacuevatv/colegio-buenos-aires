@@ -131,6 +131,43 @@
     }
 }
 
+
+
+.icon-colectivo {
+	@extend .icon-colectivoycalculadora;
+	background: url(../images/colectivo.svg);
+}
+
+.icon-calculadora {
+	@extend .icon-colectivoycalculadora;
+	background: url(../images/calculadora.svg);
+}
+
+
+.icon-colectivoycalculadora {
+	display: block;
+    width: 100%;
+    height: 90px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    @media (min-width: $sm) {
+    	height: 170px;
+    }
+    @media (min-width: $md) {
+    	height: 170px;
+    }
+    @media (min-width: $lg) {
+    	height: 230px;
+    }
+    @media (min-width: $xlg) {
+    	height: 310px;
+    }
+}
+
+
+
+
 /*
  ******** BOTONES **********
 */

@@ -219,7 +219,8 @@ html, body {
     .main-content-page {
       width: 70%;
       padding-right: 30px;
-      position: relative; } }
+      position: relative;
+      flex-grow: 1; } }
 
 .row {
   display: block; }
@@ -381,6 +382,14 @@ q {
 .subtitulo_clasico {
   border-bottom: 2px solid #27b49a; }
 
+.subtitulo_seccion {
+  border-bottom: 2px solid #27b49a;
+  font-size: 170%;
+  padding-bottom: 10px; }
+  @media (min-width: 992px) {
+    .subtitulo_seccion {
+      font-size: 200%; } }
+
 .main-title-header {
   padding-top: 50px;
   padding-bottom: 20px; }
@@ -402,6 +411,24 @@ q {
     @media (min-width: 992px) {
       .main-title-header h1 {
         color: #fff; } }
+
+.niveles-header {
+  padding-top: 50px;
+  padding-bottom: 20px; }
+  @media (min-width: 992px) {
+    .niveles-header {
+      background-color: #011a29;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center 45%;
+      padding-top: 10vh;
+      padding-bottom: 10vh; } }
+  .niveles-header h1 {
+    text-transform: uppercase;
+    color: #fff;
+    padding-top: 10vh; }
+  .niveles-header p {
+    color: #fff; }
 
 /*--------------------------------------------------------------
 7.0 404
@@ -521,6 +548,32 @@ q {
     vertical-align: middle;
     background: url(../images/sprite.png);
     background-position: -161px -138px; }
+
+.icon-colectivo {
+  background: url(../images/colectivo.svg); }
+
+.icon-calculadora {
+  background: url(../images/calculadora.svg); }
+
+.icon-colectivoycalculadora, .icon-colectivo, .icon-calculadora {
+  display: block;
+  width: 100%;
+  height: 90px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; }
+  @media (min-width: 768px) {
+    .icon-colectivoycalculadora, .icon-colectivo, .icon-calculadora {
+      height: 170px; } }
+  @media (min-width: 992px) {
+    .icon-colectivoycalculadora, .icon-colectivo, .icon-calculadora {
+      height: 170px; } }
+  @media (min-width: 1200px) {
+    .icon-colectivoycalculadora, .icon-colectivo, .icon-calculadora {
+      height: 230px; } }
+  @media (min-width: 1500px) {
+    .icon-colectivoycalculadora, .icon-colectivo, .icon-calculadora {
+      height: 310px; } }
 
 /*
  ******** BOTONES **********
@@ -828,10 +881,10 @@ q {
   position: relative;
   height: 75px;
   background-color: rgba(1, 26, 41, 0.85);
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -ms-transition: background-color 0.5s;
+  transition: background-color 0.5s;
   /*LOGO*/
   /*TOGLE BUTTON*/ }
   @media (min-width: 768px) {
@@ -1245,6 +1298,18 @@ q {
 .acordion-color-verde {
   background-color: #27b49a !important; }
 
+.acordion-color-naranja {
+  background-color: #ea9600 !important; }
+
+.acordion-color-azul {
+  background-color: #2b426e !important; }
+
+.acordion-color-verde2 {
+  background-color: #52ba58 !important; }
+
+.acordion-color-gris {
+  background-color: rgba(168, 168, 168, 0.9) !important; }
+
 /*--------------------------------------------------------------
 12.0 PAGES
 --------------------------------------------------------------*/
@@ -1285,6 +1350,24 @@ q {
   padding: 30px 20%; }
   .separador-background-transparent h3 {
     color: #fff !important; }
+
+.separador-background {
+  background-color: rgba(1, 26, 41, 0.3);
+  color: #fff;
+  text-align: center;
+  padding: 30px 5%; }
+  .separador-background h3 {
+    color: #fff !important;
+    font-size: 150%; }
+    @media (min-width: 992px) {
+      .separador-background h3 {
+        font-size: 170%; } }
+  .separador-background p {
+    font-size: 80%;
+    margin-bottom: 30px; }
+    @media (min-width: 992px) {
+      .separador-background p {
+        font-size: 100%; } }
 
 /*CONTACTO*/
 #contact-page .contact-form-wrapper {
@@ -1804,6 +1887,120 @@ q {
 @media (min-width: 768px) {
   .twitter-arreglo {
     top: -7px; } }
+
+/*NIVELES*/
+.niveles .nivel-intro {
+  margin-bottom: 30px; }
+  .niveles .nivel-intro .msj-bienvenida {
+    margin-bottom: 50px;
+    text-align: justify; }
+    .niveles .nivel-intro .msj-bienvenida h4 {
+      text-transform: uppercase;
+      font-weight: 700; }
+  .niveles .nivel-intro .nivel-horario-titulo {
+    color: #e10453;
+    text-transform: uppercase;
+    text-align: center !important;
+    margin-bottom: 0; }
+  .niveles .nivel-intro .niveles-horario {
+    text-align: center;
+    padding: 0 50px;
+    margin-bottom: 30px;
+    font-size: 120%; }
+.niveles .nivel-detalles {
+  margin: 30px 0; }
+.niveles .nivel-certificaciones {
+  margin: 30px 0; }
+.niveles .nivel-proyecto {
+  position: relative; }
+  .niveles .nivel-proyecto .texto-proyecto-wrapper {
+    padding: 50px 0;
+    text-align: justify; }
+    .niveles .nivel-proyecto .texto-proyecto-wrapper p {
+      font-weight: 700; }
+      @media (min-width: 992px) {
+        .niveles .nivel-proyecto .texto-proyecto-wrapper p {
+          padding: 50px 0;
+          font-size: 150%; } }
+.niveles .nivel-talleres {
+  margin: 30px 0; }
+.niveles .nivel-deportes {
+  margin: 80px 0; }
+  .niveles .nivel-deportes .nivel-deportes-wrapper {
+    overflow: hidden; }
+    @media (min-width: 992px) {
+      .niveles .nivel-deportes .nivel-deportes-wrapper {
+        display: flex;
+        display: -o-flex;
+        display: -ms-flex;
+        display: -moz-flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+        -ms-justify-content: space-between;
+        -o-justify-content: space-between;
+        justify-content: space-between; } }
+    .niveles .nivel-deportes .nivel-deportes-wrapper .nivel-imagen-deportes {
+      overflow: hidden;
+      height: 200px;
+      margin-bottom: 30px; }
+      @media (min-width: 768px) {
+        .niveles .nivel-deportes .nivel-deportes-wrapper .nivel-imagen-deportes {
+          height: 300px; } }
+      @media (min-width: 992px) {
+        .niveles .nivel-deportes .nivel-deportes-wrapper .nivel-imagen-deportes {
+          height: 500px;
+          width: 35%;
+          -webkit-align-self: flex-start;
+          -moz-align-self: flex-start;
+          -ms-align-self: flex-start;
+          -o-align-self: flex-start;
+          align-self: flex-start; } }
+      .niveles .nivel-deportes .nivel-deportes-wrapper .nivel-imagen-deportes img {
+        width: 100%; }
+        @media (min-width: 768px) {
+          .niveles .nivel-deportes .nivel-deportes-wrapper .nivel-imagen-deportes img {
+            -webkit-transform: translateY(-100px);
+            -moz-transform: translateY(-100px);
+            -ms-transform: translateY(-100px);
+            -o-transform: translateY(-100px);
+            transform: translateY(-100px); } }
+        @media (min-width: 992px) {
+          .niveles .nivel-deportes .nivel-deportes-wrapper .nivel-imagen-deportes img {
+            -webkit-transform: translateY(0);
+            -moz-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -o-transform: translateY(0);
+            transform: translateY(0);
+            -webkit-transform: translateX(-200px);
+            -moz-transform: translateX(-200px);
+            -ms-transform: translateX(-200px);
+            -o-transform: translateX(-200px);
+            transform: translateX(-200px);
+            width: auto; } }
+    @media (min-width: 992px) {
+      .niveles .nivel-deportes .nivel-deportes-wrapper .nivel-data-deportes {
+        width: 60%;
+        -webkit-align-self: flex-start;
+        -moz-align-self: flex-start;
+        -ms-align-self: flex-start;
+        -o-align-self: flex-start;
+        align-self: flex-start; } }
+    .niveles .nivel-deportes .nivel-deportes-wrapper .nivel-data-deportes p {
+      margin-top: 0;
+      text-align: justify;
+      margin-bottom: 20px; }
+.niveles .nivel-documentacion {
+  margin: 30px 0; }
+
+.separador-inscribite {
+  margin: 60px 0;
+  background: url(../images/separador-inscribite.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center; }
 
 /*--------------------------------------------------------------
 13.0 ANIMATION
