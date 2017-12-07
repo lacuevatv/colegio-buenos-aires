@@ -5,55 +5,67 @@
  * Since 1.0
  * PAGE TEMPLATE: PAGINA TALLERES
 */
+
+
+
 $dispositivo = dispositivo();
 include 'header.php';
 ?>
 <!--- .inner-wrapper: contenido principal y específico del template -->
 <div class="inner-wrapper">
     
-    <header>
-    	<div class="container">
-	        <h1>Talleres</h1>
-	    </div>
-    </header>
+    <header><h1 class="sr-only">Talleres</h1></header>
    
     <div class="main-content-page-wrapper container">
 	    <div class="main-content-page">
-	    	<h1>colegio de buenos aires
-			<br>
-				<small>Fuente h1 small</small></h1>
 
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui <a href="#">officia</a> deserunt mollit anim id est laborum.
-			</p>
+    		<section id="talleres-inicial" class="talleres-section">
+    			<h2 class="subtitulo_clasico animation-element fade-in">
+	    			Inicial
+	    		</h2>
+	    		<div class="text-talleres">
+	    			<p>
+	    				Las actividades son de juego/tarea; se realizan proyectos mensuales favoreciendo al desarrollo del lenguaje oral, la expresión espontánea, ofreciéndoles diversas técnicas y elementos que orienten el desarrollo de la capacidad creadora.
+	    			</p>
+	    		</div>
+	    		<div id="talleres-inicial-tab" class="tabs-wrappers">
+	    			<?php getTemplate( 'contenido-talleres', 'inicial' ); ?>
+	    		</div>
 
-			<p>
-				<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui <a href="#">officia</a> deserunt mollit anim id est laborum.</small>
-				<a href="#" class="btn">Link</a>
-			</p>
+    		</section>
 
-			<h2>
-				Institucional h2<br>
-				<small>Fuente h2 small</small>
-			</h2>
+    		<section id="talleres-primaria" class="talleres-section">
+    			<h2 class="subtitulo_clasico animation-element fade-in">
+	    			Primaria
+	    		</h2>
 
-			<h3>
-				Fuente h3<br>
-				<small>Fuente h3 small</small>
-			</h3>
+	    		<div class="text-talleres">
+	    			<p>
+	    				La organización de los Talleres está orientada hacia la posibilidad de ampliar y profundizar en áreas del conocimiento, desde un espacio propicio para desarrollar las potencialidades y estimular la creatividad en diversas áreas.
+	    			</p>
+	    		</div>
+				<div id="talleres-primaria-tab" class="tabs-wrappers">
+    				<?php getTemplate( 'contenido-talleres', 'primaria' ); ?>
+				</div><!-- //.tabs-wrapper -->
+    		</section>
 
-			<h4>
-				Fuente h4<br>
-				<small>Fuente h4 small</small>
-			</h4>
+    		<section id="talleres-secundario" class="talleres-section">
+    			<h2 class="subtitulo_clasico animation-element fade-in">
+	    			Secundario
+	    		</h2>
 
-			<h5>
-				Fuente h5<br>
-				<small>Fuente h5 small</small>
-			</h5>
+	    		<div class="text-talleres">
+	    			<p>
+	    				Como complemento de la parte Programática o Curricular, el Colegio Buenos Aires ofrece a sus alumnos una serie de Talleres que enriquecen su formación a lo largo de toda la carrera, dándoles la posibilidad de canalizar todas sus inquietudes e inclinaciones, e inclusive, descubrir su vocación. También funcionan como apoyo de las materias programáticas, contribuyendo al acompañamiento personalizado que es tradición en nuestra institución.
+	    			</p>
+	    		</div>
 
-			<q>La escuela es el arma más poderosa que puedes usar para cambiar el mundo.</q>
-			<p>Nelson Mandela</p>
+	    		<div id="talleres-secundario-tab" class="tabs-wrappers">
+	    			<?php getTemplate( 'contenido-talleres', 'secundario' ); ?>
+	    		</div>
+
+    		</section>
+
 	    </div><!-- //.main-content-page -->
 
     <?php if ( $dispositivo == 'pc' )  : ?> 

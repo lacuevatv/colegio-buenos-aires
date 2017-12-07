@@ -59,6 +59,10 @@ $textoNiveles = array(
 			),
 		),
 	),
+	'complementaria' => array(
+		'inicial'    => '<p>A partir de Sala de 2 años se puede optar por la Jornada Complementaria con horarios extendidos en contra turno. Esta sala de Jornada Complementaria se conforma por nenes de las salas de 2 y 3 años o de 4 y 5 años  y  están a cargo dos docentes. Las actividades son de juego/tarea; se realizan proyectos mensuales favoreciendo al desarrollo del lenguaje oral, la expresión espontánea, ofreciéndoles diversas técnicas y elementos que orienten el desarrollo de la capacidad creadora. </p><p><strong>Almuerzo</strong>: pueden optar por la vianda individual  o  por el servicio de catering que ofrece el Colegio.<br> <strong>Materias Especiales</strong>: Inglés  y  Computación <em>(para las salas de 4 y 5 años)</em></p>',
+		'primaria'   => '<p>En nivel Primario se puede optar por la Jornada Complementaria con horarios extendidos en contra turno. La organización de los Talleres está orientada hacia la posibilidad de ampliar y profundizar en áreas del conocimiento, desde un espacio propicio para desarrollar las potencialidades y estimular la creatividad en diversas áreas.</p> <p><strong>Almuerzo</strong>: pueden optar por la vianda individual  o  por el servicio de catering que ofrece el Colegio.</p><p> <strong>Materias especiales</strong>: Educación Plástica,  Educación Física, Idioma extranjera, Informática, Comunicación Social el Taller de Tareas a cargo de maestras de grado para servir de apoyo en las diversas áreas del conocimiento.</p>',
+	),
 );
 
 $dispositivo = dispositivo();
@@ -152,36 +156,37 @@ if ( $slug == '' ) : ?>
 							Horario
 					</h3>
 	    			<div class="acordion-content">
-	    				<h4 class="nivel-horario-titulo">
-	    					Turno Mañana
-	    				</h4>
-	    				<p class="niveles-horario">
-	    					<strong>
-	    						Jornada Simple:	
-	    					</strong>
-	    						<?php echo $textoNiveles['textoHorario']['manana']['simple'][$slug]; ?>
-	    					<br>
-	    					<strong>
-	    						Jornada Complementaria:	
-	    					</strong>
-	    						<?php echo $textoNiveles['textoHorario']['manana']['complementaria'][$slug]; ?>
-	    					<br>
-	    				</p>
-	    				<h4 class="nivel-horario-titulo">
-	    					Turno Tarde
-	    				</h4>
-	    				<p class="niveles-horario">
-	    					<strong>
-	    						Jornada Simple:	
-	    					</strong>
-	    						<?php echo $textoNiveles['textoHorario']['manana']['simple'][$slug]; ?>
-	    					<br>
-	    					<strong>
-	    						Jornada Complementaria:	
-	    					</strong>
-	    						<?php echo $textoNiveles['textoHorario']['manana']['complementaria'][$slug]; ?>
-	    					<br>
-	    				</p>
+	    				<div class="acordion-container">
+		    				<h4 class="nivel-horario-titulo">
+		    					Turno Mañana
+		    				</h4>
+		    				<p class="niveles-horario">
+		    					<strong>
+		    						Jornada Simple:	
+		    					</strong>
+		    						<?php echo $textoNiveles['textoHorario']['manana']['simple'][$slug]; ?>
+		    					<br>
+		    					<strong>
+		    						Jornada Complementaria:	
+		    					</strong>
+		    						<?php echo $textoNiveles['textoHorario']['manana']['complementaria'][$slug]; ?>
+		    					<br>
+		    				</p>
+		    				<h4 class="nivel-horario-titulo">
+		    					Turno Tarde
+		    				</h4>
+		    				<p class="niveles-horario">
+		    					<strong>
+		    						Jornada Simple:	
+		    					</strong>
+		    						<?php echo $textoNiveles['textoHorario']['manana']['simple'][$slug]; ?>
+		    					<br>
+		    					<strong>
+		    						Jornada Complementaria:	
+		    					</strong>
+		    						<?php echo $textoNiveles['textoHorario']['manana']['complementaria'][$slug]; ?>
+		    				</p>
+		    			</div>
 	    			</div>
 
 	    		<?php if ( $slug != 'secundario') : ?>
@@ -190,9 +195,9 @@ if ( $slug == '' ) : ?>
 							Jornada Complementaria
 					</h3>
 	    			<div class="acordion-content">
-	    				<p>
-	    					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	    				</p>
+	    				<div class="acordion-container">
+	    					<?php echo $textoNiveles['complementaria'][$slug]; ?>
+	    				</div>
 	    			</div>
 	    		<?php endif; ?>
 	    		</div>
@@ -221,7 +226,7 @@ if ( $slug == '' ) : ?>
 
 		    	<div id="acordionDetalles" class="acordion">
 		    		
-		    		<?php getTemplate( 'niveles-detalle', $slug ); ?>
+			    		<?php getTemplate( 'niveles-detalle', $slug ); ?>
 
 	    		</div><!--- //.acordion -->
 
@@ -253,9 +258,9 @@ if ( $slug == '' ) : ?>
 		    </section>
 
 		    <section class="nivel-talleres">
-
-		    	<?php getTemplate( 'contenido-talleres', $slug ); ?>
-		    
+		    	<div class="tabs-wrappers">
+		    		<?php getTemplate( 'contenido-talleres', $slug ); ?>
+		    	</div>
 		    </section>
 
 		     <section class="nivel-deportes">

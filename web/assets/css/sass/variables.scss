@@ -47,7 +47,12 @@ $xlg: 1500px;
           box-shadow: $var;
 }
 
-
+@mixin transform($var) {
+  -webkit-transform: $var;
+     -moz-transform: $var;
+      -ms-transform: $var;
+          transform: $var;
+}
 /*
 @media (min-width: $md) {}
 -webkit-

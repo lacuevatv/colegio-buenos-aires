@@ -129,7 +129,25 @@ $(document).ready(function(){
 	});
 
 	
+	/*
+	 * TABS TALLERES
+	*/
 
+	if (actualPage == 'talleres') {
+		var talleresInicial = new talleresTabs( $('#talleres-inicial-tab') );
+		talleresInicial.initTalleres();
+
+		var talleresPrimaria = new talleresTabs( $('#talleres-primaria-tab') );
+		talleresPrimaria.initTalleres();
+
+		var talleresSecundaria = new talleresTabs( $('#talleres-secundario-tab') );
+		talleresSecundaria.initTalleres();
+	}
+	
+	if (actualPage == 'niveles') {
+		var talleres = new talleresTabs( );
+		talleres.initTalleres();
+	}
 
 });//on-ready
 
@@ -801,7 +819,84 @@ function acordion( contenedor, open, collapse ) {
 	
 
 /*--------------------------------------------------------------
-6.0 
+6.0  TABS TALLERES
 --------------------------------------------------------------*/
 
 //$(document).ready(function(){});
+
+//función Tabs talleres
+//primer parametro id o identificador del contenedor
+//segundo parametro, si por defecto hay uno abierto, por defecto ninguno abierto
+//tercer parametro, si se pueden abrir todos juntos o uno solo, por defecto todos juntos
+function talleresTabs( contenedor ) {
+	//parametros
+	contenedor || ( contenedor = $('.tabs-wrappers') );//u open
+	
+	var altura =  $(contenedor).height();//guarda la altura minima
+	var toggles = $(contenedor).find('.btn-tab');//boton donde se hace clic
+	var articles = $(contenedor).find('article');
+	//función que inicia las tabs
+	talleresTabs.prototype.initTalleres = function () {
+		
+		alturaContenedor(articles[0]);
+		//poner la clase active en el primer titulo activado
+		$(toggles[0]).addClass('title-active');
+		//poner la clase active en el primer articulo activado
+		$(articles[0]).addClass('contenido-taller-active');
+		
+	}
+
+
+	//al hacer clic en titulo se abre acordeon
+	$(toggles).click(function(event){
+		event.preventDefault();
+		
+		var id = $(this).attr('href');
+
+		alturaContenedor(id);
+		showHideTab(id);
+		destacarTitulo(this);
+		
+	});
+	
+	var showHideTab = function(element) {
+		//cierra los otros elementos
+		$(contenedor).find('.contenido-taller-active').removeClass('contenido-taller-active');
+		
+		//abre el elemento
+		$(contenedor).find(element).addClass('contenido-taller-active');
+	}
+
+	var destacarTitulo = function(element) {
+		//quita el destacado del otro titulo
+		$(contenedor).find('.title-active').removeClass('title-active');
+		
+		//abre el elemento
+		$(contenedor).find(element).addClass('title-active');
+	}
+
+	//ajuste altura elemento
+	var alturaContenedor = function( element ) {
+		newH = $(contenedor).find(element).height() + 40;
+		//si la nueva altura es mayor que la altura normal o la altura que esta ahora
+		if ( newH > altura || newH > contenedor.height() ) {
+			//contenedor.height(newH);
+			contenedor.animate({
+				'height':newH + 'px'
+			},1000)
+		} else {
+			//se pone el contenedor a la altura inicial
+			//contenedor.height(altura);
+			contenedor.animate({
+				'height': altura + 'px'
+			},1000)
+		}
+	}
+
+}
+
+/*
+	 * AJUSTE ALTURA TABS
+	 */
+	 var altura = $('.tabs-wrappers').prop('scrollHeight');
+	// $('.tabs-wrappers').height(altura);

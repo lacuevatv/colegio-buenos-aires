@@ -163,19 +163,14 @@
 .acordion-content {
 	background-color: $color-gris-claro;
 	font-size: 80%;
-	padding: 0 20px;
 	overflow: hidden;
 	height: 0;
-
-	p {
-		margin: 0;
-		padding-top: 20px;
-		padding-bottom: 20px;
+	.acordion-container {
+		padding: 20px 20px 20px;
 	}
 
 	a {
 		margin-top: 0;
-		margin-bottom: 20px;
 	}
 }
 

@@ -362,6 +362,8 @@ p {
     font-size: 80%; }
   p strong {
     font-weight: 700; }
+  p em {
+    font-style: italic; }
 
 q {
   font-size: 200%;
@@ -1281,16 +1283,12 @@ q {
 .acordion-content {
   background-color: #eeeded;
   font-size: 80%;
-  padding: 0 20px;
   overflow: hidden;
   height: 0; }
-  .acordion-content p {
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 20px; }
+  .acordion-content .acordion-container {
+    padding: 20px 20px 20px; }
   .acordion-content a {
-    margin-top: 0;
-    margin-bottom: 20px; }
+    margin-top: 0; }
 
 .acordion-color-celeste {
   background-color: #119ad5 !important; }
@@ -2002,6 +2000,82 @@ q {
   background-position-x: center;
   background-position-y: center; }
 
+/*TALLERES*/
+.talleres-section {
+  margin: 30px 0; }
+  .talleres-section .text-talleres {
+    margin: 30px 0; }
+
+.tabs-wrappers {
+  display: flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -ms-align-items: flex-start;
+  -o-align-items: flex-start;
+  align-items: flex-start; }
+  .tabs-wrappers .titles-tab {
+    width: 30%;
+    max-width: 205px; }
+    .tabs-wrappers .titles-tab li {
+      margin: 5px 0; }
+      .tabs-wrappers .titles-tab li:first-child {
+        margin-top: 0; }
+      .tabs-wrappers .titles-tab li a {
+        display: block;
+        background-color: #27b49a;
+        color: #fff;
+        font-size: 120%;
+        line-height: 120%;
+        text-align: center;
+        cursor: pointer;
+        padding: 10px 0; }
+        .tabs-wrappers .titles-tab li a:hover {
+          background-color: #ea9600; }
+      .tabs-wrappers .titles-tab li .title-active {
+        background-color: #2b426e; }
+  .tabs-wrappers .tab-content {
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    -ms-flex-grow: 1;
+    -o-flex-grow: 1;
+    flex-grow: 1;
+    width: 70%;
+    position: relative; }
+  .tabs-wrappers .contenido-taller {
+    position: absolute;
+    top: 0;
+    background: #eeeded;
+    padding: 20px 20px;
+    opacity: 0; }
+  .tabs-wrappers .contenido-taller-active {
+    animation-name: tab_content;
+    animation-duration: 1s;
+    animation-fill-mode: forwards; }
+
+@keyframes tab_content {
+  from {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    transform: translateY(50px); }
+  to {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px); } }
 /*--------------------------------------------------------------
 13.0 ANIMATION
 --------------------------------------------------------------*/
