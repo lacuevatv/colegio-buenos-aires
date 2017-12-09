@@ -487,3 +487,38 @@ function paginationSingle( $categoria, $cantPost, $exclude ) {
 
 	getTemplate( 'pagination-single', $posts);
 }
+
+//busca la documentación cargada
+function getDocumentation ( $section = 'none', $subSection = 'none' ) {
+	$connection = connectDB();
+	$tabla = 'docs';
+
+	$query  = "SELECT * FROM " .$tabla;
+	if ( $section != 'none' ) {	
+		$query .= " WHERE docs_seccion='" . $section . "'";
+	}
+	if ( $subSection != 'none' ) {
+		$query .= " AND docs_subsection = '".$subSection."'";
+	}
+	
+	$query .= " AND post_type = 'link' ORDER by docs_orden desc ";
+	
+	$result = mysqli_query($connection, $query);
+	
+	closeDataBase( $connection );
+
+	if ( $result->num_rows == 0 ) {
+		
+		echo '<li>Ningun archivo ha sido cargado todavía</li>';
+
+		return;
+	} else {
+
+		while ($row = $result->fetch_array()) {
+				$loop[] = $row;
+			}
+
+	}
+
+	getTemplate( 'template-documentacion', $loop );
+}

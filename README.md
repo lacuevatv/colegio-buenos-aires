@@ -2,6 +2,7 @@
 (Sitio auto administrable)
 
 ## Versiones:
+* 0.4.11 - ARMANDO PAGINAS: Niveles. Falta completar detalles y hacer una versión de talleres en acordeon para los móviles.
 * 0.4.10 - ARMANDO PAGINAS: Niveles. completé la parte de talleres, falta cargar la info
 * 0.4.9 - ARMANDO PAGINAS: Niveles. 4 templates: Gral, y los tres niveles. Falta terminar, ya tengo la estructura, falta ir completando. Algunos templates que se cargan ahí se ven en otras páginas.
 * 0.4.8 - Correcciones responsive y de script. Mejoré el script del acordion agregando scrollHeigt para conocer la altura de los elementos.

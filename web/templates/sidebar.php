@@ -45,6 +45,12 @@ switch ( $pageActual ) {
 			'bienvenidos', 'niveles', 'campus', 'noticias', 'calendario', 'edad-feliz', 'xhendra', 'contacto'
 		);
 		break;
+
+	case 'documentacion':
+		$widgets = array( 
+			'contacto', 'noticias', 'campus', 'xhendra', 
+		);
+	break;
 }
 
 ?>

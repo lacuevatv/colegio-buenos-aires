@@ -4,7 +4,7 @@ switch ( $data ) {
 	case 'inicial': ?>
 	<!-- DETALLES INICIAL -->
 		
-	<h3 class="title-acordion acordion-color-verde">
+	<h3 class="title-acordion acordion-color-verde animation-element slide-up">
 		<span class="icon-open"></span>
 			Salas de 2 y 3 años
 	</h3>
@@ -14,7 +14,7 @@ switch ( $data ) {
 		</p>
 	</div>
 
-	<h3 class="title-acordion acordion-color-naranja">
+	<h3 class="title-acordion acordion-color-naranja animation-element slide-up">
 		<span class="icon-open"></span>
 			Salas de 4 y 5 años
 	</h3>
@@ -24,7 +24,7 @@ switch ( $data ) {
 		</p>
 	</div>
 
-	<h3 class="title-acordion acordion-color-azul">
+	<h3 class="title-acordion acordion-color-azul animation-element slide-up">
 		<span class="icon-open"></span>
 			Idiomas
 	</h3>
@@ -34,7 +34,7 @@ switch ( $data ) {
 		</p>
 	</div>
 
-	<h3 class="title-acordion acordion-color-verde2">
+	<h3 class="title-acordion acordion-color-verde2 animation-element slide-up">
 		<span class="icon-open"></span>
 			Las nuevas tecnologías en el aula
 	</h3>

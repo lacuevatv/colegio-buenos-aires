@@ -34,6 +34,7 @@ define('LINK_EMAIL', '#');
 define('TELCOLEGIO', '4855 8289');
 define('GOOGLECALENDAR', '#');
 define('XHENDRA', '#');
+define('LINKINSCRIBITE', MAINSURL . '/contacto');
 
 //categoria para hacer loop
 global $categorias;

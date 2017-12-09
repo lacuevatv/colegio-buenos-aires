@@ -13,49 +13,41 @@ include 'header.php';
 <!--- .inner-wrapper: contenido principal y específico del template -->
 <div class="inner-wrapper">
     
-        <header>
-    	<div class="container">
-	        <h1>Certificaciones</h1>
-	    </div>
-    </header>
+    <header><h1 class="sr-only">Certificaciones</h1></header>
    
     <div class="main-content-page-wrapper container">
 	    <div class="main-content-page">
-	    	<h1>colegio de buenos aires
-			<br>
-				<small>Fuente h1 small</small></h1>
+	    	
+	    	<section class="talleres-section">
+    			<h2 class="subtitulo_clasico animation-element fade-in">
+	    			Certificaciones Primaria
+	    		</h2>
+	    		<div class="text-talleres">
+	    			<p>
+	    				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	    			</p>
+	    		</div>
+	    		<div class="certificaciones-wrappers">
+	    			<?php getTemplate( 'contenido-certificaciones', 'primaria' ); ?>
+	    		</div>
 
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui <a href="#">officia</a> deserunt mollit anim id est laborum.
-			</p>
+    		</section>
 
-			<p>
-				<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui <a href="#">officia</a> deserunt mollit anim id est laborum.</small>
-				<a href="#" class="btn">Link</a>
-			</p>
+    		<section class="talleres-section">
+    			<h2 class="subtitulo_clasico animation-element fade-in">
+	    			Certificaciones Secundario
+	    		</h2>
+	    		<div class="text-talleres">
+	    			<p>
+	    				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	    			</p>
+	    		</div>
+	    		<div class="certificaciones-wrappers">
+	    			<?php getTemplate( 'contenido-certificaciones', 'secundario' ); ?>
+	    		</div>
 
-			<h2>
-				Institucional h2<br>
-				<small>Fuente h2 small</small>
-			</h2>
+    		</section>
 
-			<h3>
-				Fuente h3<br>
-				<small>Fuente h3 small</small>
-			</h3>
-
-			<h4>
-				Fuente h4<br>
-				<small>Fuente h4 small</small>
-			</h4>
-
-			<h5>
-				Fuente h5<br>
-				<small>Fuente h5 small</small>
-			</h5>
-
-			<q>La escuela es el arma más poderosa que puedes usar para cambiar el mundo.</q>
-			<p>Nelson Mandela</p>
 	    </div><!-- //.main-content-page -->
 
     <?php if ( $dispositivo == 'pc' )  : ?> 

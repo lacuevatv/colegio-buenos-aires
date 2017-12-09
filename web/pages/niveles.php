@@ -122,18 +122,18 @@ if ( $slug == '' ) : ?>
 
 	    	<?php if ( $slug == 'inicial' ) : ?>
 		    	
-		    	<p class="msj-bienvenida">
+		    	<p class="msj-bienvenida animation-element fade-in-scroll">
 		    		El colegio Buenos Aires se propone en el Nivel Inicial propiciar la integración de los niños y sus familias al sistema educativo institucional, fortaleciendo vínculos a través del diálogo constructivo y el respeto mutuo, en un ambiente colaborativo y en un clima de afecto y confianza, a fin de afianzar la seguridad en los niños desde las áreas: cognitiva, social y expresiva; ofreciendo oportunidades de actividades educativas que promueven el desarrollo de las capacidades creativas y el placer por el conocimiento desde la construcción de escenarios lúdicos que le permitan desarrollar sus capacidades individuales y sociales.
 		    	</p>
 
 	    	<?php elseif ( $slug == 'primaria' ) : ?>
 	    		
-	    		<p class="msj-bienvenida">
+	    		<p class="msj-bienvenida animation-element fade-in-scroll">
 	    			El Colegio Buenos Aires en el Nivel Primario, ofrece una educación común y laica, con características inclusivas y de un pensamiento abierto a los cambios socio-culturales que demandan nuevas pedagogías y nuevas tecnologías para lograr una enseñanza de aprendizajes significativos en nuestros alumnos. Como propósito fundamental, nuestra institución, promueve una educación integral, pensada para desarrollar las capacidades de nuestros niños en las diversas áreas, respetando las necesidades individuales y los intereses comunes; teniendo como criterio central, fortalecer los vínculos entre los niños y con las familias, a través del diálogo constructivo y el respeto mutuo, ofreciendo espacios propicios, en un ambiente social colaborativo y en un clima de afecto y confianza, pensado para que trascienda el ámbito escolar, colaborando en su vida social, creando una conciencia colectiva de la importancia del cuidado del medio social y ambiental en el cual los niños crecen y desarrollan sus oportunidades como individuos únicos y singulares.
 	    		</p>
 
 	    	<?php else : ?>
-	    		<div class="msj-bienvenida">
+	    		<div class="msj-bienvenida animation-element fade-in-scroll">
 		    		<h4>
 		    			El futuro está cerca, vayamos a su encuentro.
 		    		</h4>
@@ -150,7 +150,7 @@ if ( $slug == '' ) : ?>
 	    	<?php endif; ?>
 		    		
 
-		    	<div id="acordionNiveles" class="acordion">
+		    	<div id="acordionNiveles" class="acordion fade-in-scroll">
 		    		<h3 class="title-acordion">
 						<span class="icon-open"></span>
 							Horario
@@ -190,7 +190,7 @@ if ( $slug == '' ) : ?>
 	    			</div>
 
 	    		<?php if ( $slug != 'secundario') : ?>
-	    			<h3 class="title-acordion acordion-color-celeste">
+	    			<h3 class="title-acordion acordion-color-celeste animation-element slide-up">
 						<span class="icon-open"></span>
 							Jornada Complementaria
 					</h3>
@@ -215,7 +215,7 @@ if ( $slug == '' ) : ?>
 		    			Estamos a disposición para cualquier duda o pregunta.
 		    		</p>
 		    		
-		    		<a href="<?php echo MAINSURL; ?>/contacto" title="Colegio Buenos Aires - Inscribite" class="btn btn-sm btn-border-inverse">
+		    		<a href="<?php echo LINKINSCRIBITE; ?>" title="Colegio Buenos Aires - Inscribite" class="btn btn-sm btn-border-inverse">
 			    		Inscribite
 			    	</a>
 		    	</div>
@@ -246,28 +246,31 @@ if ( $slug == '' ) : ?>
 		    <section class="nivel-proyecto">
 		    	
 		    	<div class="texto-proyecto-wrapper">
-		    		<span class="icon-colectivo"></span>
+		    		<span class="icon-colectivo animation-element fade-in-scroll"></span>
 			    	
-			    	<p>
+			    	<p class="animation-element fade-in-scroll">
 			    		<?php echo $textoNiveles['textoProyecto'][$slug]; ?>
 			    	</p>
 			    	
-			    	<span class="icon-calculadora"></span>
+			    	<span class="icon-calculadora animation-element fade-in-scroll"></span>
 			    </div>
 
 		    </section>
 
 		    <section class="nivel-talleres">
-		    	<div class="tabs-wrappers">
+		    	<h2 class="subtitulo_seccion animation-element fade-in-scroll">
+		     		Talleres
+		     	</h2>
+		    	<div class="tabs-wrappers animation-element fade-in-scroll">
 		    		<?php getTemplate( 'contenido-talleres', $slug ); ?>
 		    	</div>
 		    </section>
 
 		     <section class="nivel-deportes">
-		     	<h2 class="subtitulo_seccion">
+		     	<h2 class="subtitulo_seccion animation-element fade-in-scroll">
 		     		Campo de deportes
 		     	</h2>
-		     	<div class="nivel-deportes-wrapper">
+		     	<div class="nivel-deportes-wrapper animation-element fade-in-scroll">
 			     	<div class="nivel-imagen-deportes">
 			     		<img src="<?php echo MAINSURL; ?>/assets/images/niveles-deportes.jpg" alt="Colegio Buenos Aires - Estancia La Chiquita">
 			     	</div>
@@ -285,15 +288,17 @@ if ( $slug == '' ) : ?>
 
 		    <section class="nivel-documentacion">
 
-		    	<div id="acordionDocumentacion" class="acordion">
+		    	<div id="acordionDocumentacion" class="acordion animation-element slide-up">
 		    		<h3 class="title-acordion">
 						<span class="icon-open"></span>
 							Documentación
 					</h3>
 	    			<div class="acordion-content">
-	    				<p>
-							<?php echo 'llamar a función documentacion para que muestre lo que tiene que mostrar'; ?>
-						</p>
+	    				<div class="acordion-container">
+	    					<ul class="documentacion-list">
+								<?php getDocumentation( $slug ); ?>
+							</ul>
+						</div>
 	    			</div>
 	    		</div>
 

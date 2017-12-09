@@ -48,6 +48,14 @@ $(document).ready(function(){
 		}
 	}
 
+	//acordion documentacion
+	if ( document.getElementById('acordionDocumentacion') != null && actualPage == 'documentacion') {
+		//en la pagina niveles los inicializa a todos juntos por su clase
+			var documentacionAcordion = new acordion( $('#acordionDocumentacion') );
+			documentacionAcordion.initAcordion();
+	}
+	
+
 	if ( document.getElementById('acordionAutoridades') != null ) {
 		//inicializa los acordeones de institucional
 		var autoridadesAcordion = new acordion( $('#acordionAutoridades') );
