@@ -4,6 +4,7 @@ sube, muestra y mantiene la subida de archivos
 */
 
 function showLinksdocsAdmin() {
+	global $subsection;
 	$connection = connectDB();
 	$tabla = 'docs';
 	$secciones = array();
@@ -43,7 +44,7 @@ function showLinksdocsAdmin() {
 				<div>
 					<h4 class="docs-section-title" data-nombre="<?php echo $secciones[$i]; ?>">
 						<?php echo $textoSecciones[$i]; ?> | 
-						<small class="change-section-name-docs-btn">Cambiar nombre u orden</small>
+						<small class="change-section-name-docs-btn btn-cursor">Cambiar nombre u orden</small>
 					</h4>
 					<p><strong>Orden:</strong> <span><?php echo $ordenSecciones[$i]; ?></span></p>
 					<ul class="links-docs" id="<?php echo $secciones[$i]; ?>">
@@ -61,7 +62,7 @@ function showLinksdocsAdmin() {
 				<div>
 					<h4 class="docs-section-title" data-nombre="<?php echo $secciones[$i]; ?>">
 						<?php echo $textoSecciones[$i]; ?> | 
-						<small class="change-section-name-docs-btn">Cambiar nombre u orden</small>
+						<small class="change-section-name-docs-btn btn-cursor">Cambiar nombre u orden</small>
 					</h4>
 					<p class="orden-secciones-docs"><strong>Orden:</strong> <span><?php echo $ordenSecciones[$i]; ?></span></p>
 					<ul class="links-docs" id="<?php echo $secciones[$i]; ?>">
@@ -74,36 +75,63 @@ function showLinksdocsAdmin() {
 					$textoItem = $rowitem['docs_texto'];
 					$linkItem = $rowitem['docs_url'];
 					$type = $rowitem['docs_type'];
+					$subSection = $rowitem['docs_subsection'];
 					
 					?>
 						<li>
 			  				<article id="<?php echo $IDItem; ?>" class="link-docs-wrapper">
 					        	<div class="row">
-					        		<div class="col-20">
-					        			<label><small>Orden:</small></label>
-					        			<input type="text" class="link-docs-orden" value="<?php echo $orden; ?>">	
-					        		</div><!-- //col -->
-					        		<div class="col-20">
-					        			<label><small>Texto a mostrar:</small></label>
-					        			<input type="text" class="link-docs-texto" value="<?php echo $textoItem; ?>">		
+					        		<div class="col-30">
+					        			<div class="row-always">
+						        			<div class="col-30">
+							        			<label><small>Orden:</small></label>
+							        			<input type="text" class="link-docs-orden" value="<?php echo $orden; ?>">	
+							        		</div>
+							        		<div class="col-70">
+							        			<label><small>Texto a mostrar:</small></label>
+							        			<input type="text" class="link-docs-texto" value="<?php echo $textoItem; ?>">		
+						        			</div>
+						        		</div>
 					        		</div>
 					        		<div class="col-20">
 					        			<div class="link-docs-file">
 					        			<?php if ( $type == 'url' ) { ?>
 					        				<a href="<?php echo $linkItem; ?>" target="_blank" data-href="<?php echo $linkItem; ?>" data-type="url"><?php echo $linkItem; ?></a><br>
-					        				<small><span class="btn-del-file-docs">Borrar</span> archivo</small>
+					        				<small><span class="btn-cursor btn-del-file-docs">Borrar</span> url</small>
 					        				<?php } else { ?>
 					        					<a href="<?php echo UPLOADSURLFILES . '/' . $linkItem; ?>" target="_blank" data-href="<?php echo $linkItem; ?>" data-type="file"><?php echo $linkItem; ?>
 					        					</a><br>
-							        		<small><span class="btn-load-file-docs">Cambiar</span> o <span class="btn-del-file-docs">Borrar</span> archivo</small>
+							        		<small><span class="btn-cursor btn-load-file-docs">Cambiar</span> o <span class="btn-cursor btn-del-file-docs">Borrar</span> archivo</small>
 					        				<?php } ?>
 							        	</div>
 					        		</div><!-- //col -->
 					        		<div class="col-20">
-					        			<button class="btn btn-primary btn-save-file-docs">Guardar</button>
+					        			<select class="link-docs-sucsection">
+					        				<?php 
+					        					$section = $secciones[$i];
+
+					        					for ($a=0; $a <count($subsection[$section]) ; $a++) { 
+					        						
+					        						echo '<option value="'.$subsection[$section][$a].'"';
+					        						if ( $subsection[$section][$a] == $subSection ) {
+					        							echo ' selected'; 
+					        						}
+					        						echo '>';
+					        						echo $subsection[$section][$a];
+					        						echo '</option>';
+
+					        					}
+					        					
+					        				?>
+					        				
+					        				
+					        			</select>
 					        		</div><!-- //col -->
 					        		<div class="col-20">
-					        			<span class="error-tag"></span>
+					        			<button class="btn btn-sm btn-save btn-save-file-docs">Guardar</button>
+					        			<div>
+						        			<span class="error-tag"></span>
+						        		</div>
 					        		</div><!-- //col -->
 					        	</div><!-- //row -->
 					        </article><!-- //link-docs-wrapper -->	

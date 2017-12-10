@@ -20,9 +20,28 @@
 
 	li {
 		margin: 20px 0;
+		border-bottom: 1px solid $gris;
+		min-height: 100px;
 	}
 }
 
 .new-section-docs-btn-text {
 	margin-bottom: 50px;
+}
+
+.link-docs-wrapper {
+	input {
+		height: 25px;
+	}
+	select {
+		background: $danger;
+		border: none;
+		color: $blanco;
+		height: 25px;
+		margin-top: 20px;
+	}
+	
+	.link-docs-file {
+		margin-top: 20px;
+	}
 }

@@ -315,7 +315,7 @@ if ( $slug == '' ) : ?>
 	    			<div class="acordion-content">
 	    				<div class="acordion-container">
 	    					<ul class="documentacion-list">
-								<?php getDocumentation( $slug ); ?>
+								<?php getDocumentation( $slug, 'docs' ); ?>
 							</ul>
 						</div>
 	    			</div>

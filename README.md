@@ -2,6 +2,7 @@
 (Sitio auto administrable)
 
 ## Versiones:
+* 0.4.13 - ADMINISTRADOR: Cree subsecciones en modulo documentacion.
 * 0.4.12 - ARMANDO PAGINAS: Niveles. Quedaron listos los niveles, inicial, primario y secundario. Falta maquetar niveles gral sin sidebar e inicio.
 * 0.4.11 - ARMANDO PAGINAS: Niveles. Falta completar detalles y hacer una versión de talleres en acordeon para los móviles.
 * 0.4.10 - ARMANDO PAGINAS: Niveles. completé la parte de talleres, falta cargar la info

@@ -191,8 +191,25 @@ $(document).ready(function(){
 		var id = $(this).closest('ul').attr('id');
 		var IDcontenedor = '#'+id;
 		var contenedor = $(IDcontenedor);
-		var html = '<li><article class="link-docs-wrapper" id="id"><div class="row"><div class="col-20"><label><small>Orden:</small></label><input type="text" class="link-docs-orden" value="0"></div><div class="col-20"><label><small>Texto a mostrar:</small></label><input type="text" class="link-docs-texto" value="Texto del link"></div><div class="col-20"><div class="link-docs-file"><small><span class="btn-load-file-docs new">Cargar nuevo</span> archivo</small></div></div><div class="col-20"><button class="btn btn-primary btn-save-file-docs">Guardar</button></div><div class="col-20"><span class="error-tag"></span></div></div></article></li>';
-		contenedor.prepend($(html));
+
+		subsection = IDcontenedor.replace('#','');
+
+		$.ajax( {
+            type: 'POST',
+            url: ajaxFunctionDir + '/create-item-docs.php',
+            data: {
+            	subsection : subsection,
+                postType: 'file',
+                linkcopiado: 'none',
+            },
+            success: function ( response ) {
+            	contenedor.prepend(response);
+            },
+            error: function ( ) {
+                console.log('error');
+            },
+        });//cierre ajax
+
 	});//agregar link archivo docs
 
 	//agregar url docs (no hace nada en la BD hasta que se guardan los cambios)
@@ -202,9 +219,25 @@ $(document).ready(function(){
 		var contenedor = $(IDcontenedor);
 
 		var linkcopiado = prompt("copie el link aquí");
-		var html = '<li><article class="link-docs-wrapper" id="id"><div class="row"><div class="col-20"><label><small>Orden:</small></label><input type="text" class="link-docs-orden" value="0"></div><div class="col-20"><label><small>Texto a mostrar:</small></label><input type="text" class="link-docs-texto" value="Texto del link"></div><div class="col-20"><div class="link-docs-file"><a href="'+linkcopiado+'" target="_blank" data-href="'+linkcopiado+'" data-type="url">'+linkcopiado+'</a><br><small><span class="btn-load-file-docs">Cambiar</span> o <span class="btn-del-file-docs">Borrar</span> archivo</small></div></div><div class="col-20"><button class="btn btn-primary btn-save-file-docs">Guardar</button></div><div class="col-20"><span class="error-tag"></span></div></div></article></li>';
 
-		contenedor.prepend($(html));
+		subsection = IDcontenedor.replace('#','');
+
+		$.ajax( {
+            type: 'POST',
+            url: ajaxFunctionDir + '/create-item-docs.php',
+            data: {
+            	subsection : subsection,
+                postType: 'url',
+                linkcopiado: linkcopiado,
+            },
+            success: function ( response ) {
+            	console.log(response)
+            	contenedor.prepend(response);
+            },
+            error: function ( ) {
+                console.log('error');
+            },
+        });//cierre ajax
 	});//agregar link archivo docs
 
 
@@ -217,6 +250,7 @@ $(document).ready(function(){
 		var orden = article.find('.link-docs-orden').val();
 		var texto = article.find('.link-docs-texto').val();
 		var url = article.find('.link-docs-file a').attr('data-href');
+		var subsection = article.find('.link-docs-sucsection').val();
 		var errormsj = article.find('.error-tag');
 		var newItem = false;
 		var idItem = article.attr('id');
@@ -228,7 +262,7 @@ $(document).ready(function(){
 		if ( article.find('.link-docs-file a').attr('data-type') == 'url') {
 			docsType = 'url';
 		}
-		debugger;
+		
 		//modificar la base de datos con nuevo archivo
 		$.ajax( {
 	            type: 'POST',
@@ -236,6 +270,7 @@ $(document).ready(function(){
 	            data: {
 	                postType: 'link',
 	                seccion: idSeccion,
+	                subsection: subsection,
 	                url: url,
 	                texto: texto,
 	                orden: orden,
@@ -247,6 +282,7 @@ $(document).ready(function(){
 	            	errormsj.html('guardando, espere');
             	},
 	            success: function ( response ) {
+	            	console.log(response)
 	            	article.attr('id', response);
 	            	errormsj.html('Elemento guardado');
 	            },

@@ -13,7 +13,7 @@ if ( isAjax() ) {
 	$type = isset( $_POST['docsType'] ) ? $_POST['docsType'] : '';
 	$PostType = isset( $_POST['postType'] ) ? $_POST['postType'] : 'linkpostType';
 	$seccion = isset( $_POST['seccion'] ) ? $_POST['seccion'] : '';
-	$subSeccion = isset( $_POST['sub_seccion'] ) ? $_POST['sub_seccion'] : '';
+	$subSeccion = isset( $_POST['subsection'] ) ? $_POST['subsection'] : 'docs';
 	$url = isset( $_POST['url'] ) ? $_POST['url'] : '';
 	$texto = isset( $_POST['texto'] ) ? $_POST['texto'] : '';
 	$orden = isset( $_POST['orden'] ) ? $_POST['orden'] : '0';
@@ -30,7 +30,7 @@ if ( isAjax() ) {
 	} else {
 		$item_id = isset( $_POST['idItem'] ) ? $_POST['idItem'] : '';
 		//si es viejo se actualiza
-		$queryUpdateItem  = "UPDATE ".$tabla." SET docs_texto='".$texto."',docs_url='".$url."', docs_orden='".$orden."' WHERE docs_id='".$item_id."' LIMIT 1";
+		$queryUpdateItem  = "UPDATE ".$tabla." SET docs_texto='".$texto."',docs_url='".$url."', docs_subsection='".$subSeccion."',docs_orden='".$orden."' WHERE docs_id='".$item_id."' LIMIT 1";
 
 		$result = mysqli_query($connection, $queryUpdateItem);
 		echo 'ok';

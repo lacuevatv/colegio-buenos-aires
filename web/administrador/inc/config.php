@@ -30,3 +30,17 @@ $categorias = array(
 	array( 'slug' => 'noticias', 'nombre' => 'Noticias'),
 	array( 'slug' => 'edad-feliz', 'nombre' => 'Edad Feliz'),
 );
+
+//variables de subsecciones de documentacion
+global $subsection;
+$subsection = array(
+	'inicial'    => array(
+		'docs',
+	),
+	'primario'   => array(
+		'docs',
+	),
+	'secundario' => array(
+		'docs', 'programa-1','programa-2','programa-3',
+	),
+);

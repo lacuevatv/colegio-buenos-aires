@@ -366,15 +366,15 @@ switch ( $data ) {
 			<div class="acordion-container">
 				<h4 class="text-uppercase text-center">Primer año</h4>
 				<ul class="documentacion-list">
-					<?php getDocumentation( 'secundario', 'programas-1' ); ?>
+					<?php getDocumentation( 'secundario', 'programa-1' ); ?>
 				</ul>
 				<h4 class="text-uppercase text-center">Segundo año</h4>
 				<ul class="documentacion-list">
-					<?php getDocumentation( 'secundario', 'programas-2' ); ?>
+					<?php getDocumentation( 'secundario', 'programa-2' ); ?>
 				</ul>
 				<h4 class="text-uppercase text-center">Tercer año</h4>
 				<ul class="documentacion-list">
-					<?php getDocumentation( 'secundario', 'programas-3' ); ?>
+					<?php getDocumentation( 'secundario', 'programa-3' ); ?>
 				</ul>
 			</div>
 		</div>
