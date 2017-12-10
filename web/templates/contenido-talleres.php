@@ -1,5 +1,5 @@
 <?php
-
+global $dispositivo;
 $talleres = array(
 	'inicial'   => array(
 		'titles' => array(
@@ -48,7 +48,7 @@ $talleres = array(
 	),
 );
 
-?>
+if ( $dispositivo != 'movil') : ?>
 
 
 <ul class="titles-tab">
@@ -76,3 +76,19 @@ for ($i=0; $i < count($content); $i++) { ?>
 	<?php } ?>
 
 </div>
+
+<?php else : 
+$titulos = $talleres[$data]['titles'];
+$content = $talleres[$data]['content'];
+for ($i=0; $i < count($titulos['href']); $i++) { ?>
+	<h3 class="title-acordion acordion-color-verde animation-element slide-up">
+		<span class="icon-open"></span>
+			<?php echo $titulos['text'][$i]; ?>
+	</h3>
+	<div class="acordion-content">
+		<div class="acordion-container">
+			<?php echo $content[$i]; ?>
+		</div>
+	</div>
+<?php }//for
+endif;

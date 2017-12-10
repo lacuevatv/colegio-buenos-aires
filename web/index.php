@@ -6,7 +6,8 @@
  *
 */
 require_once 'inc/functions.php';
-
+global $dispositivo;
+$dispositivo = dispositivo();
 global $pageActual;
 $pageActual = pageActual( cleanUri() );
 

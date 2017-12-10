@@ -149,13 +149,19 @@
 		margin-top: 10px;
 		background-color: $color-rosa;
 		color: $color-blanco;
-		font-size: 120%;
+		font-size: 110%;
 		text-align: center;
 		height: 40px;
 		line-height: 40px;
 		cursor: pointer;
-		span {
-
+		@media (min-width: $sm) {
+			font-size: 120%;
+			height: 60px;
+			line-height: 60px;
+		}
+		@media (min-width: $md) {
+			height: 40px;
+			line-height: 40px;
 		}
 	}
 }

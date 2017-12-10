@@ -30,6 +30,17 @@
   to {opacity: 1;transform:translateY(0px);}
 }
 
+.animation-element.slide-left.in-view {
+  animation-name: slide-left;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-left {
+  from {opacity: 0;transform:translateX(-100px);}
+  to {opacity: 1;transform:translateX(0px);}
+}
+
 .animation-element.slide-right.in-view {
   animation-name: slide-right;
   animation-duration: 1s;

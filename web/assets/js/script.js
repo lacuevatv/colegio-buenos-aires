@@ -31,21 +31,21 @@ $(document).ready(function(){
 
 
 /*
- * Inicio de acordeones
+ * Inicio de acordeones de niveles
 */
-	if ( document.getElementById('acordionNivelWidget') != null ) {
-	
-		//inicializa los acordeones de niveles del sidebar
-		if (actualPage == 'niveles' ) {
+
+	if (actualPage == 'niveles' ) {
 			//en la pagina niveles los inicializa a todos juntos por su clase
 			var nivelesAcordion = new acordion( $('.acordion'), 'open' );
 			nivelesAcordion.initAcordion();
-		} else {
-			//en las otras paginas se inicializa por el id
+		}
+
+
+	if ( document.getElementById('acordionNivelWidget') != null && actualPage != 'niveles') {
+		//inicializa el acordion widget en otras paginas
 			var widgetAcordion = new acordion( $('#acordionNivelWidget'), 'open', 'active' );
 			widgetAcordion.initAcordion();	
-			console.log('acordeon-otros')
-		}
+			console.log('acordeon-otros');
 	}
 
 	//acordion documentacion

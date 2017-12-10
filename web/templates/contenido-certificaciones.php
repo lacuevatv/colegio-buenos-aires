@@ -1,15 +1,15 @@
 <?php
 global $pageActual; ?>
 	
-<div class="certificaciones-wrapper">
+<div class="certificaciones-wrapper animation-element fade-in-scroll">
 	
 	<?php if ( $pageActual == 'niveles' ) {
 		
-		echo '<h2>Certificaciones</h2>';
+		echo '<h2 class="animation-element slide-up">Certificaciones</h2>';
 	
 	} else {
 		
-		echo '<h3>Detalles:</h3>';
+		echo '<h3 class="animation-element slide-up">Detalles:</h3>';
 	
 	} ?>
 
@@ -21,11 +21,11 @@ global $pageActual; ?>
 	<!-- CERTIFICACIONES PRIMARIA -->
 	<article class="certificacion article-border-right">
 		<a href="<?php echo MAINSURL; ?>/certificaciones">
-			<h1>	
+			<h1 class="animation-element slide-up">	
 				Inglés
 			</h1>
 		</a>
-		<ul class="certificacion-lista">
+		<ul class="certificacion-lista animation-element slide-left">
 			<li>
 				Trinity College London Gese: Nivel Initial y Elemental
 			</li>
@@ -35,8 +35,8 @@ global $pageActual; ?>
 		</ul>
 	</article>
 
-	<article class="certificacion">
-		<h1>
+	<article class="certificacion animation-element slide-right">
+		<h1 class="animation-element slide-up">
 			Informática UTN
 		</h1>
 		<ul class="certificacion-lista">
@@ -55,11 +55,11 @@ global $pageActual; ?>
 		<!-- CERTIFICACIONES SECUNDARIO -->
 	<article class="certificacion article-border-right">
 		<a href="<?php echo MAINSURL; ?>/certificaciones">
-			<h1>	
+			<h1 class="animation-element slide-up">	
 				Inglés
 			</h1>
 		</a>
-		<ul class="certificacion-lista">
+		<ul class="certificacion-lista animation-element slide-left">
 			<li>
 				Trinity College London Gese: Nivel Initial y Elemental
 			</li>
@@ -70,10 +70,10 @@ global $pageActual; ?>
 	</article>
 
 	<article class="certificacion">
-		<h1>
+		<h1 class="animation-element slide-up">
 			Informática UTN
 		</h1>
-		<ul class="certificacion-lista">
+		<ul class="certificacion-lista animation-element slide-right">
 			<li>
 				Word Fundamentos Avanzado
 			</li>

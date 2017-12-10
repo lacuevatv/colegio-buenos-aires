@@ -854,6 +854,12 @@
 		margin: 30px 0;
 	}//.nivel-documentacion
 
+	.lista-detalles {
+		padding-left: 20px;
+		li {
+			list-style-type: disc;
+		}
+	}
 }//.niveles
 
 .separador-inscribite {
@@ -977,15 +983,22 @@
 	}
 
 	.certificaciones-tabla {
-		display: flex;
-		display: -o-flex;
-		display: -ms-flex;
-		display: -moz-flex;
-		display: -webkit-flex;	
+		
+		@media (min-width: $md) {
+			display: flex;
+			display: -o-flex;
+			display: -ms-flex;
+			display: -moz-flex;
+			display: -webkit-flex;
+		}
 
 		article {
-			width: 50%;
 			padding: 1px 20px;
+			margin-bottom: 30px;
+			@media (min-width: $md) {
+				width: 50%;
+				margin-bottom: 0;
+			}
 		}
 	}
 
@@ -1002,7 +1015,9 @@
 }//.certificaciones-wrapper
 
 .article-border-right {
-	border-right: 1px dotted #ddd;
+	@media (min-width: $md) {
+		border-right: 1px dotted #ddd;
+	}
 }
 
 /*DOCUMENTACION*/

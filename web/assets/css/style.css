@@ -360,10 +360,12 @@ p {
   margin: 10px 0; }
   p small {
     font-size: 80%; }
-  p strong {
-    font-weight: 700; }
-  p em {
-    font-style: italic; }
+
+strong {
+  font-weight: 700; }
+
+em {
+  font-style: italic; }
 
 q {
   font-size: 200%;
@@ -417,6 +419,9 @@ q {
 .niveles-header {
   padding-top: 50px;
   padding-bottom: 20px; }
+  @media (min-width: 768px) {
+    .niveles-header {
+      padding-bottom: 60px; } }
   @media (min-width: 992px) {
     .niveles-header {
       background-color: #011a29;
@@ -428,9 +433,20 @@ q {
   .niveles-header h1 {
     text-transform: uppercase;
     color: #fff;
-    padding-top: 10vh; }
+    padding-top: 0vh;
+    font-size: 250%; }
+    @media (min-width: 768px) {
+      .niveles-header h1 {
+        padding-top: 10vh;
+        font-size: 300%; } }
   .niveles-header p {
     color: #fff; }
+
+.text-uppercase {
+  text-transform: uppercase; }
+
+.text-center {
+  text-align: center; }
 
 /*--------------------------------------------------------------
 7.0 404
@@ -1274,11 +1290,20 @@ q {
     margin-top: 10px;
     background-color: #e10453;
     color: #fff;
-    font-size: 120%;
+    font-size: 110%;
     text-align: center;
     height: 40px;
     line-height: 40px;
     cursor: pointer; }
+    @media (min-width: 768px) {
+      .acordion .title-acordion {
+        font-size: 120%;
+        height: 60px;
+        line-height: 60px; } }
+    @media (min-width: 992px) {
+      .acordion .title-acordion {
+        height: 40px;
+        line-height: 40px; } }
 
 .acordion-content {
   background-color: #eeeded;
@@ -1991,6 +2016,10 @@ q {
       margin-bottom: 20px; }
 .niveles .nivel-documentacion {
   margin: 30px 0; }
+.niveles .lista-detalles {
+  padding-left: 20px; }
+  .niveles .lista-detalles li {
+    list-style-type: disc; }
 
 .separador-inscribite {
   margin: 60px 0;
@@ -2090,15 +2119,20 @@ q {
   .certificaciones-wrapper h1 {
     color: #fff;
     font-size: 120%; }
-  .certificaciones-wrapper .certificaciones-tabla {
-    display: flex;
-    display: -o-flex;
-    display: -ms-flex;
-    display: -moz-flex;
-    display: -webkit-flex; }
-    .certificaciones-wrapper .certificaciones-tabla article {
-      width: 50%;
-      padding: 1px 20px; }
+  @media (min-width: 992px) {
+    .certificaciones-wrapper .certificaciones-tabla {
+      display: flex;
+      display: -o-flex;
+      display: -ms-flex;
+      display: -moz-flex;
+      display: -webkit-flex; } }
+  .certificaciones-wrapper .certificaciones-tabla article {
+    padding: 1px 20px;
+    margin-bottom: 30px; }
+    @media (min-width: 992px) {
+      .certificaciones-wrapper .certificaciones-tabla article {
+        width: 50%;
+        margin-bottom: 0; } }
   .certificaciones-wrapper .certificacion-lista li {
     margin: 10px 0;
     text-align: justify;
@@ -2106,8 +2140,9 @@ q {
     list-style-type: disc;
     list-style-position: inside; }
 
-.article-border-right {
-  border-right: 1px dotted #ddd; }
+@media (min-width: 992px) {
+  .article-border-right {
+    border-right: 1px dotted #ddd; } }
 
 /*DOCUMENTACION*/
 .documentacion-list li {
@@ -2157,6 +2192,18 @@ q {
   to {
     opacity: 1;
     transform: translateY(0px); } }
+.animation-element.slide-left.in-view {
+  animation-name: slide-left;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100px); }
+  to {
+    opacity: 1;
+    transform: translateX(0px); } }
 .animation-element.slide-right.in-view {
   animation-name: slide-right;
   animation-duration: 1s;

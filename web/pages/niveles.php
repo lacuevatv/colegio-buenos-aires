@@ -29,7 +29,7 @@ $textoNiveles = array(
 		'secundario' => 'Hemos elaborado a lo largo de años de experiencia, un Proyecto Educativo que se condice con nuestro criterio de Formación Integral. Realizamos un seguimiento continuo e individualizado de cada uno de nuestros alumnos. Para ello, debemos tener en cuenta los grandes cambios que los adolescentes experimentan tanto en los aspectos físico e intelectual, como afectivo, entre los 12 y 17 años.',
 	),
 	'textoDeportes' => array(
-		'inicial'    => '<p><strong>SALIDAS AL CAMPO "LA CHIQUITA"</strong>: A partir de Sala de 5 años, los niños asisten mensualmente a nuestra Estancia "La Chiquita", en la localidad de Cnel. Brandsen, para realizar una jornada de Vida en la Naturaleza: Deportes y Recreación y Area Socio-afectiva, a cargo de profesores de Educación Física, quienes planifican las actividades en relación con los ojetivos del aula. Es objetivo d esta jornada, desarrollar en los niños el amor por la naturaleza y la preservación del medio ambiente desde la experiencia directa, estimulando la integración de los grupos que concurren cada semana y adecuando las actividades a la edad evolutiva de los alumnos.</p><p>Anualmente se realiza el tradicional "Día del Egresadito". Al finalizar el año, las familias de preescolar, docentes, profesores y directivos, a través de juegos, canciones y mucho amor, se brinda a las niñas y niños de ese nivel, una inolvidable y emotiva despedida.</p>',
+		'inicial'    => '<p><strong>SALIDAS AL CAMPO "LA CHIQUITA"</strong>: A partir de Sala de 5 años, los niños asisten mensualmente a nuestra Estancia "La Chiquita", en la localidad de Cnel. Brandsen, para realizar una jornada de Vida en la Naturaleza: Deportes y Recreación y Area Socio-afectiva, a cargo de profesores de Educación Física, quienes planifican las actividades en relación con los ojetivos del aula. Es objetivo d esta jornada, desarrollar en los niños el amor por la naturaleza y la preservación del medio ambiente desde la experiencia directa, estimulando la integración de los grupos que concurren cada semana y adecuando las actividades a la edad evolutiva de los alumnos.</p><p>Anualmente se realiza el tradicional "Día del Egresadito". Al finalizar el año, las familias de preescolar, docentes, profesores y directivos, a través de juegos, canciones y mucho amor, se brinda a las niñas y niños de ese nivel, una inolvidable y emotiva despedida.</p><p>En el mes de marzo, el Colegio Buenos Aires invita a los padres que ingresan por primera vez, a conocer y recorrer el lugar acompañados por los profesores y directivos quienes los interiorizan sobre las actividades que sus hijos e hijas desarrollarán en el transcurso del año.</p>',
 		'primaria'   => '<p>Los alumnos del Nivel Primario asisten mensualmente a nuestra <strong>Estancia “La Chiquita”</strong>, en la localidad de Cnel. Brandsen, para realizar una jornada  de Vida en la Naturaleza;  Deportes y Recreación  y  Area Socio-afectiva,, a cargo de profesores de Educación Física, quienes planifican las actividades en relación con los objetivos del aula   Es objetivo de esta jornada, desarrollar en los niños el amor por la naturaleza y la preservación del medio ambiente desde la experiencia directa, estimulando la integración de los grupos que concurren cada semana y adecuando las actividades a la edad evolutiva de los alumnos.</p><p>En el mes de marzo, el Colegio Buenos Aires invita a los padres que ingresan por primera vez, a conocer y recorrer el lugar acompañados por los profesores y directivos quienes los interiorizan sobre las actividades que sus hijos e hijas desarrollarán en el transcurso del año.</p>',
 		'secundario' => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
 	),
@@ -65,7 +65,7 @@ $textoNiveles = array(
 	),
 );
 
-$dispositivo = dispositivo();
+global $dispositivo;
 $slug = getPageVar( cleanUri() );//variante de la pagina
 include 'header.php';
 ?>
@@ -223,7 +223,7 @@ if ( $slug == '' ) : ?>
 
 	<!--- DETALLES NIVEL -->
 		    <section class="nivel-detalles">
-
+		
 		    	<div id="acordionDetalles" class="acordion">
 		    		
 			    		<?php getTemplate( 'niveles-detalle', $slug ); ?>
@@ -257,13 +257,32 @@ if ( $slug == '' ) : ?>
 
 		    </section>
 
+
+	<!--- TALLERES -->
+
 		    <section class="nivel-talleres">
 		    	<h2 class="subtitulo_seccion animation-element fade-in-scroll">
 		     		Talleres
 		     	</h2>
-		    	<div class="tabs-wrappers animation-element fade-in-scroll">
+		    	
+		<?php if ( $dispositivo != 'movil') : ?>
+				
+				<div class="tabs-wrappers animation-element fade-in-scroll">
+		    		
 		    		<?php getTemplate( 'contenido-talleres', $slug ); ?>
+		    	
 		    	</div>
+		    	
+	   	<?php else : ?>
+
+	   			<div id="acordionDetalles" class="acordion">
+		    		
+			    		<?php getTemplate( 'contenido-talleres', $slug ); ?>
+
+	    		</div><!--- //.acordion -->
+	    
+	    <?php endif; ?>
+
 		    </section>
 
 		     <section class="nivel-deportes">
