@@ -29,24 +29,29 @@ var actualPage;
 $(document).ready(function(){
 	actualPage = $('body').attr('data-page');
 
+//si la pagina es contacto, inicia funcion de formulario
+if (actualPage == 'contacto') {
+	contactForm();
+}
 
 /*
- * Inicio de acordeones de niveles
+ * Inicio de acordeones
 */
-
 	if (actualPage == 'niveles' ) {
-			//en la pagina niveles los inicializa a todos juntos por su clase
-			var nivelesAcordion = new acordion( $('.acordion'), 'open' );
-			nivelesAcordion.initAcordion();
-		}
+		//en la pagina niveles los inicializa a todos juntos por su clase
+		var nivelesAcordion = new acordion( $('.acordion'), 'open' );
+		nivelesAcordion.initAcordion();
+	}
 
 
-	if ( document.getElementById('acordionNivelWidget') != null && actualPage != 'niveles') {
+	if ( document.getElementById('acordionNivelWidget') != null && actualPage != 'niveles' ) {
 		//inicializa el acordion widget en otras paginas
 			var widgetAcordion = new acordion( $('#acordionNivelWidget'), 'open', 'active' );
 			widgetAcordion.initAcordion();	
-			console.log('acordeon-otros');
 	}
+
+
+	
 
 	//acordion documentacion
 	if ( document.getElementById('acordionDocumentacion') != null && actualPage == 'documentacion') {
@@ -84,57 +89,7 @@ $(document).ready(function(){
 		}
 	});
 
-	/*
-	 * clic boton cargar mas noticias
-	*/
-	$(document).on('click', '.btn-load-more-news', function( e ){
-		e.preventDefault();
-		var btn = this;
-		var loader = $('.ajax-loader-noticias');
-		var contenedor = $('.loop-posts-wrapper');
-		var categoria = $(btn).attr('data-categoria');
-		var page = parseInt($(btn).attr('data-page'));
-		var resto = parseInt( $(btn).attr('data-resto') );
-		var cantPost = $(btn).attr('data-cantpost');
-		var mensaje = $('.mensaje-sutil');
-		var newMensaje = resto + ' noticias más';
-		
-		$(this).attr('data-resto', resto);
-
-		$.ajax( {
-            type: 'POST',
-            url: functionsDir + '/ajax.php',
-            data: {
-            	function: 'load-more',
-            	page: page,
-            	categoria: categoria,
-            	cantPost: cantPost,
-
-            },
-            beforeSend: function() {
-                loader.fadeIn();
-            },
-            success: function ( response ) {
-                //console.log(response);
-                contenedor.append(response);
-                loader.fadeOut();
-                resto = resto - cantPost;
-                if ( resto <= 0 ) {
-                	$('.load-more-wrapper').remove();
-                } else {
-                	newMensaje = resto + ' noticias más';
-                	mensaje.html(newMensaje);
-                	//aumento el numero en el boton
-					$(btn).attr('data-page', page+1);
-					//pongo el nuevo resto
-					$(btn).attr('data-resto', resto);
-                }
-            },
-            error: function ( ) {
-                console.log('error');
-            },
-        });//cierre ajax
-	});
+	
 
 	
 	/*
@@ -157,10 +112,21 @@ $(document).ready(function(){
 		talleres.initTalleres();
 	}
 
+
+	/*
+	 * TABS BIENVENIDOS DE PÁGINA NIVELES
+	*/
+	var bienvenidos = new bienvenidosTabs();
+	bienvenidos.initbienvenidosTabs();
+
 });//on-ready
 
 
-//onload para galería de imágenes y animaciónes
+
+/*
+ * onload para galería de imágenes y animaciónes
+ *
+*/
 $(window).on('load', function(){
 
 	/*
@@ -307,9 +273,60 @@ $(document).ready(function(){
         }, "slow");
     });
 
+	/*
+	 * clic boton cargar mas noticias
+	*/
+	$(document).on('click', '.btn-load-more-news', function( e ){
+		e.preventDefault();
+		var btn = this;
+		var loader = $('.ajax-loader-noticias');
+		var contenedor = $('.loop-posts-wrapper');
+		var categoria = $(btn).attr('data-categoria');
+		var page = parseInt($(btn).attr('data-page'));
+		var resto = parseInt( $(btn).attr('data-resto') );
+		var cantPost = $(btn).attr('data-cantpost');
+		var mensaje = $('.mensaje-sutil');
+		var newMensaje = resto + ' noticias más';
+		
+		$(this).attr('data-resto', resto);
+
+		$.ajax( {
+            type: 'POST',
+            url: functionsDir + '/ajax.php',
+            data: {
+            	function: 'load-more',
+            	page: page,
+            	categoria: categoria,
+            	cantPost: cantPost,
+
+            },
+            beforeSend: function() {
+                loader.fadeIn();
+            },
+            success: function ( response ) {
+                //console.log(response);
+                contenedor.append(response);
+                loader.fadeOut();
+                resto = resto - cantPost;
+                if ( resto <= 0 ) {
+                	$('.load-more-wrapper').remove();
+                } else {
+                	newMensaje = resto + ' noticias más';
+                	mensaje.html(newMensaje);
+                	//aumento el numero en el boton
+					$(btn).attr('data-page', page+1);
+					//pongo el nuevo resto
+					$(btn).attr('data-resto', resto);
+                }
+            },
+            error: function ( ) {
+                console.log('error');
+            },
+        });//cierre ajax
+	});
+
+
 });//.ready
-
-
 
 
 
@@ -318,7 +335,8 @@ $(document).ready(function(){
 3.0 FORMS
 --------------------------------------------------------------*/
 
-$(document).ready(function(){
+function contactForm() {
+
 	$('#contact-form').submit(function( event ){
 		event.preventDefault();
 		var mensajeExito = 'Correo enviado exitosamente';
@@ -357,7 +375,7 @@ $(document).ready(function(){
             },
         });//cierre ajax
 	})
-});
+}
 
 /*--------------------------------------------------------------
 4.0 GALERIA IMAGENES
@@ -903,8 +921,64 @@ function talleresTabs( contenedor ) {
 
 }
 
-/*
-	 * AJUSTE ALTURA TABS
+	/*
+	 * TABS BIENVENIDA (pagina niveles)
 	 */
-	 var altura = $('.tabs-wrappers').prop('scrollHeight');
-	// $('.tabs-wrappers').height(altura);
+	
+
+	function bienvenidosTabs( contenedor ) {
+	//parametros
+	contenedor || ( contenedor = $('.tabs-historia-wrapper') );//u open
+	//variables
+	var altura;
+	var contenedorArticulos = $(contenedor).find('.tabs-historia-contenido-wrapper')//contiene solo los articulos internos, no los títulos
+	var articulos = $(contenedor).find('.tabs-historia-contenido')//los articulos
+	var toggles = $(contenedor).find('.tabs-historia-titulos li');//boton donde se hace clic
+	
+	//función que inicia las tabs
+	bienvenidosTabs.prototype.initbienvenidosTabs = function () {
+		//debugger;
+		
+		
+		//poner la clase active en el primer titulo activado
+		cambiartitulo(toggles[0]);
+		
+		//poner la clase active en el primer articulo activado
+		cambiarArticulo(articulos[0]);
+		
+		//calcular altura contenedor y poner la altura correcta
+		setTimeout(altura, 100);
+		
+	}
+
+	var altura= function(){
+		var altura = $(contenedorArticulos).prop('scrollHeight') + 10;
+		$(contenedorArticulos).height(altura);
+	} 	
+
+	//al hacer clic en titulo se abre acordeon
+	$(toggles).click(function(event){
+		
+		var id = '#' + $(this).attr('data-id');
+		var active = $(contenedorArticulos).find('.on-active');
+		var title = $(contenedor).find('.title-active');
+		//quitar titulo activo
+		cambiartitulo(title);
+		//poner nuevo titulo activo
+		cambiartitulo(this);
+		//quitar articulo activo
+		cambiarArticulo(active);
+		//mostrar nuevo articulo activo
+		cambiarArticulo(id);
+
+	});
+
+	var cambiarArticulo = function( articulo ) {
+		$(articulo).toggleClass('on-active');
+	}
+
+	var cambiartitulo = function( titulo ) {
+		$(titulo).toggleClass('title-active');
+	}	
+
+}

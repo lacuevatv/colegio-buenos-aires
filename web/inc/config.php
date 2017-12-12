@@ -32,10 +32,12 @@ define('LINK_TWITTER', '#');
 define('LINK_YOUTUBE', '#');
 define('LINK_EMAIL', '#');
 define('TELCOLEGIO', '4855 8289');
+define('COLEGIODIRECCION', 'Acevedo 357, Villa Crespo, 1414 CABA');
+define('COLEGIOEMAIL', 'info@colegiobuenosaires.edu.ar');
 define('GOOGLECALENDAR', '#');
 define('XHENDRA', '#');
 define('LINKINSCRIBITE', MAINSURL . '/contacto');
-
+define('MAPAGOOGLE', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2362842021116!2d-58.44429744015378!3d-34.59818617135286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca0b414510e1%3A0x43564576cc0da8d3!2sAcevedo+357%2C+C1414DJG+CABA!5e0!3m2!1ses!2sar!4v1511791250465' );
 //categoria para hacer loop
 global $categorias;
 $categorias = array(
@@ -71,7 +73,12 @@ $menuItems = array(
 //galeria de imagenes del sidebar. Tres parametros, alt, src y caption para ponerle algún texto
 global $galeriaBienvenidos;
 $galeriaBienvenidos = array(
-	array( 'url' => '2017-11-20-262-imagen.jpg', 'alt' => 'Colegio Buenos Aires', 'caption' => 'Colegio Buenos Aires'),
+	array( 'url' => '2017-12-12-144-imagen.jpg', 'alt' => 'Colegio Buenos Aires', 'caption' => 'Entrada'),
+	array( 'url' => '2017-12-12-636-imagen.jpg', 'alt' => 'Colegio Buenos Aires', 'caption' => 'Folklore - Día de la tradición'),
 	array( 'url' => '2017-11-20-563-imagen.jpg', 'alt' => 'Colegio Buenos Aires', 'caption' => 'Colegio Buenos Aires'),
-	array( 'url' => '2017-11-21-533-imagen.jpg', 'alt' => 'Colegio Buenos Aires', 'caption' => 'Colegio Buenos Aires'),
+	array( 'url' => '2017-12-12-981-imagen.jpg', 'alt' => 'Colegio Buenos Aires', 'caption' => 'Colegio Buenos Aires'),
+	array( 'url' => '2017-12-12-719-imagen.jpg', 'alt' => 'Colegio Buenos Aires', 'caption' => 'Hall'),
+	array( 'url' => '2017-12-12-507-imagen.jpg', 'alt' => 'Colegio Buenos Aires', 'caption' => 'Estancia La Chiquita'),
+	array( 'url' => '2017-12-12-524-imagen.jpg', 'alt' => 'Colegio Buenos Aires', 'caption' => 'Pasillo'),
+	array( 'url' => '2017-12-12-836-imagen.jpg', 'alt' => 'Colegio Buenos Aires', 'caption' => 'Campana'),
 );

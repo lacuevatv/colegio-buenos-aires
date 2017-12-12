@@ -51,3 +51,31 @@
   from {opacity: 0;transform:translateX(100px);}
   to {opacity: 1;transform:translateX(0px);}
 }
+
+.niveles-widget-data-animate.in-view {
+  animation-name: niveles-widget-data-animate-movil;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  @media (min-width: $md) {
+    animation-name: niveles-widget-data-animate-md;
+  }
+}
+
+@keyframes niveles-widget-data-animate-movil {
+  from {opacity: 0;top:213px;}
+  to {opacity: 1;top:0px;}
+}
+
+@keyframes niveles-widget-data-animate-sm {
+  from {opacity: 0;top:300px;}
+  to {opacity: 1;top:223px;}
+}
+
+@keyframes niveles-widget-data-animate-md {
+  from {opacity: 0;
+    @include transform(translateY(100px));
+  }
+  to {opacity: 1;
+    @include transform(translateY(0));
+  }
+}

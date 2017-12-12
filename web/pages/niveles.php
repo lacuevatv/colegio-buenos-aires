@@ -7,6 +7,7 @@
  * TEMPLATES: niveles educativo sin sidebar, inicial, primaria y secundaria con. Por lo tanto, se separa al principio, ya que el header también es distinto.
 */
 
+//TEXTOS e IMAGEN SUPERIOR
 $textoNiveles = array(
 	'imagenHeader' => array(
 		'inicial'    => 'header-inicial.jpg',
@@ -75,31 +76,10 @@ include 'header.php';
 
 <?php 
 //template niveles sin sidebar
-if ( $slug == '' ) : ?>
+if ( $slug == '' ) : 
 	
-	<header>
-		<div class="container">
-			<h1>
-				pagina niveles educativos
-			</h1>
+	getTemplate( 'niveles-main-template' );
 
-			<p>
-				
-				Pagina sin sidebar y más dinámica para completar
-			</p>
-		</div>
-	</header>
-
-	<div class="main-content-page-niveles-educativos">
-		<div class="container">
-			<p>
-				
-				Pagina sin sidebar y más dinámica para completar
-			</p>
-		</div>
-	</div><!-- //.main-content-page-niveles-educativos template 1 -->
-
-<?php 
 //template inicial, primaria secundaria con sidebar
  else : ?>
     
@@ -206,19 +186,7 @@ if ( $slug == '' ) : ?>
 
     <!--- INSCRIBITE -->
 		    <aside class="separador-inscribite animation-element slide-up in-view">
-		    	<div class="separador-background">
-		    		<h3>
-		    			¿Te gustan nuestros programas?
-		    		</h3>
-
-		    		<p>
-		    			Estamos a disposición para cualquier duda o pregunta.
-		    		</p>
-		    		
-		    		<a href="<?php echo LINKINSCRIBITE; ?>" title="Colegio Buenos Aires - Inscribite" class="btn btn-sm btn-border-inverse">
-			    		Inscribite
-			    	</a>
-		    	</div>
+		    	<?php getTemplate( 'separador-inscribite' ); ?>
 		    </aside>
 
 	<!--- DETALLES NIVEL -->

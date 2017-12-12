@@ -9,44 +9,172 @@ include 'header.php';
 ?>
 <!--- .inner-wrapper: contenido principal y específico del template -->
 <div class="inner-wrapper" >
-	<div class="container">
+	<header>
+		<h1 class="sr-only">Colegio Buenos Aires</h1>
 
-		<h1>colegio de buenos aires
-		<br>
-			<small>Fuente h1 small</small></h1>
+		<div class="container">
+			<div class="widgets-inicio-wrapper">
+				
+				<ul class="widgets-inicio">
+					<li>
+						<?php //getTemplate( 'widget-bienvenidos' ); ?>
+					</li>
+					<li>
+						<?php //getTemplate( 'widget-niveles', 'niveles' ); ?>
+					</li>
+					<li>
+						<?php //getTemplate( 'widget-calendario' ); ?>
+					</li>
+					<li>
+						<?php //getTemplate( 'widget-campus-virtual' ); ?>
+					</li>
+					<li>
+						<?php //getTemplate( 'widget-certificaciones', 'ingles' ); ?>
+					</li>
+					<li>
+						<?php //getTemplate( 'widget-campo-deportes' ); ?>
+					</li>
+				</ul>
 
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui <a href="#">officia</a> deserunt mollit anim id est laborum.
-		</p>
+			</div>
+		</div>
 
-		<p>
-			<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui <a href="#">officia</a> deserunt mollit anim id est laborum.</small>
-			<a href="#" class="btn">Link</a>
-		</p>
+	</header>
+	<!-- main-content -->
+	<div class="content-niveles">
+		<div class="container">
 
-		<h2>
-			Institucional h2<br>
-			<small>Fuente h2 small</small>
-		</h2>
+			<div class="row">
+				<div class="col-50">
+	<!--- INSTITUCIONAL -->
+					<section>
+						<h2 class="subtitulo_clasico text-center animation-element fade-in-scroll">
+							Institucional
+						</h2>
+						
+						Vemos que poner
 
-		<h3>
-			Fuente h3<br>
-			<small>Fuente h3 small</small>
-		</h3>
+					</section>
+				</div>
 
-		<h4>
-			Fuente h4<br>
-			<small>Fuente h4 small</small>
-		</h4>
+				<div class="col-50">
+	<!--- NOTICIAS -->
+					<section>
+						<h2 class="subtitulo_clasico text-center animation-element fade-in-scroll">
+							Noticias
+						</h2>
+						<ul class="last-news-list">
 
-		<h5>
-			Fuente h5<br>
-			<small>Fuente h5 small</small>
-		</h5>
+						<?php 
+						$noticias = getPosts( 'noticias', 2 ); 	
+						for ($i=0; $i < count($noticias); $i++) { ?>
+							<li>
+								<article class="wrapper-last-news">
+									<a href="<?php echo MAINSURL . '/noticias/' . $noticias[$i]['post_url']; ?>" title="Leer más">
+										<h1>
+											<?php echo $noticias[$i]['post_titulo']; ?>
+										</h1>
+									</a>
+									
+									<div class="wrapper-last-news-data">
+										<a href="<?php echo MAINSURL . '/noticias/' . $noticias[$i]['post_url']; ?>" title="Leer más">
+											<figure>
+												<img src="<?php echo UPLOADSURL . '/' . $noticias[$i]['post_imagen']; ?>" alt="<?php echo $noticias[$i]['post_titulo']; ?>" class="image-responsive">
+											</figure>		
+										</a>
 
-		<q>La escuela es el arma más poderosa que puedes usar para cambiar el mundo.</q>
-		<p>Nelson Mandela</p>
-	</div>
+										<p class="last-news-data">
+											<?php echo acortaTexto( $noticias[$i]['post_resumen'], 10 ); ?>
+										</p>
+										<p>
+											<a class="btn btn-sm btn-primary" href="<?php echo MAINSURL . '/noticias/' . $noticias[$i]['post_url']; ?>" class="">Leer más</a>
+										</p>
+
+									</div>
+									
+								</article>
+							</li>		 	
+						<?php } ?>
+							
+						</ul>
+					</section>
+				</div>
+			</div>
+
+		</div><!--- //.container -->
+
+
+	<!--- INSCRIBITE -->
+	    <aside class="separador-inscribite animation-element slide-up in-view">
+	    	<?php getTemplate( 'separador-inscribite' ); ?>
+	    </aside>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-50">
+	<!--- CAMPUS -->
+					<section>
+						<h2 class="subtitulo_clasico text-center animation-element fade-in-scroll">
+							Campus Virtual
+						</h2>
+						<p>
+							Completar
+						</p>
+					</section>
+				</div>
+
+				<div class="col-50">
+	<!--- NIVELES -->
+					<section>
+						<h2 class="subtitulo_clasico text-center animation-element fade-in-scroll">
+							Niveles
+						</h2>
+						
+						<?php getTemplate( 'widget-niveles', 'inicio' ); ?>
+
+					</section>
+				</div>
+			</div>
+		
+			
+			<div class="row">
+				<div class="col-50">
+	<!--- CONTACTO -->
+					<section>
+						<h2 class="subtitulo_clasico text-center animation-element fade-in-scroll">
+							Contacto
+						</h2>
+						<p>
+							Puede completar el formulario para solicitar presupuestos o realizar preguntas generales sobre Colegio Buenos Aires y nuestros cursos. ¡Le responderemos a la brevedad!
+						</p>
+						<div class="contact-form-wrapper">
+							<?php getTemplate( 'formulario-contacto' ); ?>
+						</div>
+					</section>
+				</div>
+
+				<div class="col-50">
+	<!--- MAPA -->
+					<section>
+						<h2 class="subtitulo_clasico text-center animation-element fade-in-scroll">
+							Mapa
+						</h2>
+						<p>
+							Colegio Buenos Aires se encuentra en <?php echo COLEGIODIRECCION; ?>
+						</p>
+
+						<iframe src="<?php echo MAPAGOOGLE; ?>" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen class="animation-element fade-in"></iframe>
+					</section>
+				</div>
+			</div>
+		</div><!--- //.container -->
+		
+	</div><!--- //.content-niveles (main content) -->
+
+	<aside>
+		Aca van las frases
+	</aside>
+
 </div><!--- //.inner-wrapper -->
 
 <?php include 'footer.php'; ?>

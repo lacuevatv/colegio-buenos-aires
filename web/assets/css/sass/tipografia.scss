@@ -24,7 +24,7 @@ h2 {
 	}
 
 	@media (min-width: $md) {
-		font-size: 300%;
+		font-size: 250%;
 		line-height: 130%;
 	}
 }
@@ -97,6 +97,7 @@ q {
 
 .subtitulo_clasico {
 	border-bottom: 2px solid $color-verde-agua;
+	line-height: 200%;
 }
 
 .subtitulo_seccion {
@@ -172,4 +173,8 @@ q {
 
 .text-center {
 	text-align: center;
+}
+
+.text-justify {
+	text-align: justify;
 }

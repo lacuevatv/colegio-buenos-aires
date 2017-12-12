@@ -213,6 +213,16 @@
 	color: $color-blanco;
 }
 
+.btn-border-verde {
+	border: 1px solid $color-verde-claro;
+	color: $color-verde-claro;
+}
+
+.btn-border-naranja {
+	border: 1px solid $color-naranja;
+	color: $color-naranja;
+}
+
 .btn-primary {
 	background-color: $color-celeste;
 	color: $color-blanco;
@@ -252,3 +262,4 @@
 	    background-color: $color-verde-agua;
 	}
 }
+
