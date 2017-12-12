@@ -120,7 +120,7 @@
 				</li>
 
 				<li>
-					<?php getTemplate( 'widget-campus-virtual' ); ?>
+					<?php getTemplate( 'widget-campus', 'niveles' ); ?>
 				</li>
 
 			</ul>

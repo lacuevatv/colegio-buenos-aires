@@ -61,6 +61,96 @@
 	}
 }
 
+/*LOADER*/
+.loader {
+	position: fixed;
+	z-index: 111111111;
+	width: 100vw;
+	height: 100vh;
+	background: $color-blanco;
+	display: flex;
+	display: -o-flex;
+	display: -ms-flex;
+	display: -moz-flex;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	-o-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-justify-content: center;
+	-o-justify-content: center;
+	justify-content: center;
+	padding: 80px 20px;
+	@media (min-width: $md) {
+		padding: 80px 20%;
+	}
+
+	img {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		@include transform(translate3d(-50%,-50%,0));
+		width: 150px;
+
+		@media (min-width: $sm) {
+			width: 50%;
+			max-width: 400px;
+		}
+	}
+}
+
+/*FRASES*/
+.wrapper-frases {
+	padding: 80px 0;
+	text-align: center;
+	position: relative;
+	@media (min-width: $md) {
+		padding: 80px 0;
+	}
+
+	p {
+		&:before {
+			content: '-';
+		}
+		font-size: 150%;
+		line-height: 150%;
+
+		&:after {
+			content: '-';
+		}
+	}
+
+	span.open {
+		content: '';
+	    position: absolute;
+	    width: 80px;
+	    height: 60px;
+	    background: url(../images/sprite.png);
+	    top: 0;
+	    left: 50%;
+	    @include transform(translateX(-50%));
+	    background-repeat: no-repeat;
+	    background-position-x: 0px;
+	    background-position-y: -167px;
+	}
+	
+	span.close {
+	    position: absolute;
+	    width: 80px;
+	    height: 60px;
+	    background: url(../images/sprite.png);
+	    bottom: 0;
+	    left: 50%;
+	    @include transform(translateX(-50%));
+	   	background-repeat: no-repeat;
+	    background-position-x: -94px;
+	    background-position-y: -167px;
+	}
+}
+
 
 /*FORMULARIO DE CONTACTO*/
 .contact-form-wrapper {
@@ -1025,8 +1115,24 @@
 	}
 }
 
-
-
+//corrector de altura widget
+.niveles-widget-article-taller {
+	
+	@media (min-width: $md) {
+		height: 290px;
+	}
+	@media (min-width: $xlg) {
+			height: 272px;
+		}
+	.niveles-widget-data{
+		@media (min-width: $md) {
+			top: 253px;
+		}
+		@media (min-width: $xlg) {
+			top: 235px;
+		}
+	}
+}
 
 .niveles-widget-data-celeste {
 	background-color: $color-celeste-transparente!important;
@@ -1375,5 +1481,111 @@
 		    	text-decoration: underline;
 		    }
 		}
+	}
+}
+
+/*INICIO*/
+.inicio {
+	//ultimas noticias
+	.last-news-list {
+		display: flex;
+		flex-direction: column;
+		li {
+			margin-bottom: 30px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.wrapper-news {//contenedor de texto, imagen y boton
+		@media (min-width: $md) {
+			display: flex;
+			display: -o-flex;
+			display: -ms-flex;
+			display: -moz-flex;
+			display: -webkit-flex;
+			-webkit-justify-content: space-between;
+			-moz-justify-content: space-between;
+			-ms-justify-content: space-between;
+			-o-justify-content: space-between;
+			justify-content: space-between;
+		}
+
+		> a {
+			display: block;
+			@media (min-width: $md) {
+				width: 48%;
+			}
+		}
+
+		figure {
+			@media (min-width: $md) {
+				overflow: hidden;
+				max-height: 135px;
+			}
+			&:hover {
+				zoom: 1;
+			    filter: alpha(opacity=50);
+			    opacity: 0.5;
+			}
+		}
+
+		.wrapper-news-data {
+			@media (min-width: $md) {
+				width: 48%;
+			}
+
+			h1 {
+				font-size: 140%;
+				line-height: 110%;
+			}
+		}	
+	}
+
+	/*institucional*/
+	#institucional-acordion {
+		.institucional-titulo {
+			margin: 0;
+			margin-top: 10px;
+			background-color: $color-rosa;
+			color: $color-blanco;
+			font-size: 110%;
+			text-align: center;
+			height: 40px;
+			line-height: 40px;
+			cursor: pointer;
+			@media (min-width: $sm) {
+				font-size: 120%;
+				height: 60px;
+				line-height: 60px;
+			}
+			@media (min-width: $md) {
+				height: 40px;
+				line-height: 40px;
+			}
+		}
+
+		.institucional-contenido {
+			background-color: $color-gris-claro;
+			//font-size: 80%;
+			overflow: hidden;
+			height: 0;
+			.acordion-container {
+				padding: 20px 20px 20px;
+			}
+
+			a {
+				margin-top: 0;
+			}
+		}
+	}
+}//.inicio
+
+.frases-inicio {
+	padding: 80px 20px;
+	@media (min-width: $md) {
+		padding: 80px 20%;
 	}
 }

@@ -171,6 +171,13 @@
 /*
  ******** BOTONES **********
 */
+.link {
+	font-style: italic;
+	&:hover{
+		text-decoration: underline
+	}
+}
+
 .btn-wrapper-center {
 	text-align: center;
 }
@@ -223,16 +230,6 @@
 	color: $color-naranja;
 }
 
-.btn-primary {
-	background-color: $color-celeste;
-	color: $color-blanco;
-}
-
-.btn-destacado {
-	background-color: $color-rosa;
-	color: $color-blanco;	
-}
-
 .btn-rosa {
 	color: $color-rosa;
 	border: 1px solid $color-rosa;
@@ -262,4 +259,16 @@
 	    background-color: $color-verde-agua;
 	}
 }
+
+.btn-primary {
+	background-color: $color-celeste;
+	color: $color-blanco;
+}
+
+.btn-destacado {
+	background-color: $color-rosa;
+	color: $color-blanco;	
+}
+
+
 

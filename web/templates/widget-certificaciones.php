@@ -4,14 +4,14 @@ $contenidoCertificaciones = array(
 	'idioma'    => array(
 		'imagen'  => 'certifiacion-ingles.jpg',
 		'titulo'  => 'Certificación Idiomas',
-		'parrafo' => 'Desde ya hace 5 años el Colegio Buenos Aires ha implementado los cursos de Inglés Intensivo en su horario contra turno para brindarle la oportunidad a los alumnos de prepararse para rendir los exámenes Internacionales de Cambridge English YLE (Young learners of English) y GESE (Graded Examinations in Spoken English) de Trinity College London.',
+		'parrafo' => 'Desde ya hace 5 años el Colegio Buenos Aires ha implementado los cursos de Inglés Intensivo en su horario contra turno. Exámenes Internacionales de Cambridge English YLE y GESE de Trinity College London.',
 		'link'    => '/certificaciones',
 		'color'   => 'niveles-widget-data-naranja',
 	),
 	'utn'   => array(
 		'imagen'  => 'certificacion-utn.jpg',
 		'titulo'  => 'Certificación UTN',
-		'parrafo' => 'Con el fin de continuar creciendo en su propuesta educativa, el Colegio Buenos Aires ha articulado con la Universidad Tecnológica Nacional - Facultad Regional Buenos Aires, un Convenio de Certificación de Conocimientos en el área de Informática, que permite avalar los conocimientos impartidos durante el paso de nuestros alumnos por la Institución.',
+		'parrafo' => 'El Colegio Buenos Aires ha articulado con la Universidad Tecnológica Nacional, un Convenio de Certificación de Conocimientos en el área de Informática, que permite avalar los conocimientos impartidos por nuestra Institución.',
 		'link'    => '/certificaciones',
 		'color'   => 'niveles-widget-data-celeste',
 	),

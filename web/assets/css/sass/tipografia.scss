@@ -76,7 +76,7 @@ em {
 }
 
 q {
-	font-size: 200%;
+	font-size: 150%;
 	line-height: 110%;
 	font-weight:$fuente-bold;
 	margin: 40px 0;
@@ -97,7 +97,10 @@ q {
 
 .subtitulo_clasico {
 	border-bottom: 2px solid $color-verde-agua;
-	line-height: 200%;
+	line-height: 130%;
+	@media (min-width: $md) {
+		line-height: 200%;
+	}
 }
 
 .subtitulo_seccion {

@@ -41,7 +41,7 @@ include 'header.php';
 
 	</header>
 	<!-- main-content -->
-	<div class="content-niveles">
+	<div class="inicio">
 		<div class="container">
 
 			<div class="row">
@@ -52,7 +52,36 @@ include 'header.php';
 							Institucional
 						</h2>
 						
-						Vemos que poner
+						<div id="institucional-acordion" class="animation-element fade-in-scroll">
+							<h3 class="institucional-titulo acordion-color-verde2">
+								<span class="icon-institucional">+</span>
+								Historia
+							</h3>
+							<div class="institucional-contenido">
+								<div class="acordion-container">
+									<p class="text-justify">
+										La Patria había cumplido un siglo y eran épocas muy duras y llenas de privaciones. Un joven maestro y profesor de Ciencias, proveniente de Rosario, provincia de Santa Fe, soñaba con fundar un instituto educativo. Desde temprana edad el joven Julio Faggioni había sentido el llamado de su vocación docente. 
+									</p>
+									<a class="btn btn-primary btn-sm">
+										Leer más
+									</a>
+								</div>
+							</div>
+							<h3 class="institucional-titulo acordion-color-naranja">
+								<span class="icon-institucional">+</span>
+								Equipo directivo
+							</h3>
+							<div class="institucional-contenido">
+								<div class="acordion-container">
+									<p class="text-justify">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									</p>
+									<a class="btn btn-primary btn-sm">
+										Leer más
+									</a>
+								</div>
+							</div>
+						</div>
 
 					</section>
 				</div>
@@ -69,25 +98,28 @@ include 'header.php';
 						$noticias = getPosts( 'noticias', 2 ); 	
 						for ($i=0; $i < count($noticias); $i++) { ?>
 							<li>
-								<article class="wrapper-last-news">
-									<a href="<?php echo MAINSURL . '/noticias/' . $noticias[$i]['post_url']; ?>" title="Leer más">
-										<h1>
-											<?php echo $noticias[$i]['post_titulo']; ?>
-										</h1>
-									</a>
+								<article class="wrapper-news animation-element fade-in-scroll">
 									
-									<div class="wrapper-last-news-data">
-										<a href="<?php echo MAINSURL . '/noticias/' . $noticias[$i]['post_url']; ?>" title="Leer más">
+									<a href="<?php echo MAINSURL . '/noticias/' . $noticias[$i]['post_url']; ?>" title="Leer más">
 											<figure>
 												<img src="<?php echo UPLOADSURL . '/' . $noticias[$i]['post_imagen']; ?>" alt="<?php echo $noticias[$i]['post_titulo']; ?>" class="image-responsive">
 											</figure>		
 										</a>
+									
+									<div class="wrapper-news-data">
+										
 
-										<p class="last-news-data">
+										<a href="<?php echo MAINSURL . '/noticias/' . $noticias[$i]['post_url']; ?>" title="Leer más">
+											<h1>
+												<?php echo $noticias[$i]['post_titulo']; ?>
+											</h1>
+										</a>
+										
+										<p class="text-justify">
 											<?php echo acortaTexto( $noticias[$i]['post_resumen'], 10 ); ?>
 										</p>
 										<p>
-											<a class="btn btn-sm btn-primary" href="<?php echo MAINSURL . '/noticias/' . $noticias[$i]['post_url']; ?>" class="">Leer más</a>
+											<a class="btn btn-sm btn-primary" href="<?php echo MAINSURL . '/noticias/' . $noticias[$i]['post_url']; ?>">Leer más</a>
 										</p>
 
 									</div>
@@ -117,9 +149,9 @@ include 'header.php';
 						<h2 class="subtitulo_clasico text-center animation-element fade-in-scroll">
 							Campus Virtual
 						</h2>
-						<p>
-							Completar
-						</p>
+
+						<?php getTemplate( 'widget-campus', 'inicio' ); ?>
+
 					</section>
 				</div>
 
@@ -144,10 +176,10 @@ include 'header.php';
 						<h2 class="subtitulo_clasico text-center animation-element fade-in-scroll">
 							Contacto
 						</h2>
-						<p>
+						<p class="text-justify animation-element fade-in-scroll">
 							Puede completar el formulario para solicitar presupuestos o realizar preguntas generales sobre Colegio Buenos Aires y nuestros cursos. ¡Le responderemos a la brevedad!
 						</p>
-						<div class="contact-form-wrapper">
+						<div class="contact-form-wrapper animation-element fade-in-scroll">
 							<?php getTemplate( 'formulario-contacto' ); ?>
 						</div>
 					</section>
@@ -159,7 +191,7 @@ include 'header.php';
 						<h2 class="subtitulo_clasico text-center animation-element fade-in-scroll">
 							Mapa
 						</h2>
-						<p>
+						<p class="animation-element fade-in-scroll">
 							Colegio Buenos Aires se encuentra en <?php echo COLEGIODIRECCION; ?>
 						</p>
 
@@ -171,8 +203,8 @@ include 'header.php';
 		
 	</div><!--- //.content-niveles (main content) -->
 
-	<aside>
-		Aca van las frases
+	<aside class="frases-inicio animation-element fade-in-scroll">
+		<?php getTemplate( 'widget-frases' ); ?>
 	</aside>
 
 </div><!--- //.inner-wrapper -->

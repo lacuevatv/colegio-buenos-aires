@@ -3,6 +3,7 @@
  *
  * @required jQuery
  * @ver 1.0
+ * En la primera parte se inicializan las funciones que están debajo depende de la página y otras variables
  --------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 1.0 INIT //variables generales e inicio de funciones
@@ -29,14 +30,18 @@ var actualPage;
 $(document).ready(function(){
 	actualPage = $('body').attr('data-page');
 
-//si la pagina es contacto, inicia funcion de formulario
-if (actualPage == 'contacto') {
-	contactForm();
-}
+	//si la pagina es contacto, inicia funcion de formulario
+	if (actualPage == 'contacto') {
+		contactForm();
+	}
 
-/*
- * Inicio de acordeones
-*/
+	if (actualPage == 'inicio') {
+		institucionalAcordion();
+	}
+
+	/*
+	 * Inicio de acordeones
+	*/
 	if (actualPage == 'niveles' ) {
 		//en la pagina niveles los inicializa a todos juntos por su clase
 		var nivelesAcordion = new acordion( $('.acordion'), 'open' );
@@ -128,6 +133,8 @@ if (actualPage == 'contacto') {
  *
 */
 $(window).on('load', function(){
+
+	setTimeout(function (){$('.loader').fadeOut();}, 3000);
 
 	/*
 	 * INICIOS GALERIA DE IMAGENES
@@ -843,6 +850,105 @@ function acordion( contenedor, open, collapse ) {
 
 }//function
 	
+/*
+ACORDION INSTITUCIONAL DE LA PAGINA DE INICIO
+*/
+function institucionalAcordion() {
+	var contenedor = $('#institucional-acordion');
+	var titulos = $(contenedor).find('.institucional-titulo');
+	var contenidos = $(contenedor).find('.institucional-contenido');
+
+	titulos.click(function(){
+
+		//busca el contenedor para abrir o cerrar
+		var elementToOpen = $(this).next();
+		
+		//si esta cerrado, abrirlo
+		if ( elementToOpen.height() == 0 ) {
+		
+			//si es pc
+			if ( window.innerWidth > 992 ) {
+				var abierto = $('.institucional-open');
+				closeContenedor(abierto);
+				toggleClass(abierto);
+				openContenedor(elementToOpen);
+				toggleClass(elementToOpen);
+				iconChange();
+			} else {
+				//si no es collpase, simplemente lo abre
+				openContenedor(elementToOpen);
+				toggleClass(elementToOpen);
+				iconChange();
+			}
+
+		//si esta abierto cerrarlo
+		} else {
+			if ( window.innerWidth > 992 ) {
+				closeContenedor(elementToOpen);
+				toggleClass(elementToOpen);
+				openContenedor( contenidos[0] );
+				toggleClass(contenidos[0]);
+				iconChange();
+			} else {
+				closeContenedor(elementToOpen);
+				toggleClass(elementToOpen);
+				iconChange();
+			}
+		}
+
+
+		
+	});
+
+	var openContenedor = function (item) {
+		//calcula la altura
+		var h = calcularAltura(item);
+
+		//anima y abre
+		$(item).animate({
+			'height' : h
+		});
+	}
+
+	var closeContenedor = function( item ) {
+	//anima y cierra
+		$(item).animate({
+			'height' : '0'
+		});
+
+
+	}
+
+	var calcularAltura = function( item ) {
+		var altura = $(item).prop('scrollHeight') + 'px';
+		return altura;
+	}
+
+	var iconChange = function () {
+		var icon = $('.institucional-titulo .icon-institucional');//icono más y menos
+		icon.each(function(){
+			if ( $(this.parentElement).next().hasClass('institucional-open') ) {
+				$(this).text('-');
+			} else {
+				$(this).text('+');
+			}
+		})
+	}
+
+	toggleClass = function( item ) {
+		
+		$(item).toggleClass('institucional-open');
+	}
+
+
+	//inicio acordion
+	openContenedor(contenidos[0]);
+	toggleClass(contenidos[0]);
+	iconChange();
+
+
+}//institucionalAcordion()
+
 
 /*--------------------------------------------------------------
 6.0  TABS TALLERES

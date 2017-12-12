@@ -54,7 +54,10 @@ global $pageActual;
 </head>
 <body data-page="<?php echo $pageActual; ?>">
 <div class="wrapper-site">
-    <?php getTemplate( 'loader' ); ?>
+    <aside class="loader">
+        <?php getTemplate( 'widget-frases' ); ?>
+        <img src="<?php echo MAINSURL; ?>/assets/images/logo-transparente.png" class="animation-element fade-in">
+    </aside>
 
 <!--- header ---------------------->
     <header class="header-site">

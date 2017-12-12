@@ -35,6 +35,7 @@ define('TELCOLEGIO', '4855 8289');
 define('COLEGIODIRECCION', 'Acevedo 357, Villa Crespo, 1414 CABA');
 define('COLEGIOEMAIL', 'info@colegiobuenosaires.edu.ar');
 define('GOOGLECALENDAR', '#');
+define('CAMPUSVIRTUAL', '#');
 define('XHENDRA', '#');
 define('LINKINSCRIBITE', MAINSURL . '/contacto');
 define('MAPAGOOGLE', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2362842021116!2d-58.44429744015378!3d-34.59818617135286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca0b414510e1%3A0x43564576cc0da8d3!2sAcevedo+357%2C+C1414DJG+CABA!5e0!3m2!1ses!2sar!4v1511791250465' );
@@ -81,4 +82,36 @@ $galeriaBienvenidos = array(
 	array( 'url' => '2017-12-12-507-imagen.jpg', 'alt' => 'Colegio Buenos Aires', 'caption' => 'Estancia La Chiquita'),
 	array( 'url' => '2017-12-12-524-imagen.jpg', 'alt' => 'Colegio Buenos Aires', 'caption' => 'Pasillo'),
 	array( 'url' => '2017-12-12-836-imagen.jpg', 'alt' => 'Colegio Buenos Aires', 'caption' => 'Campana'),
+);
+
+global $frases;
+$frases = array(
+	array(
+		'frase' => 'Para construir la paz tenemos que centrarnos en las cosas que nos unen no en las que nos diferencian.',
+		'autor' => 'UNICEF',
+	),
+	array(
+		'frase' => 'Dime y lo olvido, enséñame y lo recuerdo, involúcrame y lo aprendo.',
+		'autor' => 'Benjamín Franklin',
+	),
+	array(
+		'frase' => 'Enseñar exige respeto a la autonomía del ser del educando.',
+		'autor' => 'Paulo Freire',
+	),
+	array(
+		'frase' => 'Los malos entendidos pueden ser fuentes de conflicto si no sabemos abordarlos pacíficamente.',
+		'autor' => 'UNICEF',
+	),
+	array(
+		'frase' => 'El mejor medio para hacer que sean buenos los niños es hacerlos felices.',
+		'autor' => 'Oscar Wilde',
+	),
+	array(
+		'frase' => 'Todo parece imposible hasta que se hace.',
+		'autor' => 'Nelson Mandela',
+	),
+	array(
+		'frase' => 'Solo se ve con el corazón, lo esencial es invisible a los ojos.',
+		'autor' => 'Antoine de Saint - Exupery',
+	),
 );
