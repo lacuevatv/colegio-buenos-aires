@@ -43,20 +43,24 @@ $(document).ready(function(){
 	/*
 	 * Inicio de acordeones
 	*/
-	if (actualPage == 'niveles' ) {
+	if ( actualPage == 'niveles' ) {
 		//en la pagina niveles los inicializa a todos juntos por su clase
 		var nivelesAcordion = new acordion( $('.acordion'), 'open' );
 		nivelesAcordion.initAcordion();
 	}
 
+	if ( actualPage == 'campus-virtual' ) {
+		//en la pagina niveles los inicializa a todos juntos por su clase
+		var nivelesAcordion = new acordion( $('.acordion') );
+		nivelesAcordion.initAcordion();
+	}
 
-	if ( document.getElementById('acordionNivelWidget') != null && actualPage != 'niveles' ) {
+
+	if ( document.getElementById('acordionNivelWidget') != null && actualPage != 'niveles' && actualPage != 'campus-virtual' ) {
 		//inicializa el acordion widget en otras paginas
 			var widgetAcordion = new acordion( $('#acordionNivelWidget'), 'open', 'active' );
 			widgetAcordion.initAcordion();	
 	}
-
-
 	
 
 	//acordion documentacion
@@ -73,6 +77,7 @@ $(document).ready(function(){
 			autoridadesAcordion.initAcordion();
 	}
 	
+
 	/*
 	 * institucional, leer completo, es una especie de acordeon también
 	 */

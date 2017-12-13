@@ -11,49 +11,58 @@ include 'header.php';
 <!--- .inner-wrapper: contenido principal y específico del template -->
 <div class="inner-wrapper">
     
-    <header>
-    	<div class="container">
-	        <h1>Jornada complementaria</h1>
-	    </div>
-    </header>
+    <header></header>
    
     <div class="main-content-page-wrapper container">
 	    <div class="main-content-page">
-	    	<h1>colegio de buenos aires
-			<br>
-				<small>Fuente h1 small</small></h1>
+	    	<h1 class="subtitulo_clasico animation-element fade-in">
+    			Jornada Complementaria
+    		</h1>
 
+    		<p class="text-justify">
+	    		A partir de Sala de 2 años se puede optar por la Jornada Complementaria con horarios extendidos en contra turno.
+	    	</p>
+
+	    	<h2 class="color-celeste">
+				Sala 2 y 3 años
+			</h2>
+			<p class="text-justify">
+				La sala de Jornada Complementaria se conforma por nenes de las salas de 2 y 3 años y están a cargo dos docentes. Las actividades son de juego/tarea; se realizan proyectos mensuales favoreciendo al desarrollo del lenguaje oral, la expresión espontánea, ofreciéndoles diversas técnicas y elementos que orienten el desarrollo de la capacidad creadora.
+			</p>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui <a href="#">officia</a> deserunt mollit anim id est laborum.
+				<strong>Almuerzo</strong>: pueden optar por la vianda individual o por el servicio de catering que ofrece el Colegio.
 			</p>
 
-			<p>
-				<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui <a href="#">officia</a> deserunt mollit anim id est laborum.</small>
-				<a href="#" class="btn">Link</a>
-			</p>
-
-			<h2>
-				Institucional h2<br>
-				<small>Fuente h2 small</small>
+			<h2 class="color-celeste">
+				Sala 4 y 5 años
 			</h2>
 
-			<h3>
-				Fuente h3<br>
-				<small>Fuente h3 small</small>
-			</h3>
+			<p class="text-justify">
+				Esta sala de Jornada Complementaria se conforma por nenes de las salas de 4 y 5 años y están a cargo dos docentes. Las actividades son de juego/tarea; se realizan proyectos mensuales favoreciendo al desarrollo del lenguaje oral, la expresión espontánea, ofreciéndoles diversas técnicas y elementos que orienten el desarrollo de la capacidad creadora.
+			</p>
+			<p class="text-justify">
+				<strong>Almuerzo</strong>: pueden optar por la vianda individual o por el servicio de catering que ofrece el Colegio.
+			</p>
+			<p class="text-justify">
+				<strong>Materias especiales</strong>: inglés y Computación
+			</p>
 
-			<h4>
-				Fuente h4<br>
-				<small>Fuente h4 small</small>
-			</h4>
 
-			<h5>
-				Fuente h5<br>
-				<small>Fuente h5 small</small>
-			</h5>
+			<h2 class="color-celeste">
+				Primaria
+			</h2>
 
-			<q>La escuela es el arma más poderosa que puedes usar para cambiar el mundo.</q>
-			<p>Nelson Mandela</p>
+			<p class="text-justify">
+				La organización de los Talleres está orientada hacia la posibilidad de ampliar y profundizar en áreas del conocimiento, desde un espacio propicio para desarrollar las potencialidades y estimular la creatividad en diversas áreas.
+			</p>
+			<p class="text-justify">
+				<strong>Almuerzo</strong>: pueden optar por la vianda individual o por el servicio de catering que ofrece el Colegio.
+			</p>
+			<p class="text-justify">
+				<strong>Materias especiales</strong>: Educación Plástica, Educación Física, Idioma extranjera, Informática, Comunicación Social el Taller de Tareas a cargo de maestras de grado para servir de apoyo en las diversas áreas del conocimiento.
+			</p>
+
+
 	    </div><!-- //.main-content-page -->
 
     <?php if ( $dispositivo == 'pc' )  : ?> 

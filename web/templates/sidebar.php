@@ -40,17 +40,24 @@ switch ( $pageActual ) {
 		);
 		break;
 
-	default:
-		$widgets = array( 
-			'bienvenidos', 'niveles', 'campus', 'noticias', 'calendario', 'edad-feliz', 'xhendra', 'contacto'
-		);
-		break;
-
+	case 'jornada-complementaria':
 	case 'documentacion':
 		$widgets = array( 
 			'contacto', 'noticias', 'campus', 'xhendra', 
 		);
 	break;
+
+	case 'campus-virtual':
+		$widgets = array( 
+			'bienvenidos', 'niveles', 'noticias', 'contacto', 'xhendra', 
+		);
+	break;
+
+	default:
+		$widgets = array( 
+			'bienvenidos', 'niveles', 'campus', 'noticias', 'calendario', 'edad-feliz', 'xhendra', 'contacto'
+		);
+		break;
 }
 
 ?>

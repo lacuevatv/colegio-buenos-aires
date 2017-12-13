@@ -30,7 +30,7 @@ define('LINK_FACEBOOK', '#');
 define('LINK_INSTAGRAM', '#');
 define('LINK_TWITTER', '#');
 define('LINK_YOUTUBE', '#');
-define('LINK_EMAIL', '#');
+define('LINK_EMAIL', 'tallercba@yahoo.com.ar');
 define('TELCOLEGIO', '4855 8289');
 define('COLEGIODIRECCION', 'Acevedo 357, Villa Crespo, 1414 CABA');
 define('COLEGIOEMAIL', 'info@colegiobuenosaires.edu.ar');
@@ -39,6 +39,7 @@ define('CAMPUSVIRTUAL', '#');
 define('XHENDRA', '#');
 define('LINKINSCRIBITE', MAINSURL . '/contacto');
 define('MAPAGOOGLE', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2362842021116!2d-58.44429744015378!3d-34.59818617135286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca0b414510e1%3A0x43564576cc0da8d3!2sAcevedo+357%2C+C1414DJG+CABA!5e0!3m2!1ses!2sar!4v1511791250465' );
+define('LINKFORMULARIOCAMPUS','https://docs.google.com/forms/d/e/1FAIpQLSdvBA2otgsuDDqMlR2aup2O8fnA1ccQJDK0mlJU9B3E9w9Q0g/viewform');
 //categoria para hacer loop
 global $categorias;
 $categorias = array(

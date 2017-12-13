@@ -2,6 +2,7 @@
 (Sitio auto administrable)
 
 ## Versiones:
+* 0.4.16 - ARMANDO PAGINAS: Pagina de campus virtual y jornada complementaria terminada
 * 0.4.16 - ARMANDO PAGINAS: Terminado inicio con grid superior!!!
 * 0.4.15 - ARMANDO PAGINAS: Terminando inicio, faltan los widgets superiores en grilla y ya estoy.
 * 0.4.14 - ARMANDO PAGINAS: Niveles. Quedó lista niveles, falta inicio y campus virtual.
