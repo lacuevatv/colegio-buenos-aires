@@ -2,6 +2,8 @@
 (Sitio auto administrable)
 
 ## Versiones:
+* 0.4.20 - Sitio Listo para probar, falta una sola pagina porque no tengo info: campo-deportes
+* 0.4.19 - Habilitado la promo en front y backend con url
 * 0.4.18 - Organizado el script.js y corregido algunos detalles de css. Pagina subida para probar funcionamiento
 * 0.4.17 - ARMANDO PAGINAS: Pagina de campus virtual y jornada complementaria terminada
 * 0.4.16 - ARMANDO PAGINAS: Terminado inicio con grid superior!!!
