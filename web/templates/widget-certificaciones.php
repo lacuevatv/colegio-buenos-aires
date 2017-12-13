@@ -1,4 +1,5 @@
 <?php 
+global $pageActual;
 
 $contenidoCertificaciones = array(
 	'idioma'    => array(
@@ -17,33 +18,51 @@ $contenidoCertificaciones = array(
 	),
 );
 
-	switch ($data) {
-		case 'utn':
-		case 'idioma': ?>
-			<article class="niveles-widget-article animation-element fade-in-scroll">
-				<figure class="niveles-widget-imagen">
-					<img src="<?php echo MAINSURL; ?>/assets/images/<?php echo $contenidoCertificaciones[$data]['imagen']?>">
-				</figure>
-				<div class="niveles-widget-data <?php echo $contenidoCertificaciones[$data]['color']?> animation-element niveles-widget-data-animate">
-					<h1>
-						<?php echo $contenidoCertificaciones[$data]['titulo']?>
-					</h1>
+//el template normal es cuando no está en la pagina de inicio
+if ( $pageActual != 'inicio' ) : ?>
 
-					<p>
-						<?php echo $contenidoCertificaciones[$data]['parrafo']?>
-					</p>
-					<p>
-						<a href="<?php echo MAINSURL . $contenidoCertificaciones[$data]['link']; ?>" class="btn btn-sm btn-border-inverse">
-							Leer más
-						</a>
-					</p>
-				</div>
-			</article>
-		<?php break;
-		
-		default:
-			//aca irian los dos en uno
-			echo 'default';
-			break;
-	}
+<article class="niveles-widget-article animation-element fade-in-scroll">
+	<figure class="niveles-widget-imagen">
+		<img src="<?php echo MAINSURL; ?>/assets/images/<?php echo $contenidoCertificaciones[$data]['imagen']?>">
+	</figure>
+	<div class="niveles-widget-data <?php echo $contenidoCertificaciones[$data]['color']?> animation-element niveles-widget-data-animate">
+		<h1>
+			<?php echo $contenidoCertificaciones[$data]['titulo']?>
+		</h1>
+
+		<p>
+			<?php echo $contenidoCertificaciones[$data]['parrafo']?>
+		</p>
+		<p>
+			<a href="<?php echo MAINSURL . $contenidoCertificaciones[$data]['link']; ?>" class="btn btn-sm btn-border-inverse">
+				Leer más
+			</a>
+		</p>
+	</div>
+</article>
+
+<?php else : 
+//el template de la pagina de incio
 ?>
+
+<article class="niveles-widget-article-inicio animation-element fade-in-scroll">
+	<figure class="niveles-widget-imagen">
+		<img src="<?php echo MAINSURL; ?>/assets/images/<?php echo $contenidoCertificaciones[$data]['imagen']?>">
+	</figure>
+	<div class="niveles-widget-data <?php echo $contenidoCertificaciones[$data]['color']?> animation-element niveles-widget-data-animate">
+		<h1>
+			<?php echo $contenidoCertificaciones[$data]['titulo']?>
+		</h1>
+
+		<p>
+			<?php echo $contenidoCertificaciones[$data]['parrafo']?>
+		</p>
+		<p>
+			<a href="<?php echo MAINSURL . $contenidoCertificaciones[$data]['link']; ?>" class="btn btn-border-inverse">
+				Leer más
+			</a>
+		</p>
+	</div>
+</article>	
+
+<?php endif; ?>

@@ -9,30 +9,39 @@ include 'header.php';
 ?>
 <!--- .inner-wrapper: contenido principal y específico del template -->
 <div class="inner-wrapper" >
-	<header>
-		<h1 class="sr-only">Colegio Buenos Aires</h1>
+	<header class="header-inicio">
 
 		<div class="container">
-			<div class="widgets-inicio-wrapper">
+
+			<h1 id="main-title-inicio" class="subtitulo_clasico text-center animation-element fade-in-scroll in-view"">
+				Colegio Buenos Aires
+			</h1>
+
+			<div class="grid-inicio-wrapper">
 				
-				<ul class="widgets-inicio">
+				<ul class="grid-inicio">
 					<li>
-						<?php //getTemplate( 'widget-bienvenidos' ); ?>
+						<?php
+						global $dispositivo;
+						if ( $dispositivo  != 'movil' ) {
+							getTemplate( 'widget-bienvenidos', 'inicio' ); 
+						}
+						?>
 					</li>
 					<li>
-						<?php //getTemplate( 'widget-niveles', 'niveles' ); ?>
+						<?php getTemplate( 'widget-niveles', 'inicio' ); ?>
 					</li>
 					<li>
-						<?php //getTemplate( 'widget-calendario' ); ?>
+						<?php getTemplate( 'widget-calendario', 'inicio' ); ?>
 					</li>
 					<li>
-						<?php //getTemplate( 'widget-campus-virtual' ); ?>
+						<?php getTemplate( 'widget-campo-deportes', 'inicio' ); ?>
 					</li>
 					<li>
-						<?php //getTemplate( 'widget-certificaciones', 'ingles' ); ?>
+						<?php getTemplate( 'widget-certificaciones', 'utn' ); ?>
 					</li>
 					<li>
-						<?php //getTemplate( 'widget-campo-deportes' ); ?>
+						<?php getTemplate( 'widget-certificaciones', 'idioma' ); ?>
 					</li>
 				</ul>
 
@@ -162,7 +171,7 @@ include 'header.php';
 							Niveles
 						</h2>
 						
-						<?php getTemplate( 'widget-niveles', 'inicio' ); ?>
+						<?php getTemplate( 'widget-niveles' ); ?>
 
 					</section>
 				</div>

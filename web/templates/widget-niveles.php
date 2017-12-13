@@ -19,6 +19,7 @@ $contenidoNiveles = array(
 		'link'    => '/niveles/secundario',
 	),
 );
+global $pageActual;
 
 switch ($data) {
 	case 'niveles': ?>
@@ -92,11 +93,82 @@ switch ($data) {
 		</ul>
 	<?php break;
 
+	case 'inicio': ?>
+		<ul class="niveles-widget-app-column">
+			<li>
+				<article class="niveles-widget-article-inicio animation-element fade-in-scroll">
+					<figure class="niveles-widget-imagen">
+						<img src="<?php echo MAINSURL . '/assets/images/' . $contenidoNiveles['inicial']['imagen']; ?>">
+					</figure>
+					<div class="niveles-widget-data animation-element niveles-widget-data-animate">
+						<h1>
+							<?php echo $contenidoNiveles['inicial']['titulo']; ?>
+						</h1>
+
+						<p>
+							<?php echo $contenidoNiveles['inicial']['parrafo']; ?>
+						</p>
+						<p>
+							<a href="<?php echo MAINSURL . $contenidoNiveles['inicial']['link']; ?>" class="btn btn-border-inverse">
+								Leer más
+							</a>
+						</p>
+					</div>
+				</article>
+			</li>
+
+			<li>
+				<article class="niveles-widget-article-inicio animation-element fade-in-scroll">
+					<figure class="niveles-widget-imagen">
+						<img src="<?php echo MAINSURL . '/assets/images/' . $contenidoNiveles['primaria']['imagen']; ?>">
+					</figure>
+					<div class="niveles-widget-data niveles-widget-data-celeste animation-element niveles-widget-data-animate">
+						<h1>
+							<?php echo $contenidoNiveles['primaria']['titulo']; ?>
+						</h1>
+
+						<p>
+							<?php echo $contenidoNiveles['primaria']['parrafo']; ?>
+						</p>
+						<p>
+							<a href="<?php echo MAINSURL . $contenidoNiveles['primaria']['link']; ?>" class="btn btn-border-inverse">
+								Leer más
+							</a>
+						</p>
+					</div>
+				</article>
+			</li>
+
+			<li>
+				<article class="niveles-widget-article-inicio animation-element fade-in-scroll">
+					<figure class="niveles-widget-imagen">
+						<img src="<?php echo MAINSURL . '/assets/images/' . $contenidoNiveles['secundario']['imagen']; ?>">
+					</figure>
+					<div class="niveles-widget-data niveles-widget-data-verde animation-element niveles-widget-data-animate">
+						<h1>
+							<?php echo $contenidoNiveles['secundario']['titulo']; ?>
+						</h1>
+
+						<p>
+							<?php echo $contenidoNiveles['secundario']['parrafo']; ?>
+						</p>
+						<p>
+							<a href="<?php echo MAINSURL . $contenidoNiveles['secundario']['link']; ?>" class="btn btn-border-inverse">
+								Leer más
+							</a>
+						</p>
+					</div>
+				</article>
+			</li>
+
+		</ul>
+	<?php break;
+
 	//default es widget sidebar
 	default: ?>
 	<article class="widget animation-element fade-in-scroll">
 		
-	<?php if ( $data != 'inicio') : ?>		
+	<?php if ( $pageActual != 'inicio') : ?>		
 	
 		<h1>Niveles</h1>
 	

@@ -2,7 +2,7 @@
 	<figure class="niveles-widget-imagen">
 		<img src="<?php echo MAINSURL; ?>/assets/images/jornada-complementaria.jpg">
 	</figure>
-	<div class="niveles-widget-data niveles-widget-data-verde-agua animation-element niveles-widget-data-animate">
+	<div class="niveles-widget-data niveles-widget-data-verde animation-element niveles-widget-data-animate">
 		<h1>
 			Jornada Complementaria
 		</h1>

@@ -35,6 +35,7 @@ $(document).ready(function(){
 		contactForm();
 	}
 
+	//acordion de institucional en pagina de inicio
 	if (actualPage == 'inicio') {
 		institucionalAcordion();
 	}
@@ -140,9 +141,17 @@ $(window).on('load', function(){
 	 * INICIOS GALERIA DE IMAGENES
 	*/
 	
+	if (actualPage == 'inicio') {
+		galeriaImagenesInicio( $('.galeria-inicio-wrapper') );
+	}
+
+
+
 	//galeria de bienvenidos, widget
-	var galeriaWidget = new galeriaImagenes( $('.wrapper-galeria-images') );
-	galeriaWidget.initGaleria();
+	if (actualPage != 'inicio') {
+		var galeriaWidget = new galeriaImagenes( $('.wrapper-galeria-images') );
+		galeriaWidget.initGaleria();
+	}
 
 	//si es noticias busca iniciar galeria:
 
@@ -387,9 +396,71 @@ function contactForm() {
 /*--------------------------------------------------------------
 4.0 GALERIA IMAGENES
 --------------------------------------------------------------*/
+/*
+ * GALERIA DE IMAGENES DE INICIO
+ * agrega y quita clases css a las imagenes que tienen animaciones internas
+*/
+
+function galeriaImagenesInicio ( contenedor, speedTransition ) {
+	this.contenedor = contenedor;
+	speedTransition || ( speedTransition = 5000 );
+	
+	var figure = $(contenedor).find('figure');
+	var images = $(contenedor).find('img');
+	var captions = $(contenedor).find('figcaption');
+	var indice = 0;
+	var cantImages = figure.length-1;
+
+
+	animationStart = function () {
+		setInterval(animacionImagenes, speedTransition);	
+	}
+
+	togleClases = function (indice) {
+		$(figure[indice]).toggleClass('animate-figure-galeria');
+		$(images[indice]).toggleClass('animated-image-galeria');
+		$(captions[indice]).toggleClass('animated-figcaption-galeria');
+	}
+
+	animacionImagenes = function () {
+
+		//si el indice esta en primer lugar
+		if ( indice == 0 ) {
+			//pone la nueva imagen
+			togleClases(indice+1);
+			//suma indice
+			indice++;
+
+			// o si indice esta en ultimo lugar
+		} else if ( indice == cantImages ) {
+			//togleClases(0);
+			
+			
+			for (var i = 1; i <= cantImages; i++) {
+				togleClases(i);	
+			}
+
+			indice = 0;
+
+			
+		} else {
+			//pone la nueva imagen
+			togleClases(indice+1);
+			
+			//suma indice
+			indice++;
+
+		}	
+	}
+
+	//inicia la galeria
+	togleClases(0);
+	animationStart();
+}
+
 
 /*
- * La galería de imagenes std está al inicio y en el sidebar, las imágenes están definidas en una varible global en config.php
+ * GALERIA IMAGENES SIDEBAR
 */
 
 function galeriaImagenes( contenedor, speedTransition, speedAnimation, speedAnimationCaption, classAnimationCaption, tipoTransicion ) {
