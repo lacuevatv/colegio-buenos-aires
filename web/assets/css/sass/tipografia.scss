@@ -141,14 +141,14 @@ q {
 .niveles-header {
 	padding-top: 50px;
 	padding-bottom: 20px;
+	background-color: $color-azul-titulos;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center 45%;
 	@media (min-width: $sm) {
 		padding-bottom: 60px;
 	}
 	@media (min-width: $md) {
-		background-color: $color-azul-titulos;
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center 45%;
 		padding-top: 10vh;
 		padding-bottom: 10vh;
 	}

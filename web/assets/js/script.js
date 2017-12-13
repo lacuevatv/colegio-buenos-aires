@@ -30,85 +30,117 @@ var actualPage;
 $(document).ready(function(){
 	actualPage = $('body').attr('data-page');
 
-	//si la pagina es contacto, inicia funcion de formulario
-	if (actualPage == 'contacto') {
-		contactForm();
-	}
+	switch(actualPage) {
 
-	//acordion de institucional en pagina de inicio
-	if (actualPage == 'inicio') {
+	case 'inicio':
+        //acordion de institucional en pagina de inicio
 		institucionalAcordion();
-	}
 
-	/*
-	 * Inicio de acordeones
-	*/
-	if ( actualPage == 'niveles' ) {
-		//en la pagina niveles los inicializa a todos juntos por su clase
-		var nivelesAcordion = new acordion( $('.acordion'), 'open' );
-		nivelesAcordion.initAcordion();
-	}
-
-	if ( actualPage == 'campus-virtual' ) {
-		//en la pagina niveles los inicializa a todos juntos por su clase
-		var nivelesAcordion = new acordion( $('.acordion') );
-		nivelesAcordion.initAcordion();
-	}
-
-
-	if ( document.getElementById('acordionNivelWidget') != null && actualPage != 'niveles' && actualPage != 'campus-virtual' ) {
+    	//este acordion va en todos salvo en niveles y campus virtual
+    	if ( document.getElementById('acordionNivelWidget') != null ) {
 		//inicializa el acordion widget en otras paginas
 			var widgetAcordion = new acordion( $('#acordionNivelWidget'), 'open', 'active' );
 			widgetAcordion.initAcordion();	
-	}
-	
+		}	
 
-	//acordion documentacion
-	if ( document.getElementById('acordionDocumentacion') != null && actualPage == 'documentacion') {
-		//en la pagina niveles los inicializa a todos juntos por su clase
-			var documentacionAcordion = new acordion( $('#acordionDocumentacion') );
-			documentacionAcordion.initAcordion();
-	}
-	
+    break;
 
-	if ( document.getElementById('acordionAutoridades') != null ) {
-		//inicializa los acordeones de institucional
-		var autoridadesAcordion = new acordion( $('#acordionAutoridades') );
-			autoridadesAcordion.initAcordion();
-	}
-	
+	case 'niveles':
+        
+    	//en la pagina niveles se inicializa a todos los acordiones por su clase
+		var nivelesAcordion = new acordion( $('.acordion'), 'open' );
+		nivelesAcordion.initAcordion();
 
-	/*
-	 * institucional, leer completo, es una especie de acordeon también
-	 */
-	var parrafoInstitucional = $('.read-more-wrapper');
-	var stdHeightParrafoInst = parrafoInstitucional.css( 'height' );
-	var alturaCompleta = parrafoInstitucional.prop('scrollHeight') + 'px';
-	
-	//al hacer clic se amplia el parrafo para leerlo completo
-	$('.read-more-button-institucional').click(function(){
-		
-		if ( parrafoInstitucional.css( 'height' ) == stdHeightParrafoInst ) {
-
-		parrafoInstitucional.animate({
-			 'height' : alturaCompleta 
-			},2000);
-		} else {
-			parrafoInstitucional.animate({
-			 'height' : stdHeightParrafoInst 
-			},2000);
-		}
-	});
-
-	
-
-	
-	/*
-	 * TABS TALLERES
+		//inicializa los tabs de talleres
+		var talleres = new talleresTabs( );
+		talleres.initTalleres();
+		/*
+	 * TABS BIENVENIDOS DE PÁGINA NIVELES
 	*/
+	var bienvenidos = new bienvenidosTabs();
+	bienvenidos.initbienvenidosTabs();
+    break;
 
-	if (actualPage == 'talleres') {
-		var talleresInicial = new talleresTabs( $('#talleres-inicial-tab') );
+    case 'documentacion':
+        
+        //acordion documentacion
+		if ( document.getElementById('acordionDocumentacion') != null ) {
+			//en la pagina niveles los inicializa a todos juntos por su clase
+				var documentacionAcordion = new acordion( $('#acordionDocumentacion') );
+				documentacionAcordion.initAcordion();
+		}
+    	//este acordion va en todos salvo en niveles y campus virtual
+    	if ( document.getElementById('acordionNivelWidget') != null ) {
+		//inicializa el acordion widget en otras paginas
+			var widgetAcordion = new acordion( $('#acordionNivelWidget'), 'open', 'active' );
+			widgetAcordion.initAcordion();	
+		}	
+
+    break;
+
+    case 'institucional':
+        
+        //inicializa los acordeones de institucional
+        if ( document.getElementById('acordionAutoridades') != null ) {
+			var autoridadesAcordion = new acordion( $('#acordionAutoridades') );
+				autoridadesAcordion.initAcordion();
+		}
+    	//este acordion va en todos salvo en niveles y campus virtual
+    	if ( document.getElementById('acordionNivelWidget') != null ) {
+		//inicializa el acordion widget en otras paginas
+			var widgetAcordion = new acordion( $('#acordionNivelWidget'), 'open', 'active' );
+			widgetAcordion.initAcordion();	
+		}
+
+		/*
+		 * institucional, leer completo, es una especie de acordeon también
+		 */
+		var parrafoInstitucional = $('.read-more-wrapper');
+		var stdHeightParrafoInst = parrafoInstitucional.css( 'height' );
+		var alturaCompleta = parrafoInstitucional.prop('scrollHeight') + 'px';
+		
+		//al hacer clic se amplia el parrafo para leerlo completo
+		$('.read-more-button-institucional').click(function(){
+			
+			if ( parrafoInstitucional.css( 'height' ) == stdHeightParrafoInst ) {
+
+			parrafoInstitucional.animate({
+				 'height' : alturaCompleta 
+				},2000);
+			$(this).text('Leer menos');
+			} else {
+				parrafoInstitucional.animate({
+				 'height' : stdHeightParrafoInst 
+				},2000);
+				$(this).text('Continuar Leyendo');
+			}
+		});
+
+    break;
+
+    case 'campus-virtual':
+        
+    	var nivelesAcordion = new acordion( $('.acordion') );
+		nivelesAcordion.initAcordion();
+
+    break;
+    
+    case 'contacto':
+    	//inicia funcion de formulario
+        contactForm();
+
+    	//este acordion va en todos salvo en niveles y campus virtual
+    	if ( document.getElementById('acordionNivelWidget') != null ) {
+		//inicializa el acordion widget en otras paginas
+			var widgetAcordion = new acordion( $('#acordionNivelWidget'), 'open', 'active' );
+			widgetAcordion.initAcordion();	
+		}	
+
+    break;
+
+    case 'talleres':
+    	//inicializa los tabs de talleres
+    	var talleresInicial = new talleresTabs( $('#talleres-inicial-tab') );
 		talleresInicial.initTalleres();
 
 		var talleresPrimaria = new talleresTabs( $('#talleres-primaria-tab') );
@@ -116,19 +148,18 @@ $(document).ready(function(){
 
 		var talleresSecundaria = new talleresTabs( $('#talleres-secundario-tab') );
 		talleresSecundaria.initTalleres();
-	}
-	
-	if (actualPage == 'niveles') {
-		var talleres = new talleresTabs( );
-		talleres.initTalleres();
-	}
 
+    break;
 
-	/*
-	 * TABS BIENVENIDOS DE PÁGINA NIVELES
-	*/
-	var bienvenidos = new bienvenidosTabs();
-	bienvenidos.initbienvenidosTabs();
+    default:
+        //este va en todos salvo en niveles y campus virtual
+    	if ( document.getElementById('acordionNivelWidget') != null ) {
+		//inicializa el acordion widget en otras paginas
+			var widgetAcordion = new acordion( $('#acordionNivelWidget'), 'open', 'active' );
+			widgetAcordion.initAcordion();	
+		}	
+	break;
+}
 
 });//on-ready
 
@@ -150,20 +181,18 @@ $(window).on('load', function(){
 		galeriaImagenesInicio( $('.galeria-inicio-wrapper') );
 	}
 
-
-
 	//galeria de bienvenidos, widget
-	if (actualPage != 'inicio') {
+	if ( document.getElementsByClassName('wrapper-galeria-images') != null ) {
 		var galeriaWidget = new galeriaImagenes( $('.wrapper-galeria-images') );
 		galeriaWidget.initGaleria();
 	}
 
 	//si es noticias busca iniciar galeria:
-
 	if (actualPage == 'noticias') {
 		galeriaPost = new galeriaImagenesPost( $('.post-galeria-wrapper') );
 		galeriaPost.startGaleriaPost();
 	}
+
 
 	/*
 	 * ANIMACIONES
@@ -1119,8 +1148,6 @@ function talleresTabs( contenedor ) {
 	
 	//función que inicia las tabs
 	bienvenidosTabs.prototype.initbienvenidosTabs = function () {
-		//debugger;
-		
 		
 		//poner la clase active en el primer titulo activado
 		cambiartitulo(toggles[0]);

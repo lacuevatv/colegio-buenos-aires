@@ -426,16 +426,16 @@ q {
 
 .niveles-header {
   padding-top: 50px;
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  background-color: #011a29;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 45%; }
   @media (min-width: 768px) {
     .niveles-header {
       padding-bottom: 60px; } }
   @media (min-width: 992px) {
     .niveles-header {
-      background-color: #011a29;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center 45%;
       padding-top: 10vh;
       padding-bottom: 10vh; } }
   .niveles-header h1 {
