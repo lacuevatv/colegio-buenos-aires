@@ -58,7 +58,10 @@ global $pageActual;
         <?php getTemplate( 'widget-frases' ); ?>
         <img src="<?php echo MAINSURL; ?>/assets/images/logo-transparente.png" class="animation-element fade-in">
     </aside>
+    <?php
+        openPopUp($pageActual);
 
+    ?>
 <!--- header ---------------------->
     <header class="header-site">
 <!--- nav ---------------------->

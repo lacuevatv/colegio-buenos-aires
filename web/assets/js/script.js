@@ -225,6 +225,34 @@ $(window).on('load', function(){
     $window.on('scroll resize', check_if_in_view);
     $window.trigger('scroll');
 
+
+    /*
+    POPUP
+    */
+    var popup = $( '.popup' );
+    var popupIMG = $( '.popup img' );
+    var tiempo = 10000;
+    if ( popup.length != 0 ) {
+        var closeX = $( '.close-popup' );
+        var closeBTN = $( '.cerrar-popup' );
+        
+        function openPop () {
+            popup.addClass('popup-active');
+            popupIMG.fadeIn();
+        }
+        
+        setTimeout( openPop, tiempo);
+        
+        function closePopup() {
+            popup.removeClass('popup-active');
+            popupIMG.fadeOut(tiempo);
+        }
+
+        closeX.click(closePopup);
+        closeBTN.click(closePopup);
+
+    }
+
 });//on-load
 
 

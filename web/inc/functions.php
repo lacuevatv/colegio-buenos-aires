@@ -457,13 +457,11 @@ function getSinglePost ( $slug ) {
 
 //Muestra el botón de cargar más de ser necesario e indica la página
 function getPagination( $categoria, $postPerPage ) {
-
-	//$posts = getPosts( $categoria, 10, 'none', 'publicado', $postPerPage );
-	$posts = getPosts( $categoria, -1, 'none', 'publicado' );
+	$posts = getPosts( $categoria );
 	$totalPost = count($posts);
 	$postRestantes = ceil($totalPost - $postPerPage);//devuelve valor redondeado 
 
-	if ( $postRestantes == 0 ) {
+	if ( $postRestantes <= 0 ) {
 		return;
 	}
 
@@ -521,4 +519,74 @@ function getDocumentation ( $section = 'none', $subSection = 'none' ) {
 	}
 
 	getTemplate( 'template-documentacion', $loop );
+}
+
+function openPopUp ( $page ) {
+	
+	if ( $page == 'inicio' ) {
+
+		$connection = connectDB();
+		$tabla = 'options';
+		$option_name = 'popupValue';
+		$query  = "SELECT * FROM " .$tabla. " WHERE options_name = '{$option_name}' LIMIT 1";
+		$result =  mysqli_query($connection, $query);
+		
+		
+		if ($result->num_rows == 0) {
+			return;
+		}
+		
+		$data = mysqli_fetch_array($result);
+		
+		if ($data[2] == '1') {
+			getTemplate( 'popup' );
+		} else {
+			return;
+		}
+	}
+}//funcion openPopUp
+
+function showPopupImg () {
+	
+	$connection = connectDB();
+	$tabla = 'medios';
+	$post_type = 'promo';
+	$query  = 'SELECT * FROM ' .$tabla. ' WHERE medio_post_type = "'.$post_type.'" order by medio_id desc LIMIT 1';
+
+	$result =  mysqli_query($connection, $query);
+	$data = mysqli_fetch_array($result);
+	$urlPoup = $data[3];
+	
+	mysqli_close($connection);
+	if ( $urlPoup == NULL ) {
+		echo MAINSURL . '/assets/images/popupdefault.png';
+	} else {
+		echo UPLOADSURL . '/' . $urlPoup;
+	}
+}
+
+//busca el url si existe
+function getUrlPromo() {
+	$connection = connectDB();
+	$tabla = 'options';
+	$option_name = 'urlPopup';
+
+	$query  = "SELECT * FROM " .$tabla. " WHERE options_name = '{$option_name}' LIMIT 1";
+	$result =  mysqli_query($connection, $query);
+	
+	closeDataBase($connection);
+
+	if ($result->num_rows == 0) {
+		return '#';
+	}
+	
+	$data = mysqli_fetch_array($result);
+	
+	if ($data[2] == '') {
+		return '#';
+	} else {
+		return $data[2];
+	}
+
+	closeDataBase($connection);
 }
