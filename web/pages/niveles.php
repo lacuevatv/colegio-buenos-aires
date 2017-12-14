@@ -83,7 +83,7 @@ if ( $slug == '' ) :
 //template inicial, primaria secundaria con sidebar
  else : ?>
     
-    <header class="niveles-header" style="background-image: url(/assets/images/<?php echo $textoNiveles['imagenHeader'][$slug]; ?>)">
+    <header class="niveles-header" style="<?php echo 'background-image: url('.MAINSURL.'/assets/images/'.$textoNiveles['imagenHeader'][$slug].')'; ?>">
     	<div class="container">
 	        <h1>
 	        	<?php echo $textoNiveles['tituloHeader'][$slug]; ?>

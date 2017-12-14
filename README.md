@@ -2,6 +2,7 @@
 (Sitio auto administrable)
 
 ## Versiones:
+* 0.4.21 - Algunos arreglos de css. Falta arreglar en inicio el grid y las tabs en niveles. En ie no funcionan bien. Agregué un script para detectar el navegador y hacer algo diferente.
 * 0.4.20 - Sitio Listo para probar, falta una sola pagina porque no tengo info: campo-deportes
 * 0.4.19 - Habilitado la promo en front y backend con url
 * 0.4.18 - Organizado el script.js y corregido algunos detalles de css. Pagina subida para probar funcionamiento

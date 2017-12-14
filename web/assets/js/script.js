@@ -23,8 +23,28 @@ var uploadsUrl = baseUrl + '/galeria'
 var functionsDir = baseUrl + '/inc';
 var actualPage;
 //variables que identifican los navegadores de microsoft
-//var es_ie = navigator.userAgent.indexOf("MSIE") > -1 ;
-//var es_edge = window.navigator.userAgent.indexOf("Edge") > -1
+var es_edge = window.navigator.userAgent.indexOf("Edge") > -1;
+var es_safari = window.navigator.userAgent.indexOf("Safari") > -1;
+var es_chrome = window.navigator.userAgent.indexOf("Chrome") > -1;
+
+var safari = false;
+var ms_ie = false;
+var ua = window.navigator.userAgent;
+var old_ie = ua.indexOf('MSIE ');
+var new_ie = ua.indexOf('Trident/');
+var edge = ua.indexOf('Edge');
+
+if ( (old_ie > -1) || (new_ie > -1) || (edge > -1) ) {
+    ms_ie = true;
+}
+
+if ( navigator.vendor.indexOf('Apple') > -1 ) {
+	safari = true;
+}
+
+console.log(safari);
+console.log(ms_ie);
+
 
 
 $(document).ready(function(){

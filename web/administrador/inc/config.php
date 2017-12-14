@@ -37,7 +37,7 @@ $subsection = array(
 	'inicial'    => array(
 		'docs',
 	),
-	'primario'   => array(
+	'primaria'   => array(
 		'docs',
 	),
 	'secundario' => array(
