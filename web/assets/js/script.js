@@ -42,17 +42,20 @@ if ( navigator.vendor.indexOf('Apple') > -1 ) {
 	safari = true;
 }
 
-console.log(safari);
-console.log(ms_ie);
-
-
-
 $(document).ready(function(){
 	actualPage = $('body').attr('data-page');
 
 	switch(actualPage) {
 
 	case 'inicio':
+		//si es safari o msi muestra otro inicio
+		if (safari || ms_ie) {
+			$( '.grid-inicio' ).addClass('grid-inicio-hack');
+			$( '.niveles-widget-app-column' ).addClass('niveles-widget-app');
+			$( '.niveles-widget-app-column' ).removeClass('niveles-widget-app-column');
+			$( '.niveles-widget-app' ).css('padding', '10px 0');
+			
+		}
         //acordion de institucional en pagina de inicio
 		institucionalAcordion();
 

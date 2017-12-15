@@ -9,7 +9,7 @@
 		</p>
 
 		<p class="text-justify">
-			Entre los objetivos institucionales prioriza el desarrollo integral de la personalidad de los alumnos, educándoloes y preparándolos para actuar en forma autónoma y responsable en un mundo globalizado, y desarrollar a través de la acción diario los valores que lo lleven ser personas de bien.
+			Entre los objetivos institucionales prioriza el desarrollo integral de la personalidad de los alumnos, educándolos y preparándolos para actuar en forma autónoma y responsable en un mundo globalizado, y desarrollar a través de la acción diaria los valores que lo lleven a ser personas de bien.
 		</p>
 
 		<?php getTemplate( 'widget-niveles', 'niveles' ); ?>
@@ -141,7 +141,7 @@
 						Formulario de contacto
 					</h3>
 					<p class="animation-element text-justify fade-in-scroll">
-						Puede completar el formulario para solicitar presupuestos o realizar preguntas generales sobre Colegio Buenos Aires y nuestros cursos. ¡Le responderemos a la brevedad!
+						Puede completar el formulario para solicitar información o hacer consultas sobre nuestras propuestas educativas. ¡Le responderemos a la brevedad!
 					</p>
 					<div class="contact-form-wrapper animation-element fade-in-scroll">
 						<?php getTemplate( 'formulario-contacto' ); ?>

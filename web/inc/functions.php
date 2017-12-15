@@ -510,12 +510,12 @@ function getDocumentation ( $section = 'none', $subSection = 'none' ) {
 		echo '<li>Ningun archivo ha sido cargado todavía</li>';
 
 		return;
+		
 	} else {
 
 		while ($row = $result->fetch_array()) {
 				$loop[] = $row;
 			}
-
 	}
 
 	getTemplate( 'template-documentacion', $loop );

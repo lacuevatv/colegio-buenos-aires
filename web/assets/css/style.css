@@ -16,6 +16,7 @@
 12.0 PAGES
 13.0 ANIMATIONS
 14.0 POPUP
+15.0 HACK CROSSBROWSING
 
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -1624,7 +1625,7 @@ q {
         max-height: 30vh; } }
     @media (min-width: 992px) {
       .loop-posts-wrapper .post-in-loop .image-wrapper-loop {
-        max-height: 35vh; } }
+        max-height: 45vh; } }
     @media (min-width: 1500px) {
       .loop-posts-wrapper .post-in-loop .image-wrapper-loop {
         max-height: 40vh; } }
@@ -2070,6 +2071,7 @@ q {
     color: #119ad5; }
 .content-niveles .tabs-historia-wrapper .tabs-historia-contenido-wrapper {
   position: relative;
+  width: 100%;
   overflow: hidden;
   min-height: 350px;
   -webkit-transition: all 1s;
@@ -2088,7 +2090,8 @@ q {
     -moz-transform: translateX(-100%);
     -ms-transform: translateX(-100%);
     transform: translateX(-100%);
-    opacity: 0; }
+    opacity: 0;
+    width: 100%; }
   .content-niveles .tabs-historia-wrapper .tabs-historia-contenido-wrapper .on-active {
     -webkit-transform: translateX(0%);
     -moz-transform: translateX(0%);
@@ -2761,22 +2764,6 @@ q {
     .documentacion-list li a:hover {
       text-decoration: underline; }
 
-li.prueba {
-  display: block;
-  width: 100%;
-  background: red;
-  min-height: 250px; }
-  li.prueba:nth-child(2) {
-    background: blue; }
-  li.prueba:nth-child(3) {
-    background: green; }
-  li.prueba:nth-child(4) {
-    background: gray; }
-  li.prueba:nth-child(5) {
-    background: black; }
-  li.prueba:nth-child(6) {
-    background: pink; }
-
 /*INICIO*/
 .header-inicio #main-title-inicio {
   font-size: 180%;
@@ -2892,7 +2879,12 @@ li.prueba {
       display: none; } }
   @media (min-width: 1200px) {
     .header-inicio .grid-inicio > li:nth-child(3) {
-      display: block; } }
+      display: block;
+      -webkit-align-self: self-start;
+      -moz-align-self: self-start;
+      -ms-align-self: self-start;
+      -o-align-self: self-start;
+      align-self: self-start; } }
   @media (min-width: 1200px) {
     .header-inicio .grid-inicio > li:nth-child(4) {
       -webkit-grid-row: 2/4;
@@ -3237,7 +3229,7 @@ li.prueba {
     -ms-transform: translate3d(0px, 0px, 0);
     transform: translate3d(0px, 0px, 0); } }
 /*--------------------------------------------------------------
-14.0 ANIMATION
+14.0 POPUP
 --------------------------------------------------------------*/
 .popup {
   position: fixed;
@@ -3303,5 +3295,43 @@ li.prueba {
   -ms-justify-content: center;
   -o-justify-content: center;
   justify-content: center; }
+
+/*--------------------------------------------------------------
+15.0 HACK CROSSBROWSING
+--------------------------------------------------------------*/
+@media (min-width: 992px) {
+  .header-inicio .grid-inicio-hack {
+    display: flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
+    justify-content: space-between;
+    flex-wrap: wrap; } }
+@media (min-width: 992px) {
+  .header-inicio .grid-inicio-hack > li {
+    width: 50%; } }
+@media (min-width: 992px) {
+  .header-inicio .grid-inicio-hack > li:nth-child(1) {
+    width: 100%;
+    height: 450px; } }
+@media (min-width: 992px) {
+  .header-inicio .grid-inicio-hack > li:nth-child(2) {
+    width: 100%; } }
+@media (min-width: 992px) {
+  .header-inicio .grid-inicio-hack > li:nth-child(3) {
+    display: none; } }
+@media (min-width: 992px) {
+  .header-inicio .grid-inicio-hack > li:nth-child(4) {
+    display: none; } }
 
 /*# sourceMappingURL=style.css.map */

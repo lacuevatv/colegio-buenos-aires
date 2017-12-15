@@ -181,12 +181,18 @@ $(document).ready(function(){
 		var imgAjax = $( '.load-ajax' );
 		var formData = new FormData( formulario[0] );
 		var postType = '';
+		var archivo = false;
 		var url = ajaxFunctionDir + '/upload-medios.php';
 		//si se carga desde promociones el post type es promo
 		if ( location.search.split("=")[1] == 'promociones' ) {
 			postType = 'promo';
 			formData.append('post_type', postType);
 		}
+		if ( location.search.split("=")[1] == 'archivos' ) {
+			var archivo = true;
+		}
+
+
 		//si se carga desde sliders el post type es sliders
 		if ( location.search.split("=")[1].split("&")[0] == 'editar-slider' ) {
 			postType = 'slider';
@@ -217,6 +223,9 @@ $(document).ready(function(){
 					
 					if (response.length == 2) {
 						var html = '<input type="hidden" class="previewAtachment" name="previewAtachment" value="'+response[0]+'"><img class="preview-image img-responsive" src="'+uploadsDir+'/'+response[0]+'"><p><a href="" class="preview-file"></a></p>';
+						if (archivo) {
+							var html = '<input type="hidden" class="previewAtachment" name="previewAtachment" value="'+response[0]+'"><img class="preview-image img-responsive" src="'+administradorUrl+'/assets/images/icon-file.png"><p><a href="" class="preview-file"></a></p>';
+						}
 						var node = $(html);
 						$('.preview-wrapper').append(node);
 					} else {

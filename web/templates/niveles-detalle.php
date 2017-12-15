@@ -136,7 +136,7 @@ switch ( $data ) {
 	</h3>
 	<div class="acordion-content">
 		<div class="acordion-container">
-			En Idioma Inglés nuestro Colegio ofrece, a partir del Nivel Primario, la posibilidad de acceder a exámenes que certifiquen sus conocimientos. Es variada la oportunidad de los exámenes:  para todo el alumnado el “Trinity College London Gese” y “Pearson Exams”  y los alumnos de Inglés Intensivo, además,  pueden acceder al examen del “Cambridge YLE Exams”
+			En Idioma Inglés nuestro Colegio ofrece, a partir del Nivel Primario, la posibilidad de acceder a exámenes que certifican sus conocimientos. Es variada la oportunidad de los exámenes:  para todo el alumnado el “Trinity College London Gese” y “Pearson Exams”  y los alumnos de Inglés Intensivo, además,  pueden acceder al examen del “Cambridge YLE Exams”
 		</div>
 	</div>
 
@@ -181,7 +181,7 @@ switch ( $data ) {
 				</p>
 				<h4 class="text-uppercase">Conocimiento del mundo.</h4>
 				<p>
-					Las Ciencias Sociales y Naturales  Se busca promover desde las ciencias el sentido por la investigación a través de la indagación sobre el ambiente que los rodea, las historias personales y familiares, los cambios que establecen vinculaciones con el tiempo presente, la construcción de la identidad tomando los valores éticos y los derechos consensuados logrando satisfacer su curiosidad enriqueciendo y ampliando sus conocimientos por medio de la interacción activa con sus pares, docentes y la comunidad.
+					Las Ciencias Sociales y Naturales buscan promover desde las ciencias el sentido por la investigación a través de la indagación sobre el ambiente que los rodea, las historias personales y familiares, los cambios que establecen vinculaciones con el tiempo presente, la construcción de la identidad tomando los valores éticos y los derechos consensuados logrando satisfacer su curiosidad, enriqueciendo y ampliando sus conocimientos por medio de la interacción activa con sus pares, docentes y la comunidad.
 				</p>
 			</div>
 		</div>
@@ -208,13 +208,13 @@ switch ( $data ) {
 		</h3>
 		<div class="acordion-content">
 			<div class="acordion-container">
-				<strong>Educación Física</strong>, <strong>Educación Musical</strong>, <strong>Educación Tecnológica</strong>, <strong>Educación Plástica</strong>, <strong>Idioma Inglés</strong> e <strong>Informática</strong>.
+				Educación Física, Educación Musical, Educación Tecnológica, Educación Plástica, Idioma Inglés e Informática.
 			</div>
 		</div>
 
 		<h3 class="title-acordion acordion-color-gris animation-element slide-up">
 			<span class="icon-open"></span>
-				Idioma Ingles
+				Idioma Inglés
 		</h3>
 		<div class="acordion-content">
 			<div class="acordion-container">

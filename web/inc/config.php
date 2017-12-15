@@ -35,7 +35,7 @@ define('TELCOLEGIO', '4855 8289');
 define('COLEGIODIRECCION', 'Acevedo 357, Villa Crespo, 1414 CABA');
 define('COLEGIOEMAIL', 'info@colegiobuenosaires.edu.ar');
 define('GOOGLECALENDAR', '#');
-define('CAMPUSVIRTUAL', '#');
+define('CAMPUSVIRTUAL', 'http://campus.colegiobuenosaires.com/');
 define('XHENDRA', '#');
 define('LINKINSCRIBITE', MAINSURL . '/contacto');
 define('MAPAGOOGLE', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2362842021116!2d-58.44429744015378!3d-34.59818617135286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca0b414510e1%3A0x43564576cc0da8d3!2sAcevedo+357%2C+C1414DJG+CABA!5e0!3m2!1ses!2sar!4v1511791250465' );
@@ -62,13 +62,13 @@ $menuItems = array(
 	array( 'url' => 'edad-feliz', 'nombre' => 'Edad Feliz'),
 	array( 'url' => 'contacto', 'nombre' => 'Contacto'),
 	'hideMenus' =>  array(
-		array ('url' => 'campo-deportes', 'nombre' => 'Estancia La Chiquita'),
 		array ('url' => 'campo-deportes', 'nombre' => 'campo de deportes'),
 		array ('url' => 'campus-virtual', 'nombre' => 'campus virtual'),
 		array ('url' => 'certificaciones', 'nombre' => 'certificaciones'),
 		array ('url' => 'documentacion', 'nombre' => 'documentacion'),
 		array ('url' => 'jornada-complementaria', 'nombre' => 'jornada complementaria'),
 		array ('url' => 'talleres', 'nombre' => 'talleres'),
+		array ('url' => GOOGLECALENDAR, 'nombre' => 'Calendario'),
 	),
 );
 

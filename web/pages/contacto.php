@@ -19,7 +19,10 @@ include 'header.php';
 	    		<h2 class="subtitulo_clasico animation-element fade-in">
 	    			Formulario de Contacto
 	    		</h2>
-
+	    		<p class="text-justify animation-element fade-in-scroll">
+							Puede completar el formulario para solicitar información o hacer consultas sobre nuestras propuestas educativas. ¡Le responderemos a la brevedad!
+						</p>
+						
 	    		<?php getTemplate( 'formulario-contacto' ); ?>
 
 	    	</section>

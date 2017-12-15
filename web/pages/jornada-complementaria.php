@@ -44,7 +44,7 @@ include 'header.php';
 				<strong>Almuerzo</strong>: pueden optar por la vianda individual o por el servicio de catering que ofrece el Colegio.
 			</p>
 			<p class="text-justify">
-				<strong>Materias especiales</strong>: inglés y Computación
+				<strong>Materias especiales</strong>: Inglés y Computación
 			</p>
 
 

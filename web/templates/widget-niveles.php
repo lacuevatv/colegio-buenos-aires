@@ -3,7 +3,7 @@ $contenidoNiveles = array(
 	'inicial'    => array(
 		'imagen'  => 'inicial-widget-imagen.jpg',
 		'titulo'  => 'Inicial',
-		'parrafo' => 'A partir de la sala de 2 años nos proponemos a lograr la integración del niño a un pequeño grupo social, acompañando y estimulando el paso del juego solitario al paralelo, recurriendo al juego simbólico.',
+		'parrafo' => 'A partir de la sala de 2 años nos proponemos lograr la integración del niño a un pequeño grupo social, acompañando y estimulando el paso del juego solitario al paralelo, recurriendo al juego simbólico.',
 		'link'    => '/niveles/inicial',
 	),
 	'primaria'   => array(
@@ -15,7 +15,7 @@ $contenidoNiveles = array(
 	'secundario' => array(
 		'imagen'  => 'secundario-widget-imagen.jpg',
 		'titulo'  => 'Secundario',
-		'parrafo' => 'Hemos elaborado a lo largo de años de experiencia, un Proyecto Educativo que se condice con nuestro criterio de Formación Integral. Realizamos un seguimiento continuo e individualizado de cada uno de nuestros alumnos.',
+		'parrafo' => 'Hemos elaborado, a lo largo de años de experiencia, un Proyecto Educativo que se condice con nuestro criterio de Formación Integral. Realizamos un seguimiento continuo e individualizado de cada uno de nuestros alumnos.',
 		'link'    => '/niveles/secundario',
 	),
 );

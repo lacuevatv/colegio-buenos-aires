@@ -32,7 +32,7 @@ include 'header.php';
 						<?php getTemplate( 'widget-niveles', 'inicio' ); ?>
 					</li>
 					<li>
-						<?php getTemplate( 'widget-calendario', 'inicio' ); ?>
+						<?php getTemplate( 'widget-campus', 'inicio1' ); ?>
 					</li>
 					<li>
 						<?php getTemplate( 'widget-campo-deportes', 'inicio' ); ?>
@@ -159,7 +159,7 @@ include 'header.php';
 							Campus Virtual
 						</h2>
 
-						<?php getTemplate( 'widget-campus', 'inicio' ); ?>
+						<?php getTemplate( 'widget-campus', 'inicio2' ); ?>
 
 					</section>
 				</div>
@@ -186,7 +186,7 @@ include 'header.php';
 							Contacto
 						</h2>
 						<p class="text-justify animation-element fade-in-scroll">
-							Puede completar el formulario para solicitar presupuestos o realizar preguntas generales sobre Colegio Buenos Aires y nuestros cursos. ¡Le responderemos a la brevedad!
+							Puede completar el formulario para solicitar información o hacer consultas sobre nuestras propuestas educativas. ¡Le responderemos a la brevedad!
 						</p>
 						<div class="contact-form-wrapper animation-element fade-in-scroll">
 							<?php getTemplate( 'formulario-contacto' ); ?>

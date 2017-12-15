@@ -62,7 +62,7 @@ $textoNiveles = array(
 	),
 	'complementaria' => array(
 		'inicial'    => '<p>A partir de Sala de 2 años se puede optar por la Jornada Complementaria con horarios extendidos en contra turno. Esta sala de Jornada Complementaria se conforma por nenes de las salas de 2 y 3 años o de 4 y 5 años  y  están a cargo dos docentes. Las actividades son de juego/tarea; se realizan proyectos mensuales favoreciendo al desarrollo del lenguaje oral, la expresión espontánea, ofreciéndoles diversas técnicas y elementos que orienten el desarrollo de la capacidad creadora. </p><p><strong>Almuerzo</strong>: pueden optar por la vianda individual  o  por el servicio de catering que ofrece el Colegio.<br> <strong>Materias Especiales</strong>: Inglés  y  Computación <em>(para las salas de 4 y 5 años)</em></p>',
-		'primaria'   => '<p>En nivel Primario se puede optar por la Jornada Complementaria con horarios extendidos en contra turno. La organización de los Talleres está orientada hacia la posibilidad de ampliar y profundizar en áreas del conocimiento, desde un espacio propicio para desarrollar las potencialidades y estimular la creatividad en diversas áreas.</p> <p><strong>Almuerzo</strong>: pueden optar por la vianda individual  o  por el servicio de catering que ofrece el Colegio.</p><p> <strong>Materias especiales</strong>: Educación Plástica,  Educación Física, Idioma extranjera, Informática, Comunicación Social el Taller de Tareas a cargo de maestras de grado para servir de apoyo en las diversas áreas del conocimiento.</p>',
+		'primaria'   => '<p>En nivel Primario se puede optar por la Jornada Complementaria con horarios extendidos en contra turno. La organización de los Talleres está orientada hacia la posibilidad de ampliar y profundizar en áreas del conocimiento, desde un espacio propicio para desarrollar las potencialidades y estimular la creatividad en diversas áreas.</p> <p><strong>Almuerzo</strong>: pueden optar por la vianda individual  o  por el servicio de catering que ofrece el Colegio.</p><p> <strong>Materias especiales</strong>: Educación Plástica,  Educación Física, Idioma extranjero, Informática, Comunicación Social el Taller de Tareas a cargo de maestras de grado para servir de apoyo en las diversas áreas del conocimiento.</p>',
 	),
 );
 
@@ -159,12 +159,12 @@ if ( $slug == '' ) :
 		    					<strong>
 		    						Jornada Simple:	
 		    					</strong>
-		    						<?php echo $textoNiveles['textoHorario']['manana']['simple'][$slug]; ?>
+		    						<?php echo $textoNiveles['textoHorario']['tarde']['simple'][$slug]; ?>
 		    					<br>
 		    					<strong>
 		    						Jornada Complementaria:	
 		    					</strong>
-		    						<?php echo $textoNiveles['textoHorario']['manana']['complementaria'][$slug]; ?>
+		    						<?php echo $textoNiveles['textoHorario']['tarde']['complementaria'][$slug]; ?>
 		    				</p>
 		    			</div>
 	    			</div>

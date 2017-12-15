@@ -34,7 +34,7 @@
                     <div class="footer-contacto">
                         <h3>Contacto</h3>
                         <p>
-                            Para contactarse con nosotros puede llamarnos o visitarnos personalmente de lunes a viernes desde las 8 hasta las 18hs.
+                            Para contactarse con nosotros puede llamarnos o visitarnos personalmente de lunes a viernes desde las 9:00 a 18:00hs.
                         </p>
                         <a href="<?php echo MAINSURL; ?>/contacto" class="btn btn-border-inverse btn-sm">Contactar</a>
                     </div>
