@@ -23,7 +23,7 @@ define("DB_PASS", "123");
 define("DB_NAME", "colegio");
 //META TAGS
 define('SITETITLE', 'Colegio Buenos Aires');
-define('METADESCRIPTION', 'Inicial, Primaria y secundaria. Colegio Buenos Aires se encuentra en Acevedo 357, C.A.B.A');
+define('METADESCRIPTION', 'Bienvenidos al Colegio Buenos Aires. Dentro de nuestra propuesta educativa, las activadades que se desarrollan en los Talleres Extraprogramáticos cumplen un rol protagónico en la formación integral del educando.');
 define('METAKEYS', 'Colegio Buenos Aires, inicial, primaria, secundaria, colegio, Escuela, Buenos Aires, educación, campus virtual, estancia la chiquita, convenios utn, convenios cambridge,');
 //LINKS:
 define('LINK_FACEBOOK', '#');

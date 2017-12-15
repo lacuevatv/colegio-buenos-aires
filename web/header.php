@@ -8,14 +8,14 @@
 
 global $menuItems;
 global $pageActual;
-
+global $metaDescription;
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title><?php echo SITETITLE; ?></title>
+	<title><?php echo SeoTitlePage(cleanUri()); ?></title>
     <!-- Forces user OUT of IE's compatibility mode and removes "broken page" icon --> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <!--favicon-->
@@ -28,18 +28,18 @@ global $pageActual;
 
 <!-- SEO SECCTION -->
     <meta name="keywords" content="<?php echo METAKEYS; ?>">
-    <meta name="description" content="<?php echo METADESCRIPTION; ?>">
+    <meta name="description" content="<?php echo metaDescriptionText($metaDescription); ?>">
     <link rel="canonical" href="<?php echo MAINSURL . '/'; ?>" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="<?php echo SITETITLE; ?>" />
-    <meta property="og:description" content="<?php echo METADESCRIPTION; ?>" />
+    <meta property="og:title" content="<?php echo SeoTitlePage(cleanUri()); ?>" />
+    <meta property="og:description" content="<?php echo metaDescriptionText($metaDescription); ?>" />
     <meta property="og:url" content="<?php echo MAINSURL . '/'; ?>" />
     <meta property="og:site_name" content="<?php echo SITETITLE; ?>" />
     <meta property="og:image" content="<?php echo MAINSURL . "/galeria/2017-11-21-533-imagen.jpg"; ?>" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:description" content="<?php echo METADESCRIPTION; ?>" />
-    <meta name="twitter:title" content="<?php echo SITETITLE; ?>" />
+    <meta name="twitter:description" content="<?php echo metaDescriptionText($metaDescription); ?>" />
+    <meta name="twitter:title" content="<?php echo SeoTitlePage(cleanUri()); ?>" />
     <meta name="twitter:image" content="<?php echo MAINSURL . '/galeria/2017-11-21-533-imagen.jpg'; ?>" />
 <!-- // SEO SECCTION -->
 

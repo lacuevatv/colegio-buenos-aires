@@ -2,6 +2,7 @@
 (Sitio auto administrable)
 
 ## Versiones:
+* 0.4.24 - Ajuste el titulo seo para que siempre muestre un titulo distinto de acuerdo a la página y la meta description que muestra siempre la misma salvo en las noticias y edad feliz que muestra el resumen de las mismas.
 * 0.4.23 - Retoque administrador para que cuando subis un archivo al tenér exito te muestre un icono.
 * 0.4.22 - Arreglo script. Cree otra versión del grid de inicio para safari, ie y edge.
 * 0.4.21 - Algunos arreglos de css. Falta arreglar en inicio el grid y las tabs en niveles. En ie no funcionan bien. Agregué un script para detectar el navegador y hacer algo diferente.

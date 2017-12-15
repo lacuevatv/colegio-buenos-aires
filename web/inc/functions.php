@@ -73,12 +73,7 @@ function isAjax() {
 */
 function pageActual ( $uri ) {
 	$slug = 'inicio'; //slug por defecto
-	/*if ( $_SERVER["PHP_SELF"] == '/index.php' ) {
-	 
-	} else {
-		//echo $_SERVER["PHP_SELF"];
-		//echo $_SERVER["REQUEST_URI"];
-	}*/
+	
 	//borramos la barra / luego del dominio:
 	$url = $uri;
 	$parseUrl = explode('/', $url);
@@ -316,13 +311,14 @@ function SeoTitlePage ( $page ) {
     $tituloBase   = SITETITLE;
 
     //titulo cuando no es home ni noticias
-    if ( $page != 'inicio' && $page != 'noticias' ) {
+    if ( $page != 'inicio' ) {
         //si la página no es home hay que separar la url que está unido por "-" para armar un nuevo título
-        $pageActualTitle = explode('-', $page);
-        $pageSEOTitle = ' |';
-        for ($i=0; $i < count($pageActualTitle); $i++) { 
-            $pageSEOTitle .= ' ';
-            $pageSEOTitle .= ucfirst($pageActualTitle[$i]);
+        
+        $pageActualTitle = explode('/', $page);
+        $pageSEOTitle = '';
+        for ($i=1; $i < count($pageActualTitle); $i++) { 
+            $pageSEOTitle .= ' - ';
+            $pageSEOTitle .= str_replace('-', ' ', ucfirst($pageActualTitle[$i]) );
         }
 
         $tituloBase .= $pageSEOTitle;
@@ -333,21 +329,13 @@ function SeoTitlePage ( $page ) {
 
 
 //define el metadescription en la etiqueta Head para SEO
-function metaDescriptionText ( $pageActual, $noticia, $curso, $categoriaNoticias ) {
-	$metaDescription = METADESCRIPTION;
-	
+function metaDescriptionText ( $item ) {
+	if ( $item != '') {
+		return $item;
+	} else {
 
-	if ( $noticia != 'none') {
-		global $dataNoticia;
-		$base = ' | Asociación de trabajadores de la Sanidad Argentina, Buenos Aires.';
-		$metaDescription = $dataNoticia['resumen'] . $base;
+		return METADESCRIPTION;
 	}
-
-	if ( $categoriaNoticias != 'none') {
-		$metaDescription = 'Últimas noticias ' .$categoriaNoticias. '. Asociación de trabajadores de la Sanidad Argentina, Buenos Aires.';
-	}
-
-	return $metaDescription;
 
 }//metaDescriptionText()
 

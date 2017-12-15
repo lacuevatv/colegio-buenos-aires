@@ -9,11 +9,12 @@ $cantPost = CANTPOST;
 $slug = getPageVar( cleanUri() );//trae la variable de la pagina
 $single = false;
 $dispositivo = dispositivo();
-
+global $metaDescription;
 if ( $slug != '' ) {
 	$singlePost = getSinglePost( $slug );
 	$fecha = tuneandoFecha( $singlePost['post_fecha'] );
 	$single = true;
+	$metaDescription = preparaResumen( $singlePost );
 } else {
 	$posts = getPosts( 'edad-feliz', $cantPost );
 }
