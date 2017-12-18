@@ -30,10 +30,10 @@ define('LINK_FACEBOOK', '#');
 define('LINK_INSTAGRAM', '#');
 define('LINK_TWITTER', '#');
 define('LINK_YOUTUBE', '#');
-define('LINK_EMAIL', 'tallercba@yahoo.com.ar');
 define('TELCOLEGIO', '4855 8289');
 define('COLEGIODIRECCION', 'Acevedo 357, Villa Crespo, 1414 CABA');
-define('COLEGIOEMAIL', 'info@colegiobuenosaires.edu.ar');
+define('COLEGIOEMAIL', 'info@colegiobuenosaires.edu.ar');//email que se ve
+define('LINK_EMAIL', COLEGIOEMAIL);//email donde se envian los formularios
 define('GOOGLECALENDAR', '#');
 define('CAMPUSVIRTUAL', 'http://campus.colegiobuenosaires.com/');
 define('XHENDRA', '#');

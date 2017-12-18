@@ -190,6 +190,7 @@
 	cursor: pointer;
 
 	&:hover {
+		color: inherit;
 	    zoom: 1;
 	    filter: alpha(opacity=70);
 	    opacity: 0.7;
@@ -201,6 +202,7 @@
 	padding-top: 6px;
 	padding-bottom: 6px;
 	@include border-radius(3px);
+	letter-spacing: 0.5px;
 }
 
 .btn-xsm {
@@ -217,21 +219,21 @@
 
 .btn-border-inverse {
 	border: 1px solid $color-blanco;
-	color: $color-blanco;
+	color: $color-blanco!important;
 }
 
 .btn-border-verde {
 	border: 1px solid $color-verde-claro;
-	color: $color-verde-claro;
+	color: $color-verde-claro!important;
 }
 
 .btn-border-naranja {
 	border: 1px solid $color-naranja;
-	color: $color-naranja;
+	color: $color-naranja!important;
 }
 
 .btn-rosa {
-	color: $color-rosa;
+	color: $color-rosa!important;
 	border: 1px solid $color-rosa;
 	padding: 5px 20px;
 	&:hover {
@@ -241,7 +243,7 @@
 }
 
 .btn-celeste {
-	color: $color-celeste;
+	color: $color-celeste!important;
 	border: 1px solid $color-celeste;
 	padding: 5px 20px;
 	&:hover {
@@ -251,7 +253,7 @@
 }
 
 .btn-verde {
-	color: $color-verde-agua;
+	color: $color-verde-agua!important;
 	border: 1px solid $color-verde-agua;
 	padding: 5px 20px;
 	&:hover {
@@ -262,13 +264,25 @@
 
 .btn-primary {
 	background-color: $color-celeste;
-	color: $color-blanco;
+	border: 1px solid $color-celeste;
+	color: $color-blanco!important;
 }
 
 .btn-destacado {
 	background-color: $color-rosa;
-	color: $color-blanco;	
+	border: 1px solid $color-rosa;
+	color: $color-blanco!important;	
 }
 
+.btn-full-blanco {
+	color: $color-rosa!important;
+	border: 1px solid $color-blanco;
+	background-color: $color-blanco;
+	padding: 5px 20px;
+	&:hover {
+	    background-color: transparent;
+	    color: $color-blanco!important;
+	}
+}
 
 

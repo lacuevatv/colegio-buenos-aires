@@ -109,7 +109,7 @@ switch ($data) {
 							<?php echo $contenidoNiveles['inicial']['parrafo']; ?>
 						</p>
 						<p>
-							<a href="<?php echo MAINSURL . $contenidoNiveles['inicial']['link']; ?>" class="btn btn-border-inverse">
+							<a href="<?php echo MAINSURL . $contenidoNiveles['inicial']['link']; ?>" class="btn btn-sm btn-border-inverse">
 								Leer más
 							</a>
 						</p>
@@ -131,7 +131,7 @@ switch ($data) {
 							<?php echo $contenidoNiveles['primaria']['parrafo']; ?>
 						</p>
 						<p>
-							<a href="<?php echo MAINSURL . $contenidoNiveles['primaria']['link']; ?>" class="btn btn-border-inverse">
+							<a href="<?php echo MAINSURL . $contenidoNiveles['primaria']['link']; ?>" class="btn btn-sm btn-border-inverse">
 								Leer más
 							</a>
 						</p>
@@ -153,7 +153,7 @@ switch ($data) {
 							<?php echo $contenidoNiveles['secundario']['parrafo']; ?>
 						</p>
 						<p>
-							<a href="<?php echo MAINSURL . $contenidoNiveles['secundario']['link']; ?>" class="btn btn-border-inverse">
+							<a href="<?php echo MAINSURL . $contenidoNiveles['secundario']['link']; ?>" class="btn btn-sm btn-border-inverse">
 								Leer más
 							</a>
 						</p>

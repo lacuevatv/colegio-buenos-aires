@@ -49,7 +49,7 @@ if ( $pageActual != 'inicio' ) : ?>
 			<?php echo $deportesContenido['parrafo']; ?>
 		</p>
 		<p>
-			<a href="<?php echo MAINSURL . $deportesContenido['link']; ?>" class="btn btn-border-inverse">
+			<a href="<?php echo MAINSURL . $deportesContenido['link']; ?>" class="btn btn-sm btn-border-inverse">
 				Leer más
 			</a>
 		</p>

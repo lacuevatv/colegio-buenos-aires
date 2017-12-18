@@ -2,6 +2,8 @@
 (Sitio auto administrable)
 
 ## Versiones:
+* 0.4.26 - Ajustes por vero, la diseñadora marcando el estilo.
+* 0.4.25 - Configurando formularios con phpmailer, cuando este listo el dns lo pruebo online.
 * 0.4.24 - Ajuste el titulo seo para que siempre muestre un titulo distinto de acuerdo a la página y la meta description que muestra siempre la misma salvo en las noticias y edad feliz que muestra el resumen de las mismas.
 * 0.4.23 - Retoque administrador para que cuando subis un archivo al tenér exito te muestre un icono.
 * 0.4.22 - Arreglo script. Cree otra versión del grid de inicio para safari, ie y edge.

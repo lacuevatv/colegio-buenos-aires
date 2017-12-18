@@ -627,6 +627,7 @@ q {
   border-radius: 5px;
   cursor: pointer; }
   .btn:hover {
+    color: inherit;
     zoom: 1;
     filter: alpha(opacity=70);
     opacity: 0.7; }
@@ -638,7 +639,8 @@ q {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
-  border-radius: 3px; }
+  border-radius: 3px;
+  letter-spacing: 0.5px; }
 
 .btn-xsm {
   font-size: 50%;
@@ -655,18 +657,18 @@ q {
 
 .btn-border-inverse {
   border: 1px solid #fff;
-  color: #fff; }
+  color: #fff !important; }
 
 .btn-border-verde {
   border: 1px solid #52ba58;
-  color: #52ba58; }
+  color: #52ba58 !important; }
 
 .btn-border-naranja {
   border: 1px solid #ea9600;
-  color: #ea9600; }
+  color: #ea9600 !important; }
 
 .btn-rosa {
-  color: #e10453;
+  color: #e10453 !important;
   border: 1px solid #e10453;
   padding: 5px 20px; }
   .btn-rosa:hover {
@@ -674,7 +676,7 @@ q {
     background-color: #e10453; }
 
 .btn-celeste {
-  color: #119ad5;
+  color: #119ad5 !important;
   border: 1px solid #119ad5;
   padding: 5px 20px; }
   .btn-celeste:hover {
@@ -682,7 +684,7 @@ q {
     background-color: #119ad5; }
 
 .btn-verde {
-  color: #27b49a;
+  color: #27b49a !important;
   border: 1px solid #27b49a;
   padding: 5px 20px; }
   .btn-verde:hover {
@@ -691,11 +693,22 @@ q {
 
 .btn-primary {
   background-color: #119ad5;
-  color: #fff; }
+  border: 1px solid #119ad5;
+  color: #fff !important; }
 
 .btn-destacado {
   background-color: #e10453;
-  color: #fff; }
+  border: 1px solid #e10453;
+  color: #fff !important; }
+
+.btn-full-blanco {
+  color: #e10453 !important;
+  border: 1px solid #fff;
+  background-color: #fff;
+  padding: 5px 20px; }
+  .btn-full-blanco:hover {
+    background-color: transparent;
+    color: #fff !important; }
 
 /*--------------------------------------------------------------
 9.0 FOOTER

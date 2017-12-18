@@ -58,7 +58,7 @@ if ( $pageActual != 'inicio' ) : ?>
 			<?php echo $contenidoCertificaciones[$data]['parrafo']?>
 		</p>
 		<p>
-			<a href="<?php echo MAINSURL . $contenidoCertificaciones[$data]['link']; ?>" class="btn btn-border-inverse">
+			<a href="<?php echo MAINSURL . $contenidoCertificaciones[$data]['link']; ?>" class="btn btn-sm btn-border-inverse">
 				Leer más
 			</a>
 		</p>

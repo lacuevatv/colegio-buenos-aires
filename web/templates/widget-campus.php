@@ -29,7 +29,7 @@ $contenidoCampus = array(
 					<a href="<?php echo MAINSURL . $contenidoCampus['link']; ?>" class="btn btn-sm btn-border-inverse">
 						Leer más
 					</a>
-					<a href="<?php echo MAINSURL . $contenidoCampus['url']; ?>" target="_blank" class="btn btn-sm btn-primary link-widget">Entrar</a>
+					<a href="<?php echo MAINSURL . $contenidoCampus['url']; ?>" target="_blank" class="btn btn-sm btn-full-blanco link-widget">Entrar</a>
 				</p>
 			</div>
 		</article>
@@ -52,7 +52,7 @@ $contenidoCampus = array(
 					<a href="<?php echo MAINSURL . $contenidoCampus['link']; ?>" class="btn btn-sm btn-border-inverse">
 						Leer más
 					</a>
-					<a href="<?php echo MAINSURL . $contenidoCampus['url']; ?>" target="_blank" class="btn btn-sm btn-primary link-widget">Entrar</a>
+					<a href="<?php echo MAINSURL . $contenidoCampus['url']; ?>" target="_blank" class="btn btn-sm btn-full-blanco link-widget">Entrar</a>
 				</p>
 			</div>
 		</article>

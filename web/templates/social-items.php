@@ -1,5 +1,5 @@
 <li>
-	<a href="mailto:<?php echo LINK_EMAIL; ?>" class="icon icon-email">
+	<a href="mailto:<?php echo COLEGIOEMAIL; ?>" class="icon icon-email">
 		<span class="sr-only">Email</span>
 	</a>
 </li>
