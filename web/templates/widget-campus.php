@@ -29,7 +29,7 @@ $contenidoCampus = array(
 					<a href="<?php echo MAINSURL . $contenidoCampus['link']; ?>" class="btn btn-sm btn-border-inverse">
 						Leer más
 					</a>
-					<a href="<?php echo MAINSURL . $contenidoCampus['url']; ?>" target="_blank" class="btn btn-sm btn-full-blanco link-widget">Entrar</a>
+					<a href="<?php echo $contenidoCampus['url']; ?>" target="_blank" class="btn btn-sm btn-full-blanco link-widget">Entrar</a>
 				</p>
 			</div>
 		</article>
@@ -52,7 +52,7 @@ $contenidoCampus = array(
 					<a href="<?php echo MAINSURL . $contenidoCampus['link']; ?>" class="btn btn-sm btn-border-inverse">
 						Leer más
 					</a>
-					<a href="<?php echo MAINSURL . $contenidoCampus['url']; ?>" target="_blank" class="btn btn-sm btn-full-blanco link-widget">Entrar</a>
+					<a href="<?php echo $contenidoCampus['url']; ?>" target="_blank" class="btn btn-sm btn-full-blanco link-widget">Entrar</a>
 				</p>
 			</div>
 		</article>
@@ -74,7 +74,7 @@ $contenidoCampus = array(
 					<img src="<?php echo UPLOADSURL . '/' . $contenidoCampus['imagen']; ?>" alt="Campus Virtual - Colegio Buenos Aires">
 				</figure>
 
-				<a href="<?php echo MAINSURL . $contenidoCampus['url']; ?>" target="_blank" class="btn btn-sm btn-primary link-widget">Entrar</a>
+				<a href="<?php echo $contenidoCampus['url']; ?>" target="_blank" class="btn btn-sm btn-primary link-widget">Entrar</a>
 
 			</article>
 		<?php break;

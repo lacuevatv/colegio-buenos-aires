@@ -237,7 +237,7 @@
 	border: 1px solid $color-rosa;
 	padding: 5px 20px;
 	&:hover {
-	    color: $color-blanco;
+	    color: $color-blanco!important;
 	    background-color: $color-rosa;
 	}
 }
