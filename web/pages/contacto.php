@@ -43,6 +43,8 @@ include 'header.php';
 		    		<div class="col-50 animation-element slide-up">
 		    			<li class="icon-before icon-before-tel">
 		    				<?php echo TELCOLEGIO; ?>
+		    				/
+		    				<?php echo TELCOLEGIO2; ?>
 		    			</li>
 		    			<li class="icon-before icon-before-clock">
 		    				Lunes a Viernes de 9:00 a 18:00hs

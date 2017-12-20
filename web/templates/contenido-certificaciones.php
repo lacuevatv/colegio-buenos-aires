@@ -61,10 +61,7 @@ global $pageActual; ?>
 		</a>
 		<ul class="certificacion-lista animation-element slide-left">
 			<li>
-				Trinity College London Gese: Nivel Initial y Elemental
-			</li>
-			<li>
-				Cambridge Universirt Yle: Nivel Starters Movers Flyers
+				Cambridge English: Key (KET) es un examen que evalúa  la habilidad de los alumnos para poder usar el inglés para comunicarse en situaciones simples. Se encuentra en nivel <em>A2 ELEMENTAL</em> en la escala internacional.
 			</li>
 		</ul>
 	</article>

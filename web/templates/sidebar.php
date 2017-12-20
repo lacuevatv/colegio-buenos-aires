@@ -11,9 +11,15 @@ global $pageActual;
 $widgets = array();
 
 switch ( $pageActual ) {
+	case 'inscripciones':
+		$widgets = array( 
+			'bienvenidos', 'niveles', 'noticias', 'campus', 'edad-feliz', 'xhendra', 'calendario'
+		);
+		break;
+
 	case 'contacto':
 		$widgets = array( 
-			'bienvenidos', 'niveles', 'campus', 'noticias',);
+			'bienvenidos', 'niveles', 'inscripciones', 'campus', 'noticias',);
 		break;
 	
 	case 'institucional':
@@ -24,7 +30,7 @@ switch ( $pageActual ) {
 
 	case 'noticias':
 		$widgets = array( 
-			'bienvenidos', 'niveles', 'campus', 'edad-feliz', 'calendario', 'contacto'
+			'bienvenidos', 'niveles', 'campus', 'inscripciones', 'edad-feliz', 'calendario', 'contacto'
 		);
 		break;
 
@@ -36,7 +42,7 @@ switch ( $pageActual ) {
 
 	case 'niveles':
 		$widgets = array( 
-			'bienvenidos', 'campus', 'noticias', 'calendario', 'niveles','edad-feliz', 'xhendra', 'contacto'
+			'bienvenidos', 'campus', 'noticias', 'inscripciones', 'calendario', 'niveles','edad-feliz', 'xhendra', 'contacto'
 		);
 		break;
 

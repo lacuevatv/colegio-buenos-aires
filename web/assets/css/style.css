@@ -386,6 +386,12 @@ q {
       font-size: 200%;
       line-height: 110%; } }
 
+ol {
+  list-style-type: decimal;
+  padding-left: 30px; }
+  ol li {
+    margin: 5px 0; }
+
 .color-celeste {
   color: #119ad5; }
 
@@ -404,27 +410,61 @@ q {
     .subtitulo_seccion {
       font-size: 200%; } }
 
-.main-title-header {
+.main-title-header, .main-title-header-inscripciones {
   padding-top: 50px;
   padding-bottom: 20px; }
   @media (min-width: 992px) {
-    .main-title-header {
+    .main-title-header, .main-title-header-inscripciones {
       background: #011a29 url(../images/header-institucional.jpg) no-repeat;
       background-size: cover;
       background-position: center;
       padding-top: 30vh;
       padding-bottom: 5vh; } }
   @media (min-width: 1200px) {
-    .main-title-header {
+    .main-title-header, .main-title-header-inscripciones {
       background-position: center 30%; } }
   @media (min-width: 1500px) {
-    .main-title-header {
+    .main-title-header, .main-title-header-inscripciones {
       background-position: center 30%; } }
-  .main-title-header h1 {
+  .main-title-header h1, .main-title-header-inscripciones h1 {
     text-transform: uppercase; }
     @media (min-width: 992px) {
-      .main-title-header h1 {
+      .main-title-header h1, .main-title-header-inscripciones h1 {
         color: #fff; } }
+
+.main-title-header-inscripciones {
+  padding-top: 50px;
+  padding-bottom: 20px; }
+  @media (min-width: 992px) {
+    .main-title-header-inscripciones {
+      font-size: 300%;
+      background: #011a29 url(../images/separador-inscribite.jpg) no-repeat;
+      background-size: cover;
+      background-position: center;
+      padding-top: 30vh;
+      padding-bottom: 5vh; } }
+  @media (min-width: 1200px) {
+    .main-title-header-inscripciones {
+      background-position: center 30%; } }
+  @media (min-width: 1500px) {
+    .main-title-header-inscripciones {
+      background-position: center 30%; } }
+  .main-title-header-inscripciones h1 {
+    text-transform: uppercase;
+    font-size: 220%;
+    text-align: center; }
+    @media (min-width: 992px) {
+      .main-title-header-inscripciones h1 {
+        color: #fff;
+        font-size: 100%;
+        text-align: left; } }
+  .main-title-header-inscripciones p {
+    text-align: center; }
+    @media (min-width: 992px) {
+      .main-title-header-inscripciones p {
+        font-size: 40%;
+        color: #fff;
+        text-align: left; } }
 
 .niveles-header {
   padding-top: 50px;
@@ -3058,6 +3098,53 @@ q {
   @media (min-width: 992px) {
     .frases-inicio {
       padding: 80px 20%; } }
+
+/*INSCRIPCIONES*/
+@media (min-width: 992px) {
+  .inscripciones .lista-documentacion {
+    display: flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    -ms-justify-content: space-around;
+    -o-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap; } }
+.inscripciones .lista-documentacion li {
+  margin: 10px 0; }
+  @media (min-width: 768px) {
+    .inscripciones .lista-documentacion li {
+      width: 40%;
+      margin: 5px; }
+      .inscripciones .lista-documentacion li:hover {
+        text-decoration: underline; } }
+.inscripciones .lista-inscripciones {
+  list-style-type: disc;
+  padding-left: 20px; }
+.inscripciones .docs-list-inscripcion {
+  background-color: #119ad5;
+  color: #fff;
+  padding: 10px 20px 20px;
+  margin: 50px 0 80px; }
+  .inscripciones .docs-list-inscripcion h3 {
+    color: #fff;
+    text-align: center;
+    margin: 15px 0 40px;
+    font-size: 200%; }
+.inscripciones .section-uniforme {
+  margin-bottom: 50px; }
 
 /*--------------------------------------------------------------
 13.0 ANIMATION

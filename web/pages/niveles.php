@@ -37,26 +37,24 @@ $textoNiveles = array(
 	'textoHorario' => array(
 		'manana' => array(
 			'simple' => array(
-				'inicial'    => '8:00 a 11:50hs',
+				'inicial'    => '8:10 a 11:55hs',
 				'primaria'   => '8:00hs a 12:45hs',
-				'secundario' => '8:00 a 12:45hs',
+				'secundario' => '7:45 a 12:50hs',
 			),
 			'complementaria' => array(
 				'inicial'    => 'Almuerzo y descanso hasta las 14hs. <br>Almuerzo, descanso y talleres hasta las 16:15hs.',
 				'primaria'   => 'Almuerzo: hasta las 14hs.<br> Almuerzo  y  Talleres: hasta las 16:30hs.',
-				'secundario' => 'Almuerzo hasta las 14hs. <br>Almuerzo y talleres hasta las 16:30hs.',
 			),
 		),
 		'tarde' => array(
 			'simple' => array(
-				'inicial'    => '13:30 a 17:00hs',
-				'primaria'   => '13:15hs  a  17:45hs',
-				'secundario' => '13:15 a 17:45hs',
+				'inicial'    => '13:15 a 17:00hs',
+				'primaria'   => '13:10hs a 17:45hs',
+				'secundario' => '13:15 a 18:20hs',
 			),
 			'complementaria' => array(
 				'inicial'    => 'Talleres, almuerzo y descanso desde las 8:30hs.',
 				'primaria'   => 'Talleres y almuerzo: desde las 8:00hs.',
-				'secundario' => 'Talleres y Almuerzo desde las 8:00hs.',
 			),
 		),
 	),
@@ -149,7 +147,11 @@ if ( $slug == '' ) :
 		    					<strong>
 		    						Jornada Complementaria:	
 		    					</strong>
-		    						<?php echo $textoNiveles['textoHorario']['manana']['complementaria'][$slug]; ?>
+		    						<?php
+		    						if ( $slug != 'secundario' ) : 
+			    						echo $textoNiveles['textoHorario']['manana']['complementaria'][$slug];
+			    					endif;
+		    						?>
 		    					<br>
 		    				</p>
 		    				<h4 class="nivel-horario-titulo">
@@ -164,7 +166,11 @@ if ( $slug == '' ) :
 		    					<strong>
 		    						Jornada Complementaria:	
 		    					</strong>
-		    						<?php echo $textoNiveles['textoHorario']['tarde']['complementaria'][$slug]; ?>
+		    						<?php 
+		    						if ( $slug != 'secundario' ) : 
+			    						echo $textoNiveles['textoHorario']['tarde']['complementaria'][$slug];
+			    					endif;
+		    						?>
 		    				</p>
 		    			</div>
 	    			</div>

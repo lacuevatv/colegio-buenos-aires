@@ -2034,3 +2034,70 @@
 		padding: 80px 20%;
 	}
 }
+
+/*INSCRIPCIONES*/
+.inscripciones {
+	.lista-documentacion {
+		@media (min-width: $md) {
+			display: flex;
+			display: -o-flex;
+			display: -ms-flex;
+			display: -moz-flex;
+			display: -webkit-flex;
+			-webkit-align-items: center;
+			-moz-align-items: center;
+			-ms-align-items: center;
+			-o-align-items: center;
+			align-items: center;
+			-webkit-justify-content: space-around;
+			-moz-justify-content: space-around;
+			-ms-justify-content: space-around;
+			-o-justify-content: space-around;
+			justify-content: space-around;
+			-webkit-flex-wrap: wrap;
+			-moz-flex-wrap: wrap;
+			-ms-flex-wrap: wrap;
+			-o-flex-wrap: wrap;
+			flex-wrap: wrap;
+		}
+
+		li {
+			margin: 10px 0;
+			@media (min-width: $sm) {
+				width: 40%;
+				margin: 5px;
+
+				&:hover {
+				    text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	.lista-inscripciones {
+		list-style-type: disc;
+		padding-left: 20px;
+	}
+
+
+	.docs-list-inscripcion {
+		background-color: $color-celeste;
+		color: $color-blanco;
+		padding: 10px 20px 20px;
+		margin: 50px 0 80px;
+		
+		h3 {
+			color: $color-blanco;		
+			text-align: center;
+			margin: 15px 0 40px;
+			font-size: 200%;
+		}
+	}
+
+	.section-uniforme {
+		margin-bottom: 50px;
+	}
+}
+
+
+
