@@ -41,6 +41,6 @@ $subsection = array(
 		'docs',
 	),
 	'secundario' => array(
-		'docs', 'programa-1','programa-2','programa-3',
+		'docs', 'programa-1','programa-2','programa-3-sociales','programa-3-economia','programa-4-sociales','programa-4-economia','programa-5-sociales','programa-5-economia',
 	),
 );

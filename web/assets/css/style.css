@@ -538,7 +538,8 @@ ol {
   background: url(../images/sprite.png); }
 
 .icon-email {
-  background-position: -95px -12px; }
+  background-position: -95px -12px;
+  margin-right: 10px; }
 
 .icon-facebook {
   background-position: -129px -12px; }
@@ -951,7 +952,7 @@ ol {
       float: right;
       padding-top: 15px;
       padding-bottom: 15px;
-      padding-left: 40px;
+      padding-left: 20px;
       display: flex;
       display: -o-flex;
       display: -ms-flex;

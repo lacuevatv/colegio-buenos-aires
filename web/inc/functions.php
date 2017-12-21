@@ -254,7 +254,7 @@ function tuneandoFecha( $date ) {
 //muestra el menú del array de menu
 function showMenu( $menu, $active = null, $hide = false ) {
 	//el último elemento del array tiene los menus ocultos
-	for ($i=0; $i < count($menu)-1; $i++) { ?>
+	for ($i=0; $i < count($menu)-2; $i++) { ?>
 		<li>
 			<?php 
 				if ( ! isset( $menu[$i]['subItem'] ) ) : ?>
@@ -295,6 +295,8 @@ function showMenu( $menu, $active = null, $hide = false ) {
 			return;
 		}
 		
+
+		//for menu hide
 		for ($i=0; $i < count($hideMenus); $i++) { ?>
 			<li>
 				<a href="<?php echo MAINSURL . '/' . $hideMenus[$i]['url']; ?>">
@@ -303,6 +305,25 @@ function showMenu( $menu, $active = null, $hide = false ) {
 			</li>
 			<?php
 		}
+
+		//extra menus
+		if ( isset($menu['extra-menu']) ) {
+			$extraMenus = $menu['extra-menu'];	
+		} else {
+			return;
+		}
+		
+
+		//for extra menus
+		for ($i=0; $i < count($extraMenus); $i++) { ?>
+			<li>
+				<a href="<?php echo $extraMenus[$i]['url']; ?>" target="_blank">
+					<?php echo $extraMenus[$i]['nombre']; ?>
+				</a>
+			</li>
+			<?php
+		}
+
 	}
 }
 

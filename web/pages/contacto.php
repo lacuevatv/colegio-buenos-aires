@@ -59,7 +59,7 @@ include 'header.php';
 	    	<h2 class="subtitulo_clasico animation-element fade-in">
 	    			Calendario
 	    		</h2>
-	    	<iframe src="<?php echo FRAMECALENDARIO; ?>" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+	    	<iframe src="<?php echo GOOGLECALENDAR; ?>" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 	    	</section>
 
 

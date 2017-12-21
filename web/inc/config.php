@@ -36,14 +36,13 @@ define('TELCOLEGIO2', '4854 3882');
 define('COLEGIODIRECCION', 'Acevedo 357, Villa Crespo, 1414 CABA');
 define('COLEGIOEMAIL', 'info@colegiobuenosaires.edu.ar');//email que se ve
 define('LINK_EMAIL', COLEGIOEMAIL);//email donde se envian los formularios
-define('GOOGLECALENDAR', '#');
+define('GOOGLECALENDAR', 'https://calendar.google.com/calendar/embed?src=usuariocolegiobuenosaires%40gmail.com&ctz=America/Argentina/Buenos_Aires');
 define('CAMPUSVIRTUAL', 'http://campus.colegiobuenosaires.com/');
 define('XHENDRA', 'https://www.xhendra.com.ar/');
 define('LINKINSCRIBITE', MAINSURL . '/inscripciones');
 define('LINKFORMULARIOCAMPUS','https://docs.google.com/forms/d/e/1FAIpQLSdvBA2otgsuDDqMlR2aup2O8fnA1ccQJDK0mlJU9B3E9w9Q0g/viewform');
 define('MAPAGOOGLE', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2362842021116!2d-58.44429744015378!3d-34.59818617135286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca0b414510e1%3A0x43564576cc0da8d3!2sAcevedo+357%2C+C1414DJG+CABA!5e0!3m2!1ses!2sar!4v1511791250465' );
 define('MAPAGOOGLEDEPORTES', 'https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d418918.7276433514!2d-58.70025020033937!3d-34.886301530471776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e0!4m3!3m2!1d-34.598694!2d-58.441288!4m5!1s0x95a2c96c4d5d1fa1%3A0xdace12f0c5c9f1b6!2sLa+Chiquita+-+Colegio+Buenos+Aires.%2C+Coronel+Brandsen%2C+Buenos+Aires!3m2!1d-35.126245!2d-58.261257!5e1!3m2!1ses!2sar!4v1513862076349' );
-define( 'FRAMECALENDARIO', 'https://calendar.google.com/calendar/embed?src=usuariocolegiobuenosaires%40gmail.com&ctz=America/Argentina/Buenos_Aires' );
 
 
 //categoria para hacer loop
@@ -75,7 +74,10 @@ $menuItems = array(
 		array ('url' => 'documentacion', 'nombre' => 'documentacion'),
 		array ('url' => 'jornada-complementaria', 'nombre' => 'jornada complementaria'),
 		array ('url' => 'talleres', 'nombre' => 'talleres'),
+	),
+	'extra-menu' =>  array(
 		array ('url' => GOOGLECALENDAR, 'nombre' => 'Calendario'),
+		array ('url' => XHENDRA, 'nombre' => 'Xhendra'),
 	),
 );
 

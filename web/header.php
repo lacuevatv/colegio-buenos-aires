@@ -70,6 +70,12 @@ global $metaDescription;
                 <?php getTemplate( 'social-items' ); ?>
             </ul>
 
+            <!--<div class="container-der">
+                <a href="mailto:<?php echo COLEGIOEMAIL; ?>">
+                    <span class="icon icon-email"></span><?php echo COLEGIOEMAIL; ?>
+                </a>
+            </div>-->
+
             <a href="tel:11<?php echo str_replace(' ', '', TELCOLEGIO); ?>">
                 <h5 class="tel-data-header">
                     <span class="icon-tel"></span><?php echo TELCOLEGIO; ?>

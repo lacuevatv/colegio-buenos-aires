@@ -59,6 +59,12 @@ switch ( $pageActual ) {
 		);
 	break;
 
+	case 'campo-deportes':
+		$widgets = array( 
+			'bienvenidos', 'niveles', 'campus', 'noticias', 'calendario', 'edad-feliz',
+		);
+		break;
+
 	default:
 		$widgets = array( 
 			'bienvenidos', 'niveles', 'campus', 'noticias', 'calendario', 'edad-feliz', 'xhendra', 'contacto'

@@ -54,6 +54,9 @@ include 'header.php';
 	    		<img src="<?php echo MAINSURL; ?>/assets/images/campo-deportes3.jpg" class="image-responsive">
 	    	</p>
 
+	    	<h3 class="subtitulo_clasico animation-element fade-in">
+    			¿Cómo llegar?
+    		</h3>
 			<div>
 				<iframe src="<?php echo MAPAGOOGLEDEPORTES; ?>" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 			</div>

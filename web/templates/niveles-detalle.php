@@ -372,9 +372,29 @@ switch ( $data ) {
 				<ul class="documentacion-list">
 					<?php getDocumentation( 'secundario', 'programa-2' ); ?>
 				</ul>
-				<h4 class="text-uppercase text-center">Tercer año</h4>
+				<h4 class="text-uppercase text-center">Tercer año Sociales y Humanidades</h4>
 				<ul class="documentacion-list">
-					<?php getDocumentation( 'secundario', 'programa-3' ); ?>
+					<?php getDocumentation( 'secundario', 'programa-3-sociales' ); ?>
+				</ul>
+				<h4 class="text-uppercase text-center">Tercer año: Economía y Administración</h4>
+				<ul class="documentacion-list">
+					<?php getDocumentation( 'secundario', 'programa-3-economia' ); ?>
+				</ul>
+				<h4 class="text-uppercase text-center">Cuarto año Sociales y Humanidades</h4>
+				<ul class="documentacion-list">
+					<?php getDocumentation( 'secundario', 'programa-4-sociales' ); ?>
+				</ul>
+				<h4 class="text-uppercase text-center">Cuarto año: Economía y Administración</h4>
+				<ul class="documentacion-list">
+					<?php getDocumentation( 'secundario', 'programa-4-economia' ); ?>
+				</ul>
+				<h4 class="text-uppercase text-center">Quinto año Sociales y Humanidades</h4>
+				<ul class="documentacion-list">
+					<?php getDocumentation( 'secundario', 'programa-5-sociales' ); ?>
+				</ul>
+				<h4 class="text-uppercase text-center">Quinto año: Economía y Administración</h4>
+				<ul class="documentacion-list">
+					<?php getDocumentation( 'secundario', 'programa-5-economia' ); ?>
 				</ul>
 			</div>
 		</div>
