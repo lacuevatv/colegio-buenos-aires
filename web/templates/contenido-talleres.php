@@ -16,7 +16,7 @@ $talleres = array(
 	'primaria'  => array(
 		'titles' => array(
 		'href' => array( 'teatro', 'iniciacion-musical', 'comedia-musical', 'gimnasia', 'futbol', 'comic', 'voley', 'comunicacion-social' ),
-			'text' => array( 'Teatro', 'Iniciación Musical', 'Comedia Musical', 'Gimnasia y Coreografía', 'Fútbol', 'Comic', 'Voley', 'Comunicación Social', ),
+			'text' => array( 'Teatro', 'Iniciación Musical', 'Comedia Musical', 'Gimnasia y Coreografía', 'Fútbol', 'Comic y Ajedrez', 'Voley', 'Comunicación Social', ),
 		),
 		'content' => array(
 			'El objetivo del taller es que los niños descubran, exploren y recorran el mundo del teatro partiendo del juego para experimentar con el cuerpo y la imaginación; estimulando y desarrollando así el potencial expresivo de cada uno; en un entorno en el que puedan sentirse contenidos.<br><strong>Horario</strong>:Lunes de 17:45 a 18:45',
@@ -24,7 +24,7 @@ $talleres = array(
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.',
 			'Prof. Luciana Bellón<br><trong>Horario</strong>Miércoles de 17:00 a 17:45<br><strong>Contacto</strong>: lu25_12@hotmail.com',
 			'Este taller apunta al desarrollo motriz, aprendizaje deportivo y técnico por medio de la actividad lúdica. Tiene como principal objetivo el brindar un lugar de encuentro y pertenencia para los chicos.<br><strong>Horario 1°-2° y 3° grado</strong>: Martes y jueves 17:50 a 18:50<br>,<strong>4°-5°y 6° grado</strong>: Miércoles 17:45 a 18:45 y Viernes 17:15 a 18:15',
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.',
+			'Se trata de dos talleres en uno: durante la primera media hora, los alumnos aprenden estrategias de apertura, ataque y defensa, además de jugar entre ellos y con el profesor. El ancestral deporte del Ajedrez permite desarrollar en el alumno un sinúmero de valores, entre los cuales se destaca la camaradería; la siguiente media hora del taller, está dedicada a la técnica de la Historieta: tanto el dibujo como el guión de comic, logran que los chicos creen mundos propios, explorando y expandiendo su imaginación y creatividad.',
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.',
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut minim veniam.',
 		),
