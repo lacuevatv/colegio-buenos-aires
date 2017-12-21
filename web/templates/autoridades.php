@@ -37,7 +37,7 @@ if ( $pageActual != 'inicio' && $dispositivo != 'movil' ) : ?>
 	<?php 
 		for ($i=0; $i < count($autoridades) ; $i++) { ?>
 
-		<li <?php if ( $pageActual == 'niveles' ) { echo 'class=autoridades-list-plus-width'; } ?>>
+		<li>
 			<article>
 				<img src="<?php echo MAINSURL . '/assets/images/' . $autoridades[$i]['imagen']; ?>" alt="<?php echo $autoridades[$i]['nombre']; ?>">
 				<h1>

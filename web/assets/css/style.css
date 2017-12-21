@@ -3198,16 +3198,6 @@ ol {
     .autoridades-list-plus li img {
       width: 100%; }
 
-@media (min-width: 768px) {
-  .autoridades-list-plus-width {
-    width: 20% !important; } }
-@media (min-width: 768px) {
-  .autoridades-list-plus-width h1 {
-    font-size: 100% !important; } }
-@media (min-width: 768px) {
-  .autoridades-list-plus-width h4 {
-    font-size: 80% !important; } }
-
 /*--------------------------------------------------------------
 13.0 ANIMATION
 --------------------------------------------------------------*/

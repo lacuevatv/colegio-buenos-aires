@@ -2,6 +2,7 @@
 (Sitio auto administrable)
 
 ## Versiones:
+* 0.4.29 - Mejoré el script de js en la parte de tabs, para que modifique la altura del contenedor de acuerdo a lo que se muestra
 * 0.4.28 - Se creó la página inscripciones
 * 0.4.27 - completé contenido que me han pasado de autoridades y campo de deportes
 * 0.4.26 - Ajustes por vero, la diseñadora marcando el estilo.

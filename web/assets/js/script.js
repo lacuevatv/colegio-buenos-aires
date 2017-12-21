@@ -1210,8 +1210,9 @@ function talleresTabs( contenedor ) {
 		
 	}
 
-	var altura= function(){
-		var altura = $(contenedorArticulos).prop('scrollHeight') + 10;
+	var altura= function( item ){
+		item || ( item = contenedorArticulos );//u open
+		var altura = $(item).prop('scrollHeight') + 10;
 		$(contenedorArticulos).height(altura);
 	} 	
 
@@ -1229,7 +1230,8 @@ function talleresTabs( contenedor ) {
 		cambiarArticulo(active);
 		//mostrar nuevo articulo activo
 		cambiarArticulo(id);
-altura();
+		
+		altura(id);
 
 
 	});

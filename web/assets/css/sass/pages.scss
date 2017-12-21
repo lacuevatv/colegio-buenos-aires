@@ -2158,21 +2158,3 @@
 		}
 	}
 }
-
-.autoridades-list-plus-width {
-	@media (min-width: $sm) {
-		width: 20%!important;
-	}
-
-	h1 {
-		@media (min-width: $sm) {
-			font-size: 100%!important;
-		}
-	}
-
-	h4 {
-		@media (min-width: $sm) {
-			font-size: 80%!important;
-		}
-	}
-}
