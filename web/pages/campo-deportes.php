@@ -10,62 +10,62 @@ include 'header.php';
 ?>
 <!--- .inner-wrapper: contenido principal y específico del template -->
 <div class="inner-wrapper">
-    
-    <header>
-    	<div class="container">
-	        <h1>Campo de deportes</h1>
-	    </div>
-    </header>
+     
+    <header></header>
    
     <div class="main-content-page-wrapper container">
 	    <div class="main-content-page">
+	    	<h1 class="subtitulo_clasico animation-element fade-in">
+    			Campo de deportes - Estancia La Chiquita
+    		</h1>
+	    	<p class="animation-element fade-in">
+	    		<img src="<?php echo MAINSURL; ?>/assets/images/campo-deportes1.jpg" class="image-responsive">
+	    	</p>
 	    	
-	    	<h1>colegio de buenos aires
-				<br>
-					<small>Fuente h1 small</small></h1>
+	    	<p class="text-justify animation-element fade-in-scroll">
+		    	El Colegio cuenta con un espacio genial, ideal para despejarse y pasarla bárbaro. Se trata de un campo ubicado a 64 km del Colegio, en la localidad de Brandsen.
+		    </p>
+		    <p class="text-justify animation-element fade-in-scroll">
+		    	Es una auténtica reserva ecológica, con eucaliptos, pinos, araucarias, robles, palmeras y árboles frutales.
+		    </p>
+		    <p class="text-justify animation-element fade-in-scroll">
+		    	Una gran variedad de pájaros aporta vida al lugar, con sus diferentes trinos.
+		    </p>
+		    <p class="text-justify animation-element fade-in-scroll">
+		    	El campo está a disposición de los chicos del Colegio, de Jardín de Infantes a 5° año.
+		    </p>
+		    <p class="text-justify animation-element fade-in-scroll">
+		    	Las actividades que allí se realizan son múltiples: competencias deportivas, caminatas, asados, campamentos y todo tipo de encuentro.
+		    </p>
 
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui <a href="#">officia</a> deserunt mollit anim id est laborum.
-				</p>
+		    <p class="animation-element fade-in-scroll">
+	    		<img src="<?php echo MAINSURL; ?>/assets/images/campo-deportes2.jpg" class="image-responsive">
+	    	</p>
 
-				<p>
-					<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui <a href="#">officia</a> deserunt mollit anim id est laborum.</small>
-					<a href="#" class="btn">Link</a>
-				</p>
+		    <p class="text-justify animation-element fade-in-scroll">
+		    	También celebramos anualmente el Día de la Familia, en coincidencia con el Día de la Tradición.
+		    </p>
 
-				<h2>
-					Institucional h2<br>
-					<small>Fuente h2 small</small>
-				</h2>
+		    <p class="text-justify animation-element fade-in-scroll">
+		    	Este año cumplimos 25 años con este proyecto que permite a los habitantes de la ciudad, un saludable contacto con la naturaleza.
+		    </p>
 
-				<h3>
-					Fuente h3<br>
-					<small>Fuente h3 small</small>
-				</h3>
+		    <p class="animation-element fade-in-scroll">
+	    		<img src="<?php echo MAINSURL; ?>/assets/images/campo-deportes3.jpg" class="image-responsive">
+	    	</p>
 
-				<h4>
-					Fuente h4<br>
-					<small>Fuente h4 small</small>
-				</h4>
+			
 
-				<h5>
-					Fuente h5<br>
-					<small>Fuente h5 small</small>
-				</h5>
-
-				<q>La escuela es el arma más poderosa que puedes usar para cambiar el mundo.</q>
-				<p>Nelson Mandela</p>
-	    	
 	    </div><!-- //.main-content-page -->
 
-	<?php if ( $dispositivo == 'pc' )  : ?> 
+    <?php if ( $dispositivo == 'pc' )  : ?> 
 		    	 	
 	    <aside class="sidebar">
 	       <?php getTemplate( 'sidebar' ); ?>
 	   	</aside>
 
-	<?php endif; ?>
-
+	<?php endif; ?> 
+	
    </div><!-- //.main-content-page-wrapper -->
         
 </div><!--- //.inner-wrapper -->

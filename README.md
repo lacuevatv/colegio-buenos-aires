@@ -2,6 +2,8 @@
 (Sitio auto administrable)
 
 ## Versiones:
+* 0.4.28 - Se creó la página inscripciones
+* 0.4.27 - completé contenido que me han pasado de autoridades y campo de deportes
 * 0.4.26 - Ajustes por vero, la diseñadora marcando el estilo.
 * 0.4.25 - Configurando formularios con phpmailer, cuando este listo el dns lo pruebo online.
 * 0.4.24 - Ajuste el titulo seo para que siempre muestre un titulo distinto de acuerdo a la página y la meta description que muestra siempre la misma salvo en las noticias y edad feliz que muestra el resumen de las mismas.

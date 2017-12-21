@@ -397,10 +397,15 @@ ol {
 
 .subtitulo_clasico {
   border-bottom: 2px solid #27b49a;
-  line-height: 130%; }
+  line-height: 130%;
+  font-size: 130%;
+  margin: 30px 0; }
   @media (min-width: 992px) {
     .subtitulo_clasico {
-      line-height: 200%; } }
+      line-height: 200%;
+      font-size: 300%;
+      margin: 0;
+      margin-bottom: 30px; } }
 
 .subtitulo_seccion {
   border-bottom: 2px solid #27b49a;
@@ -3145,6 +3150,63 @@ ol {
     font-size: 200%; }
 .inscripciones .section-uniforme {
   margin-bottom: 50px; }
+
+.autoridades-list {
+  text-align: center; }
+  .autoridades-list li {
+    margin: 5px 0; }
+
+.autoridades-list-plus {
+  display: flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: -moz-flex;
+  display: -webkit-flex;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -ms-align-items: flex-start;
+  -o-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .autoridades-list-plus li {
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 20px; }
+    @media (min-width: 768px) {
+      .autoridades-list-plus li {
+        width: 30%; } }
+    .autoridades-list-plus li h1 {
+      font-size: 150%; }
+      @media (min-width: 768px) {
+        .autoridades-list-plus li h1 {
+          font-size: 120%; } }
+    .autoridades-list-plus li h4 {
+      margin: 5px 0;
+      font-size: 120%; }
+      @media (min-width: 768px) {
+        .autoridades-list-plus li h4 {
+          font-size: 100%; } }
+    .autoridades-list-plus li img {
+      width: 100%; }
+
+@media (min-width: 768px) {
+  .autoridades-list-plus-width {
+    width: 20% !important; } }
+@media (min-width: 768px) {
+  .autoridades-list-plus-width h1 {
+    font-size: 100% !important; } }
+@media (min-width: 768px) {
+  .autoridades-list-plus-width h4 {
+    font-size: 80% !important; } }
 
 /*--------------------------------------------------------------
 13.0 ANIMATION

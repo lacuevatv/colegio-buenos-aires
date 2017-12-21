@@ -45,6 +45,8 @@ if ( navigator.vendor.indexOf('Apple') > -1 ) {
 $(document).ready(function(){
 	actualPage = $('body').attr('data-page');
 
+	setTimeout(function (){$('.loader').fadeOut();}, 3000);
+
 	switch(actualPage) {
 
 	case 'inicio':
@@ -193,8 +195,6 @@ $(document).ready(function(){
  *
 */
 $(window).on('load', function(){
-
-	setTimeout(function (){$('.loader').fadeOut();}, 3000);
 
 	/*
 	 * INICIOS GALERIA DE IMAGENES
@@ -442,7 +442,6 @@ function contactForm() {
 		event.preventDefault();
 		var mensajeExito = 'Correo enviado exitosamente';
 		var mensajeError = 'Hubo un error, intente nuevamente o comuniquese por teléfono de 9 a 18hs.';
-		var formulario = $(this).serialize()
 
 		formData = new FormData( this );
 		formData.append('function','contact-form');
@@ -461,7 +460,7 @@ function contactForm() {
             success: function ( response ) {
                 console.log(response);
                 if ( response == 'ok' ) {
-	                $('#contact-form').fadeOut( 1000 );
+	                $('#contact-form').fadeOut();
 	                $('.mensaje-wrapper').fadeIn();
 	                $('span.mensaje').html(mensajeExito);
                 } else {
@@ -1207,7 +1206,7 @@ function talleresTabs( contenedor ) {
 		cambiarArticulo(articulos[0]);
 		
 		//calcular altura contenedor y poner la altura correcta
-		setTimeout(altura, 100);
+		setTimeout(altura, 500);
 		
 	}
 
@@ -1230,6 +1229,8 @@ function talleresTabs( contenedor ) {
 		cambiarArticulo(active);
 		//mostrar nuevo articulo activo
 		cambiarArticulo(id);
+altura();
+
 
 	});
 

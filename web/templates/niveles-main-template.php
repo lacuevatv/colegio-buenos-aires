@@ -1,3 +1,6 @@
+<?php 
+global $dispositivo;
+?>
 <header class="header-niveles">
 	<div class="container">
 		<h1 class="subtitulo_clasico animation-element fade-in">
@@ -18,6 +21,8 @@
 
 <!-- main-content -->
 <div class="content-niveles">
+
+<?php if ( $dispositivo != 'movil' ) : ?>
 
 <!--- HISTORIA -->
 	<section>
@@ -58,12 +63,9 @@
 						<h3 class="color-celeste text-center animation-element fade-in-scroll">
 							Autoridades
 						</h3>
-						<p class="text-center animation-element fade-in-scroll">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</p>
-						<div class="btn-wrapper-center animation-element fade-in-scroll">
-							<a href="<?php echo MAINSURL; ?>/institucional" class="btn btn-primary btn-sm">Ver más</a>
-						</div>
+						
+						<?php getTemplate('autoridades'); ?>
+
 					</div>
 
 					<div id="historia" class="tabs-historia-contenido">
@@ -89,6 +91,8 @@
 		</div>	
 	</section>
 	
+<?php endif; ?>
+
 <!--- INSCRIBITE -->
     <aside class="separador-inscribite animation-element slide-up in-view">
     	<?php getTemplate( 'separador-inscribite' ); ?>
