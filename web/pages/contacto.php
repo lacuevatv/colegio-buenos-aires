@@ -56,11 +56,10 @@ include 'header.php';
 
 
 	    	<section class="contact-calendar-wrapper animation-element slide-up">
-	    		<a href="<?php echo GOOGLECALENDAR; ?>" target="_blank" title="Calendario de Eventos en Google Calendar">
-		    		<figure>
-		    			<img src="<?php echo UPLOADSURL; ?>/2017-11-24-395-imagen.png">
-		    		</figure>
-		    	</a>
+	    	<h2 class="subtitulo_clasico animation-element fade-in">
+	    			Calendario
+	    		</h2>
+	    	<iframe src="<?php echo FRAMECALENDARIO; ?>" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 	    	</section>
 
 
