@@ -150,6 +150,7 @@ $(document).ready(function(){
 
     break;
     
+    case 'inscripciones':
     case 'contacto':
     	//inicia funcion de formulario
         contactForm();

@@ -225,11 +225,19 @@
 .btn-border-verde {
 	border: 1px solid $color-verde-claro;
 	color: $color-verde-claro!important;
+	&:hover {
+	    color: $color-blanco!important;
+	    background-color: $color-verde-claro;
+	}
 }
 
 .btn-border-naranja {
 	border: 1px solid $color-naranja;
 	color: $color-naranja!important;
+	&:hover {
+	    color: $color-blanco!important;
+	    background-color: $color-naranja;
+	}
 }
 
 .btn-rosa {
@@ -247,7 +255,7 @@
 	border: 1px solid $color-celeste;
 	padding: 5px 20px;
 	&:hover {
-	    color: $color-blanco;
+	    color: $color-blanco!important;
 	    background-color: $color-celeste;
 	}
 }
@@ -257,7 +265,7 @@
 	border: 1px solid $color-verde-agua;
 	padding: 5px 20px;
 	&:hover {
-	    color: $color-blanco;
+	    color: $color-blanco!important;
 	    background-color: $color-verde-agua;
 	}
 }
