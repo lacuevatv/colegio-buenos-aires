@@ -2037,6 +2037,20 @@
 
 /*INSCRIPCIONES*/
 .inscripciones {
+
+	.instrucciones {
+	    background-color: $color-celeste;
+	    color: white;
+	    padding: 5px 30px 30px;
+	    margin-bottom: 60px;
+		h2 {
+		    font-size: 200%;
+			line-height: 120%;
+			text-align: center;
+			color: $color-blanco;
+		}
+	}
+
 	.lista-documentacion {
 		@media (min-width: $md) {
 			display: flex;
@@ -2077,6 +2091,12 @@
 	.lista-inscripciones {
 		list-style-type: disc;
 		padding-left: 20px;
+
+		li {
+			margin: 10px 0;
+	    	line-height: 110%;
+	    	text-align: justify;
+		}
 	}
 
 

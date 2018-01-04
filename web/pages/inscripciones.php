@@ -21,6 +21,24 @@ include 'header.php';
     </header>
     <div class="main-content-page-wrapper container">
 	    <div class="main-content-page inscripciones">
+	    	<div class="instrucciones">
+	    		<h2>Instrucciones para solicitar entrevistas para la inscripción</h2>
+	    		<ol>
+	    			<li>
+	    				Comunicarse a los teléfonos del colegio (4855-8289/4854-3882)
+	    			</li>
+	    			<li>
+	    				Solicitar a Secretaría una entrevista para información del nivel que requiera ((inicial, primaria, secundario).
+	    			</li>
+	    			<li>
+	    				Para ser agendado se le solicitará su nombre y un celular de contacto.
+	    			</li>
+	    			<li>
+	    				El día de la entrevista será recibido por la dirección/coordinación y/o psicopedagoga quienes le informarán de la organización del colegio.
+	    			</li>
+	    		</ol>
+	    	</div>
+
 	    	<section>
 	    		
 	    		<h2 class="subtitulo_clasico animation-element fade-in-scroll">

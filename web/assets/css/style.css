@@ -390,7 +390,8 @@ ol {
   list-style-type: decimal;
   padding-left: 30px; }
   ol li {
-    margin: 5px 0; }
+    margin: 10px 0;
+    line-height: 110%; }
 
 .color-celeste {
   color: #119ad5; }
@@ -3112,6 +3113,16 @@ ol {
       padding: 80px 20%; } }
 
 /*INSCRIPCIONES*/
+.inscripciones .instrucciones {
+  background-color: #119ad5;
+  color: white;
+  padding: 5px 30px 30px;
+  margin-bottom: 60px; }
+  .inscripciones .instrucciones h2 {
+    font-size: 200%;
+    line-height: 120%;
+    text-align: center;
+    color: #fff; }
 @media (min-width: 992px) {
   .inscripciones .lista-documentacion {
     display: flex;
@@ -3145,6 +3156,10 @@ ol {
 .inscripciones .lista-inscripciones {
   list-style-type: disc;
   padding-left: 20px; }
+  .inscripciones .lista-inscripciones li {
+    margin: 10px 0;
+    line-height: 110%;
+    text-align: justify; }
 .inscripciones .docs-list-inscripcion {
   background-color: #119ad5;
   color: #fff;

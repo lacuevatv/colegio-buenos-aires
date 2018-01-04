@@ -2,6 +2,7 @@
 (Sitio auto administrable)
 
 ## Versiones:
+* 0.4.32 - Retoques de texto y contenido
 * 0.4.31 - Tuve que quitar redes sociales.
 * 0.4.30 - Agregué calendario de google y mapa de deportes
 * 0.4.29 - Mejoré el script de js en la parte de tabs, para que modifique la altura del contenedor de acuerdo a lo que se muestra
