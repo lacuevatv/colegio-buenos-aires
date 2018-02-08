@@ -47,6 +47,7 @@ switch ( $pageActual ) {
 		break;
 
 	case 'jornada-complementaria':
+	case 'certificaciones':
 	case 'documentacion':
 		$widgets = array( 
 			'contacto', 'noticias', 'campus', 'xhendra', 
