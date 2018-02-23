@@ -104,7 +104,7 @@ include 'header.php';
 	    				Apto físico al inicio del ciclo lectivo
 	    			</li>
 	    			<li>
-	    				Los alumnos que provienen de Colegios Municipales deberán presentar el <strong>Certificación de aprobación de grado</strong> (original) y <strong>Boletín</strong> (fotocopia)		
+	    				Los alumnos que provienen de <strong>Colegios Municipales</strong> deberán presentar el <strong>Boletín</strong> (original) e <strong>informe</strong>. Los alumnos que provienen de <strong>Colegios Privados</strong> deberán presentar <strong>Certificación de aprobación de grado</strong> (original), <strong>Boletín</strong> (fotocopia) e <strong>informe</strong>.
 	    			</li>
 	    			<li>
 	    				Los alumnos de primer grado deberán presentar <strong>Certificado de agudeza visual</strong>
