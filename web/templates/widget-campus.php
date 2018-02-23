@@ -30,6 +30,9 @@ $contenidoCampus = array(
 						Leer más
 					</a>
 					<a href="<?php echo $contenidoCampus['url']; ?>" target="_blank" class="btn btn-sm btn-full-blanco link-widget">Entrar</a>
+					<a href="<?php echo LINKFORMULARIOCAMPUS; ?>" target="_blank" class="btn btn-sm btn-border-inverse">
+						Solicitar usuario
+					</a>
 				</p>
 			</div>
 		</article>
