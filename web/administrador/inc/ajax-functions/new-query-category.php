@@ -67,13 +67,19 @@ if ( $result->num_rows == 0 ) {
 				    		<small><?php echo $date; ?></small>
 				    	</h1>
 				    	<p class="links-edicion-noticias">
-				    		<a href="#editar-noticia" title="Editar">Editar Noticia</a> | 
-				    		<a href="<?php echo 'http://' . $_SERVER['HTTP_HOST'] .'/noticias/'. $url ?>" target="_blank" title="Ver">Ver noticia</a>
-				    		<?php 
+				    		<a href="index.php?admin=editar-noticias&slug=<?php echo $url; ?>" title="Editar" class="btn-edit-news">
+					    		Editar Noticia
+					    	</a>
+					    	<?php 
 				    			if ( $status != 'publicado' ) {
 				    		?>
-				    		 | <a href="#publicar-noticia" title="Publicar">Publicar</a>
-				    		<?php } ?>
+				    		 | <a href="<?php echo 'http://' . $_SERVER['HTTP_HOST'] .'/'.$categoria.'/'. $url ?>" target="_blank" title="Ver">Vista Previa</a>
+				    		 | <a href="<?php echo $url; ?>" class="btn-publish-post" title="Publicar">Publicar</a> 
+				    		 | <a href="<?php echo $url; ?>" class="btn-delete-post">Borrar</a>
+				    		<?php } else { ?>
+				    		 | <a href="<?php echo 'http://' . $_SERVER['HTTP_HOST'] .'/'.$categoria.'/'. $url ?>" target="_blank" title="Ver">Ver noticia</a>
+				    		 | <a href="<?php echo $url; ?>" class="btn-delete-post">Borrar</a>
+				    		 <?php } ?>
 				    	</p>
 						
 				    </div>
