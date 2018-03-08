@@ -44,16 +44,17 @@ if( isAjax() ) {
 			// 2 = client and server messages
 			$mail->SMTPDebug = 0;
 			//Set the hostname of the mail server
-			$mail->Host = 'mail.colegiobuenosaires.edu.ar';
+			$mail->Host = 'smtp.office365.com';
 			//Set the SMTP port number - likely to be 25, 465 or 587
 			$mail->Port = 587;
+			$mail->SMTPSecure = 'TLS';
 			//Whether to use SMTP authentication
 			$mail->SMTPAuth = true;
 			$mail->CharSet = "utf-8";
 			//Username to use for SMTP authentication
 			$mail->Username = 'info@colegiobuenosaires.edu.ar';
 			//Password to use for SMTP authentication
-			$mail->Password = 'OtGOoX6X2rn7';
+			$mail->Password = 'Cbsas2017*';
 			//Set who the message is to be sent from
 			$mail->setFrom('info@colegiobuenosaires.edu.ar', utf8_decode($nombre));
 			//Set an alternative reply-to address
