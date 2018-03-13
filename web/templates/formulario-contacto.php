@@ -27,6 +27,10 @@
 		</label>
 		<textarea name="msj" <?php if ( dispositivo() == 'pc' ) { echo 'placeholder="Mensaje"'; } ?>></textarea>
 	</div>
+
+	<div>
+		<div class="g-recaptcha" data-sitekey="6Lf0BkwUAAAAAFiIZs1E1Ux8ugLd_T9TURIQRQon"></div>
+	</div>
 	
 	<div class="form-group">
 		<button type="submit" id="send-contact-form" class="btn btn-primary">Enviar</button>

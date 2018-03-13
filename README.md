@@ -2,6 +2,7 @@
 (Sitio auto administrable)
 
 ## Versiones:
+* 0.5 - Le agregué el office 365 por phpmailer y además el recaptcha de google.
 * 0.4.32 - Retoques de texto y contenido
 * 0.4.31 - Tuve que quitar redes sociales.
 * 0.4.30 - Agregué calendario de google y mapa de deportes
@@ -50,6 +51,7 @@ Ver como configurar el email de acuerdo a lo que usen.
 #### PHP version 5.6
 * Mobile Detect Master 2.8.26 (Detecta si es movil o pc)
 * PHP Mailer 6.0.1
+* Recaptcha de google 1.1.3
 * phpmy admin 4.7.2 en versión local para administrar Base de datos mysql
 
 ### Javascript

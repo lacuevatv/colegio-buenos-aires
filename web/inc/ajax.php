@@ -20,7 +20,9 @@ if( isAjax() ) {
 		 * Maneja el formulario de contacto
 		*/
 		case 'contact-form':
-		
+			
+			require_once 'autoload.php';
+
 			$nombre     = isset($_POST['nombre']) ? $_POST['nombre'] : '';
 			$email      = isset($_POST['email']) ? $_POST['email'] : '';
 			$asunto     = isset($_POST['subject']) ? $_POST['subject'] : 'Formulario de Contacto';
@@ -31,46 +33,61 @@ if( isAjax() ) {
 
 			$emailTo    = LINK_EMAIL;
 			
-			require_once('lib/PHPMailer/src/PHPMailer.php');
-			require_once('lib/PHPMailer/src/SMTP.php');
-			require_once('lib/PHPMailer/src/Exception.php');
-
-			$mail = new PHPMailer;
-			//Tell PHPMailer to use SMTP
-			$mail->isSMTP();
-			//Enable SMTP debugging
-			// 0 = off (for production use)
-			// 1 = client messages
-			// 2 = client and server messages
-			$mail->SMTPDebug = 0;
-			//Set the hostname of the mail server
-			$mail->Host = 'smtp.office365.com';
-			//Set the SMTP port number - likely to be 25, 465 or 587
-			$mail->Port = 587;
-			$mail->SMTPSecure = 'TLS';
-			//Whether to use SMTP authentication
-			$mail->SMTPAuth = true;
-			$mail->CharSet = "utf-8";
-			//Username to use for SMTP authentication
-			$mail->Username = 'info@colegiobuenosaires.edu.ar';
-			//Password to use for SMTP authentication
-			$mail->Password = 'Cbsas2017*';
-			//Set who the message is to be sent from
-			$mail->setFrom('info@colegiobuenosaires.edu.ar', utf8_decode($nombre));
-			//Set an alternative reply-to address
-			$mail->addReplyTo($email, $nombre);
-			//Set who the message is to be sent to
-			$mail->addAddress($emailTo, 'Colegio Buenos Aires');
-			//Set the subject line
-			$mail->Subject = $asunto;
-			//Read an HTML message body from an external file, convert referenced images to embedded,
+			//va a verificar la captcha con google
+			$siteKey = '6Lf0BkwUAAAAAFiIZs1E1Ux8ugLd_T9TURIQRQon';
+			$secret = '6Lf0BkwUAAAAAB-rjShQ9CgITdlSzHR16FShFJEl';
 			
-			$mail->MsgHTML($bodyEmail);
-			//send the message, check for errors
-			if (!$mail->send()) {
-			    echo 'Mailer Error: ' . $mail->ErrorInfo;
-			} else {
-			    echo 'ok';
+			//$recaptcha = new \ReCaptcha\ReCaptcha($secret);
+			$recaptcha = new \ReCaptcha\ReCaptcha($secret, new \ReCaptcha\RequestMethod\SocketPost());
+			$resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);			
+			
+			if ( $resp->isSuccess() ) {
+
+				require_once('lib/PHPMailer/src/PHPMailer.php');
+				require_once('lib/PHPMailer/src/SMTP.php');
+				require_once('lib/PHPMailer/src/Exception.php');
+
+				$mail = new PHPMailer;
+				//Tell PHPMailer to use SMTP
+				$mail->isSMTP();
+				//Enable SMTP debugging
+				// 0 = off (for production use)
+				// 1 = client messages
+				// 2 = client and server messages
+				$mail->SMTPDebug = 0;
+				//Set the hostname of the mail server
+				$mail->Host = 'smtp.office365.com';
+				//Set the SMTP port number - likely to be 25, 465 or 587
+				$mail->Port = 587;
+				$mail->SMTPSecure = 'TLS';
+				//Whether to use SMTP authentication
+				$mail->SMTPAuth = true;
+				$mail->CharSet = "utf-8";
+				//Username to use for SMTP authentication
+				$mail->Username = 'info@colegiobuenosaires.edu.ar';
+				//Password to use for SMTP authentication
+				$mail->Password = 'Cbsas2018*';
+				//Set who the message is to be sent from
+				$mail->setFrom('info@colegiobuenosaires.edu.ar', utf8_decode($nombre));
+				//Set an alternative reply-to address
+				$mail->addReplyTo($email, $nombre);
+				//Set who the message is to be sent to
+				$mail->addAddress($emailTo, 'Colegio Buenos Aires');
+				//Set the subject line
+				$mail->Subject = $asunto;
+				//Read an HTML message body from an external file, convert referenced images to embedded,
+				
+				$mail->MsgHTML($bodyEmail);
+				//send the message, check for errors
+				if (!$mail->send()) {
+				    echo 'Mailer Error: ' . $mail->ErrorInfo;
+				} else {
+				    echo 'ok';
+				}
+
+			} else { 
+
+				   echo 'captcha-error';
 			}
 		
 		break;		

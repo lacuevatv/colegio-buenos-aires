@@ -50,7 +50,8 @@ global $metaDescription;
 
 <!--- modernizr -->
     <script src="<?php echo MAINSURL; ?>/assets/js/modernizr-custom.js"></script>
-
+<!--- recaptcha -->
+<script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
 </head>
 <body data-page="<?php echo $pageActual; ?>">
 <div class="wrapper-site">
