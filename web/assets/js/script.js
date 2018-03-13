@@ -50,6 +50,7 @@ $(document).ready(function(){
 	switch(actualPage) {
 
 	case 'inicio':
+
 		//si es safari o msi muestra otro inicio
 		if (safari || ms_ie) {
 			$( '.grid-inicio' ).addClass('grid-inicio-hack');
@@ -67,6 +68,8 @@ $(document).ready(function(){
 			var widgetAcordion = new acordion( $('#acordionNivelWidget'), 'open', 'active' );
 			widgetAcordion.initAcordion();	
 		}	
+	//formulario de contacto
+	contactForm();
 
     break;
 
