@@ -4,6 +4,11 @@ global $dispositivo;
 
 $autoridades = array(
 	array(
+		'nombre' => 'Julio Guillermo Faggioni Méndez',
+		'cargo' => 'Director General',
+		'imagen' => 'faggioni.png',
+	),
+	array(
 		'nombre' => 'Mirta Selzler',
 		'cargo' => 'Directora de Primaria',
 		'imagen' => 'mirta.png',
@@ -27,6 +32,11 @@ $autoridades = array(
 		'nombre' => 'Alicia Morello',
 		'cargo' => 'Directora de Estudios',
 		'imagen' => 'alicia.png',
+	),
+	array(
+		'nombre' => 'María Pía Bonini',
+		'cargo' => 'Psicopedagoga',
+		'imagen' => 'maria_pia.png',
 	),
 );
 
