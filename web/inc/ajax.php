@@ -34,8 +34,8 @@ if( isAjax() ) {
 			$emailTo    = LINK_EMAIL;
 			
 			//va a verificar la captcha con google
-			$siteKey = '6Lf0BkwUAAAAAFiIZs1E1Ux8ugLd_T9TURIQRQon';
-			$secret = '6Lf0BkwUAAAAAB-rjShQ9CgITdlSzHR16FShFJEl';
+			$siteKey = '';
+			$secret = '';
 			
 			//$recaptcha = new \ReCaptcha\ReCaptcha($secret);
 			$recaptcha = new \ReCaptcha\ReCaptcha($secret, new \ReCaptcha\RequestMethod\SocketPost());
@@ -66,7 +66,7 @@ if( isAjax() ) {
 				//Username to use for SMTP authentication
 				$mail->Username = 'info@colegiobuenosaires.edu.ar';
 				//Password to use for SMTP authentication
-				$mail->Password = 'Cbsas2018*';
+				$mail->Password = '';
 				//Set who the message is to be sent from
 				$mail->setFrom('info@colegiobuenosaires.edu.ar', utf8_decode($nombre));
 				//Set an alternative reply-to address
