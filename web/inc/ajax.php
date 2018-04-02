@@ -34,8 +34,8 @@ if( isAjax() ) {
 			$emailTo    = LINK_EMAIL;
 			
 			//va a verificar la captcha con google
-			$siteKey = '';
-			$secret = '';
+			$siteKey = '6Lf0BkwUAAAAAFiIZs1E1Ux8ugLd_T9TURIQRQon';
+			$secret = '6Lf0BkwUAAAAAB-rjShQ9CgITdlSzHR16FShFJEl';
 			
 			//$recaptcha = new \ReCaptcha\ReCaptcha($secret);
 			$recaptcha = new \ReCaptcha\ReCaptcha($secret, new \ReCaptcha\RequestMethod\SocketPost());
@@ -54,7 +54,7 @@ if( isAjax() ) {
 				// 0 = off (for production use)
 				// 1 = client messages
 				// 2 = client and server messages
-				$mail->SMTPDebug = 0;
+				$mail->SMTPDebug = 2;
 				//Set the hostname of the mail server
 				$mail->Host = 'smtp.office365.com';
 				//Set the SMTP port number - likely to be 25, 465 or 587
