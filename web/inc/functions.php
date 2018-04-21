@@ -564,7 +564,7 @@ function showPopupImg () {
 
 	$result =  mysqli_query($connection, $query);
 	$data = mysqli_fetch_array($result);
-	$urlPoup = $data[3];
+	$urlPoup = $data[1];
 	
 	mysqli_close($connection);
 	if ( $urlPoup == NULL ) {
