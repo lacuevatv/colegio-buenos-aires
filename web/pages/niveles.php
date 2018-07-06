@@ -32,7 +32,9 @@ $textoNiveles = array(
 	'textoDeportes' => array(
 		'inicial'    => '<p><strong>SALIDAS AL CAMPO "LA CHIQUITA"</strong>: A partir de Sala de 5 años, los niños asisten mensualmente a nuestra Estancia "La Chiquita", en la localidad de Cnel. Brandsen, para realizar una jornada de Vida en la Naturaleza: Deportes y Recreación y Area Socio-afectiva, a cargo de profesores de Educación Física, quienes planifican las actividades en relación con los ojetivos del aula. Es objetivo d esta jornada, desarrollar en los niños el amor por la naturaleza y la preservación del medio ambiente desde la experiencia directa, estimulando la integración de los grupos que concurren cada semana y adecuando las actividades a la edad evolutiva de los alumnos.</p><p>Anualmente se realiza el tradicional "Día del Egresadito". Al finalizar el año, las familias de preescolar, docentes, profesores y directivos, a través de juegos, canciones y mucho amor, se brinda a las niñas y niños de ese nivel, una inolvidable y emotiva despedida.</p><p>En el mes de marzo, el Colegio Buenos Aires invita a los padres que ingresan por primera vez, a conocer y recorrer el lugar acompañados por los profesores y directivos quienes los interiorizan sobre las actividades que sus hijos e hijas desarrollarán en el transcurso del año.</p>',
 		'primaria'   => '<p>Los alumnos del Nivel Primario asisten mensualmente a nuestra <strong>Estancia “La Chiquita”</strong>, en la localidad de Cnel. Brandsen, para realizar una jornada  de Vida en la Naturaleza;  Deportes y Recreación  y  Area Socio-afectiva,, a cargo de profesores de Educación Física, quienes planifican las actividades en relación con los objetivos del aula   Es objetivo de esta jornada, desarrollar en los niños el amor por la naturaleza y la preservación del medio ambiente desde la experiencia directa, estimulando la integración de los grupos que concurren cada semana y adecuando las actividades a la edad evolutiva de los alumnos.</p><p>En el mes de marzo, el Colegio Buenos Aires invita a los padres que ingresan por primera vez, a conocer y recorrer el lugar acompañados por los profesores y directivos quienes los interiorizan sobre las actividades que sus hijos e hijas desarrollarán en el transcurso del año.</p>',
-		'secundario' => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
+		'secundario' => '<p><strong>La Estancia La Chiquita</strong> es un lugar especial ubicado en Cnel. Brandsen donde el deporte, la recreación y la inclusión son los pilares fundamentales que se trabajan durante el año con el nivel secundario. Favoreciendo los valores, tales como la cooperación, respeto, solidaridad,  trabajo en equipo, compañerismo, etc.</p>
+		<p>En el calendario anual  realizamos torneos deportivos y recreativos con modalidad mixta:<br>
+		Torneo de atletismo.<br>Torneo de integración de futbol y hándbol.<br>Grandes juegos.<br>Despedida de 4to. a 5to.</p>',
 	),
 	'textoHorario' => array(
 		'manana' => array(
@@ -228,7 +230,36 @@ if ( $slug == '' ) :
 			    	
 			    	<span class="icon-calculadora animation-element fade-in-scroll"></span>
 			    </div>
-
+									
+				<?php if ( $slug = 'secundario') : ?>
+					<div style="text-align:justify;">
+					<h4 style="text-transform:uppercase;font-weight: 700;">
+						“Para cada talento, para cada inquietud, un espacio”.
+					</h4>
+					<p>
+						Desde el inicio de cada ciclo lectivo se generan proyectos que buscan canalizar las inquietudes de alumnos y docentes. Las propuestas pueden venir desde la institución, como las bienales “ArteBaires” y “AltaBaires”, también de los docentes o de los mismos alumnos, que ponen de manifiesto en sus ideas las ganas de trabajar y compartir lo que se hace y la búsqueda incesante que significa crecer. En estas propuestas se ponen en juego el conocimiento y la creatividad.
+					</p>
+					<p>
+						Nuestro desafío como educadores es brindar para cada talento, para cada inquietud, un espacio que permita desarrollar una idea. De esta manera se van conformando los proyectos que a lo largo del año se llevan a cabo y se materializan en las más diversas propuestas.
+					</p>
+					<p>
+						Mediante una organización ágil, creativa y con un claro sentido pedagógico, los jóvenes son protagonistas de sus logros y se descubren a sí mismos en todo su potencial.
+					</p>
+					<p>
+						Así se han ido creando espacios de participación y expresión que perduran a través del tiempo para continuar ampliando el abanico de posibilidades que brinda el Colegio Buenos Aires. Estas son algunas de ellas:</p>
+						<ul>
+							<li>ARTEBAIRES</li>
+							<li>GRUPO MANOS AMIGAS</li>
+							<li>TALLER DE COMUNICACIÓN</li>
+							<li>TEATRO</li>
+							<li>ARTES VISUALES</li>
+							<li>MÚSICA</li>
+							<li>TALLER DE CAPACITACIÓN LABORAL</li>
+							<li>REPARACIÓN DE PC</li>
+							<li>TORNEO INTEGRACIÓN</li>
+						</ul>
+					</div>
+				<?php endif; ?>
 		    </section>
 
 
