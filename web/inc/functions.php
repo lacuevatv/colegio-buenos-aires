@@ -491,8 +491,9 @@ function getPagination( $categoria, $postPerPage ) {
 //muestra los recientes para el single
 function paginationSingle( $categoria, $cantPost, $exclude ) {
 	$posts = getPosts( $categoria, $cantPost, $exclude );
-
-	getTemplate( 'pagination-single', $posts);
+	if ( is_array($posts) ) {
+		getTemplate( 'pagination-single', $posts);
+	}
 }
 
 //busca la documentación cargada

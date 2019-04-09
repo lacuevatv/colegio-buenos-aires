@@ -34,6 +34,12 @@ switch ( $pageActual ) {
 		);
 		break;
 
+		case 'comics':
+		$widgets = array( 
+			'bienvenidos', 'niveles', 'campus', 'inscripciones', 'edad-feliz', 'calendario', 'contacto'
+		);
+		break;
+
 	case 'edad-feliz':
 		$widgets = array( 
 			'bienvenidos', 'niveles', 'campus', 'noticias', 'calendario', 'xhendra', 'contacto'

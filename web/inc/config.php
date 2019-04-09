@@ -50,6 +50,7 @@ global $categorias;
 $categorias = array(
 	array( 'slug' => 'noticias', 'nombre' => 'Noticias'),
 	array( 'slug' => 'edad-feliz', 'nombre' => 'Edad Feliz'),
+	array( 'slug' => 'comics', 'nombre' => 'Cómics'),
 );
 
 //items del menu
@@ -64,7 +65,12 @@ $menuItems = array(
 		),
 	),
 	array( 'url' => 'noticias', 'nombre' => 'Noticias'),
-	array( 'url' => 'edad-feliz', 'nombre' => 'Edad Feliz'),
+	//array( 'url' => 'edad-feliz', 'nombre' => 'Edad Feliz'),
+	array( 'url' => '', 'nombre' => 'Publicaciones', 'subItem' => array(
+		array ('url' => 'edad-feliz', 'nombre' => 'Edad Feliz'),
+		array ('url' => 'comics', 'nombre' => 'Cómics'),
+		),
+	),
 	array( 'url' => 'contacto', 'nombre' => 'Contacto'),
 	'hideMenus' =>  array(
 		array ('url' => 'inscripciones', 'nombre' => 'Inscripciones'),
