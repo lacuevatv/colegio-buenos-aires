@@ -16,7 +16,7 @@ if ( $slug != '' ) {
 	$single = true;
 	$metaDescription = preparaResumen( $singlePost );
 } else {
-	$posts = getPosts( 'comics', $cantPost );
+	$posts = getPosts( 'historietas', $cantPost );
 }
 
 include 'header.php';
@@ -49,7 +49,7 @@ include 'header.php';
 				
 				<h1>Cómics</h1>
 		        <p>
-		        	Publicaciones realizadas por los alumnos. Aquí se pueden ver algunas de ellas.
+				En el Taller de Comunicación Social, algunos alumnos realizan historietas. Compartimos estas con Uds.
 		        </p>
 
 			<?php endif; ?>

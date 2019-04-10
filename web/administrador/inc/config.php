@@ -29,7 +29,7 @@ global $categorias;
 $categorias = array(
 	array( 'slug' => 'noticias', 'nombre' => 'Noticias'),
 	array( 'slug' => 'edad-feliz', 'nombre' => 'Edad Feliz'),
-	array( 'slug' => 'comics', 'nombre' => 'Cómics'),
+	array( 'slug' => 'historietas', 'nombre' => 'historietas'),
 );
 
 //variables de subsecciones de documentacion
