@@ -47,7 +47,7 @@ include 'header.php';
 			
 			<?php else : ?>
 				
-				<h1>Cómics</h1>
+				<h1>Historietas</h1>
 		        <p>
 				En el Taller de Comunicación Social, algunos alumnos realizan historietas. Compartimos estas con Uds.
 		        </p>
