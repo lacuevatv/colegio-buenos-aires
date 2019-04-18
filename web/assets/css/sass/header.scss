@@ -298,6 +298,9 @@
             text-align: left;
             text-transform: capitalize;
             //@include transition(all 0.5s);
+            > li {
+                position: relative;
+            }
             > li > a {
                 padding: 10px 20px;
                 border-bottom: 1px solid black;
@@ -316,10 +319,39 @@
             border-bottom: 2px solid $color-blanco;
         }
     }
+
+    .subsubmenu {
+        @media (min-width: $md) {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 100%;
+            background-color: rgba(238, 237, 237, 0.9);
+            width: 180px;
+
+            > li > a {
+                padding: 10px 20px;
+                border-bottom: 1px solid black;
+
+                &:hover {
+                    color: $color-blanco;
+                    background-color: $color-rosa;
+                    opacity: 1;
+                }
+            }
+        }
+    }
 }//.main-nav
 
 //muestra el submenu en pc
 .main-menu li:hover > .submenu {
+    @media (min-width: $md) {
+        display: block;
+    }
+}
+
+//muestra el subsubmenu en pc
+.submenu li:hover > .subsubmenu {
     @media (min-width: $md) {
         display: block;
     }
