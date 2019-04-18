@@ -277,9 +277,32 @@ function showMenu( $menu, $active = null, $hide = false ) {
 				<ul class="submenu">
 				<?php for ($a=0; $a < count($submenu); $a++) { ?>
 					<li>
-						<a href="<?php echo MAINSURL . '/' . $submenu[$a]['url']; ?>">
-							<?php echo $submenu[$a]['nombre']; ?>
-						</a>
+						<?php if ( ! isset( $submenu[$a]['subItem'] ) ) : ?>
+
+							<a href="<?php echo MAINSURL . '/' . $submenu[$a]['url']; ?>">
+								<?php echo $submenu[$a]['nombre']; ?>
+							</a>
+						
+						<?php else :
+							$subsubmenu = $submenu[$a]['subItem'];
+							?>
+
+							<a href="<?php echo MAINSURL . '/' . $submenu[$a]['url']; ?>">
+								<?php echo $submenu[$a]['nombre']; ?>
+							</a>
+
+							<ul class="subsubmenu">
+
+							<?php for ($e=0; $e < count($subsubmenu); $e++) { ?>
+								<li>
+									<a href="<?php echo MAINSURL . '/' . $subsubmenu[$e]['url']; ?>">
+										<?php echo $subsubmenu[$e]['nombre']; ?>
+									</a>
+								</li>
+							<?php } ?>
+
+							</ul>
+						<?php endif; ?>
 					</li>
 				<?php } ?>
 				</ul>

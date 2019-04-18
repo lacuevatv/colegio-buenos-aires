@@ -6,7 +6,7 @@
  * CONFIG
  * Contenido: conneccion
 */
-define ( 'VERSION', '1.0' );
+define ( 'VERSION', '1.5' );
 define ( 'CANTPOST', 5 );
 //CARPETAS
 define ( 'UPLOADS', dirname( __FILE__ ) . '/../galeria' );
@@ -68,7 +68,11 @@ $menuItems = array(
 	//array( 'url' => 'edad-feliz', 'nombre' => 'Edad Feliz'),
 	array( 'url' => '', 'nombre' => 'Publicaciones', 'subItem' => array(
 		array ('url' => 'edad-feliz', 'nombre' => 'Edad Feliz'),
-		array ('url' => 'historietas', 'nombre' => 'Historietas'),
+		array ('url' => 'historietas', 'nombre' => 'Historietas', 'subItem' => array(
+			array ('url' => 'historietas/ackerman', 'nombre' => 'Acherman'),
+			array ('url' => 'historietas/el-profesor-cito', 'nombre' => 'El profesor Cito'),
+			),
+			),
 		),
 	),
 	array( 'url' => 'contacto', 'nombre' => 'Contacto'),
