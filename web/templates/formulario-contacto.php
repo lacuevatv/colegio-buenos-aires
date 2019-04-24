@@ -15,6 +15,13 @@
 	</div>
 
 	<div class="form-group">
+		<label for="email">
+			Teléfono (requerido)
+		</label>
+		<input type="text" name="tel" required <?php if ( dispositivo() == 'pc' ) { echo 'placeholder="Teléfono (requerido)"'; } ?>>
+	</div>
+
+	<div class="form-group">
 		<label for="subject">
 			Asunto
 		</label>

@@ -25,10 +25,12 @@ if( isAjax() ) {
 
 			$nombre     = isset($_POST['nombre']) ? $_POST['nombre'] : '';
 			$email      = isset($_POST['email']) ? $_POST['email'] : '';
+			$telefono   = isset($_POST['tel']) ? $_POST['tel'] : '';
 			$asunto     = isset($_POST['subject']) ? $_POST['subject'] : 'Formulario de Contacto';
 			$mensaje    = isset($_POST['msj']) ? $_POST['msj'] : '';
 			$bodyEmail  = 'Nombre: ' . $nombre . '<br>';
 			$bodyEmail .= 'email: ' . $email . ' <br>';
+			$bodyEmail .= 'Teléfono: ' . $telefono . ' <br>';
 			$bodyEmail .= 'Mensaje: ' . $mensaje . ' <br>';
 
 			$emailTo    = LINK_EMAIL;

@@ -24,7 +24,7 @@ include 'header.php';
 	    	<div class="instrucciones">
 	    		<h2>Instrucciones para solicitar entrevistas para la inscripción</h2>
 	    		<ol>
-	    			<li>
+	    			<!--<li>
 	    				Comunicarse a los teléfonos del colegio (4855-8289/4854-3882)
 	    			</li>
 	    			<li>
@@ -35,7 +35,16 @@ include 'header.php';
 	    			</li>
 	    			<li>
 	    				El día de la entrevista será recibido por la dirección/coordinación y/o psicopedagoga quienes le informarán de la organización del colegio.
-	    			</li>
+	    			</li>-->
+					<li>
+						Completar el formulario que se encuentra en contactos detallando el nivel que requiere (Inicial, primaria o secundaria) y preferencias de horario (mañana o tarde)
+					</li>
+					<li>
+						A la brevedad recibirá un mail con una cita posible, la cual deberá ser confirmada 
+					</li>
+					<li>
+						El día de la entrevista será recibido por la dirección/coordinación y/o psicopedagoga quienes le informarán de la organización del colegio.
+					</li>
 	    		</ol>
 	    	</div>
 
