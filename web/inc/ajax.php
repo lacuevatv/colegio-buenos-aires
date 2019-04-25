@@ -34,7 +34,6 @@ if( isAjax() ) {
 			$bodyEmail .= 'Mensaje: ' . $mensaje . ' <br>';
 
 			$emailTo    = LINK_EMAIL;
-			
 			//va a verificar la captcha con google
 			$siteKey = '6Lf0BkwUAAAAAFiIZs1E1Ux8ugLd_T9TURIQRQon';
 			$secret = '6Lf0BkwUAAAAAB-rjShQ9CgITdlSzHR16FShFJEl';
