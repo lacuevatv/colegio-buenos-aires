@@ -52,7 +52,7 @@ $textoNiveles = array(
 			'simple' => array(
 				'inicial'    => '13:15 a 17:00hs',
 				'primaria'   => '13:10hs a 17:45hs',
-				'secundario' => '13:15 a 18:20hs',
+				//'secundario' => '13:15 a 18:20hs',
 			),
 			'complementaria' => array(
 				'inicial'    => 'Talleres, almuerzo y descanso desde las 8:30hs.',
@@ -146,34 +146,36 @@ if ( $slug == '' ) :
 		    					</strong>
 		    						<?php echo $textoNiveles['textoHorario']['manana']['simple'][$slug]; ?>
 		    					<br>
+								<?php 
+		    						if ( $slug != 'secundario' ) : ?>
 		    					<strong>
 		    						Jornada Complementaria:	
 		    					</strong>
 		    						<?php
-		    						if ( $slug != 'secundario' ) : 
 			    						echo $textoNiveles['textoHorario']['manana']['complementaria'][$slug];
 			    					endif;
 		    						?>
 		    					<br>
 		    				</p>
-		    				<h4 class="nivel-horario-titulo">
-		    					Turno Tarde
-		    				</h4>
-		    				<p class="niveles-horario">
-		    					<strong>
-		    						Jornada Simple:	
-		    					</strong>
-		    						<?php echo $textoNiveles['textoHorario']['tarde']['simple'][$slug]; ?>
-		    					<br>
-		    					<strong>
-		    						Jornada Complementaria:	
-		    					</strong>
-		    						<?php 
-		    						if ( $slug != 'secundario' ) : 
-			    						echo $textoNiveles['textoHorario']['tarde']['complementaria'][$slug];
-			    					endif;
-		    						?>
-		    				</p>
+
+							<?php if ( $slug != 'secundario') : ?>
+								<h4 class="nivel-horario-titulo">
+									Turno Tarde
+								</h4>
+								<p class="niveles-horario">
+									<strong>
+										Jornada Simple:	
+									</strong>
+										<?php echo $textoNiveles['textoHorario']['tarde']['simple'][$slug]; ?>
+									<br>
+									<strong>
+										Jornada Complementaria:	
+									</strong>
+									<?php
+										echo $textoNiveles['textoHorario']['tarde']['complementaria'][$slug];
+									?>
+								</p>
+							<?php endif; ?>
 		    			</div>
 	    			</div>
 
