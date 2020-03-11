@@ -14,9 +14,9 @@ $autoridades = array(
 		'imagen' => 'mirta.png',
 	),
 	array(
-		'nombre' => 'Marta Lenzo',
+		'nombre' => 'Roxana Caneiro',
 		'cargo' => 'Vicedirectora de Primaria',
-		'imagen' => 'marta.png',
+		'imagen' => 'roxana.png',
 	),
 	array(
 		'nombre' => 'Agustín Iussig',
@@ -29,14 +29,19 @@ $autoridades = array(
 		'imagen' => 'maxi.png',
 	),
 	array(
-		'nombre' => 'Alicia Morello',
+		'nombre' => 'Verónica Carballeda',
 		'cargo' => 'Directora de Estudios',
-		'imagen' => 'alicia.png',
+		'imagen' => 'veronica.png',
 	),
 	array(
 		'nombre' => 'María Pía Bonini',
 		'cargo' => 'Psicopedagoga',
 		'imagen' => 'maria_pia.png',
+	),
+	array(
+		'nombre' => 'Silvina Perincioli',
+		'cargo' => 'Psicopedagoga',
+		'imagen' => 'silvina.png',
 	),
 );
 
