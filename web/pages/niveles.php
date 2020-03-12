@@ -233,7 +233,7 @@ if ( $slug == '' ) :
 			    	<span class="icon-calculadora animation-element fade-in-scroll"></span>
 			    </div>
 									
-				<?php if ( $slug = 'secundario') : ?>
+				<?php if ( $slug == 'secundario') : ?>
 					<div style="text-align:justify;">
 					<h4 style="text-transform:uppercase;font-weight: 700;">
 						“Para cada talento, para cada inquietud, un espacio”.
