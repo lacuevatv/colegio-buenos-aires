@@ -1,3 +1,4 @@
 web/galeria/*
 web/phpmyadmin/*
 bd/*
+.DS_Store
